@@ -2,7 +2,12 @@
 <project version="4">
   <component name="AndroidLayouts">
     <shared>
-      <config />
+      <config>
+        <device id="pixel" />
+        <device id="pixel_4" />
+        <device id="pixel_4_xl" />
+        <device id="pixel_4a" />
+      </config>
     </shared>
   </component>
   <component name="AutoImportSettings">
@@ -10,86 +15,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31917198-6631-4738-acca-cf7ef40bdb98" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Activity Diagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/AoL Assessment Form - COMP6100001 - Software Engineering - PPTI.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Class Diagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/ERD Database.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Project Timeline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Kelompok 1 - Software Engineering.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Laporan Akhir SE Kel 1 - dialoQ.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Laporan Akhir/00db4a5e-cb73-4ab2-9352-ff17e9331563.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Laporan Akhir/Laporan Akhir SE Kel 1 - dialoQ.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Laporan Akhir/Laporan Akhir dialoQ.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Laporan Akhir/Project Schedule.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Laporan Akhir/Sprint Timeline_page.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Laporan Akhir/TI 15/3. Template Project SE 2023.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Laporan Akhir/TI 15/6. CONTOH HASIL PROJECT SE.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Laporan Akhir/Template Laporan Akhir SE.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Project - Timeline.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Self Learning/SL 3 &amp; 4 Software Engineering - Kel 1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Self Learning/SL 5 Software Engineering - Kel 1.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Self Learning/SL 6 Software Engineering - Kel 1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Self Learning/SL 7 Software Engineering - Kel 1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Self Learning/SL 8 Software Engineering - Kel 1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Self Learning/SL 9 Software Engineering - Kel 1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Self Learning/SL Software Engineering 3 - Kelompok 1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Punya Kating/Self Learning/Timeline SL SE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Sequence Diagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Use Case Description.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Kelompok 1 AoL/Use Case.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Images/back_button.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../Images/back_button.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/playsnapui/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playsnapui/LoginActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/playsnapui/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/playsnapui/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/app/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/androidTest/java/com/example/playsnapapplication/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/java/com/example/playsnapapplication/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/app/src/test/java/com/example/playsnapapplication/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PlaySnapApplication/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/back_button.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/back_button.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\teres\.android\avd\Pixel_3a_API_35_extension_level_13_x86_64.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\teres\.android\avd\Pixel_4_API_35.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -123,11 +64,12 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/teres/OneDrive - Bina Nusantara (1)/Cawu 4/Software Engineering/PlaySnap Naomi/app/src/main/res/drawable"
+    "last_opened_file_path": "C:/Users/teres/OneDrive - Bina Nusantara (1)/Cawu 4/Software Engineering/PlaySnap/PlaySnap Naomi/app/src/main/res/drawable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap\PlaySnap Naomi\app\src\main\res\drawable" />
       <recent name="C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Naomi\app\src\main\res\drawable" />
       <recent name="C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Naomi\app\src\main\res\font" />
     </key>
@@ -203,6 +145,19 @@
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="PlaySnap UI" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="PlaySnap UI" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
       </method>
     </configuration>
   </component>

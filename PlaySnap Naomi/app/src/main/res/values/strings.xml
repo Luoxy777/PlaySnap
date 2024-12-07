@@ -14,6 +14,8 @@
     <string name="login_forgot_pw">Lupa Sandi?</string>
     <string name="login_havent_account">
         Saya tidak punya akun
+    </string>
+    <string name="daftar">
         <font color="#6995C9"><b>Daftar</b></font>
     </string>
 
@@ -29,9 +31,9 @@
     <string name="register_confirmpass">Konfirmasi sandi Anda</string>
     <string name="register_have_account">
         Saya sudah punya akun
+    </string>
+    <string name="masuk">
         <font color="#6995C9"><b>Masuk</b></font>
     </string>
     <string name="btn_register">DAFTAR</string>
-
-
 </resources>
