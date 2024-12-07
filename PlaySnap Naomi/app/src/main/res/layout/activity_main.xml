@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:background="@color/sky_blue"
-    android:padding="50dp">
+    android:padding="50dp"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/started_title"
+        style="@style/Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="350dp"
@@ -20,35 +21,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/Title"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/started_subtitle"
+        style="@style/Subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/started_subtitle"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/andikaregular"
+        android:text="@string/started_subtitle"
         android:textAlignment="center"
         android:textColor="@color/grey"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/started_title"
-        style="@style/Subtitle"/>
+        app:layout_constraintTop_toBottomOf="@id/started_title" />
 
     <ImageView
         android:id="@+id/image_ilustration_cloud"
         android:layout_width="wrap_content"
         android:layout_height="400px"
-        android:layout_marginLeft="75dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/cloud_right"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/image_illustration_started"
@@ -59,26 +59,27 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_login"
+        style="@style/ButtonBlue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:text="@string/btn_login"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@id/btn_signup"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toTopOf="parent"
-        style="@style/ButtonBlue"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_signup"
+        style="@style/ButtonWhite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/btn_signup"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        style="@style/ButtonWhite"/>
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
