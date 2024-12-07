@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">PlaySnap UI</string>
+    <string name="started_title">PlaySnap</string>
+    <string name="started_subtitle">Tempat terbaik untuk menemukan ide permainan dengan mudah</string>
+    <string name="btn_signup">DAFTAR</string>
+    <string name="btn_login">MASUK</string>
+    <string name="tv_login_title">Selamat Datang!</string>
+    <string name="tv_login_subtitle">
+        <font color="#6995C9"><b>Masuk</b></font>
+        untuk melanjutkan
+    </string>
+    <string name="login_email"> Email atau nama pengguna Anda</string>
+    <string name="login_password"> Sandi Anda</string>
+    <string name="login_forgot_pw">Lupa Sandi?</string>
+    <string name="login_havent_account">
+        Saya tidak punya akun
+        <font color="#6995C9"><b>Daftar</b></font>
+    </string>
+
+    <string name="tv_register_title">Hai!</string>
+    <string name="tv_register_subtitle">
+        <font color="#6995C9"><b>Daftar</b></font>
+        untuk memulai aplikasi ini
+    </string>
+    <string name="register_fullname">Nama lengkap Anda</string>
+    <string name="register_email">Email Anda</string>
+    <string name="register_username">Nama pengguna Anda</string>
+    <string name="register_password">Sandi Anda</string>
+    <string name="register_confirmpass">Konfirmasi sandi Anda</string>
+    <string name="register_have_account">
+        Saya sudah punya akun
+        <font color="#6995C9"><b>Masuk</b></font>
+    </string>
+    <string name="btn_register">DAFTAR</string>
+
+
+</resources>
