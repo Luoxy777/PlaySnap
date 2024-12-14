@@ -154,6 +154,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="15dp"
         android:hint="@string/register_password"
+        app:passwordToggleEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/ic_lock"
         app:layout_constraintStart_toStartOf="parent"
@@ -162,6 +163,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_password"
             style="@style/TextInputEditText"
+            android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -187,6 +189,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="15dp"
         android:hint="@string/register_confirmpass"
+        app:passwordToggleEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/ic_lock"
         app:layout_constraintStart_toStartOf="parent"
@@ -195,6 +198,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_confirmpass"
             style="@style/TextInputEditText"
+            android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
