@@ -7,10 +7,19 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
+import com.example.playsnapui.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
 import org.w3c.dom.Text
 import java.text.DateFormat
 
 class MainActivity : AppCompatActivity() {
+
+    //here binding and auth line
+    private lateinit var binding:ActivityMainBinding
+    companion object{
+        lateinit var auth: FirebaseAuth
+    }
+
     lateinit var startTitle : TextView
     lateinit var startSub : TextView
     lateinit var logo : ImageView
@@ -21,6 +30,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //1 line
+        auth = FirebaseAuth.getInstance()
 
         startTitle = findViewById(R.id.started_title)
         startSub = findViewById(R.id.started_subtitle)

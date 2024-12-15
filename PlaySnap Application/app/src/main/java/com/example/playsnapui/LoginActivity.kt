@@ -7,6 +7,7 @@ import android.provider.ContactsContract.CommonDataKinds.Email
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -44,12 +45,30 @@ class LoginActivity : AppCompatActivity() {
             val explicit1 = Intent(this, MainActivity::class.java)
 
             startActivity(explicit1)
+            finish()
         }
 
         daftarClickable.setOnClickListener{
             val explicit2 = Intent(this, RegisterActivity::class.java)
 
             startActivity(explicit2)
+            finish()
+        }
+
+        buttonMasuk.setOnClickListener{
+            val email = email.text.toString()
+            val password = password.text.toString()
+            if(email.isNotEmpty() && password.isNotEmpty()){
+                MainActivity.auth.signInWithEmailAndPassword(email, password).addOnCompleteListener{
+                    if(it.isSuccessful){
+                        val explicit2 = Intent(this, HomePageActivity::class.java)
+                        startActivity(explicit2)
+                        finish()
+                    }
+                }.addOnFailureListener{
+                    Toast.makeText(this, it.localizedMessage, Toast.LENGTH_LONG).show()
+                }
+            }
         }
     }
 }

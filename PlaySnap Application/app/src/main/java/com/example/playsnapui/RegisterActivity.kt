@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import com.google.android.material.textfield.TextInputEditText
+import com.google.firebase.auth.FirebaseAuth
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -52,12 +54,40 @@ class RegisterActivity : AppCompatActivity() {
             val explicit = Intent(this, LoginActivity::class.java)
 
             startActivity(explicit)
+            finish()
         }
 
         buttonBack.setOnClickListener {
             val explicit1 = Intent(this, MainActivity::class.java)
 
             startActivity(explicit1)
+            finish()
         }
+
+        buttonDaftar.setOnClickListener{
+            val nama = textNama.text.toString()
+            val email = textEmail.text.toString()
+            val username = textUser.text.toString()
+            val password = textPassword.text.toString()
+            val confirmPass = textConfirm.text.toString()
+            if(nama.isEmpty() || email.isEmpty() || username.isEmpty() || password.isEmpty() || confirmPass.isEmpty()){
+                Toast.makeText(this, "Please fill the empty form", Toast.LENGTH_LONG).show()
+            }
+            else if(password != confirmPass){
+                Toast.makeText(this, "You confirm password is not match with the password", Toast.LENGTH_LONG).show()
+            }
+            else if(email.isNotEmpty() && password.isNotEmpty()){
+                MainActivity.auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{
+                    if(it.isSuccessful){
+                        val explicit2 = Intent(this, LoginActivity::class.java)
+                        startActivity(explicit2)
+                        finish()
+                    }
+                }.addOnFailureListener{
+                    Toast.makeText(this, it.localizedMessage, Toast.LENGTH_LONG).show()
+                }
+            }
+        }
+
     }
 }
