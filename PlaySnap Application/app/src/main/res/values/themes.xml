@@ -20,9 +20,12 @@
 
     <style name="ButtonBack">
         <item name="android:background">@drawable/bg_button_back</item>
-
     </style>
-    
+
+    <style name="ButtonNavbar">
+        <item name="android:background">@color/orange</item>
+    </style>
+
     <style name="Title">
         <item name="android:fontFamily">@font/leaguespartanextrabold</item>
         <item name="android:textColor">@color/dark_blue</item>
@@ -52,4 +55,5 @@
         <item name="android:fontFamily">@font/andikaregular</item>
         <item name="android:textColor">@color/grey</item>
     </style>
+
 </resources>
