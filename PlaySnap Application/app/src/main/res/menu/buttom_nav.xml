@@ -4,22 +4,22 @@
     <item
         android:id="@+id/home"
         android:icon="@drawable/logo_home"
-        android:title="home"
+        android:title="Beranda"
         android:iconTint="@color/orange"
         />
     <item
         android:id="@+id/like"
         android:icon="@drawable/logo_like"
-        android:title="like"
+        android:title="Suka"
         />
     <item
         android:id="@+id/bookmark"
         android:icon="@drawable/logo_bookmark"
-        android:title="bookmark" />
+        android:title="Simpan" />
     <item
         android:id="@+id/profile"
         android:icon="@drawable/logo_profile"
-        android:title="profile"
+        android:title="Profil"
 
         />
 

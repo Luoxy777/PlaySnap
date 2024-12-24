@@ -32,6 +32,5 @@
         android:background="@color/dark_blue"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white">
-
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 </androidx.constraintlayout.widget.ConstraintLayout>
