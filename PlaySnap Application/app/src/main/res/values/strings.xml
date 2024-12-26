@@ -38,4 +38,14 @@
     <string name="btn_register">DAFTAR</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_greating">Selamat Pagi,</string>
+    <string name="title_name">Totok!</string>
+    <string name="subtitle_home">Ayo temukan permainan</string>
+    <string name="subtitle_home2">seru di sekitarmu ~</string>
+    <string name="filter_game">
+        <font color="#6995C9"><b>FILTER</b></font>
+        Permainan</string>
+    <string name="scan_object">Pindai Objek</string>
+    <string name="type_object">KETIK OBJEK</string>
+    <string name="title_recommendation">Permainan Populer!</string>
 </resources>
