@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".HomePageActivity"
     android:fillViewport="true">
 
@@ -25,7 +26,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/title_greeting"
+                android:id="@+id/tv_title_greeting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
@@ -36,7 +37,7 @@
                 android:textSize="30dp" />
 
             <TextView
-                android:id="@+id/title_name"
+                android:id="@+id/tv_title_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
@@ -47,7 +48,7 @@
                 android:textSize="30dp" />
 
             <TextView
-                android:id="@+id/subtitle_home"
+                android:id="@+id/tv_subtitle_home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
@@ -58,7 +59,7 @@
                 android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/subtitle_home2"
+                android:id="@+id/tv_subtitle_home2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -111,7 +112,7 @@
             style="@style/TextInputEditText_search" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/filter_game"
+            android:id="@+id/btn_filter_game"
             style="@style/ButtonWhite2"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -133,7 +134,7 @@
             app:layout_constraintTop_toBottomOf="@id/et_search_game" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/scan_object"
+            android:id="@+id/btn_scan_object"
             style="@style/ButtonWhite2"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -155,7 +156,7 @@
             app:layout_constraintTop_toBottomOf="@id/et_search_game" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/type_object"
+            android:id="@+id/btn_type_object"
             style="@style/ButtonWhite2"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -177,7 +178,7 @@
             app:layout_constraintTop_toBottomOf="@id/et_search_game" />
 
         <TextView
-            android:id="@+id/title_recommendation"
+            android:id="@+id/tv_title_recommendation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -186,7 +187,7 @@
             android:fontFamily="@font/leaguespartanbold"
             android:textColor="@color/dark_blue"
             android:textSize="22dp"
-            app:layout_constraintTop_toBottomOf="@id/filter_game"
+            app:layout_constraintTop_toBottomOf="@id/btn_filter_game"
             app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -199,7 +200,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title_recommendation" />
+            app:layout_constraintTop_toBottomOf="@id/tv_title_recommendation" />
         
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

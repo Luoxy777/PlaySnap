@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".LikePageActivity">
 
     <include
@@ -33,16 +34,8 @@
                     android:paddingStart="40dp"
                     android:paddingEnd="40dp">
 
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_back"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/back_button"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
                     <TextView
-                        android:id="@+id/title_like"
+                        android:id="@+id/tv_title_like"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/leaguespartanextrabold"
@@ -55,7 +48,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/subtitle_like"
+                        android:id="@+id/tv_subtitle_like"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/andikaregular"
@@ -65,7 +58,7 @@
                         android:textSize="18dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/title_like"/>
+                        app:layout_constraintTop_toBottomOf="@id/tv_title_like"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout

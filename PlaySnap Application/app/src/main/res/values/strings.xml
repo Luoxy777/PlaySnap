@@ -52,4 +52,12 @@
     <string name="subtitle_like">Ini permainan yang kamu sukai</string>
     <string name="title_bookmark">Ayo, Main Lagi!</string>
     <string name="subtitle_bookmark">Mainkan lagi permainan yang kamu simpan</string>
+    <string name="title_profile">Profil</string>
+    <string name="full_name">Totok Sugianto</string>
+    <string name="email">totoksugianto@gmail.com</string>
+    <string name="btn_edit_profile">Edit Profil</string>
+    <string name="subttile_profile">AKUN</string>
+    <string name="history_game">Riwayat Permainan</string>
+    <string name="report">LAPORKAN</string>
+    <string name="setting_acc">ATUR AKUN</string>
 </resources>
