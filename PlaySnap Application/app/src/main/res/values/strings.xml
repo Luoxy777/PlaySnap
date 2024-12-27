@@ -48,4 +48,8 @@
     <string name="scan_object">Pindai Objek</string>
     <string name="type_object">KETIK OBJEK</string>
     <string name="title_recommendation">Permainan Populer!</string>
+    <string name="title_like">Main, Yuk!</string>
+    <string name="subtitle_like">Ini permainan yang kamu sukai</string>
+    <string name="title_bookmark">Ayo, Main Lagi!</string>
+    <string name="subtitle_bookmark">Mainkan lagi permainan yang kamu simpan</string>
 </resources>
