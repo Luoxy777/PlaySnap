@@ -60,4 +60,22 @@
     <string name="history_game">Riwayat Permainan</string>
     <string name="report">LAPORKAN</string>
     <string name="setting_acc">ATUR AKUN</string>
+    <string name="tv_filter_title">Filter Permainan</string>
+    <string name="tv_filter_subtitle">Pilih kategori sesuai dengan kondisimu!</string>
+    <string name="filter_usia_main_btn_text">Usia</string>
+    <string name="filter_lokasi_main_btn_text">Lokasi</string>
+    <string name="filter_pemain_main_btn_text">Pemain</string>
+    <string name="filter_properti_main_btn_text">Properti</string>
+    <string name="filter_usia_choice_btn_title">Rentang Usia</string>
+    <string name="filter_lokasi_choice_btn_title">Tipe lokasi</string>
+    <string name="filter_pemain_choice_btn_title">Jumlah Pemain</string>
+    <string name="filter_properti_choice_btn_title">Properti Main</string>
+    <string name="mulai_btn_text">MULAI</string>
+    <string name="hapus_btn_text">HAPUS</string>
+    <string name="tv_ketikobj_title">Siap Bermain?</string>
+    <string name="tv_ketikobj_subtitle">Tambahkan atau hapus objek sesuai keinginanmu ~</string>
+    <string name="searchbar_ketikobj_default">Tambahkan objek...</string>
+    <string name="tv_manage_object_title">"Ketik Objek"</string>
+    <string name="tv_manage_object_subtitle">"Tambahkan objek sesuai keinginanmu untuk mulai bermain ~"</string>
+    <string name="hint_manage_object">"   Tambahkan objek...</string>
 </resources>
