@@ -78,4 +78,5 @@
     <string name="tv_manage_object_title">"Ketik Objek"</string>
     <string name="tv_manage_object_subtitle">"Tambahkan objek sesuai keinginanmu untuk mulai bermain ~"</string>
     <string name="hint_manage_object">"   Tambahkan objek...</string>
+    <string name="title_foryou">Hanya Untukmu!</string>
 </resources>
