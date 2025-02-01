@@ -119,18 +119,15 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="22dp"
                 android:layout_marginStart="40dp"
-                android:text="@string/filter_game"
-                android:fontFamily="@font/leaguespartanextrabold"
-                android:textSize="14dp"
-                android:textColor="@color/dark_blue"
                 android:shadowRadius="100"
                 android:shadowColor="@color/light_grey"
                 android:shadowDx="0"
                 android:shadowDy="100"
                 android:elevation="100dp"
                 android:drawableTop="@drawable/ic_filter_game"
-                android:paddingTop="7dp"
-                android:paddingBottom="5dp"
+                android:drawableBottom="@drawable/btn_filter"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/et_search_game" />
 
@@ -141,17 +138,14 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="22dp"
                 android:drawableTop="@drawable/ic_scan_object"
+                android:drawableBottom="@drawable/btn_scan"
                 android:elevation="100dp"
-                android:fontFamily="@font/leaguespartanextrabold"
-                android:textSize="18dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="12dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:shadowColor="@color/light_grey"
                 android:shadowDx="0"
                 android:shadowDy="100"
                 android:shadowRadius="100"
-                android:text="@string/scan_object"
-                android:textColor="@color/dark_blue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/et_search_game" />
@@ -163,18 +157,15 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="22dp"
                 android:layout_marginEnd="40dp"
-                android:text="@string/type_object"
-                android:fontFamily="@font/leaguespartanextrabold"
-                android:textSize="18dp"
-                android:textColor="@color/dark_blue"
                 android:shadowRadius="100"
                 android:shadowColor="@color/light_grey"
                 android:shadowDx="0"
                 android:shadowDy="100"
                 android:elevation="100dp"
                 android:drawableTop="@drawable/ic_type_object"
-                android:paddingTop="8dp"
-                android:paddingBottom="12dp"
+                android:drawableBottom="@drawable/btn_type"
+                android:paddingTop="12dp"
+                android:paddingBottom="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/et_search_game" />
 
@@ -192,7 +183,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recent_recycler"
+                android:id="@+id/recent_recycler_popgame"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -213,12 +204,51 @@
                 android:fontFamily="@font/leaguespartanbold"
                 android:textColor="@color/dark_blue"
                 android:textSize="22dp"
-                app:layout_constraintTop_toBottomOf="@id/recent_recycler"
+                app:layout_constraintTop_toBottomOf="@id/recent_recycler_popgame"
                 app:layout_constraintStart_toStartOf="parent" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recent_recycler_foryou"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_foryou"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <!--
+    <ImageButton
+        android:id="@+id/btn1"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="450dp"
+        android:background="@drawable/card_bg"
+        android:layout_width="153.75dp"
+        android:layout_height="180dp"/>
+
+    <ImageButton
+        android:id="@+id/btn2"
+        android:layout_marginStart="193.75dp"
+        android:layout_marginTop="450dp"
+        android:background="@drawable/card_bg"
+        android:layout_width="153.75dp"
+        android:layout_height="180dp"/>
+    -->
+
+    <!-- <ImageButton
+        android:id="@+id/btn1"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="450dp"
+        android:background="@drawable/card_bg"
+        android:backgroundTint="@color/dark_blue"
+        android:layout_width="340dp"
+        android:layout_height="191.25dp"/>
+    -->
 
     <include
         android:id="@+id/include"

@@ -42,10 +42,8 @@
     <string name="title_name">Totok!</string>
     <string name="subtitle_home">Ayo temukan permainan</string>
     <string name="subtitle_home2">seru di sekitarmu ~</string>
-    <string name="filter_game">
-        <font color="#6995C9"><b>FILTER</b></font>
-        Permainan</string>
-    <string name="scan_object">Pindai Objek</string>
+    <string name="filter_game">FILTER PERMAINAN</string>
+    <string name="scan_object">PINDAI OBJEK</string>
     <string name="type_object">KETIK OBJEK</string>
     <string name="title_recommendation">Permainan Populer!</string>
     <string name="title_like">Main, Yuk!</string>
@@ -79,4 +77,5 @@
     <string name="tv_manage_object_subtitle">"Tambahkan objek sesuai keinginanmu untuk mulai bermain ~"</string>
     <string name="hint_manage_object">"   Tambahkan objek...</string>
     <string name="title_foryou">Hanya Untukmu!</string>
+    <string name="sub_permainan">Permainan</string>
 </resources>
