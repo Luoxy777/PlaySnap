@@ -15,26 +15,26 @@ class BottomSheet : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.bottom_sheet_filter_page)
 
-        //initializing views
-        val bottomSheet: FrameLayout = findViewById(R.id.bottom_sheet)
-        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet).apply{
-            peekHeight = 200
-            this.state = BottomSheetBehavior.STATE_COLLAPSED
-        }
-
-        bottomSheetBehavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
-            override fun onStateChanged(bottomSheet: View, newState: Int) {
-                when (newState) {
-                    BottomSheetBehavior.STATE_EXPANDED -> println("STATE_EXPANDED")
-                    BottomSheetBehavior.STATE_COLLAPSED -> println("STATE_COLLAPSED")
-                    BottomSheetBehavior.STATE_HIDDEN -> println("STATE_HIDDEN")
-                }
-            }
-
-            override fun onSlide(bottomSheet: View, slideOffset: Float) {
-                println("Slide offset: $slideOffset")
-            }
-        })
+//        //initializing views
+//        val bottomSheet: FrameLayout = findViewById(R.id.bottom_sheet)
+//        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet).apply{
+//            peekHeight = 200
+//            this.state = BottomSheetBehavior.STATE_COLLAPSED
+//        }
+//
+//        bottomSheetBehavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
+//            override fun onStateChanged(bottomSheet: View, newState: Int) {
+//                when (newState) {
+//                    BottomSheetBehavior.STATE_EXPANDED -> println("STATE_EXPANDED")
+//                    BottomSheetBehavior.STATE_COLLAPSED -> println("STATE_COLLAPSED")
+//                    BottomSheetBehavior.STATE_HIDDEN -> println("STATE_HIDDEN")
+//                }
+//            }
+//
+//            override fun onSlide(bottomSheet: View, slideOffset: Float) {
+//                println("Slide offset: $slideOffset")
+//            }
+//        })
 
     }
 
