@@ -4,8 +4,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:behaviour_hideable="true"
-    app:behaviour_peekHeight="20dp"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="20dp"
     app:layout_behavior="@string/bottom_sheet_behavior">
 
     <LinearLayout

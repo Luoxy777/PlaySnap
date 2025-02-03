@@ -78,4 +78,5 @@
     <string name="hint_manage_object">"   Tambahkan objek...</string>
     <string name="title_foryou">Hanya Untukmu!</string>
     <string name="sub_permainan">Permainan</string>
+    <string name="title_activity_search_by_camera">SearchByCameraActivity</string>
 </resources>
