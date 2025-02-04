@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="88dp"
         android:background="@color/transparent_blue"
@@ -13,9 +14,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_flash"
+            style="@style/ButtonWhite"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/mulai_button_oultline"
+            android:drawableTop="@drawable/baseline_flash_on_24"
+            android:elevation="100dp"
+            android:padding="12.5dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_flip_camera"
+            style="@style/ButtonWhite"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/mulai_button_oultline"
+            android:drawableTop="@drawable/baseline_flip_camera_android_24"
+            android:elevation="100dp"
+            android:padding="12.5dp" />
+
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="113dp"
         android:background="@color/transparent_blue"
@@ -24,7 +51,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" >
+        app:layout_constraintVertical_bias="1.0">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@id/mulai_button"
@@ -37,6 +64,43 @@
             android:background="@drawable/mulai_button_oultline"
             android:text="@string/mulai_btn_text"
             android:textColor="@color/white" />
+
+        <View
+            android:id="@+id/camera_button_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="170dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/circle_camera_bg_btn" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/camera_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="180dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/camera_button" />
     </RelativeLayout>
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.491" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

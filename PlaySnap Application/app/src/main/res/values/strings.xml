@@ -73,9 +73,9 @@
     <string name="tv_ketikobj_title">Siap Bermain?</string>
     <string name="tv_ketikobj_subtitle">Tambahkan atau hapus objek sesuai keinginanmu ~</string>
     <string name="searchbar_ketikobj_default">Tambahkan objek...</string>
-    <string name="tv_manage_object_title">"Ketik Objek"</string>
-    <string name="tv_manage_object_subtitle">"Tambahkan objek sesuai keinginanmu untuk mulai bermain ~"</string>
-    <string name="hint_manage_object">"   Tambahkan objek...</string>
+    <string name="tv_manage_object_title">Ketik Objek</string>
+    <string name="tv_manage_object_subtitle">Tambahkan objek sesuai keinginanmu untuk mulai bermain ~"</string>
+    <string name="hint_manage_object">   Tambahkan objek...</string>
     <string name="title_foryou">Hanya Untukmu!</string>
     <string name="sub_permainan">Permainan</string>
     <string name="title_help">Butuh Bantuan?</string>
@@ -88,4 +88,5 @@
     <string name="question6_kenapa_objek">Kenapa objek tidak muncul setelah dipindai?</string>
     <string name="question7_bagaimana_cara">Bagaimana cara melihat riwayat permainan?</string>
     <string name="title_send_question">Masih buntu? Ajukan pertanyaan!</string>
+    <string name="title_activity_search_by_camera">SearchByCameraActivity</string>
 </resources>

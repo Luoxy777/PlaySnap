@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature android:name="android.hardware.camera.any"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="34"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,6 +18,11 @@
         <activity
             android:name=".HelpPageActivity"
             android:exported="false" />
+        <activity
+            android:name=".SearchByCameraActivity"
+            android:exported="false"
+            android:label="@string/title_activity_search_by_camera"
+            android:theme="@style/Theme.PlaySnapUI" />
         <activity
             android:name=".ProfilePageActivity"
             android:exported="false" />
@@ -49,5 +57,4 @@
             android:name=".BottomSheet"
             android:theme="@style/TransparentTheme"></activity>
     </application>
-
 </manifest>
