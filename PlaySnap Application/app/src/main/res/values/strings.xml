@@ -78,4 +78,14 @@
     <string name="hint_manage_object">"   Tambahkan objek...</string>
     <string name="title_foryou">Hanya Untukmu!</string>
     <string name="sub_permainan">Permainan</string>
+    <string name="title_help">Butuh Bantuan?</string>
+    <string name="subtitle_help">Berikut beberapa pertanyaan yang sering diajukan oleh sobat PlaySnap, semoga membantu!</string>
+    <string name="question1_apa_itu">Apa itu PlaySnap?</string>
+    <string name="question2_kenapa_pilih">Kenapa pilih PlaySnap?</string>
+    <string name="question3_bagaimana_cara">Bagaimana cara pindai gambar?</string>
+    <string name="question4_bagaimana_cara">Bagaimana cara cari permainan?</string>
+    <string name="question5_bagaimana_cara">Bagaimana cara menghapus objek?</string>
+    <string name="question6_kenapa_objek">Kenapa objek tidak muncul setelah dipindai?</string>
+    <string name="question7_bagaimana_cara">Bagaimana cara melihat riwayat permainan?</string>
+    <string name="title_send_question">Masih buntu? Ajukan pertanyaan!</string>
 </resources>
