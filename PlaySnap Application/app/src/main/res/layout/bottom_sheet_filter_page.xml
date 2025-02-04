@@ -1,28 +1,28 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".BottomSheet">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="63dp"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:orientation="vertical">
 
-        <Button
-            android:layout_width="wrap_content"
+    <FrameLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/rounded_rectangle_dragable"
+        app:layout_behavior="" >
+        <ImageView
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:text="expand" />
-
-    </LinearLayout>
-
-    <include
-        layout="@layout/item_bottom_sheet"></include>
+            android:src="@drawable/ic_bottom_sheet_drag"
+            android:paddingTop="10dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center|top">
+        </ImageView>
+    </FrameLayout>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

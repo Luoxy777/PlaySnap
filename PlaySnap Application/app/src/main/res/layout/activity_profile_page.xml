@@ -100,7 +100,7 @@
         app:layout_constraintTop_toBottomOf="@id/profile_pic"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_history"
+        android:id="@+id/btn_history_game"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,7 +116,7 @@
         android:drawableStart="@drawable/ic_history_game"
         android:drawableEnd="@drawable/back_button_mini"
         android:text="@string/history_game"
-        android:textSize="16dp"
+        android:textSize="17dp"
         android:fontFamily="@font/leaguespartanregular"
         android:textAlignment="textStart"/>
 
@@ -134,15 +134,15 @@
         android:drawableStart="@drawable/ic_report"
         android:drawableEnd="@drawable/back_button_mini"
         android:text="@string/report"
-        android:textSize="16dp"
+        android:textSize="17dp"
         android:fontFamily="@font/leaguespartanregular"
         android:textAlignment="textStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_history"/>
+        app:layout_constraintTop_toBottomOf="@id/btn_history_game"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_settings"
+        android:id="@+id/btn_setting_acc"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="40dp"
@@ -155,7 +155,7 @@
         android:drawableStart="@drawable/ic_setting_account"
         android:drawableEnd="@drawable/back_button_mini"
         android:text="@string/setting_acc"
-        android:textSize="16dp"
+        android:textSize="17dp"
         android:fontFamily="@font/leaguespartanregular"
         android:textAlignment="textStart"
         app:layout_constraintStart_toStartOf="parent"

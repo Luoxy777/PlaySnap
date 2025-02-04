@@ -32,13 +32,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.62" />
 
+    <include
+        layout="@layout/bottom_sheet_filter_page"/>
 
 
-<!--    <include-->
-<!--        android:id="@id/include"-->
-<!--        layout="@layout/activity_navigation_bar"-->
-<!--        tools:layout_editor_absoluteX="0dp"-->
-<!--        tools:layout_editor_absoluteY="164dp" />-->
+    <include
+        android:id="@id/include"
+        layout="@layout/activity_navigation_bar"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="164dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_back"

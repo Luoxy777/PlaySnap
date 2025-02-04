@@ -227,7 +227,7 @@
                 android:background="@color/white"
                 android:drawableEnd="@drawable/back_button_mini"
                 android:text="@string/question6_kenapa_objek"
-                android:textSize="16dp"
+                android:textSize="15.4dp"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
                 android:textColor="@color/grey"
@@ -257,7 +257,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btn_kenapa_objek"/>
-            
+
             <TextView
                 android:id="@+id/tv_question"
                 android:layout_width="wrap_content"
@@ -287,7 +287,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
-        
+
     </ScrollView>
 
     <include
