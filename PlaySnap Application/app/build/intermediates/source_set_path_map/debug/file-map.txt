@@ -1,0 +1,43 @@
+com.example.playsnapui.app-appcompat-resources-1.7.0-0 C:\Users\teres\.gradle\caches\transforms-3\10d87d2b85e397cd1f2c99a57ba65342\transformed\appcompat-resources-1.7.0\res
+com.example.playsnapui.app-lifecycle-process-2.6.2-1 C:\Users\teres\.gradle\caches\transforms-3\134a958ac634ebe6cc67b89f840bdc7d\transformed\lifecycle-process-2.6.2\res
+com.example.playsnapui.app-play-services-auth-20.7.0-2 C:\Users\teres\.gradle\caches\transforms-3\13cf6fa5daf5a627e00c353fceef01b9\transformed\play-services-auth-20.7.0\res
+com.example.playsnapui.app-core-1.13.0-3 C:\Users\teres\.gradle\caches\transforms-3\265e79d116eff32653eac050be33f071\transformed\core-1.13.0\res
+com.example.playsnapui.app-recyclerview-1.1.0-4 C:\Users\teres\.gradle\caches\transforms-3\28a4ccae1699a7fa234042a70f4d93b7\transformed\recyclerview-1.1.0\res
+com.example.playsnapui.app-firebase-common-21.0.0-5 C:\Users\teres\.gradle\caches\transforms-3\349fd0682db78e098186f458326f9f46\transformed\firebase-common-21.0.0\res
+com.example.playsnapui.app-credentials-1.2.0-rc01-6 C:\Users\teres\.gradle\caches\transforms-3\364ed3f952ab5d77369e6328a8ee9517\transformed\credentials-1.2.0-rc01\res
+com.example.playsnapui.app-annotation-experimental-1.4.0-7 C:\Users\teres\.gradle\caches\transforms-3\3ae6a31c80b702be90b7b66405ddc837\transformed\annotation-experimental-1.4.0\res
+com.example.playsnapui.app-fragment-1.5.4-8 C:\Users\teres\.gradle\caches\transforms-3\484bab5456b1e50a10fe05b824115ef6\transformed\fragment-1.5.4\res
+com.example.playsnapui.app-drawerlayout-1.1.1-9 C:\Users\teres\.gradle\caches\transforms-3\505e37631b3a5b8713d73a6eb640a2b5\transformed\drawerlayout-1.1.1\res
+com.example.playsnapui.app-activity-1.8.0-10 C:\Users\teres\.gradle\caches\transforms-3\5950b761e01062a1778449aef1f95611\transformed\activity-1.8.0\res
+com.example.playsnapui.app-transition-1.5.0-11 C:\Users\teres\.gradle\caches\transforms-3\5f694082d557b524aaa2b85d3b7aa5cc\transformed\transition-1.5.0\res
+com.example.playsnapui.app-material-1.12.0-12 C:\Users\teres\.gradle\caches\transforms-3\6bbbb02b3bac273aa62918b09dc14598\transformed\material-1.12.0\res
+com.example.playsnapui.app-lifecycle-livedata-core-2.6.2-13 C:\Users\teres\.gradle\caches\transforms-3\7181a185555cf55da87caaba6ea94930\transformed\lifecycle-livedata-core-2.6.2\res
+com.example.playsnapui.app-viewpager2-1.0.0-14 C:\Users\teres\.gradle\caches\transforms-3\74757bb90d530ec2683c4be7d9f026d6\transformed\viewpager2-1.0.0\res
+com.example.playsnapui.app-play-services-base-18.0.1-15 C:\Users\teres\.gradle\caches\transforms-3\78439d26f457faa994bf17b611d0e562\transformed\play-services-base-18.0.1\res
+com.example.playsnapui.app-savedstate-1.2.1-16 C:\Users\teres\.gradle\caches\transforms-3\78ca9c208eb8d705f619d9ca2bdd3c0d\transformed\savedstate-1.2.1\res
+com.example.playsnapui.app-lifecycle-viewmodel-savedstate-2.6.2-17 C:\Users\teres\.gradle\caches\transforms-3\79d87f650810ef2744a7e004bf602d2d\transformed\lifecycle-viewmodel-savedstate-2.6.2\res
+com.example.playsnapui.app-lifecycle-viewmodel-2.6.2-18 C:\Users\teres\.gradle\caches\transforms-3\7ec0e7f7b76c25db74e9a583bd7dba96\transformed\lifecycle-viewmodel-2.6.2\res
+com.example.playsnapui.app-browser-1.4.0-19 C:\Users\teres\.gradle\caches\transforms-3\851419bb0d322d76263c9d9bb840f42e\transformed\browser-1.4.0\res
+com.example.playsnapui.app-core-runtime-2.2.0-20 C:\Users\teres\.gradle\caches\transforms-3\8b12d7974bbbef7a563966d9484e8b07\transformed\core-runtime-2.2.0\res
+com.example.playsnapui.app-profileinstaller-1.4.0-21 C:\Users\teres\.gradle\caches\transforms-3\94162443992b152b739b8a5399f77796\transformed\profileinstaller-1.4.0\res
+com.example.playsnapui.app-lifecycle-livedata-2.6.2-22 C:\Users\teres\.gradle\caches\transforms-3\9992b27cbb98af053abb95686b924f20\transformed\lifecycle-livedata-2.6.2\res
+com.example.playsnapui.app-emoji2-1.3.0-23 C:\Users\teres\.gradle\caches\transforms-3\a546d3b530aa71959a44d5fe8572aa48\transformed\emoji2-1.3.0\res
+com.example.playsnapui.app-core-common-2.0.3-24 C:\Users\teres\.gradle\caches\transforms-3\ab450209390d67b20a59f4533845b303\transformed\core-common-2.0.3\res
+com.example.playsnapui.app-startup-runtime-1.1.1-25 C:\Users\teres\.gradle\caches\transforms-3\b6e24007c7c0dba12fccaa4ed1b32f9c\transformed\startup-runtime-1.1.1\res
+com.example.playsnapui.app-core-ktx-1.13.0-26 C:\Users\teres\.gradle\caches\transforms-3\c433c4c8ec941a82f67eb1eb27d77fe4\transformed\core-ktx-1.13.0\res
+com.example.playsnapui.app-appcompat-1.7.0-27 C:\Users\teres\.gradle\caches\transforms-3\dac8565da2ebcf6eee14a0efdf9f30a7\transformed\appcompat-1.7.0\res
+com.example.playsnapui.app-cardview-1.0.0-28 C:\Users\teres\.gradle\caches\transforms-3\dc86b2450e54b7d066386e28455b8893\transformed\cardview-1.0.0\res
+com.example.playsnapui.app-emoji2-views-helper-1.3.0-29 C:\Users\teres\.gradle\caches\transforms-3\de8d31d1228ac856e63f173421a57058\transformed\emoji2-views-helper-1.3.0\res
+com.example.playsnapui.app-play-services-basement-18.4.0-30 C:\Users\teres\.gradle\caches\transforms-3\deaa164c5f3e3bce13e322aaef3488f8\transformed\play-services-basement-18.4.0\res
+com.example.playsnapui.app-constraintlayout-2.2.0-31 C:\Users\teres\.gradle\caches\transforms-3\e0a307b6e25055a03274325b014fba7c\transformed\constraintlayout-2.2.0\res
+com.example.playsnapui.app-credentials-play-services-auth-1.2.0-rc01-32 C:\Users\teres\.gradle\caches\transforms-3\f14cdd029d5c3bb78df6a9f02f6fdb97\transformed\credentials-play-services-auth-1.2.0-rc01\res
+com.example.playsnapui.app-coordinatorlayout-1.1.0-33 C:\Users\teres\.gradle\caches\transforms-3\f8d4cc55737281d3b557eef36092a2d0\transformed\coordinatorlayout-1.1.0\res
+com.example.playsnapui.app-lifecycle-runtime-2.6.2-34 C:\Users\teres\.gradle\caches\transforms-3\fa14eb7b08cfc3b51281f2752eb37a27\transformed\lifecycle-runtime-2.6.2\res
+com.example.playsnapui.app-pngs-35 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Testing\PlaySnap\PlaySnap Application\app\build\generated\res\pngs\debug
+com.example.playsnapui.app-res-36 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Testing\PlaySnap\PlaySnap Application\app\build\generated\res\processDebugGoogleServices
+com.example.playsnapui.app-resValues-37 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Testing\PlaySnap\PlaySnap Application\app\build\generated\res\resValues\debug
+com.example.playsnapui.app-packageDebugResources-38 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Testing\PlaySnap\PlaySnap Application\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.playsnapui.app-packageDebugResources-39 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Testing\PlaySnap\PlaySnap Application\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.playsnapui.app-merged_res-40 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Testing\PlaySnap\PlaySnap Application\app\build\intermediates\merged_res\debug
+com.example.playsnapui.app-debug-41 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Testing\PlaySnap\PlaySnap Application\app\src\debug\res
+com.example.playsnapui.app-main-42 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Testing\PlaySnap\PlaySnap Application\app\src\main\res

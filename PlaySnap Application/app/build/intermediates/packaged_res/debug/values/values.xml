@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="blue">#95D3FA</color>
+    <color name="dark_blue">#6995C9</color>
+    <color name="grey">#484848</color>
+    <color name="grey_blue">#BDD2E3</color>
+    <color name="light_grey">#9A9A9A</color>
+    <color name="orange">#E58A22</color>
+    <color name="sky_blue">#B7E3FF</color>
+    <color name="transparent_blue">#806995C9</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#FAC80F</color>
+    <string name="app_name">PlaySnap UI</string>
+    <string name="btn_edit_profile">Edit Profil</string>
+    <string name="btn_login">MASUK</string>
+    <string name="btn_register">DAFTAR</string>
+    <string name="btn_signup">DAFTAR</string>
+    <string name="daftar">
+        <font color="#6995C9"><b>Daftar</b></font>
+    </string>
+    <string name="email">totoksugianto@gmail.com</string>
+    <string name="filter_game">FILTER PERMAINAN</string>
+    <string name="filter_lokasi_choice_btn_title">Tipe lokasi</string>
+    <string name="filter_lokasi_main_btn_text">Lokasi</string>
+    <string name="filter_pemain_choice_btn_title">Jumlah Pemain</string>
+    <string name="filter_pemain_main_btn_text">Pemain</string>
+    <string name="filter_properti_choice_btn_title">Properti Main</string>
+    <string name="filter_properti_main_btn_text">Properti</string>
+    <string name="filter_usia_choice_btn_title">Rentang Usia</string>
+    <string name="filter_usia_main_btn_text">Usia</string>
+    <string name="full_name">Totok Sugianto</string>
+    <string name="gcm_defaultSenderId" translatable="false">944904599518</string>
+    <string name="google_api_key" translatable="false">AIzaSyA0FrrViNt1U4XKUUYjf0d1V9NdcZPt1Xo</string>
+    <string name="google_app_id" translatable="false">1:944904599518:android:c82deed3b441d78a984f4f</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA0FrrViNt1U4XKUUYjf0d1V9NdcZPt1Xo</string>
+    <string name="google_storage_bucket" translatable="false">playsnap-23317.firebasestorage.app</string>
+    <string name="hapus_btn_text">HAPUS</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_manage_object">"   Tambahkan objek...</string>
+    <string name="history_game">Riwayat Permainan</string>
+    <string name="login_email"> Email atau nama pengguna Anda</string>
+    <string name="login_forgot_pw">Lupa Sandi?</string>
+    <string name="login_havent_account">
+        Saya tidak punya akun
+    </string>
+    <string name="login_password"> Sandi Anda</string>
+    <string name="masuk">
+        <font color="#6995C9"><b>Masuk</b></font>
+    </string>
+    <string name="mulai_btn_text">MULAI</string>
+    <string name="project_id" translatable="false">playsnap-23317</string>
+    <string name="question1_apa_itu">Apa itu PlaySnap?</string>
+    <string name="question2_kenapa_pilih">Kenapa pilih PlaySnap?</string>
+    <string name="question3_bagaimana_cara">Bagaimana cara pindai gambar?</string>
+    <string name="question4_bagaimana_cara">Bagaimana cara cari permainan?</string>
+    <string name="question5_bagaimana_cara">Bagaimana cara menghapus objek?</string>
+    <string name="question6_kenapa_objek">Kenapa objek tidak muncul setelah dipindai?</string>
+    <string name="question7_bagaimana_cara">Bagaimana cara melihat riwayat permainan?</string>
+    <string name="register_confirmpass">Konfirmasi sandi Anda</string>
+    <string name="register_email">Email Anda</string>
+    <string name="register_fullname">Nama lengkap Anda</string>
+    <string name="register_have_account">
+        Saya sudah punya akun
+    </string>
+    <string name="register_password">Sandi Anda</string>
+    <string name="register_username">Nama pengguna Anda</string>
+    <string name="report">LAPORKAN</string>
+    <string name="scan_object">PINDAI OBJEK</string>
+    <string name="searchbar_ketikobj_default">Tambahkan objek...</string>
+    <string name="setting_acc">ATUR AKUN</string>
+    <string name="started_subtitle">Tempat terbaik untuk menemukan ide permainan dengan mudah</string>
+    <string name="started_title">PlaySnap</string>
+    <string name="sub_permainan">Permainan</string>
+    <string name="subtitle_bookmark">Mainkan lagi permainan yang kamu simpan</string>
+    <string name="subtitle_help">Berikut beberapa pertanyaan yang sering diajukan oleh sobat PlaySnap, semoga membantu!</string>
+    <string name="subtitle_home">Ayo temukan permainan</string>
+    <string name="subtitle_home2">seru di sekitarmu ~</string>
+    <string name="subtitle_like">Ini permainan yang kamu sukai</string>
+    <string name="subttile_profile">AKUN</string>
+    <string name="title_bookmark">Ayo, Main Lagi!</string>
+    <string name="title_foryou">Hanya Untukmu!</string>
+    <string name="title_greating">Selamat Pagi,</string>
+    <string name="title_help">Butuh Bantuan?</string>
+    <string name="title_like">Main, Yuk!</string>
+    <string name="title_name">Totok!</string>
+    <string name="title_profile">Profil</string>
+    <string name="title_recommendation">Permainan Populer!</string>
+    <string name="title_send_question">Masih buntu? Ajukan pertanyaan!</string>
+    <string name="tv_filter_subtitle">Pilih kategori sesuai dengan kondisimu!</string>
+    <string name="tv_filter_title">Filter Permainan</string>
+    <string name="tv_ketikobj_subtitle">Tambahkan atau hapus objek sesuai keinginanmu ~</string>
+    <string name="tv_ketikobj_title">Siap Bermain?</string>
+    <string name="tv_login_subtitle">
+        <font color="#6995C9"><b>Masuk</b></font>
+        untuk melanjutkan
+    </string>
+    <string name="tv_login_title">Selamat Datang!</string>
+    <string name="tv_manage_object_subtitle">"Tambahkan objek sesuai keinginanmu untuk mulai bermain ~"</string>
+    <string name="tv_manage_object_title">"Ketik Objek"</string>
+    <string name="tv_register_subtitle">
+        <font color="#6995C9"><b>Daftar</b></font>
+        untuk memulai aplikasi ini
+    </string>
+    <string name="tv_register_title">Hai!</string>
+    <string name="type_object">KETIK OBJEK</string>
+    <style name="Base.Theme.PlaySnapUI" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="BottomNote">
+        <item name="android:fontFamily">@font/andikaregular</item>
+        <item name="android:textColor">@color/grey</item>
+    </style>
+    <style name="ButtonBack">
+        <item name="android:background">@drawable/bg_button_back</item>
+    </style>
+    <style name="ButtonBlue">
+        <item name="android:background">@drawable/bg_button_blue</item>
+        <item name="android:fontFamily">@font/andikabold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="ButtonNavbar">
+        <item name="android:background">@color/orange</item>
+    </style>
+    <style name="ButtonWhite">
+        <item name="android:background">@drawable/bg_button</item>
+        <item name="android:fontFamily">@font/andikabold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="ButtonWhite2">
+        <item name="android:background">@drawable/bg_button_corner</item>
+        <item name="android:fontFamily">@font/andikabold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="EditText">
+        <item name="fontFamily">@font/andikaregular</item>
+    </style>
+    <style name="Subtitle">
+        <item name="android:fontFamily">@font/andikaregular</item>
+        <item name="android:textColor">@color/grey</item>
+    </style>
+    <style name="TextInputEditText" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:background">@drawable/bg_text_field</item>
+        <item name="fontFamily">@font/andikaregular</item>
+    </style>
+    <style name="TextInputEditText_search" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="fontFamily">@font/andikaregular</item>
+    </style>
+    <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="hintTextColor">@color/light_grey</item>
+        <item name="startIconTint">@color/dark_blue</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="background">@color/white</item>
+    </style>
+    <style name="Theme.PlaySnapUI" parent="Base.Theme.PlaySnapUI"/>
+    <style name="Title">
+        <item name="android:fontFamily">@font/leaguespartanextrabold</item>
+        <item name="android:textColor">@color/dark_blue</item>
+        <item name="android:textSize">48sp</item>
+    </style>
+    <style name="TitleGame">
+        <item name="android:fontFamily">@font/leaguespartanextrabold</item>
+        <item name="android:textColor">@color/dark_blue</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    <style name="TransparentTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+</resources>
