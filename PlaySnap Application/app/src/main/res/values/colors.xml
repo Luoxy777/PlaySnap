@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_grey">#9A9A9A</color>
+    <color name="light_grey_transparent">#269A9A9A</color>
     <color name="grey">#484848</color>
     <color name="grey_blue">#BDD2E3</color>
     <color name="sky_blue">#B7E3FF</color>
@@ -10,5 +11,6 @@
     <color name="dark_blue">#6995C9</color>
     <color name="yellow">#FAC80F</color>
     <color name="orange">#E58A22</color>
-    <color name="transparent_blue">#806995C9</color>
+    <color name="transparent_blue">#406995C9</color>
+    <color name="green">#93BD01</color>
 </resources>

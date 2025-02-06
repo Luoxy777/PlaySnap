@@ -9,7 +9,7 @@
         <font color="#6995C9"><b>Masuk</b></font>
         untuk melanjutkan
     </string>
-    <string name="login_email"> Email atau nama pengguna Anda</string>
+    <string name="login_email"> Email Anda</string>
     <string name="login_password"> Sandi Anda</string>
     <string name="login_forgot_pw">Lupa Sandi?</string>
     <string name="login_havent_account">
@@ -88,4 +88,123 @@
     <string name="question6_kenapa_objek">Kenapa objek tidak muncul setelah dipindai?</string>
     <string name="question7_bagaimana_cara">Bagaimana cara melihat riwayat permainan?</string>
     <string name="title_send_question">Masih buntu? Ajukan pertanyaan!</string>
+    <string name="tv_titleq1_banner">Apa itu PlaySnap?</string>
+    <string name="tv_subtitle_banner">Berikut penjelasannya!</string>
+    <string name="title_q1">Mari berkenalan dengan aplikasi PlaySnap!</string>
+    <string name="q1_answer">PlaySnap adalah aplikasi pintar yang membantu kamu menemukan dan memainkan permainan tradisional (tanpa gadget). Dengan teknologi machine learning, PlaySnap bisa:\n\n
+        1. Mengenali objek di sekitar kamu melalui kamera, lalu merekomendasikan permainan yang sesuai.\n
+        - Contohnya: Kalau kamu memotret bola, PlaySnap akan menyarankan permainan seperti sepak bola mini atau kasti.\n\n
+        2. Memberikan rekomendasi tanpa objek, jadi kamu tetap bisa bermain di mana saja.\n\n
+        3. Memfilter rekomendasi permainan berdasarkan kebutuhan, seperti lokasi (indoor atau outdoor), usia pemain, menggunakan properti main atau tidak, dan jumlah pemain.\n\n
+        4. Menyediakan deskripsi dan tutorial lengkap untuk setiap permainan.\n\n
+        <b>Fitur tambahan:\n</b>
+        - Kamu bisa like, share, dan bookmark permainan favorit.\n
+        - Melihat riwayat permainan yang pernah kamu pilih.\n
+        - Dan tentunya, mengedit profil untuk menyesuaikan preferensimu.\n\n
+        Intinya: PlaySnap bikin momen bermain jadi lebih seru, kreatif, dan penuh nostalgia!</string>
+    <string name="tv_titleq2_banner">Kenapa Pilih PlaySnap?</string>
+    <string name="title_q2">Yuk lihat keuntungan jika menggunakan PlaySnap!</string>
+    <string name="q2_answer"><b>1️. Meningkatkan kreativitas anak\n</b>
+        Alih-alih hanya bermain game di layar, PlaySnap membantu anak menemukan permainan yang mendorong kreativitas dan imajinasi mereka.\n\n
+        <b>2️. Menggunakan teknologi AI canggih</b>\n
+        Aplikasi ini mampu mengenali berbagai objek dengan akurasi tinggi, sehingga rekomendasi permainan menjadi lebih relevan dan menarik.\n\n
+        <b>3️. Mudah digunakan</b>\n
+        Antarmuka aplikasi dirancang agar mudah dipahami oleh anak-anak, dengan ikon yang jelas dan navigasi yang sederhana.\n\n
+        <b>4️. Mengurangi screen time anak</b>\n
+        PlaySnap bertujuan untuk mengajak anak-anak lebih aktif dan eksploratif dalam bermain, mengurangi ketergantungan pada perangkat digital.\n\n
+        <b>5️. Cocok untuk segala usia</b>\n
+        Aplikasi ini dapat digunakan oleh berbagai kelompok usia, baik anak-anak kecil yang membutuhkan ide bermain maupun orang tua yang ingin bermain bersama anak mereka.</string>
+    <string name="tv_titleq3_banner">Bagaimana Cara Pindai Gambar?</string>
+    <string name="title_q3">Berikut langkah-langkah untuk pindai gambar</string>
+    <string name="q3_answer">
+        1️. Buka aplikasi PlaySnap di perangkat kamu.\n
+        \n
+        2️. Tekan tombol "Pindai Objek" di halaman utama.\n
+        \n
+        3️. Arahkan kamera perangkat ke objek yang ingin dipindai. Pastikan objek cukup terang dan tidak tertutup oleh benda lain.\n
+        \n
+        4️. Tekan tombol untuk mengambil foto dan memulai proses pemindaian.\n
+        \n
+        5️. Tunggu beberapa detik hingga PlaySnap menganalisis gambar dan menampilkan rekomendasi permainan berdasarkan objek yang terdeteksi. Pada saat proses tersebut, kamu bisa menghapus gambar dan objek yang tidak diinginkan. Bahkan, kamu juga bisa menambahkan objek yang tertinggal secara manual lho!\n
+        \n
+        6️. Pilih salah satu permainan dari daftar rekomendasi dan mulai bermain!\n
+        \n
+        <b>Tips agar pemindaian lebih akurat:\n</b>
+        - Gunakan pencahayaan yang cukup.\n
+        - Pastikan objek dalam fokus kamera.\n
+        - Hindari latar belakang yang terlalu ramai agar objek lebih mudah dikenali.</string>
+    <string name="tv_titleq4_banner">Bagaimana Cara Cari Permainan?</string>
+    <string name="title_q4">Berikut langkah-langkah untuk mencari permainan</string>
+    <string name="q4_answer">
+        1. Ketik nama objek atau kata kunci permainan yang diinginkan di kolom pencarian. Misalnya, "bola" atau "lego".\n
+    \n
+    2. PlaySnap akan menampilkan daftar permainan yang relevan berdasarkan kata kunci tersebut.\n
+    \n
+    3. Klik pada permainan yang ingin dimainkan untuk melihat instruksi dan mulai bermain.</string>
+    <string name="tv_titleq5_banner">Bagaimana Cara Menghapus Objek?</string>
+    <string name="title_q5">Berikut langkah-langkah untuk mengnapus objek</string>
+    <string name="q5_answer">
+        1. PlaySnap akan menampilkan objek jika sistem sudah selesai mendeteksi objek apa saja yang ada di gambar yang kamu pindai.\n
+        \n
+        2. Pilih objek yang ingin dihapus dari daftar.\n
+        \n
+        3. Tekan ikon hapus yang tersedia di samping objek tersebut.\n
+        \n
+        4. Konfirmasi penghapusan untuk memastikan bahwa kamu benar-benar mau menghapus objek tersebut. Setelah dihapus, objek tersebut tidak akan muncul lagi di daftar pemindaian, tetapi Anda tetap bisa memindainya kembali di lain waktu jika diperlukan atau menambahkannya secara manual.
+    </string>
+    <string name="tv_titleq6_banner">Kenapa Objek Tidak Muncul Saat Dipindai?</string>
+    <string name="title_q6">Mari lihat penyebab objek yang tidak muncul</string>
+    <string name="q6_answer">
+        <b>1. Pencahayaan kurang memadai\n</b>
+        Pastikan objek yang dipindai berada di tempat yang cukup terang agar sistem dapat mengenalinya dengan baik.\n
+        \n
+        <b>2. Objek tidak dikenali oleh sistem\n</b>
+        Beberapa objek yang sangat umum mungkin belum terdaftar dalam sistem PlaySnap. Coba pindai objek lain atau gunakan sudut yang berbeda.\n
+        \n
+        <b>3. Koneksi internet tidak stabil\n</b>
+        PlaySnap memerlukan koneksi internet untuk mengakses database permainan. Pastikan perangkat Anda memiliki koneksi internet yang baik.
+    </string>
+    <string name="tv_titleq7_banner">Bagaimana Cara Melihat Riwayat Permainan?</string>
+    <string name="title_q7">Yuk lihat riwayat permainan kamu!</string>
+    <string name="q7_answer">
+        1️. Buka aplikasi PlaySnap dan masuk ke menu “Profil” bagian “Riwayat Permainan”.\n
+        \n
+        2️. Di dalam menu ini, kamu akan menemukan daftar permainan yang telah dimainkan sebelumnya.\n
+        \n
+        3️. Pilih salah satu permainan untuk melihat detailnya dan mulai bermain kembali.\n
+        \n
+        Fitur riwayat permainan berguna jika anak ingin memainkan kembali permainan yang mereka sukai tanpa harus melakukan pemindaian ulang.
+    </string>
+    <string name="helpreq_title">Pertanyaan</string>
+    <string name="helpreq_subtitle">Silahkan berikan pertanyaan seputar PlaySnap!</string>
+    <string name="string_send">KIRIM</string>
+    <string name="title_bottom_helpreq">Semoga membantu, Totok!</string>
+    <string name="subtitle_bottom_helpreq">Jika kesulitan, jangan sungkan ajukan pertanyaan lagi ya!</string>
+    <string name="helpreq_success_title">Pertanyaan Terkirim!</string>
+    <string name="report_success_title">Laporan Terkirim!</string>
+    <string name="edit1_subtitle">Nama</string>
+    <string name="edit1_name">Totok Sugianto</string>
+    <string name="edit2_subtitle">Nama Pengguna</string>
+    <string name="edit2_username">toto_anaklayangan123</string>
+    <string name="edit3_subtitle">Email</string>
+    <string name="edit3_email">totoksugianto@gmail.com</string>
+    <string name="edit4_subtitle">Jenis Kelamin</string>
+    <string name="edit4_gender">-</string>
+    <string name="btn_change_pass">Ubah Password</string>
+    <string name="title_change_pass">Ubah Password</string>
+    <string name="edit1_subtitle_pass">Password Lama</string>
+    <string name="edit1_old_pass">**********</string>
+    <string name="edit2_subtitle_pass">Buat Password Baru</string>
+    <string name="edit2_new_pass">**********</string>
+    <string name="edit3_subtitle_pass">Konfirmasi Password</string>
+    <string name="edit3_new_pass_confirm">**********</string>
+    <string name="title_settings">Atur Akun</string>
+    <string name="btn_sign_out">Keluar Akun</string>
+    <string name="btn_delete">Hapus Akun</string>
+    <string name="sign_out_message">Apakah kamu yakin ingin keluar dari akun ini?</string>
+    <string name="delete_message">Apakah kamu yakin ingin hapus permanen akun ini?</string>
+    <string name="no_message">TIDAK</string>
+    <string name="yes_message">YA</string>
+    <string name="report_title">Laporkan</string>
+    <string name="report_subtitle">Ada permasalahan?</string>
 </resources>

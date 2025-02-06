@@ -22,9 +22,6 @@ public final class ActivityProfilePageBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final AppCompatButton btnChangeProfile;
-
-  @NonNull
   public final AppCompatButton btnEditProfile;
 
   @NonNull
@@ -38,6 +35,9 @@ public final class ActivityProfilePageBinding implements ViewBinding {
 
   @NonNull
   public final ActivityNavigationBarBinding include;
+
+  @NonNull
+  public final ImageView ivBottomEdit;
 
   @NonNull
   public final ImageView profilePic;
@@ -55,18 +55,18 @@ public final class ActivityProfilePageBinding implements ViewBinding {
   public final TextView tvFullName;
 
   private ActivityProfilePageBinding(@NonNull ConstraintLayout rootView,
-      @NonNull AppCompatButton btnChangeProfile, @NonNull AppCompatButton btnEditProfile,
-      @NonNull AppCompatButton btnHistoryGame, @NonNull AppCompatButton btnReport,
-      @NonNull AppCompatButton btnSettingAcc, @NonNull ActivityNavigationBarBinding include,
+      @NonNull AppCompatButton btnEditProfile, @NonNull AppCompatButton btnHistoryGame,
+      @NonNull AppCompatButton btnReport, @NonNull AppCompatButton btnSettingAcc,
+      @NonNull ActivityNavigationBarBinding include, @NonNull ImageView ivBottomEdit,
       @NonNull ImageView profilePic, @NonNull TextView titleProfile, @NonNull TextView tvAccount,
       @NonNull TextView tvEmail, @NonNull TextView tvFullName) {
     this.rootView = rootView;
-    this.btnChangeProfile = btnChangeProfile;
     this.btnEditProfile = btnEditProfile;
     this.btnHistoryGame = btnHistoryGame;
     this.btnReport = btnReport;
     this.btnSettingAcc = btnSettingAcc;
     this.include = include;
+    this.ivBottomEdit = ivBottomEdit;
     this.profilePic = profilePic;
     this.titleProfile = titleProfile;
     this.tvAccount = tvAccount;
@@ -101,12 +101,6 @@ public final class ActivityProfilePageBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btn_change_profile;
-      AppCompatButton btnChangeProfile = ViewBindings.findChildViewById(rootView, id);
-      if (btnChangeProfile == null) {
-        break missingId;
-      }
-
       id = R.id.btn_edit_profile;
       AppCompatButton btnEditProfile = ViewBindings.findChildViewById(rootView, id);
       if (btnEditProfile == null) {
@@ -138,6 +132,12 @@ public final class ActivityProfilePageBinding implements ViewBinding {
       }
       ActivityNavigationBarBinding binding_include = ActivityNavigationBarBinding.bind(include);
 
+      id = R.id.iv_bottom_edit;
+      ImageView ivBottomEdit = ViewBindings.findChildViewById(rootView, id);
+      if (ivBottomEdit == null) {
+        break missingId;
+      }
+
       id = R.id.profile_pic;
       ImageView profilePic = ViewBindings.findChildViewById(rootView, id);
       if (profilePic == null) {
@@ -168,8 +168,8 @@ public final class ActivityProfilePageBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityProfilePageBinding((ConstraintLayout) rootView, btnChangeProfile,
-          btnEditProfile, btnHistoryGame, btnReport, btnSettingAcc, binding_include, profilePic,
+      return new ActivityProfilePageBinding((ConstraintLayout) rootView, btnEditProfile,
+          btnHistoryGame, btnReport, btnSettingAcc, binding_include, ivBottomEdit, profilePic,
           titleProfile, tvAccount, tvEmail, tvFullName);
     }
     String missingId = rootView.getResources().getResourceName(id);

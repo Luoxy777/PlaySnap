@@ -13,6 +13,54 @@
         android:theme="@style/Theme.PlaySnapUI"
         tools:targetApi="31">
         <activity
+            android:name=".ReportPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingsAccountPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditPasswordPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfilePageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReportPageSuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpPageReqSuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpPageReqActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpPageQ7Activity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpPageQ6Activity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpPageQ5Activity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpPageQ4Activity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpPageQ3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpPageQ2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpPageQ2Actvity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpPageQ1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpPageQ1"
+            android:exported="false" />
+        <activity
             android:name=".HelpPageActivity"
             android:exported="false" />
         <activity
@@ -47,7 +95,7 @@
         </activity>
         <activity
             android:name=".BottomSheet"
-            android:theme="@style/TransparentTheme"></activity>
+            android:theme="@style/TransparentTheme" />
     </application>
 
 </manifest>

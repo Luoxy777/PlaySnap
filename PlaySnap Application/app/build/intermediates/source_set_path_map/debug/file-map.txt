@@ -33,11 +33,11 @@ com.example.playsnapui.app-constraintlayout-2.2.0-31 C:\Users\teres\.gradle\cach
 com.example.playsnapui.app-credentials-play-services-auth-1.2.0-rc01-32 C:\Users\teres\.gradle\caches\transforms-3\f14cdd029d5c3bb78df6a9f02f6fdb97\transformed\credentials-play-services-auth-1.2.0-rc01\res
 com.example.playsnapui.app-coordinatorlayout-1.1.0-33 C:\Users\teres\.gradle\caches\transforms-3\f8d4cc55737281d3b557eef36092a2d0\transformed\coordinatorlayout-1.1.0\res
 com.example.playsnapui.app-lifecycle-runtime-2.6.2-34 C:\Users\teres\.gradle\caches\transforms-3\fa14eb7b08cfc3b51281f2752eb37a27\transformed\lifecycle-runtime-2.6.2\res
-com.example.playsnapui.app-pngs-35 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Testing\PlaySnap\PlaySnap Application\app\build\generated\res\pngs\debug
-com.example.playsnapui.app-res-36 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Testing\PlaySnap\PlaySnap Application\app\build\generated\res\processDebugGoogleServices
-com.example.playsnapui.app-resValues-37 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Testing\PlaySnap\PlaySnap Application\app\build\generated\res\resValues\debug
-com.example.playsnapui.app-packageDebugResources-38 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Testing\PlaySnap\PlaySnap Application\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.playsnapui.app-packageDebugResources-39 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Testing\PlaySnap\PlaySnap Application\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.playsnapui.app-merged_res-40 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Testing\PlaySnap\PlaySnap Application\app\build\intermediates\merged_res\debug
-com.example.playsnapui.app-debug-41 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Testing\PlaySnap\PlaySnap Application\app\src\debug\res
-com.example.playsnapui.app-main-42 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Testing\PlaySnap\PlaySnap Application\app\src\main\res
+com.example.playsnapui.app-pngs-35 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap\PlaySnap Application\app\build\generated\res\pngs\debug
+com.example.playsnapui.app-res-36 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap\PlaySnap Application\app\build\generated\res\processDebugGoogleServices
+com.example.playsnapui.app-resValues-37 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap\PlaySnap Application\app\build\generated\res\resValues\debug
+com.example.playsnapui.app-packageDebugResources-38 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap\PlaySnap Application\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.playsnapui.app-packageDebugResources-39 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap\PlaySnap Application\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.playsnapui.app-merged_res-40 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap\PlaySnap Application\app\build\intermediates\merged_res\debug
+com.example.playsnapui.app-debug-41 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap\PlaySnap Application\app\src\debug\res
+com.example.playsnapui.app-main-42 C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap\PlaySnap Application\app\src\main\res
