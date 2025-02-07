@@ -3275,6 +3275,7 @@ id BOTTOM_START
 id CTRL
 id FUNCTION
 id META
+id MyScrollView
 id NO_DEBUG
 id SHIFT
 id SHOW_ALL

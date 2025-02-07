@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +23,9 @@ import java.lang.String;
 public final class ActivityHomePageBinding implements ViewBinding {
   @NonNull
   private final RelativeLayout rootView;
+
+  @NonNull
+  public final ScrollView MyScrollView;
 
   @NonNull
   public final ImageView banner;
@@ -65,7 +69,8 @@ public final class ActivityHomePageBinding implements ViewBinding {
   @NonNull
   public final TextView tvTitleRecommendation;
 
-  private ActivityHomePageBinding(@NonNull RelativeLayout rootView, @NonNull ImageView banner,
+  private ActivityHomePageBinding(@NonNull RelativeLayout rootView,
+      @NonNull ScrollView MyScrollView, @NonNull ImageView banner,
       @NonNull AppCompatButton btnFilterGame, @NonNull AppCompatButton btnScanObject,
       @NonNull AppCompatButton btnTypeObject, @NonNull TextInputEditText etSearchGame,
       @NonNull ActivityNavigationBarBinding include, @NonNull RecyclerView recentRecyclerForyou,
@@ -74,6 +79,7 @@ public final class ActivityHomePageBinding implements ViewBinding {
       @NonNull TextView tvTitleGreeting, @NonNull TextView tvTitleName,
       @NonNull TextView tvTitleRecommendation) {
     this.rootView = rootView;
+    this.MyScrollView = MyScrollView;
     this.banner = banner;
     this.btnFilterGame = btnFilterGame;
     this.btnScanObject = btnScanObject;
@@ -117,6 +123,12 @@ public final class ActivityHomePageBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.MyScrollView;
+      ScrollView MyScrollView = ViewBindings.findChildViewById(rootView, id);
+      if (MyScrollView == null) {
+        break missingId;
+      }
+
       id = R.id.banner;
       ImageView banner = ViewBindings.findChildViewById(rootView, id);
       if (banner == null) {
@@ -202,10 +214,10 @@ public final class ActivityHomePageBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityHomePageBinding((RelativeLayout) rootView, banner, btnFilterGame,
-          btnScanObject, btnTypeObject, etSearchGame, binding_include, recentRecyclerForyou,
-          recentRecyclerPopgame, tvSubtitleHome, tvSubtitleHome2, tvTitleForyou, tvTitleGreeting,
-          tvTitleName, tvTitleRecommendation);
+      return new ActivityHomePageBinding((RelativeLayout) rootView, MyScrollView, banner,
+          btnFilterGame, btnScanObject, btnTypeObject, etSearchGame, binding_include,
+          recentRecyclerForyou, recentRecyclerPopgame, tvSubtitleHome, tvSubtitleHome2,
+          tvTitleForyou, tvTitleGreeting, tvTitleName, tvTitleRecommendation);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

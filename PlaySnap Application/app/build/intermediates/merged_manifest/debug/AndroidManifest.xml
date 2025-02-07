@@ -96,7 +96,8 @@
             android:exported="false" />
         <activity
             android:name="com.example.playsnapui.HomePageActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.example.playsnapui.RegisterActivity"
             android:exported="false" />

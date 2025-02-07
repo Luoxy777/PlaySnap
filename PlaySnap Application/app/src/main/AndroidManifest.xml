@@ -77,7 +77,9 @@
             android:exported="false" />
         <activity
             android:name=".HomePageActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"
+            />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
@@ -95,7 +97,8 @@
         </activity>
         <activity
             android:name=".BottomSheet"
-            android:theme="@style/TransparentTheme" />
+            android:theme="@style/TransparentTheme"
+            />
     </application>
 
 </manifest>

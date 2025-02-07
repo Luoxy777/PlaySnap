@@ -118,6 +118,7 @@ font leaguespartanmedium
 font leaguespartanregular
 font leaguespartansemibold
 font leaguespartanthin
+id MyScrollView
 id awanTopFilterPage
 id awanTopFilterPage2
 id balokKayuMidFilterPage
