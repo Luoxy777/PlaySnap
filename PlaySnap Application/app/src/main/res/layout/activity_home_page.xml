@@ -107,6 +107,8 @@
                 android:elevation="8dp"
                 android:hint="   Cari permainan..."
                 android:textSize="12dp"
+                android:paddingStart="20dp"
+                android:gravity="start|center_vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
