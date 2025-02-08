@@ -3,11 +3,6 @@
   <component name="WizardSettings">
     <option name="children">
       <map>
-        <entry key="imageWizard">
-          <value>
-            <PersistentState />
-          </value>
-        </entry>
         <entry key="vectorWizard">
           <value>
             <PersistentState>
@@ -23,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/delete/baseline_delete_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/arrow_drop_down/baseline_arrow_drop_down_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -33,14 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="assetSourceType" value="FILE" />
-<<<<<<< HEAD
-                            <entry key="outputName" value="lompat_tali" />
-                            <entry key="sourceFile" value="C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\Objek PlaySnap\Lompat tali.svg" />
-=======
-                            <entry key="outputName" value="ic_delete_acc" />
-                            <entry key="sourceFile" value="C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap\Images\ic_delete_acc.svg" />
->>>>>>> 655791e79f043a11dad5c6b87e30f024f66a75ae
+                            <entry key="outputName" value="baseline_arrow_drop_down_24" />
+                            <entry key="sourceFile" value="C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\Objek PlaySnap\Fireworks Kanan Feedback.svg" />
                           </map>
                         </option>
                       </PersistentState>
