@@ -1899,6 +1899,7 @@ color m3_timepicker_secondary_text_button_ripple_color
 color m3_timepicker_secondary_text_button_text_color
 color m3_timepicker_time_input_stroke_color
 color m3_tonal_button_ripple_color_selector
+color maroon_red
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -2145,6 +2146,7 @@ color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
 color transparent_blue
+color transparent_white
 color white
 color yellow
 dimen abc_action_bar_content_inset_material
@@ -3035,7 +3037,14 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable back_button
 drawable back_button_mini
+drawable background_object_search_by_type
+drawable baseline_delete_24
+drawable baseline_flash_off_24
 drawable baseline_flash_on_24
+drawable baseline_flip_camera_android_24
+drawable baseline_grid_view_24
+drawable baseline_image_24
+drawable batal_hapus_button
 drawable bg_button
 drawable bg_button_back
 drawable bg_button_blue
@@ -3056,6 +3065,7 @@ drawable btn_radio_on_to_off_mtrl_animation
 drawable btn_scan
 drawable btn_type
 drawable button_selector
+drawable camera_shoot_icon
 drawable card_bg
 drawable card_bg_landscape
 drawable checklist
@@ -3088,8 +3098,10 @@ drawable ellips
 drawable ellips_help_banner
 drawable ellips_help_bottom
 drawable field
+drawable flash_button_outline
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable hapus_button_oultline
 drawable ic_account
 drawable ic_account_rectangle
 drawable ic_arrow_back_black_24
@@ -3353,6 +3365,7 @@ id animateToEnd
 id animateToStart
 id antiClockwise
 id anticipate
+id appCompatButton
 id arc
 id asConfigured
 id async
@@ -3363,6 +3376,7 @@ id autoCompleteToStart
 id awanTopFilterPage
 id awanTopFilterPage2
 id axisRelative
+id background_list_of_object
 id balokKayuMidFilterPage
 id balonTopFilterPage
 id banner
@@ -3418,6 +3432,7 @@ id btn_setting_acc
 id btn_share
 id btn_sign_out
 id btn_signup
+id btn_switch_layout
 id btn_type_object
 id btn_usia_main
 id btn_yes
@@ -3530,6 +3545,7 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fade
+id field
 id fill
 id fill_horizontal
 id fill_vertical
@@ -3547,6 +3563,7 @@ id fragment_container_view_tag
 id frameLayout
 id frost
 id fullscreen_header
+id gallery_title
 id ghost_view
 id ghost_view_holder
 id gone
@@ -3557,6 +3574,7 @@ id grouping
 id groups
 id guideline
 id guideline2
+id hapus_button
 id header_title
 id hide_ime_id
 id hideable
@@ -3580,6 +3598,9 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
+id imageView2
+id imageView3
 id image_icon_account
 id image_illustration_started
 id image_ilustration_cloud
@@ -3605,6 +3626,7 @@ id jumpToEnd
 id jumpToStart
 id labeled
 id layout
+id layout_delete_object_confirmation
 id layout_display_game
 id layout_popup
 id layout_rating
@@ -3773,6 +3795,7 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id scroll_bg_object
 id scrollable
 id search_badge
 id search_bar
@@ -3851,6 +3874,7 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView3
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -4096,7 +4120,10 @@ layout abc_tooltip
 layout activity_bookmark_page
 layout activity_edit_password_page
 layout activity_edit_profile_page
+layout activity_feedback_page
 layout activity_filter_page
+layout activity_gallery_view_object_scroll_page
+layout activity_gallery_view_object_swipe_page
 layout activity_help_page
 layout activity_help_page_q1
 layout activity_help_page_q2
@@ -4111,6 +4138,7 @@ layout activity_home_page
 layout activity_like_page
 layout activity_login
 layout activity_main
+layout activity_manage_object
 layout activity_navigation_bar
 layout activity_profile_page
 layout activity_register
@@ -4120,6 +4148,7 @@ layout activity_search_by_camera_page
 layout activity_search_game_page
 layout activity_search_object_by_type_page
 layout activity_settings_account_page
+layout activity_tutorial_page
 layout bottom_sheet_filter_page
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
@@ -4142,6 +4171,7 @@ layout design_text_input_start_icon
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout layout_bookgame_list_item
+layout layout_delete_object_confirmation
 layout layout_foryougame_list_item
 layout layout_likegame_list_item
 layout layout_popgame_list_item

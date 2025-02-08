@@ -8,9 +8,11 @@
     <color name="grey_blue">#BDD2E3</color>
     <color name="light_grey">#9A9A9A</color>
     <color name="light_grey_transparent">#269A9A9A</color>
+    <color name="maroon_red">#800000</color>
     <color name="orange">#E58A22</color>
     <color name="sky_blue">#B7E3FF</color>
     <color name="transparent_blue">#406995C9</color>
+    <color name="transparent_white">#80FFFFFF</color>
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FAC80F</color>
     <string name="app_name">PlaySnap UI</string>
