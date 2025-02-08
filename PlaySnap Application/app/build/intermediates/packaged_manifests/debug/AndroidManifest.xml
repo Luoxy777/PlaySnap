@@ -29,6 +29,7 @@
         android:label="PlaySnap"
         android:roundIcon="@drawable/playsnaplogo"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/Theme.PlaySnapUI" >
         <activity
             android:name="com.example.playsnapui.HelpPageActivity"
