@@ -11,11 +11,26 @@
                   <entry key="vectorAssetStep">
                     <value>
                       <PersistentState>
+                        <option name="children">
+                          <map>
+                            <entry key="clipartAsset">
+                              <value>
+                                <PersistentState>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/delete/baseline_delete_24.xml" />
+                                    </map>
+                                  </option>
+                                </PersistentState>
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_help_background" />
-                            <entry key="sourceFile" value="C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\PlaySnap Testing\PlaySnap\Images\ic_help_background.svg" />
+                            <entry key="outputName" value="lompat_tali" />
+                            <entry key="sourceFile" value="C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\Objek PlaySnap\Lompat tali.svg" />
                           </map>
                         </option>
                       </PersistentState>

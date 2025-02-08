@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/sky_blue"
+    android:background="@color/dark_blue"
     >
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/ic_field"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -31,19 +32,19 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/back_button"
-        android:backgroundTint="@color/dark_blue"
+        android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_manage_object_title"
+        android:id="@+id/gallery_title"
         android:fontFamily="@font/leaguespartanbold"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/white"
         android:textSize="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
-        android:text="@string/tv_manage_object_title"
+        android:text="Yey, Kerja Bagus!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,65 +58,75 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/andikaregular"
         android:gravity="center"
-        android:text="@string/tv_manage_object_subtitle"
-        android:textColor="@color/dark_blue"
+        android:text="Apakah ada gambar yang ingin dihapus?"
+        android:textColor="@color/white"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_manage_object_title" />
+        app:layout_constraintTop_toBottomOf="@id/gallery_title" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/et_search_game"
-        style="@style/TextInputEditText_search"
-        android:layout_width="340dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="172dp"
-        android:background="@drawable/search_background"
-        android:drawableStart="@drawable/ic_search"
-        android:elevation="8dp"
-        android:hint="@string/hint_manage_object"
-        android:padding="10dp"
-        android:shadowColor="@color/light_grey"
-        android:shadowDx="100"
-        android:shadowDy="100"
-        android:shadowRadius="2"
-        android:textSize="12dp"
+    <ImageView
+        android:id="@+id/scroll_bg_object"
+        android:layout_width="350dp"
+        android:layout_height="380dp"
+        android:background="@drawable/background_object_search_by_type"
+        app:layout_constraintBottom_toBottomOf="@id/field"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:startIconDrawable="@drawable/ic_search" />
+        app:layout_constraintVertical_bias="0.52" />
 
-    <ImageView
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="112dp"
-        android:background="@drawable/ic_balok_kayu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.919"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recent_recycler_popgame"
+        android:layout_width="326dp"
+        android:layout_height="338dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="104dp"
-        android:background="@drawable/ic_toys"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="172dp"
+        app:layout_constraintBottom_toBottomOf="@id/field"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="88dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="112dp"
+        android:background="@drawable/ic_maskot_main_logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/background_list_of_object"
-        android:layout_width="350dp"
-        android:layout_height="330dp"
-        android:background="@drawable/background_object_search_by_type"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_search_game"
-        app:layout_constraintVertical_bias="0.104" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_switch_layout"
+        style="@style/ButtonWhite"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/mulai_button_oultline"
+        android:drawableTop="@drawable/baseline_image_24"
+        android:elevation="100dp"
+        android:padding="6dp"
+        app:layout_constraintBottom_toTopOf="@id/scroll_bg_object"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@id/mulai_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/mulai_button_oultline"
+        android:text="@string/mulai_btn_text"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/hapus_button"
@@ -131,18 +142,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@id/mulai_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="100dp"
-        android:background="@drawable/mulai_button_oultline"
-        android:text="@string/mulai_btn_text"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

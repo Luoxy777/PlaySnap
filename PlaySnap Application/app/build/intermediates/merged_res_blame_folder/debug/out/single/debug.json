@@ -20,6 +20,10 @@
         "source": "com.example.playsnapui.app-main-42:/drawable/ic_bottom_sheet_drag.xml"
     },
     {
+        "merged": "com.example.playsnapui.app-merged_res-40:/layout_activity_feedback_page.xml.flat",
+        "source": "com.example.playsnapui.app-main-42:/layout/activity_feedback_page.xml"
+    },
+    {
         "merged": "com.example.playsnapui.app-merged_res-40:/drawable_ic_awan3.png.flat",
         "source": "com.example.playsnapui.app-main-42:/drawable/ic_awan3.png"
     },
@@ -64,12 +68,20 @@
         "source": "com.example.playsnapui.app-main-42:/menu/buttom_nav.xml"
     },
     {
+        "merged": "com.example.playsnapui.app-merged_res-40:/drawable_baseline_flash_off_24.xml.flat",
+        "source": "com.example.playsnapui.app-main-42:/drawable/baseline_flash_off_24.xml"
+    },
+    {
         "merged": "com.example.playsnapui.app-merged_res-40:/font_leaguespartanregular.ttf.flat",
         "source": "com.example.playsnapui.app-main-42:/font/leaguespartanregular.ttf"
     },
     {
         "merged": "com.example.playsnapui.app-merged_res-40:/drawable_ic_rate45.xml.flat",
         "source": "com.example.playsnapui.app-main-42:/drawable/ic_rate45.xml"
+    },
+    {
+        "merged": "com.example.playsnapui.app-merged_res-40:/drawable_camera_shoot_icon.xml.flat",
+        "source": "com.example.playsnapui.app-main-42:/drawable/camera_shoot_icon.xml"
     },
     {
         "merged": "com.example.playsnapui.app-merged_res-40:/layout_activity_search_by_camera_page.xml.flat",
@@ -98,6 +110,10 @@
     {
         "merged": "com.example.playsnapui.app-merged_res-40:/drawable_ic_rate15.xml.flat",
         "source": "com.example.playsnapui.app-main-42:/drawable/ic_rate15.xml"
+    },
+    {
+        "merged": "com.example.playsnapui.app-merged_res-40:/drawable_baseline_flip_camera_android_24.xml.flat",
+        "source": "com.example.playsnapui.app-main-42:/drawable/baseline_flip_camera_android_24.xml"
     },
     {
         "merged": "com.example.playsnapui.app-merged_res-40:/drawable_ic_maskot_left_smile.png.flat",
@@ -158,6 +174,10 @@
     {
         "merged": "com.example.playsnapui.app-merged_res-40:/drawable_ic_banner_like.png.flat",
         "source": "com.example.playsnapui.app-main-42:/drawable/ic_banner_like.png"
+    },
+    {
+        "merged": "com.example.playsnapui.app-merged_res-40:/layout_activity_gallery_view_object_swipe_page.xml.flat",
+        "source": "com.example.playsnapui.app-main-42:/layout/activity_gallery_view_object_swipe_page.xml"
     },
     {
         "merged": "com.example.playsnapui.app-merged_res-40:/drawable_ic_search.xml.flat",
@@ -280,6 +300,14 @@
         "source": "com.example.playsnapui.app-main-42:/drawable/ic_account.xml"
     },
     {
+        "merged": "com.example.playsnapui.app-merged_res-40:/drawable_baseline_delete_24.xml.flat",
+        "source": "com.example.playsnapui.app-main-42:/drawable/baseline_delete_24.xml"
+    },
+    {
+        "merged": "com.example.playsnapui.app-merged_res-40:/drawable_background_object_search_by_type.xml.flat",
+        "source": "com.example.playsnapui.app-main-42:/drawable/background_object_search_by_type.xml"
+    },
+    {
         "merged": "com.example.playsnapui.app-merged_res-40:/drawable_ic_email.xml.flat",
         "source": "com.example.playsnapui.app-main-42:/drawable/ic_email.xml"
     },
@@ -328,12 +356,12 @@
         "source": "com.example.playsnapui.app-main-42:/font/leaguespartansemibold.ttf"
     },
     {
-        "merged": "com.example.playsnapui.app-merged_res-40:/drawable_ic_game.xml.flat",
-        "source": "com.example.playsnapui.app-main-42:/drawable/ic_game.xml"
-    },
-    {
         "merged": "com.example.playsnapui.app-merged_res-40:/layout_layout_foryougame_list_item.xml.flat",
         "source": "com.example.playsnapui.app-main-42:/layout/layout_foryougame_list_item.xml"
+    },
+    {
+        "merged": "com.example.playsnapui.app-merged_res-40:/drawable_ic_game.xml.flat",
+        "source": "com.example.playsnapui.app-main-42:/drawable/ic_game.xml"
     },
     {
         "merged": "com.example.playsnapui.app-merged_res-40:/drawable_ic_rate2.xml.flat",
@@ -376,6 +404,10 @@
         "source": "com.example.playsnapui.app-main-42:/drawable/ic_balin_merah.png"
     },
     {
+        "merged": "com.example.playsnapui.app-merged_res-40:/drawable_baseline_image_24.xml.flat",
+        "source": "com.example.playsnapui.app-main-42:/drawable/baseline_image_24.xml"
+    },
+    {
         "merged": "com.example.playsnapui.app-merged_res-40:/drawable_card_bg_landscape.xml.flat",
         "source": "com.example.playsnapui.app-main-42:/drawable/card_bg_landscape.xml"
     },
@@ -404,8 +436,16 @@
         "source": "com.example.playsnapui.app-main-42:/mipmap-mdpi/ic_started_picture.webp"
     },
     {
+        "merged": "com.example.playsnapui.app-merged_res-40:/layout_activity_tutorial_page.xml.flat",
+        "source": "com.example.playsnapui.app-main-42:/layout/activity_tutorial_page.xml"
+    },
+    {
         "merged": "com.example.playsnapui.app-merged_res-40:/mipmap-hdpi_ic_started_picture_foreground.webp.flat",
         "source": "com.example.playsnapui.app-main-42:/mipmap-hdpi/ic_started_picture_foreground.webp"
+    },
+    {
+        "merged": "com.example.playsnapui.app-merged_res-40:/layout_layout_delete_object_confirmation.xml.flat",
+        "source": "com.example.playsnapui.app-main-42:/layout/layout_delete_object_confirmation.xml"
     },
     {
         "merged": "com.example.playsnapui.app-merged_res-40:/mipmap-mdpi_ic_launcher_round.webp.flat",
@@ -420,12 +460,24 @@
         "source": "com.example.playsnapui.app-main-42:/drawable/ic_rate4.xml"
     },
     {
+        "merged": "com.example.playsnapui.app-merged_res-40:/layout_activity_gallery_view_object_scroll_page.xml.flat",
+        "source": "com.example.playsnapui.app-main-42:/layout/activity_gallery_view_object_scroll_page.xml"
+    },
+    {
+        "merged": "com.example.playsnapui.app-merged_res-40:/drawable_flash_button_outline.xml.flat",
+        "source": "com.example.playsnapui.app-main-42:/drawable/flash_button_outline.xml"
+    },
+    {
         "merged": "com.example.playsnapui.app-merged_res-40:/drawable_ic_report.xml.flat",
         "source": "com.example.playsnapui.app-main-42:/drawable/ic_report.xml"
     },
     {
         "merged": "com.example.playsnapui.app-merged_res-40:/drawable_ic_rate25.xml.flat",
         "source": "com.example.playsnapui.app-main-42:/drawable/ic_rate25.xml"
+    },
+    {
+        "merged": "com.example.playsnapui.app-merged_res-40:/layout_activity_manage_object.xml.flat",
+        "source": "com.example.playsnapui.app-main-42:/layout/activity_manage_object.xml"
     },
     {
         "merged": "com.example.playsnapui.app-merged_res-40:/drawable_ic_balok_kayu.png.flat",
@@ -474,6 +526,10 @@
     {
         "merged": "com.example.playsnapui.app-merged_res-40:/drawable_ic_awan1.png.flat",
         "source": "com.example.playsnapui.app-main-42:/drawable/ic_awan1.png"
+    },
+    {
+        "merged": "com.example.playsnapui.app-merged_res-40:/drawable_hapus_button_oultline.xml.flat",
+        "source": "com.example.playsnapui.app-main-42:/drawable/hapus_button_oultline.xml"
     },
     {
         "merged": "com.example.playsnapui.app-merged_res-40:/mipmap-xhdpi_ic_started_picture_round.webp.flat",
@@ -556,16 +612,24 @@
         "source": "com.example.playsnapui.app-main-42:/drawable/logo_profile.xml"
     },
     {
-        "merged": "com.example.playsnapui.app-merged_res-40:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.playsnapui.app-main-42:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "com.example.playsnapui.app-merged_res-40:/drawable_baseline_grid_view_24.xml.flat",
+        "source": "com.example.playsnapui.app-main-42:/drawable/baseline_grid_view_24.xml"
     },
     {
         "merged": "com.example.playsnapui.app-merged_res-40:/layout_activity_like_page.xml.flat",
         "source": "com.example.playsnapui.app-main-42:/layout/activity_like_page.xml"
     },
     {
+        "merged": "com.example.playsnapui.app-merged_res-40:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.playsnapui.app-main-42:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
         "merged": "com.example.playsnapui.app-merged_res-40:/mipmap-xxhdpi_ic_started_picture_foreground.webp.flat",
         "source": "com.example.playsnapui.app-main-42:/mipmap-xxhdpi/ic_started_picture_foreground.webp"
+    },
+    {
+        "merged": "com.example.playsnapui.app-merged_res-40:/drawable_batal_hapus_button.xml.flat",
+        "source": "com.example.playsnapui.app-main-42:/drawable/batal_hapus_button.xml"
     },
     {
         "merged": "com.example.playsnapui.app-merged_res-40:/layout_activity_help_page.xml.flat",
