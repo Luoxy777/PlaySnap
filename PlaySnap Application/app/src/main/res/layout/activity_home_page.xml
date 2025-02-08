@@ -8,10 +8,11 @@
     tools:context=".HomePageActivity">
 
     <ScrollView
+        android:id="@+id/MyScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:layout_above="@id/include">
+        android:isScrollContainer="false">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -255,6 +256,9 @@
         layout="@layout/activity_navigation_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_above="@id/MyScrollView"
+        android:gravity="bottom"
+        />
 
 </RelativeLayout>

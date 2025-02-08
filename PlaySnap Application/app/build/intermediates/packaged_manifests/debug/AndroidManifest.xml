@@ -32,6 +32,54 @@
         android:testOnly="true"
         android:theme="@style/Theme.PlaySnapUI" >
         <activity
+            android:name="com.example.playsnapui.ReportPageActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.playsnapui.SettingsAccountPageActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.playsnapui.EditPasswordPageActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.playsnapui.EditProfilePageActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.playsnapui.ReportPageSuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.playsnapui.HelpPageReqSuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.playsnapui.HelpPageReqActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.playsnapui.HelpPageQ7Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.playsnapui.HelpPageQ6Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.playsnapui.HelpPageQ5Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.playsnapui.HelpPageQ4Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.playsnapui.HelpPageQ3Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.playsnapui.HelpPageQ2Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.playsnapui.HelpPageQ2Actvity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.playsnapui.HelpPageQ1Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.playsnapui.HelpPageQ1"
+            android:exported="false" />
+        <activity
             android:name="com.example.playsnapui.HelpPageActivity"
             android:exported="false" />
         <activity
@@ -48,7 +96,8 @@
             android:exported="false" />
         <activity
             android:name="com.example.playsnapui.HomePageActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.example.playsnapui.RegisterActivity"
             android:exported="false" />
