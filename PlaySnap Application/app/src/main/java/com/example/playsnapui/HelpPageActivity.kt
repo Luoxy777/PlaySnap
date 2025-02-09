@@ -2,10 +2,14 @@ package com.example.playsnapui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.playsnapui.databinding.ActivityHelpPageBinding
 
 class HelpPageActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityHelpPageBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_help_page)
+        binding = ActivityHelpPageBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }

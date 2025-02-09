@@ -62,8 +62,8 @@ class LoginActivity : AppCompatActivity() {
                 MainActivity.auth.signInWithEmailAndPassword(email, password).addOnCompleteListener{
                     if(it.isSuccessful){
                         val explicit2 = Intent(this, HomePageActivity::class.java)
+                        explicit2.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(explicit2)
-                        finish()
                     }
                 }.addOnFailureListener{
                     Toast.makeText(this, it.localizedMessage, Toast.LENGTH_LONG).show()

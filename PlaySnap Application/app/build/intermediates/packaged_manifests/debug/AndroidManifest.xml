@@ -8,6 +8,12 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="34" />
 
+    <uses-feature android:name="android.hardware.camera.any" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="34" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
@@ -31,6 +37,12 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.PlaySnapUI" >
+        <activity
+            android:name="com.example.playsnapui.SearchByTypeActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.playsnapui.SearchByCameraActivity"
+            android:exported="false" />
         <activity
             android:name="com.example.playsnapui.ReportPageActivity"
             android:exported="false" />
@@ -71,13 +83,7 @@
             android:name="com.example.playsnapui.HelpPageQ2Activity"
             android:exported="false" />
         <activity
-            android:name="com.example.playsnapui.HelpPageQ2Actvity"
-            android:exported="false" />
-        <activity
             android:name="com.example.playsnapui.HelpPageQ1Activity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.HelpPageQ1"
             android:exported="false" />
         <activity
             android:name="com.example.playsnapui.HelpPageActivity"
@@ -116,6 +122,9 @@
         <activity
             android:name="com.example.playsnapui.BottomSheet"
             android:theme="@style/TransparentTheme" />
+        <activity
+            android:name="com.example.playsnapui.FilterPageActivity"
+            android:exported="false" />
         <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"
             android:excludeFromRecents="true"
@@ -167,6 +176,22 @@
                 android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
         </service>
+        <service
+            android:name="androidx.camera.core.impl.MetadataHolderService"
+            android:enabled="false"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+        </service>
+
+        <activity
+            android:name="androidx.activity.ComponentActivity"
+            android:exported="true" />
+        <activity
+            android:name="androidx.compose.ui.tooling.PreviewActivity"
+            android:exported="true" />
+
         <service
             android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
             android:enabled="true"

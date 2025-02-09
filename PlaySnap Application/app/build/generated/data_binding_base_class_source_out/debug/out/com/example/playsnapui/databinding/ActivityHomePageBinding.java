@@ -43,6 +43,9 @@ public final class ActivityHomePageBinding implements ViewBinding {
   public final TextInputEditText etSearchGame;
 
   @NonNull
+  public final ImageView helpButton;
+
+  @NonNull
   public final ActivityNavigationBarBinding include;
 
   @NonNull
@@ -73,11 +76,11 @@ public final class ActivityHomePageBinding implements ViewBinding {
       @NonNull ScrollView MyScrollView, @NonNull ImageView banner,
       @NonNull AppCompatButton btnFilterGame, @NonNull AppCompatButton btnScanObject,
       @NonNull AppCompatButton btnTypeObject, @NonNull TextInputEditText etSearchGame,
-      @NonNull ActivityNavigationBarBinding include, @NonNull RecyclerView recentRecyclerForyou,
-      @NonNull RecyclerView recentRecyclerPopgame, @NonNull TextView tvSubtitleHome,
-      @NonNull TextView tvSubtitleHome2, @NonNull TextView tvTitleForyou,
-      @NonNull TextView tvTitleGreeting, @NonNull TextView tvTitleName,
-      @NonNull TextView tvTitleRecommendation) {
+      @NonNull ImageView helpButton, @NonNull ActivityNavigationBarBinding include,
+      @NonNull RecyclerView recentRecyclerForyou, @NonNull RecyclerView recentRecyclerPopgame,
+      @NonNull TextView tvSubtitleHome, @NonNull TextView tvSubtitleHome2,
+      @NonNull TextView tvTitleForyou, @NonNull TextView tvTitleGreeting,
+      @NonNull TextView tvTitleName, @NonNull TextView tvTitleRecommendation) {
     this.rootView = rootView;
     this.MyScrollView = MyScrollView;
     this.banner = banner;
@@ -85,6 +88,7 @@ public final class ActivityHomePageBinding implements ViewBinding {
     this.btnScanObject = btnScanObject;
     this.btnTypeObject = btnTypeObject;
     this.etSearchGame = etSearchGame;
+    this.helpButton = helpButton;
     this.include = include;
     this.recentRecyclerForyou = recentRecyclerForyou;
     this.recentRecyclerPopgame = recentRecyclerPopgame;
@@ -159,6 +163,12 @@ public final class ActivityHomePageBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.help_button;
+      ImageView helpButton = ViewBindings.findChildViewById(rootView, id);
+      if (helpButton == null) {
+        break missingId;
+      }
+
       id = R.id.include;
       View include = ViewBindings.findChildViewById(rootView, id);
       if (include == null) {
@@ -215,7 +225,7 @@ public final class ActivityHomePageBinding implements ViewBinding {
       }
 
       return new ActivityHomePageBinding((RelativeLayout) rootView, MyScrollView, banner,
-          btnFilterGame, btnScanObject, btnTypeObject, etSearchGame, binding_include,
+          btnFilterGame, btnScanObject, btnTypeObject, etSearchGame, helpButton, binding_include,
           recentRecyclerForyou, recentRecyclerPopgame, tvSubtitleHome, tvSubtitleHome2,
           tvTitleForyou, tvTitleGreeting, tvTitleName, tvTitleRecommendation);
     }

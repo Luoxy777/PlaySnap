@@ -139,7 +139,6 @@ id balokKayuMidFilterPage
 id balonTopFilterPage
 id banner
 id banner_background
-id banner_background_ellips
 id banner_mascot
 id batuRumputMidFilterPage
 id bookmark
@@ -157,6 +156,8 @@ id btn_checklist
 id btn_delete
 id btn_edit_profile
 id btn_filter_game
+id btn_flash
+id btn_flip_camera
 id btn_history_game
 id btn_kenapa_objek
 id btn_kenapa_pilih
@@ -181,6 +182,7 @@ id button_dinamic_lokasi
 id button_dinamic_pemain
 id button_dinamic_properti
 id button_dinamic_usia
+id camera_button
 id count_like
 id daftar
 id display_game
@@ -205,6 +207,7 @@ id gallery_title
 id guideline
 id guideline2
 id hapus_button
+id help_button
 id home
 id ic_account
 id ic_account_rectangle
@@ -246,6 +249,7 @@ id maskotTopFilterPage
 id masuk
 id masukButton
 id mulai_button
+id previewView
 id profile
 id profile_pic
 id rating
@@ -255,6 +259,8 @@ id recent_recycler_like
 id recent_recycler_popgame
 id registerButton
 id register_have_account
+id relativeLayout
+id relativeLayout2
 id scroll_bg_object
 id sendButton
 id started_subtitle

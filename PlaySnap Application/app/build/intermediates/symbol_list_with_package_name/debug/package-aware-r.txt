@@ -658,6 +658,7 @@ attr imagePanX
 attr imagePanY
 attr imageRotate
 attr imageZoom
+attr implementationMode
 attr indeterminateAnimationType
 attr indeterminateProgressStyle
 attr indicatorColor
@@ -1025,6 +1026,7 @@ attr round
 attr roundPercent
 attr saturation
 attr scaleFromTextSize
+attr scaleType
 attr scopeUris
 attr scrimAnimationDuration
 attr scrimBackground
@@ -2147,6 +2149,8 @@ color tooltip_background_dark
 color tooltip_background_light
 color transparent_blue
 color transparent_white
+color vector_tint_color
+color vector_tint_theme_color
 color white
 color yellow
 dimen abc_action_bar_content_inset_material
@@ -3361,6 +3365,7 @@ id aligned
 id all
 id allStates
 id always
+id androidx_compose_ui_view_composition_context
 id animateToEnd
 id animateToStart
 id antiClockwise
@@ -3381,7 +3386,6 @@ id balokKayuMidFilterPage
 id balonTopFilterPage
 id banner
 id banner_background
-id banner_background_ellips
 id banner_mascot
 id barrier
 id baseline
@@ -3416,6 +3420,8 @@ id btn_checklist
 id btn_delete
 id btn_edit_profile
 id btn_filter_game
+id btn_flash
+id btn_flip_camera
 id btn_history_game
 id btn_kenapa_objek
 id btn_kenapa_pilih
@@ -3443,6 +3449,7 @@ id button_dinamic_properti
 id button_dinamic_usia
 id cache_measures
 id callMeasure
+id camera_button
 id cancel_button
 id carryVelocity
 id center
@@ -3463,9 +3470,12 @@ id clip_vertical
 id clockwise
 id closest
 id collapseActionView
+id compatible
+id compose_view_saveable_id_tag
 id compress
 id confirm_button
 id constraint
+id consume_window_insets_tag
 id container
 id content
 id contentPanel
@@ -3547,6 +3557,9 @@ id expanded_menu
 id fade
 id field
 id fill
+id fillCenter
+id fillEnd
+id fillStart
 id fill_horizontal
 id fill_vertical
 id filled
@@ -3576,7 +3589,9 @@ id guideline
 id guideline2
 id hapus_button
 id header_title
+id help_button
 id hide_ime_id
+id hide_in_inspector_tag
 id hideable
 id home
 id homeAsUp
@@ -3611,8 +3626,10 @@ id include3
 id included
 id indeterminate
 id info
+id inspection_slot_table_set
 id invisible
 id inward
+id is_pooling_container_tag
 id italic
 id item_touch_helper_previous_elevation
 id iv_banner_helpreq
@@ -3760,10 +3777,13 @@ id path
 id pathRelative
 id peekHeight
 id percent
+id performance
 id pin
+id pooling_container_listener_holder_tag
 id position
 id postLayout
 id pressed
+id previewView
 id profile
 id profile_pic
 id progress_circular
@@ -3778,6 +3798,8 @@ id recent_recycler_popgame
 id rectangles
 id registerButton
 id register_have_account
+id relativeLayout
+id relativeLayout2
 id report_drawn
 id reverseSawtooth
 id right
@@ -4000,6 +4022,7 @@ id withinBounds
 id wrap
 id wrap_content
 id wrap_content_constrained
+id wrapped_composition_tag
 id x_left
 id x_right
 integer abc_config_activityDefaultDur
@@ -4303,6 +4326,9 @@ string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string clear_text_end_icon_content_description
+string close_drawer
+string close_sheet
+string collapsed
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
 string common_google_play_services_enable_title
@@ -4323,7 +4349,11 @@ string common_signin_button_text
 string common_signin_button_text_long
 string copy_toast_msg
 string daftar
+string default_error_message
+string default_popup_window_title
 string delete_message
+string dialog
+string dropdown_menu
 string edit1_name
 string edit1_old_pass
 string edit1_subtitle
@@ -4341,6 +4371,7 @@ string edit4_subtitle
 string email
 string error_a11y_label
 string error_icon_content_description
+string expanded
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
@@ -4371,6 +4402,8 @@ string hide_bottom_view_on_scroll_behavior
 string hint_manage_object
 string history_game
 string icon_content_description
+string in_progress
+string indeterminate
 string item_view_role_description
 string login_email
 string login_forgot_pw
@@ -4478,7 +4511,11 @@ string mtrl_switch_track_path
 string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
 string mulai_btn_text
+string navigation_menu
 string no_message
+string not_selected
+string off
+string on
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -4499,6 +4536,8 @@ string question4_bagaimana_cara
 string question5_bagaimana_cara
 string question6_kenapa_objek
 string question7_bagaimana_cara
+string range_end
+string range_start
 string register_confirmpass
 string register_email
 string register_fullname
@@ -4515,6 +4554,7 @@ string searchbar_ketikobj_default
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
 string searchview_navigation_content_description
+string selected
 string setting_acc
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
@@ -4531,6 +4571,9 @@ string subtitle_home
 string subtitle_home2
 string subtitle_like
 string subttile_profile
+string switch_role
+string tab
+string template_percent
 string title_bookmark
 string title_bottom_helpreq
 string title_change_pass
@@ -4867,7 +4910,10 @@ style ButtonWhite2
 style CardView
 style CardView_Dark
 style CardView_Light
+style DialogWindowTheme
 style EditText
+style FloatingDialogTheme
+style FloatingDialogWindowTheme
 style MaterialAlertDialog_Material3
 style MaterialAlertDialog_Material3_Animation
 style MaterialAlertDialog_Material3_Body_Text
@@ -5830,6 +5876,7 @@ styleable OnClick clickAction targetId
 styleable OnSwipe autoCompleteMode dragDirection dragScale dragThreshold limitBoundsTo maxAcceleration maxVelocity moveWhenScrollAtTop nestedScrollFlags onTouchUp rotationCenterId springBoundary springDamping springMass springStiffness springStopThreshold touchAnchorId touchAnchorSide touchRegionId
 styleable PopupWindow android_popupBackground android_popupAnimationStyle overlapAnchor
 styleable PopupWindowBackgroundState state_above_anchor
+styleable PreviewView implementationMode scaleType
 styleable PropertySet android_visibility android_alpha layout_constraintTag motionProgress visibilityMode
 styleable RadialViewGroup materialCircleRadius
 styleable RangeSlider minSeparation values
