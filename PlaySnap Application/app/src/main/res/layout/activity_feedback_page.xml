@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/sky_blue"
+    android:background="@color/dark_blue"
     >
 
     <ImageView
@@ -21,9 +21,9 @@
         android:id="@+id/include3"
         layout="@layout/activity_navigation_bar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="40dp" />
+        tools:layout_editor_absoluteY="145dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="40dp"
@@ -31,9 +31,254 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/back_button"
-        android:backgroundTint="@color/dark_blue"
+        android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:background="@drawable/ic_maskot_main_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.43" />
+
+    <ImageView
+        android:id="@+id/moon_feedback"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/ic_moon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/cloud2_feedback"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="128dp"
+        android:background="@drawable/cloud_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/cloud1_feedback"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="216dp"
+        android:scaleX="-1"
+        android:background="@drawable/cloud_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/hanabi1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/hanabi_feedback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/hanabi2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="88dp"
+        android:background="@drawable/hanabi_feedback"
+        android:scaleX="-1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/hanabi3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/hanabi_feedback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Have Fun, Player!"
+        android:textColor="@color/white"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <TextView
+        android:id="@+id/tv_subtitle_feedback"
+        style="@style/Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Kasih ulasan permainan yuk!"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+    <ImageView
+        android:id="@+id/background_rating_feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="275dp"
+        android:background="@drawable/background_rating_feedback"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/rating_star_feedback"
+        android:layout_width="175dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_rate05"
+        app:layout_constraintTop_toTopOf="@id/background_rating_feedback"
+        app:layout_constraintBottom_toBottomOf="@id/background_rating_feedback"
+        app:layout_constraintEnd_toEndOf="@id/background_rating_feedback"
+        app:layout_constraintStart_toStartOf="@id/background_rating_feedback"/>
+
+
+    <View
+        android:id="@+id/line1_feedback"
+        android:layout_width="300dp"
+        android:layout_height="0.5dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.66" />
+
+    <View
+        android:id="@+id/line2_feedback"
+        android:layout_width="300dp"
+        android:layout_height="0.5dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.77" />
+
+    <ImageView
+        android:id="@+id/player_count_feedback"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/background_rating_feedback"
+        android:backgroundTint="@color/dark_green"
+        app:layout_constraintBottom_toTopOf="@id/line2_feedback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/game_title_feedback"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lompat Tali"
+        android:textColor="@color/white"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:textSize="25dp"
+        android:layout_marginStart="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <TextView
+        android:id="@+id/player_count_feedback_number"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1-3"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/player_count_feedback"
+        app:layout_constraintEnd_toEndOf="@+id/player_count_feedback"
+        app:layout_constraintStart_toStartOf="@+id/player_count_feedback"
+        app:layout_constraintTop_toTopOf="@+id/player_count_feedback" />
+
+    <TextView
+        android:id="@+id/player_count_feedback_person_text"
+        style="@style/Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="orang"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/player_count_feedback"
+        app:layout_constraintEnd_toEndOf="@+id/player_count_feedback"
+        app:layout_constraintStart_toStartOf="@+id/player_count_feedback"
+        app:layout_constraintTop_toTopOf="@+id/player_count_feedback" />
+
+    <ImageView
+        android:id="@+id/ic_game_feedback"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_game"
+        android:backgroundTint="@color/grey"
+        app:layout_constraintBottom_toTopOf="@id/selesai_button_feedback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.146"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/game_title_feedback"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/game_details_feedback"
+        style="@style/Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Outdoor, Usia >6 tahun"
+        android:textColor="@color/grey"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/line2_feedback"
+        app:layout_constraintStart_toEndOf="@id/ic_game_feedback" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/selesai_button_feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_button_selesai_feedback"
+        style="@style/Title"
+        android:text="Selesai"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.857" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
