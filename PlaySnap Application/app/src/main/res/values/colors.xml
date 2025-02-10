@@ -7,6 +7,7 @@
     <color name="grey">#484848</color>
     <color name="grey_blue">#BDD2E3</color>
     <color name="sky_blue">#B7E3FF</color>
+    <color name="light_blue">#E4F5FF</color>
     <color name="blue">#95D3FA</color>
     <color name="dark_blue">#6995C9</color>
     <color name="yellow">#FAC80F</color>
@@ -17,4 +18,5 @@
     <color name="green">#93BD01</color>
     <color name="text_shadow">#7F000000</color>
     <color name="dark_green">#769302</color>
+    <color name="super_light_grey">#F1F0F0</color>
 </resources>

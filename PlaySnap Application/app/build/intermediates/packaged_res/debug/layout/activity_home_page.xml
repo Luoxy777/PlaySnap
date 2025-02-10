@@ -32,7 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
-                    android:layout_marginTop="45dp"
+                    android:layout_marginTop="40dp"
                     android:fontFamily="@font/leaguespartanextrabold"
                     android:text="@string/title_greating"
                     android:textColor="@color/white"
@@ -225,43 +225,5 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-    <!--
-    <ImageButton
-        android:id="@+id/btn1"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="450dp"
-        android:background="@drawable/card_bg"
-        android:layout_width="153.75dp"
-        android:layout_height="180dp"/>
-
-    <ImageButton
-        android:id="@+id/btn2"
-        android:layout_marginStart="193.75dp"
-        android:layout_marginTop="450dp"
-        android:background="@drawable/card_bg"
-        android:layout_width="153.75dp"
-        android:layout_height="180dp"/>
-    -->
-
-    <!-- <ImageButton
-        android:id="@+id/btn1"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="450dp"
-        android:background="@drawable/card_bg"
-        android:backgroundTint="@color/dark_blue"
-        android:layout_width="340dp"
-        android:layout_height="191.25dp"/>
-    -->
-
-    <include
-        android:id="@+id/include"
-        layout="@layout/activity_navigation_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_above="@id/MyScrollView"
-        android:gravity="bottom"
-        />
 
 </RelativeLayout>

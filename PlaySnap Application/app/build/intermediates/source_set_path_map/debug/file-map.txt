@@ -1,76 +1,76 @@
-com.example.playsnapui.app-pngs-0 C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\build\generated\res\pngs\debug
-com.example.playsnapui.app-res-1 C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\build\generated\res\processDebugGoogleServices
-com.example.playsnapui.app-resValues-2 C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\build\generated\res\resValues\debug
-com.example.playsnapui.app-packageDebugResources-3 C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.playsnapui.app-packageDebugResources-4 C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.playsnapui.app-merged_res-5 C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\build\intermediates\merged_res\debug
-com.example.playsnapui.app-debug-6 C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\debug\res
-com.example.playsnapui.app-main-7 C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\res
-com.example.playsnapui.app-firebase-common-21.0.0-8 C:\Users\diane\.gradle\caches\transforms-3\09dbf02251a0679bb97ba50046000330\transformed\firebase-common-21.0.0\res
-com.example.playsnapui.app-cardview-1.0.0-9 C:\Users\diane\.gradle\caches\transforms-3\0aa360745900ce7b419867614b123f9a\transformed\cardview-1.0.0\res
-com.example.playsnapui.app-ui-geometry-1.4.0-10 C:\Users\diane\.gradle\caches\transforms-3\0aa4ef55bb1814ccbdc0d98274cbb692\transformed\ui-geometry-1.4.0\res
-com.example.playsnapui.app-profileinstaller-1.4.0-11 C:\Users\diane\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\res
-com.example.playsnapui.app-lifecycle-livedata-core-2.6.2-12 C:\Users\diane\.gradle\caches\transforms-3\0c4e685a119c11ae4d8f4587cd1c8256\transformed\lifecycle-livedata-core-2.6.2\res
-com.example.playsnapui.app-camera-camera2-1.4.1-13 C:\Users\diane\.gradle\caches\transforms-3\0f6e3898e9bb02a3541d2809b1c96029\transformed\camera-camera2-1.4.1\res
-com.example.playsnapui.app-emoji2-1.3.0-14 C:\Users\diane\.gradle\caches\transforms-3\0feb2ce08b81920c087049d7c8eac30b\transformed\emoji2-1.3.0\res
-com.example.playsnapui.app-ui-tooling-preview-1.4.0-15 C:\Users\diane\.gradle\caches\transforms-3\10585b430dbe2b0be75b6981e2fd3d7b\transformed\ui-tooling-preview-1.4.0\res
-com.example.playsnapui.app-ui-tooling-data-1.4.0-16 C:\Users\diane\.gradle\caches\transforms-3\11bbba668af6eeec56a8162121e78761\transformed\ui-tooling-data-1.4.0\res
-com.example.playsnapui.app-play-services-basement-18.4.0-17 C:\Users\diane\.gradle\caches\transforms-3\1c28c6e38df06a10aa93f192d9faa2da\transformed\play-services-basement-18.4.0\res
-com.example.playsnapui.app-core-runtime-2.2.0-18 C:\Users\diane\.gradle\caches\transforms-3\2004b3368fa42c5a8a67bcb006c2dd77\transformed\core-runtime-2.2.0\res
-com.example.playsnapui.app-credentials-play-services-auth-1.2.0-rc01-19 C:\Users\diane\.gradle\caches\transforms-3\20cbcb0627ea3da5359cc6a41e8c9a16\transformed\credentials-play-services-auth-1.2.0-rc01\res
-com.example.playsnapui.app-lifecycle-runtime-2.6.2-20 C:\Users\diane\.gradle\caches\transforms-3\20fd7b483130298ef335c42c27e91c16\transformed\lifecycle-runtime-2.6.2\res
-com.example.playsnapui.app-animation-1.4.0-21 C:\Users\diane\.gradle\caches\transforms-3\232640078184be0cdab3938cc634437b\transformed\animation-1.4.0\res
-com.example.playsnapui.app-material-icons-core-1.4.0-22 C:\Users\diane\.gradle\caches\transforms-3\24c909fe16c4ac564e12e4b3ccd256ba\transformed\material-icons-core-1.4.0\res
-com.example.playsnapui.app-foundation-layout-1.4.0-23 C:\Users\diane\.gradle\caches\transforms-3\2d0cdb263e62f1febd59f6f2b5484872\transformed\foundation-layout-1.4.0\res
-com.example.playsnapui.app-core-1.13.0-24 C:\Users\diane\.gradle\caches\transforms-3\2f55ca72d86bb37246b4715357c2511c\transformed\core-1.13.0\res
-com.example.playsnapui.app-annotation-experimental-1.4.1-25 C:\Users\diane\.gradle\caches\transforms-3\300446184e27770da9c997e5f0acaab0\transformed\annotation-experimental-1.4.1\res
-com.example.playsnapui.app-core-common-2.0.3-26 C:\Users\diane\.gradle\caches\transforms-3\344cf92bceb7273231bff2ec4d0fd1e3\transformed\core-common-2.0.3\res
-com.example.playsnapui.app-lifecycle-viewmodel-2.6.2-27 C:\Users\diane\.gradle\caches\transforms-3\39e9c2c978f2cbdf307bf374d896d338\transformed\lifecycle-viewmodel-2.6.2\res
-com.example.playsnapui.app-camera-lifecycle-1.4.1-28 C:\Users\diane\.gradle\caches\transforms-3\3a1c2bc8b18e19b5ebc8946fb667484b\transformed\camera-lifecycle-1.4.1\res
-com.example.playsnapui.app-material-ripple-1.4.0-29 C:\Users\diane\.gradle\caches\transforms-3\3f66db2ed3a98cb62d419efe48e3b79a\transformed\material-ripple-1.4.0\res
-com.example.playsnapui.app-startup-runtime-1.1.1-30 C:\Users\diane\.gradle\caches\transforms-3\46e6036896969a350e16099103d7dbc4\transformed\startup-runtime-1.1.1\res
-com.example.playsnapui.app-play-services-base-18.0.1-31 C:\Users\diane\.gradle\caches\transforms-3\47d1d967546a50d3c32e08b665375736\transformed\play-services-base-18.0.1\res
-com.example.playsnapui.app-fragment-1.5.4-32 C:\Users\diane\.gradle\caches\transforms-3\540a141728639ef166755eb2f69a8ddc\transformed\fragment-1.5.4\res
-com.example.playsnapui.app-constraintlayout-2.2.0-33 C:\Users\diane\.gradle\caches\transforms-3\55954fc436dbec7f34c92bf8bc7307d9\transformed\constraintlayout-2.2.0\res
-com.example.playsnapui.app-runtime-1.4.0-34 C:\Users\diane\.gradle\caches\transforms-3\55a9b82bd6dd6c267a400e073635e107\transformed\runtime-1.4.0\res
-com.example.playsnapui.app-tracing-1.2.0-35 C:\Users\diane\.gradle\caches\transforms-3\57b11b4491ff5f0908bc0ffcffc840a2\transformed\tracing-1.2.0\res
-com.example.playsnapui.app-customview-poolingcontainer-1.0.0-36 C:\Users\diane\.gradle\caches\transforms-3\5a024ee7ae18832cdc13cac08ab361a7\transformed\customview-poolingcontainer-1.0.0\res
-com.example.playsnapui.app-lifecycle-livedata-2.6.2-37 C:\Users\diane\.gradle\caches\transforms-3\5bee3da6413f5c744c7ae131952e6a39\transformed\lifecycle-livedata-2.6.2\res
-com.example.playsnapui.app-ui-text-1.4.0-38 C:\Users\diane\.gradle\caches\transforms-3\5c46d64424ff39169e2f33de79b7eab0\transformed\ui-text-1.4.0\res
-com.example.playsnapui.app-coordinatorlayout-1.1.0-39 C:\Users\diane\.gradle\caches\transforms-3\5de02f4e2a369c73dd41f1a87ecf0078\transformed\coordinatorlayout-1.1.0\res
-com.example.playsnapui.app-lifecycle-viewmodel-ktx-2.6.2-40 C:\Users\diane\.gradle\caches\transforms-3\5e16b0addc6d707f312943d31ec979ed\transformed\lifecycle-viewmodel-ktx-2.6.2\res
-com.example.playsnapui.app-material3-1.0.0-41 C:\Users\diane\.gradle\caches\transforms-3\65164b46674f0e0d2c12a3bbb4e8d236\transformed\material3-1.0.0\res
-com.example.playsnapui.app-savedstate-ktx-1.2.1-42 C:\Users\diane\.gradle\caches\transforms-3\6eb6d23f11112ae540157b15a0ed5845\transformed\savedstate-ktx-1.2.1\res
-com.example.playsnapui.app-camera-view-1.4.1-43 C:\Users\diane\.gradle\caches\transforms-3\72b7760553c54b5b37bce78c6eeed355\transformed\camera-view-1.4.1\res
-com.example.playsnapui.app-lifecycle-runtime-ktx-2.6.2-44 C:\Users\diane\.gradle\caches\transforms-3\7430a0622ae4d6faf604529d428e3513\transformed\lifecycle-runtime-ktx-2.6.2\res
-com.example.playsnapui.app-appcompat-resources-1.7.0-45 C:\Users\diane\.gradle\caches\transforms-3\746fef1f68a8974e7489416be3bf3579\transformed\appcompat-resources-1.7.0\res
-com.example.playsnapui.app-activity-1.9.3-46 C:\Users\diane\.gradle\caches\transforms-3\7afbdbaef0a548f777b2392bf05fe8d9\transformed\activity-1.9.3\res
-com.example.playsnapui.app-foundation-1.4.0-47 C:\Users\diane\.gradle\caches\transforms-3\7cd81c42960819f561e3951f3e39bc6f\transformed\foundation-1.4.0\res
-com.example.playsnapui.app-lifecycle-process-2.6.2-48 C:\Users\diane\.gradle\caches\transforms-3\7cdb1a6ad3e6b7087eef1dba5a0a8b83\transformed\lifecycle-process-2.6.2\res
-com.example.playsnapui.app-animation-core-1.4.0-49 C:\Users\diane\.gradle\caches\transforms-3\8fa2b05bb31ec4f357f788cbf9945bbf\transformed\animation-core-1.4.0\res
-com.example.playsnapui.app-ui-test-manifest-1.4.0-50 C:\Users\diane\.gradle\caches\transforms-3\917efdd78dfb9c7746eab89c0e79ccf7\transformed\ui-test-manifest-1.4.0\res
-com.example.playsnapui.app-browser-1.4.0-51 C:\Users\diane\.gradle\caches\transforms-3\944cf7a39b3dd9ccb48d2cd9efaf5af4\transformed\browser-1.4.0\res
-com.example.playsnapui.app-emoji2-views-helper-1.3.0-52 C:\Users\diane\.gradle\caches\transforms-3\9d4cfb7af2ddf6f7b402ae16534969b6\transformed\emoji2-views-helper-1.3.0\res
-com.example.playsnapui.app-recyclerview-1.1.0-53 C:\Users\diane\.gradle\caches\transforms-3\ab2cbb94dc637fa7aeb2318ed6ac06e9\transformed\recyclerview-1.1.0\res
-com.example.playsnapui.app-savedstate-1.2.1-54 C:\Users\diane\.gradle\caches\transforms-3\aff9c7c4034e71760a649f50ba32d2da\transformed\savedstate-1.2.1\res
-com.example.playsnapui.app-appcompat-1.7.0-55 C:\Users\diane\.gradle\caches\transforms-3\b3a3dff2fd1f4fcc42b825d7fc0556bb\transformed\appcompat-1.7.0\res
-com.example.playsnapui.app-camera-core-1.4.1-56 C:\Users\diane\.gradle\caches\transforms-3\b4ae474c1c95cd6ba73ce645e585f183\transformed\camera-core-1.4.1\res
-com.example.playsnapui.app-material-1.4.0-57 C:\Users\diane\.gradle\caches\transforms-3\b5364c340f2057f45e907d44fc471808\transformed\material-1.4.0\res
-com.example.playsnapui.app-ui-util-1.4.0-58 C:\Users\diane\.gradle\caches\transforms-3\bc2b7d3cc30f7936a2563f752fdce18f\transformed\ui-util-1.4.0\res
-com.example.playsnapui.app-credentials-1.2.0-rc01-59 C:\Users\diane\.gradle\caches\transforms-3\c182ba55479e14ed40c9fadac9ce6289\transformed\credentials-1.2.0-rc01\res
-com.example.playsnapui.app-ui-graphics-1.4.0-60 C:\Users\diane\.gradle\caches\transforms-3\c5552d455dbe03ca94223e7b561d216c\transformed\ui-graphics-1.4.0\res
-com.example.playsnapui.app-viewpager2-1.0.0-61 C:\Users\diane\.gradle\caches\transforms-3\c8e51ae4a30308a3fefbe059934b274e\transformed\viewpager2-1.0.0\res
-com.example.playsnapui.app-core-ktx-1.13.0-62 C:\Users\diane\.gradle\caches\transforms-3\d660a73049008cce1488a7c0444fee2b\transformed\core-ktx-1.13.0\res
-com.example.playsnapui.app-play-services-auth-20.7.0-63 C:\Users\diane\.gradle\caches\transforms-3\d6723d4abc5b61c45e02a33cc2a387af\transformed\play-services-auth-20.7.0\res
-com.example.playsnapui.app-drawerlayout-1.1.1-64 C:\Users\diane\.gradle\caches\transforms-3\da737c2e54d1963710f851b2ed8e7aa5\transformed\drawerlayout-1.1.1\res
-com.example.playsnapui.app-tracing-ktx-1.2.0-65 C:\Users\diane\.gradle\caches\transforms-3\db20e76773568ffd71b3af9f4df57675\transformed\tracing-ktx-1.2.0\res
-com.example.playsnapui.app-camera-video-1.4.1-66 C:\Users\diane\.gradle\caches\transforms-3\dda99dd1b676a31b40c722fddcd585ad\transformed\camera-video-1.4.1\res
-com.example.playsnapui.app-runtime-saveable-1.4.0-67 C:\Users\diane\.gradle\caches\transforms-3\e491192889a98bd2eed8a743a30c721c\transformed\runtime-saveable-1.4.0\res
-com.example.playsnapui.app-lifecycle-viewmodel-savedstate-2.6.2-68 C:\Users\diane\.gradle\caches\transforms-3\e4b88bb68f08e239fb3317afd71bf7dd\transformed\lifecycle-viewmodel-savedstate-2.6.2\res
-com.example.playsnapui.app-activity-ktx-1.9.3-69 C:\Users\diane\.gradle\caches\transforms-3\e4e69cf0de887eaefc524e31de86ee9d\transformed\activity-ktx-1.9.3\res
-com.example.playsnapui.app-ui-1.4.0-70 C:\Users\diane\.gradle\caches\transforms-3\ed96e895b4408c899385064e24e6594c\transformed\ui-1.4.0\res
-com.example.playsnapui.app-material-1.12.0-71 C:\Users\diane\.gradle\caches\transforms-3\eda511739b6133ec74b6d8450ccb7fba\transformed\material-1.12.0\res
-com.example.playsnapui.app-ui-tooling-1.4.0-72 C:\Users\diane\.gradle\caches\transforms-3\f2532dff0d0587f8e3aee6e320d48fc5\transformed\ui-tooling-1.4.0\res
-com.example.playsnapui.app-ui-unit-1.4.0-73 C:\Users\diane\.gradle\caches\transforms-3\f9178a7bb75dd27710a2744e9fc8a4c9\transformed\ui-unit-1.4.0\res
-com.example.playsnapui.app-activity-compose-1.9.3-74 C:\Users\diane\.gradle\caches\transforms-3\f93fdc55b63097637d626c11f2f0fd2b\transformed\activity-compose-1.9.3\res
-com.example.playsnapui.app-transition-1.5.0-75 C:\Users\diane\.gradle\caches\transforms-3\fc1d273cd6f38398efc1ddee10d1bc3d\transformed\transition-1.5.0\res
+com.example.playsnapui.app-firebase-common-21.0.0-0 C:\Users\cryst\.gradle\caches\transforms-3\09dbf02251a0679bb97ba50046000330\transformed\firebase-common-21.0.0\res
+com.example.playsnapui.app-cardview-1.0.0-1 C:\Users\cryst\.gradle\caches\transforms-3\0aa360745900ce7b419867614b123f9a\transformed\cardview-1.0.0\res
+com.example.playsnapui.app-ui-geometry-1.4.0-2 C:\Users\cryst\.gradle\caches\transforms-3\0aa4ef55bb1814ccbdc0d98274cbb692\transformed\ui-geometry-1.4.0\res
+com.example.playsnapui.app-profileinstaller-1.4.0-3 C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\res
+com.example.playsnapui.app-lifecycle-livedata-core-2.6.2-4 C:\Users\cryst\.gradle\caches\transforms-3\0c4e685a119c11ae4d8f4587cd1c8256\transformed\lifecycle-livedata-core-2.6.2\res
+com.example.playsnapui.app-camera-camera2-1.4.1-5 C:\Users\cryst\.gradle\caches\transforms-3\0f6e3898e9bb02a3541d2809b1c96029\transformed\camera-camera2-1.4.1\res
+com.example.playsnapui.app-emoji2-1.3.0-6 C:\Users\cryst\.gradle\caches\transforms-3\0feb2ce08b81920c087049d7c8eac30b\transformed\emoji2-1.3.0\res
+com.example.playsnapui.app-ui-tooling-preview-1.4.0-7 C:\Users\cryst\.gradle\caches\transforms-3\10585b430dbe2b0be75b6981e2fd3d7b\transformed\ui-tooling-preview-1.4.0\res
+com.example.playsnapui.app-ui-tooling-data-1.4.0-8 C:\Users\cryst\.gradle\caches\transforms-3\11bbba668af6eeec56a8162121e78761\transformed\ui-tooling-data-1.4.0\res
+com.example.playsnapui.app-play-services-basement-18.4.0-9 C:\Users\cryst\.gradle\caches\transforms-3\1c28c6e38df06a10aa93f192d9faa2da\transformed\play-services-basement-18.4.0\res
+com.example.playsnapui.app-core-runtime-2.2.0-10 C:\Users\cryst\.gradle\caches\transforms-3\2004b3368fa42c5a8a67bcb006c2dd77\transformed\core-runtime-2.2.0\res
+com.example.playsnapui.app-credentials-play-services-auth-1.2.0-rc01-11 C:\Users\cryst\.gradle\caches\transforms-3\20cbcb0627ea3da5359cc6a41e8c9a16\transformed\credentials-play-services-auth-1.2.0-rc01\res
+com.example.playsnapui.app-lifecycle-runtime-2.6.2-12 C:\Users\cryst\.gradle\caches\transforms-3\20fd7b483130298ef335c42c27e91c16\transformed\lifecycle-runtime-2.6.2\res
+com.example.playsnapui.app-animation-1.4.0-13 C:\Users\cryst\.gradle\caches\transforms-3\232640078184be0cdab3938cc634437b\transformed\animation-1.4.0\res
+com.example.playsnapui.app-material-icons-core-1.4.0-14 C:\Users\cryst\.gradle\caches\transforms-3\24c909fe16c4ac564e12e4b3ccd256ba\transformed\material-icons-core-1.4.0\res
+com.example.playsnapui.app-foundation-layout-1.4.0-15 C:\Users\cryst\.gradle\caches\transforms-3\2d0cdb263e62f1febd59f6f2b5484872\transformed\foundation-layout-1.4.0\res
+com.example.playsnapui.app-core-1.13.0-16 C:\Users\cryst\.gradle\caches\transforms-3\2f55ca72d86bb37246b4715357c2511c\transformed\core-1.13.0\res
+com.example.playsnapui.app-annotation-experimental-1.4.1-17 C:\Users\cryst\.gradle\caches\transforms-3\300446184e27770da9c997e5f0acaab0\transformed\annotation-experimental-1.4.1\res
+com.example.playsnapui.app-core-common-2.0.3-18 C:\Users\cryst\.gradle\caches\transforms-3\344cf92bceb7273231bff2ec4d0fd1e3\transformed\core-common-2.0.3\res
+com.example.playsnapui.app-lifecycle-viewmodel-2.6.2-19 C:\Users\cryst\.gradle\caches\transforms-3\39e9c2c978f2cbdf307bf374d896d338\transformed\lifecycle-viewmodel-2.6.2\res
+com.example.playsnapui.app-camera-lifecycle-1.4.1-20 C:\Users\cryst\.gradle\caches\transforms-3\3a1c2bc8b18e19b5ebc8946fb667484b\transformed\camera-lifecycle-1.4.1\res
+com.example.playsnapui.app-material-ripple-1.4.0-21 C:\Users\cryst\.gradle\caches\transforms-3\3f66db2ed3a98cb62d419efe48e3b79a\transformed\material-ripple-1.4.0\res
+com.example.playsnapui.app-startup-runtime-1.1.1-22 C:\Users\cryst\.gradle\caches\transforms-3\46e6036896969a350e16099103d7dbc4\transformed\startup-runtime-1.1.1\res
+com.example.playsnapui.app-play-services-base-18.0.1-23 C:\Users\cryst\.gradle\caches\transforms-3\47d1d967546a50d3c32e08b665375736\transformed\play-services-base-18.0.1\res
+com.example.playsnapui.app-fragment-1.5.4-24 C:\Users\cryst\.gradle\caches\transforms-3\540a141728639ef166755eb2f69a8ddc\transformed\fragment-1.5.4\res
+com.example.playsnapui.app-constraintlayout-2.2.0-25 C:\Users\cryst\.gradle\caches\transforms-3\55954fc436dbec7f34c92bf8bc7307d9\transformed\constraintlayout-2.2.0\res
+com.example.playsnapui.app-runtime-1.4.0-26 C:\Users\cryst\.gradle\caches\transforms-3\55a9b82bd6dd6c267a400e073635e107\transformed\runtime-1.4.0\res
+com.example.playsnapui.app-tracing-1.2.0-27 C:\Users\cryst\.gradle\caches\transforms-3\57b11b4491ff5f0908bc0ffcffc840a2\transformed\tracing-1.2.0\res
+com.example.playsnapui.app-customview-poolingcontainer-1.0.0-28 C:\Users\cryst\.gradle\caches\transforms-3\5a024ee7ae18832cdc13cac08ab361a7\transformed\customview-poolingcontainer-1.0.0\res
+com.example.playsnapui.app-lifecycle-livedata-2.6.2-29 C:\Users\cryst\.gradle\caches\transforms-3\5bee3da6413f5c744c7ae131952e6a39\transformed\lifecycle-livedata-2.6.2\res
+com.example.playsnapui.app-ui-text-1.4.0-30 C:\Users\cryst\.gradle\caches\transforms-3\5c46d64424ff39169e2f33de79b7eab0\transformed\ui-text-1.4.0\res
+com.example.playsnapui.app-coordinatorlayout-1.1.0-31 C:\Users\cryst\.gradle\caches\transforms-3\5de02f4e2a369c73dd41f1a87ecf0078\transformed\coordinatorlayout-1.1.0\res
+com.example.playsnapui.app-lifecycle-viewmodel-ktx-2.6.2-32 C:\Users\cryst\.gradle\caches\transforms-3\5e16b0addc6d707f312943d31ec979ed\transformed\lifecycle-viewmodel-ktx-2.6.2\res
+com.example.playsnapui.app-material3-1.0.0-33 C:\Users\cryst\.gradle\caches\transforms-3\65164b46674f0e0d2c12a3bbb4e8d236\transformed\material3-1.0.0\res
+com.example.playsnapui.app-savedstate-ktx-1.2.1-34 C:\Users\cryst\.gradle\caches\transforms-3\6eb6d23f11112ae540157b15a0ed5845\transformed\savedstate-ktx-1.2.1\res
+com.example.playsnapui.app-camera-view-1.4.1-35 C:\Users\cryst\.gradle\caches\transforms-3\72b7760553c54b5b37bce78c6eeed355\transformed\camera-view-1.4.1\res
+com.example.playsnapui.app-lifecycle-runtime-ktx-2.6.2-36 C:\Users\cryst\.gradle\caches\transforms-3\7430a0622ae4d6faf604529d428e3513\transformed\lifecycle-runtime-ktx-2.6.2\res
+com.example.playsnapui.app-appcompat-resources-1.7.0-37 C:\Users\cryst\.gradle\caches\transforms-3\746fef1f68a8974e7489416be3bf3579\transformed\appcompat-resources-1.7.0\res
+com.example.playsnapui.app-activity-1.9.3-38 C:\Users\cryst\.gradle\caches\transforms-3\7afbdbaef0a548f777b2392bf05fe8d9\transformed\activity-1.9.3\res
+com.example.playsnapui.app-foundation-1.4.0-39 C:\Users\cryst\.gradle\caches\transforms-3\7cd81c42960819f561e3951f3e39bc6f\transformed\foundation-1.4.0\res
+com.example.playsnapui.app-lifecycle-process-2.6.2-40 C:\Users\cryst\.gradle\caches\transforms-3\7cdb1a6ad3e6b7087eef1dba5a0a8b83\transformed\lifecycle-process-2.6.2\res
+com.example.playsnapui.app-animation-core-1.4.0-41 C:\Users\cryst\.gradle\caches\transforms-3\8fa2b05bb31ec4f357f788cbf9945bbf\transformed\animation-core-1.4.0\res
+com.example.playsnapui.app-ui-test-manifest-1.4.0-42 C:\Users\cryst\.gradle\caches\transforms-3\917efdd78dfb9c7746eab89c0e79ccf7\transformed\ui-test-manifest-1.4.0\res
+com.example.playsnapui.app-browser-1.4.0-43 C:\Users\cryst\.gradle\caches\transforms-3\944cf7a39b3dd9ccb48d2cd9efaf5af4\transformed\browser-1.4.0\res
+com.example.playsnapui.app-emoji2-views-helper-1.3.0-44 C:\Users\cryst\.gradle\caches\transforms-3\9d4cfb7af2ddf6f7b402ae16534969b6\transformed\emoji2-views-helper-1.3.0\res
+com.example.playsnapui.app-recyclerview-1.1.0-45 C:\Users\cryst\.gradle\caches\transforms-3\ab2cbb94dc637fa7aeb2318ed6ac06e9\transformed\recyclerview-1.1.0\res
+com.example.playsnapui.app-savedstate-1.2.1-46 C:\Users\cryst\.gradle\caches\transforms-3\aff9c7c4034e71760a649f50ba32d2da\transformed\savedstate-1.2.1\res
+com.example.playsnapui.app-appcompat-1.7.0-47 C:\Users\cryst\.gradle\caches\transforms-3\b3a3dff2fd1f4fcc42b825d7fc0556bb\transformed\appcompat-1.7.0\res
+com.example.playsnapui.app-camera-core-1.4.1-48 C:\Users\cryst\.gradle\caches\transforms-3\b4ae474c1c95cd6ba73ce645e585f183\transformed\camera-core-1.4.1\res
+com.example.playsnapui.app-material-1.4.0-49 C:\Users\cryst\.gradle\caches\transforms-3\b5364c340f2057f45e907d44fc471808\transformed\material-1.4.0\res
+com.example.playsnapui.app-ui-util-1.4.0-50 C:\Users\cryst\.gradle\caches\transforms-3\bc2b7d3cc30f7936a2563f752fdce18f\transformed\ui-util-1.4.0\res
+com.example.playsnapui.app-credentials-1.2.0-rc01-51 C:\Users\cryst\.gradle\caches\transforms-3\c182ba55479e14ed40c9fadac9ce6289\transformed\credentials-1.2.0-rc01\res
+com.example.playsnapui.app-ui-graphics-1.4.0-52 C:\Users\cryst\.gradle\caches\transforms-3\c5552d455dbe03ca94223e7b561d216c\transformed\ui-graphics-1.4.0\res
+com.example.playsnapui.app-viewpager2-1.0.0-53 C:\Users\cryst\.gradle\caches\transforms-3\c8e51ae4a30308a3fefbe059934b274e\transformed\viewpager2-1.0.0\res
+com.example.playsnapui.app-core-ktx-1.13.0-54 C:\Users\cryst\.gradle\caches\transforms-3\d660a73049008cce1488a7c0444fee2b\transformed\core-ktx-1.13.0\res
+com.example.playsnapui.app-play-services-auth-20.7.0-55 C:\Users\cryst\.gradle\caches\transforms-3\d6723d4abc5b61c45e02a33cc2a387af\transformed\play-services-auth-20.7.0\res
+com.example.playsnapui.app-drawerlayout-1.1.1-56 C:\Users\cryst\.gradle\caches\transforms-3\da737c2e54d1963710f851b2ed8e7aa5\transformed\drawerlayout-1.1.1\res
+com.example.playsnapui.app-tracing-ktx-1.2.0-57 C:\Users\cryst\.gradle\caches\transforms-3\db20e76773568ffd71b3af9f4df57675\transformed\tracing-ktx-1.2.0\res
+com.example.playsnapui.app-camera-video-1.4.1-58 C:\Users\cryst\.gradle\caches\transforms-3\dda99dd1b676a31b40c722fddcd585ad\transformed\camera-video-1.4.1\res
+com.example.playsnapui.app-runtime-saveable-1.4.0-59 C:\Users\cryst\.gradle\caches\transforms-3\e491192889a98bd2eed8a743a30c721c\transformed\runtime-saveable-1.4.0\res
+com.example.playsnapui.app-lifecycle-viewmodel-savedstate-2.6.2-60 C:\Users\cryst\.gradle\caches\transforms-3\e4b88bb68f08e239fb3317afd71bf7dd\transformed\lifecycle-viewmodel-savedstate-2.6.2\res
+com.example.playsnapui.app-activity-ktx-1.9.3-61 C:\Users\cryst\.gradle\caches\transforms-3\e4e69cf0de887eaefc524e31de86ee9d\transformed\activity-ktx-1.9.3\res
+com.example.playsnapui.app-ui-1.4.0-62 C:\Users\cryst\.gradle\caches\transforms-3\ed96e895b4408c899385064e24e6594c\transformed\ui-1.4.0\res
+com.example.playsnapui.app-material-1.12.0-63 C:\Users\cryst\.gradle\caches\transforms-3\eda511739b6133ec74b6d8450ccb7fba\transformed\material-1.12.0\res
+com.example.playsnapui.app-ui-tooling-1.4.0-64 C:\Users\cryst\.gradle\caches\transforms-3\f2532dff0d0587f8e3aee6e320d48fc5\transformed\ui-tooling-1.4.0\res
+com.example.playsnapui.app-ui-unit-1.4.0-65 C:\Users\cryst\.gradle\caches\transforms-3\f9178a7bb75dd27710a2744e9fc8a4c9\transformed\ui-unit-1.4.0\res
+com.example.playsnapui.app-activity-compose-1.9.3-66 C:\Users\cryst\.gradle\caches\transforms-3\f93fdc55b63097637d626c11f2f0fd2b\transformed\activity-compose-1.9.3\res
+com.example.playsnapui.app-transition-1.5.0-67 C:\Users\cryst\.gradle\caches\transforms-3\fc1d273cd6f38398efc1ddee10d1bc3d\transformed\transition-1.5.0\res
+com.example.playsnapui.app-pngs-68 C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\build\generated\res\pngs\debug
+com.example.playsnapui.app-res-69 C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\build\generated\res\processDebugGoogleServices
+com.example.playsnapui.app-resValues-70 C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\build\generated\res\resValues\debug
+com.example.playsnapui.app-packageDebugResources-71 C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.playsnapui.app-packageDebugResources-72 C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.playsnapui.app-merged_res-73 C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\build\intermediates\merged_res\debug
+com.example.playsnapui.app-debug-74 C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\debug\res
+com.example.playsnapui.app-main-75 C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\res

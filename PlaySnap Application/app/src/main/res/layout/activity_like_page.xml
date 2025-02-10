@@ -101,15 +101,5 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-    <include
-        android:id="@+id/include"
-        layout="@layout/activity_navigation_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:gravity="bottom"
-        android:layout_above="@id/MyScrollView"
 
-        />
 </androidx.constraintlayout.widget.ConstraintLayout>

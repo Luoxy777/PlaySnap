@@ -7,6 +7,17 @@
     android:background="@color/sky_blue"
     >
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_back"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="40dp"
+        android:background="@drawable/back_button"
+        android:backgroundTint="@color/dark_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
@@ -17,25 +28,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <include
-        android:id="@+id/include3"
-        layout="@layout/activity_navigation_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="40dp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_back"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/back_button"
-        android:backgroundTint="@color/dark_blue"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/tv_manage_object_title"
         android:fontFamily="@font/leaguespartanbold"
@@ -43,13 +35,11 @@
         android:textSize="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:text="@string/tv_manage_object_title"
+        android:text="Siap Bermain?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@id/btn_back" />
 
     <TextView
         android:id="@+id/tv_manage_object_subtitle"
@@ -89,20 +79,20 @@
         app:startIconDrawable="@drawable/ic_search" />
 
     <ImageView
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="112dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="130dp"
         android:background="@drawable/ic_balok_kayu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.919"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="35dp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="130dp"
         android:background="@drawable/ic_toys"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
