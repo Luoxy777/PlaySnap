@@ -9,524 +9,377 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-feature android:name="android.hardware.camera.any" />
-11-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:5:5-63
-11-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:5:19-61
+11-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:5:5-64
+11-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:5:19-61
 12
 13    <uses-permission android:name="android.permission.CAMERA" />
-13-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:6:5-64
-13-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:6:22-62
+13-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:7:5-65
+13-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:7:22-62
 14    <uses-permission
-14-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:7:5-107
+14-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:8:5-10:38
 15        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-15-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:7:22-78
+15-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:9:9-65
 16        android:maxSdkVersion="34" />
-16-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:7:79-105
+16-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:10:9-35
 17    <uses-permission android:name="android.permission.INTERNET" />
-17-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:25:5-67
-17-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:25:22-64
+17-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:25:5-67
+17-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:25:22-64
 18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-18-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:26:5-79
-18-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:26:22-76
-19    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-19-->[com.google.android.recaptcha:recaptcha:18.5.1] C:\Users\cryst\.gradle\caches\transforms-3\554017532827f50016286811e4352a72\transformed\recaptcha-18.5.1\AndroidManifest.xml:9:5-98
-19-->[com.google.android.recaptcha:recaptcha:18.5.1] C:\Users\cryst\.gradle\caches\transforms-3\554017532827f50016286811e4352a72\transformed\recaptcha-18.5.1\AndroidManifest.xml:9:22-95
-20
-21    <permission
-21-->[androidx.core:core:1.13.0] C:\Users\cryst\.gradle\caches\transforms-3\2f55ca72d86bb37246b4715357c2511c\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
-22        android:name="com.example.playsnapui.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-22-->[androidx.core:core:1.13.0] C:\Users\cryst\.gradle\caches\transforms-3\2f55ca72d86bb37246b4715357c2511c\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
-23        android:protectionLevel="signature" />
-23-->[androidx.core:core:1.13.0] C:\Users\cryst\.gradle\caches\transforms-3\2f55ca72d86bb37246b4715357c2511c\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
-24
-25    <uses-permission android:name="com.example.playsnapui.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-25-->[androidx.core:core:1.13.0] C:\Users\cryst\.gradle\caches\transforms-3\2f55ca72d86bb37246b4715357c2511c\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
-25-->[androidx.core:core:1.13.0] C:\Users\cryst\.gradle\caches\transforms-3\2f55ca72d86bb37246b4715357c2511c\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+18-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:26:5-79
+18-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:26:22-76
+19    <uses-permission android:name="android.permission.WAKE_LOCK" />
+19-->[com.google.android.gms:play-services-measurement:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\d337fa7540949bbf5b96b7db7a2425c7\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:25:5-68
+19-->[com.google.android.gms:play-services-measurement:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\d337fa7540949bbf5b96b7db7a2425c7\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:25:22-65
+20    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+20-->[com.google.android.gms:play-services-measurement:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\d337fa7540949bbf5b96b7db7a2425c7\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:26:5-110
+20-->[com.google.android.gms:play-services-measurement:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\d337fa7540949bbf5b96b7db7a2425c7\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:26:22-107
+21    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+21-->[com.google.android.gms:play-services-measurement-api:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\65a040812c905e10cf7b7ad3c377f75c\transformed\jetified-play-services-measurement-api-21.2.2\AndroidManifest.xml:25:5-79
+21-->[com.google.android.gms:play-services-measurement-api:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\65a040812c905e10cf7b7ad3c377f75c\transformed\jetified-play-services-measurement-api-21.2.2\AndroidManifest.xml:25:22-76
+22
+23    <permission
+23-->[androidx.core:core:1.13.0] C:\Users\diane\.gradle\caches\transforms-3\6c25d772d9be7f493c51fa15dd6bac02\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+24        android:name="com.example.playsnapui.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+24-->[androidx.core:core:1.13.0] C:\Users\diane\.gradle\caches\transforms-3\6c25d772d9be7f493c51fa15dd6bac02\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+25        android:protectionLevel="signature" />
+25-->[androidx.core:core:1.13.0] C:\Users\diane\.gradle\caches\transforms-3\6c25d772d9be7f493c51fa15dd6bac02\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
 26
-27    <application
-27-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:8:5-107:19
-28        android:allowBackup="true"
-28-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:9:9-35
-29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-29-->[androidx.core:core:1.13.0] C:\Users\cryst\.gradle\caches\transforms-3\2f55ca72d86bb37246b4715357c2511c\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
-30        android:dataExtractionRules="@xml/data_extraction_rules"
-30-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:10:9-65
-31        android:debuggable="true"
-32        android:extractNativeLibs="false"
-33        android:fullBackupContent="@xml/backup_rules"
-33-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:11:9-54
-34        android:icon="@drawable/playsnaplogo"
-34-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:12:9-46
-35        android:label="PlaySnap"
-35-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:13:9-33
-36        android:roundIcon="@drawable/playsnaplogo"
-36-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:14:9-51
-37        android:supportsRtl="true"
-37-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:15:9-35
-38        android:testOnly="true"
-39        android:theme="@style/Theme.PlaySnapUI" >
-39-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:16:9-48
-40        <activity
-40-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:18:9-20:40
-41            android:name="com.example.playsnapui.SearchByTypeActivity"
-41-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:19:13-49
-42            android:exported="false" />
-42-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:20:13-37
-43        <activity
-43-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:21:9-23:40
-44            android:name="com.example.playsnapui.SearchByCameraActivity"
-44-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:22:13-51
-45            android:exported="false" />
-45-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:23:13-37
-46        <activity
-46-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:24:9-26:40
-47            android:name="com.example.playsnapui.ReportPageActivity"
-47-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:25:13-47
-48            android:exported="false" />
-48-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:26:13-37
-49        <activity
-49-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:27:9-29:40
-50            android:name="com.example.playsnapui.SettingsAccountPageActivity"
-50-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:28:13-56
-51            android:exported="false" />
-51-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:29:13-37
-52        <activity
-52-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:30:9-32:40
-53            android:name="com.example.playsnapui.EditPasswordPageActivity"
-53-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:31:13-53
-54            android:exported="false" />
-54-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:32:13-37
-55        <activity
-55-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:33:9-35:40
-56            android:name="com.example.playsnapui.EditProfilePageActivity"
-56-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:34:13-52
-57            android:exported="false" />
-57-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:35:13-37
-58        <activity
-58-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:36:9-38:40
-59            android:name="com.example.playsnapui.ReportPageSuccessActivity"
-59-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:37:13-54
-60            android:exported="false" />
-60-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:38:13-37
-61        <activity
-61-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:39:9-41:40
-62            android:name="com.example.playsnapui.HelpPageReqSuccessActivity"
-62-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:40:13-55
-63            android:exported="false" />
-63-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:41:13-37
-64        <activity
-64-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:42:9-44:40
-65            android:name="com.example.playsnapui.HelpPageReqActivity"
-65-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:43:13-48
-66            android:exported="false" />
-66-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:44:13-37
-67        <activity
-67-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:45:9-47:40
-68            android:name="com.example.playsnapui.HelpPageQ7Activity"
-68-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:46:13-47
-69            android:exported="false" />
-69-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:47:13-37
-70        <activity
-70-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:48:9-50:40
-71            android:name="com.example.playsnapui.HelpPageQ6Activity"
-71-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:49:13-47
-72            android:exported="false" />
-72-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:50:13-37
-73        <activity
-73-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:51:9-53:40
-74            android:name="com.example.playsnapui.HelpPageQ5Activity"
-74-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:52:13-47
-75            android:exported="false" />
-75-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:53:13-37
-76        <activity
-76-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:54:9-56:40
-77            android:name="com.example.playsnapui.HelpPageQ4Activity"
-77-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:55:13-47
-78            android:exported="false" />
-78-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:56:13-37
-79        <activity
-79-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:57:9-59:40
-80            android:name="com.example.playsnapui.HelpPageQ3Activity"
-80-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:58:13-47
-81            android:exported="false" />
-81-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:59:13-37
-82        <activity
-82-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:60:9-62:40
-83            android:name="com.example.playsnapui.HelpPageQ2Activity"
-83-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:61:13-47
-84            android:exported="false" />
-84-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:62:13-37
-85        <activity
-85-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:63:9-65:40
-86            android:name="com.example.playsnapui.HelpPageQ1Activity"
-86-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:64:13-47
-87            android:exported="false" />
-87-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:65:13-37
-88        <activity
-88-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:66:9-68:40
-89            android:name="com.example.playsnapui.HelpPageActivity"
-89-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:67:13-45
-90            android:exported="false" />
-90-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:68:13-37
-91        <activity
-91-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:69:9-71:40
-92            android:name="com.example.playsnapui.ProfilePageActivity"
-92-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:70:13-48
-93            android:exported="false" />
-93-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:71:13-37
-94        <activity
-94-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:72:9-74:40
-95            android:name="com.example.playsnapui.BookmarkPageActivity"
-95-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:73:13-49
-96            android:exported="false" />
-96-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:74:13-37
-97        <activity
-97-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:75:9-77:40
-98            android:name="com.example.playsnapui.LikePageActivity"
-98-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:76:13-45
-99            android:exported="false" />
-99-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:77:13-37
-100        <activity
-100-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:78:9-80:40
-101            android:name="com.example.playsnapui.NavigationBar"
-101-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:79:13-42
-102            android:exported="false" />
-102-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:80:13-37
-103        <activity
-103-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:81:9-84:55
-104            android:name="com.example.playsnapui.HomePageActivity"
-104-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:82:13-45
-105            android:exported="false"
-105-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:83:13-37
-106            android:windowSoftInputMode="adjustPan" />
-106-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:84:13-52
-107        <activity
-107-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:85:9-87:40
-108            android:name="com.example.playsnapui.RegisterActivity"
-108-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:86:13-45
-109            android:exported="false" />
-109-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:87:13-37
-110        <activity
-110-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:88:9-90:40
-111            android:name="com.example.playsnapui.LoginActivity"
-111-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:89:13-42
-112            android:exported="false" />
-112-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:90:13-37
-113        <activity
-113-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:91:9-99:20
-114            android:name="com.example.playsnapui.MainActivity"
-114-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:92:13-41
-115            android:exported="true" >
-115-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:93:13-36
-116            <intent-filter>
-116-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:94:13-98:29
-117                <action android:name="android.intent.action.MAIN" />
-117-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:95:17-69
-117-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:95:25-66
-118
-119                <category android:name="android.intent.category.LAUNCHER" />
-119-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:97:17-77
-119-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:97:27-74
-120            </intent-filter>
-121        </activity>
-122        <activity
-122-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:100:9-102:55
-123            android:name="com.example.playsnapui.BottomSheet"
-123-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:101:13-40
-124            android:theme="@style/TransparentTheme" />
-124-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:102:13-52
-125        <activity
-125-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:103:9-105:40
-126            android:name="com.example.playsnapui.FilterPageActivity"
-126-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:104:13-47
-127            android:exported="false" />
-127-->C:\Users\cryst\OneDrive - Bina Nusantara\Documents\PPTI CAWU 4\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:105:13-37
-128        <activity
-128-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:29:9-46:20
-129            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-129-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:30:13-80
-130            android:excludeFromRecents="true"
-130-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:31:13-46
-131            android:exported="true"
-131-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:32:13-36
-132            android:launchMode="singleTask"
-132-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:33:13-44
-133            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-133-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:34:13-72
-134            <intent-filter>
-134-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:35:13-45:29
-135                <action android:name="android.intent.action.VIEW" />
-135-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:36:17-69
-135-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:36:25-66
-136
-137                <category android:name="android.intent.category.DEFAULT" />
-137-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:38:17-76
-137-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:38:27-73
-138                <category android:name="android.intent.category.BROWSABLE" />
-138-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:39:17-78
-138-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:39:27-75
-139
-140                <data
-140-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:41:17-44:51
-141                    android:host="firebase.auth"
-141-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:42:21-49
-142                    android:path="/"
-142-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:43:21-37
-143                    android:scheme="genericidp" />
-143-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:44:21-48
-144            </intent-filter>
-145        </activity>
-146        <activity
-146-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:47:9-64:20
-147            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-147-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:48:13-79
-148            android:excludeFromRecents="true"
-148-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:49:13-46
-149            android:exported="true"
-149-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:50:13-36
-150            android:launchMode="singleTask"
-150-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:51:13-44
-151            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-151-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:52:13-72
-152            <intent-filter>
-152-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:53:13-63:29
-153                <action android:name="android.intent.action.VIEW" />
-153-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:36:17-69
-153-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:36:25-66
-154
-155                <category android:name="android.intent.category.DEFAULT" />
-155-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:38:17-76
-155-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:38:27-73
-156                <category android:name="android.intent.category.BROWSABLE" />
-156-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:39:17-78
-156-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:39:27-75
-157
-158                <data
-158-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:41:17-44:51
-159                    android:host="firebase.auth"
-159-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:42:21-49
-160                    android:path="/"
-160-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:43:21-37
-161                    android:scheme="recaptcha" />
-161-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:44:21-48
-162            </intent-filter>
-163        </activity>
-164
-165        <service
-165-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:66:9-72:19
-166            android:name="com.google.firebase.components.ComponentDiscoveryService"
-166-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:67:13-84
-167            android:directBootAware="true"
-167-->[com.google.firebase:firebase-common:21.0.0] C:\Users\cryst\.gradle\caches\transforms-3\09dbf02251a0679bb97ba50046000330\transformed\firebase-common-21.0.0\AndroidManifest.xml:32:13-43
-168            android:exported="false" >
-168-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:68:13-37
-169            <meta-data
-169-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:69:13-71:85
-170                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-170-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:70:17-109
-171                android:value="com.google.firebase.components.ComponentRegistrar" />
-171-->[com.google.firebase:firebase-auth:23.1.0] C:\Users\cryst\.gradle\caches\transforms-3\58c526942ee2fc26f5e8f281fee46813\transformed\firebase-auth-23.1.0\AndroidManifest.xml:71:17-82
-172            <meta-data
-172-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\cryst\.gradle\caches\transforms-3\8b65ac6a4ea2367bcb541ba059eff61f\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
-173                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
-173-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\cryst\.gradle\caches\transforms-3\8b65ac6a4ea2367bcb541ba059eff61f\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
-174                android:value="com.google.firebase.components.ComponentRegistrar" />
-174-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\cryst\.gradle\caches\transforms-3\8b65ac6a4ea2367bcb541ba059eff61f\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
-175            <meta-data
-175-->[com.google.firebase:firebase-common:21.0.0] C:\Users\cryst\.gradle\caches\transforms-3\09dbf02251a0679bb97ba50046000330\transformed\firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
-176                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
-176-->[com.google.firebase:firebase-common:21.0.0] C:\Users\cryst\.gradle\caches\transforms-3\09dbf02251a0679bb97ba50046000330\transformed\firebase-common-21.0.0\AndroidManifest.xml:36:17-109
-177                android:value="com.google.firebase.components.ComponentRegistrar" />
-177-->[com.google.firebase:firebase-common:21.0.0] C:\Users\cryst\.gradle\caches\transforms-3\09dbf02251a0679bb97ba50046000330\transformed\firebase-common-21.0.0\AndroidManifest.xml:37:17-82
-178        </service>
-179        <service
-179-->[androidx.camera:camera-camera2:1.4.1] C:\Users\cryst\.gradle\caches\transforms-3\0f6e3898e9bb02a3541d2809b1c96029\transformed\camera-camera2-1.4.1\AndroidManifest.xml:24:9-33:19
-180            android:name="androidx.camera.core.impl.MetadataHolderService"
-180-->[androidx.camera:camera-camera2:1.4.1] C:\Users\cryst\.gradle\caches\transforms-3\0f6e3898e9bb02a3541d2809b1c96029\transformed\camera-camera2-1.4.1\AndroidManifest.xml:25:13-75
-181            android:enabled="false"
-181-->[androidx.camera:camera-camera2:1.4.1] C:\Users\cryst\.gradle\caches\transforms-3\0f6e3898e9bb02a3541d2809b1c96029\transformed\camera-camera2-1.4.1\AndroidManifest.xml:26:13-36
-182            android:exported="false" >
-182-->[androidx.camera:camera-camera2:1.4.1] C:\Users\cryst\.gradle\caches\transforms-3\0f6e3898e9bb02a3541d2809b1c96029\transformed\camera-camera2-1.4.1\AndroidManifest.xml:27:13-37
-183            <meta-data
-183-->[androidx.camera:camera-camera2:1.4.1] C:\Users\cryst\.gradle\caches\transforms-3\0f6e3898e9bb02a3541d2809b1c96029\transformed\camera-camera2-1.4.1\AndroidManifest.xml:30:13-32:89
-184                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
-184-->[androidx.camera:camera-camera2:1.4.1] C:\Users\cryst\.gradle\caches\transforms-3\0f6e3898e9bb02a3541d2809b1c96029\transformed\camera-camera2-1.4.1\AndroidManifest.xml:31:17-103
-185                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
-185-->[androidx.camera:camera-camera2:1.4.1] C:\Users\cryst\.gradle\caches\transforms-3\0f6e3898e9bb02a3541d2809b1c96029\transformed\camera-camera2-1.4.1\AndroidManifest.xml:32:17-86
-186        </service>
-187
-188        <activity
-188-->[androidx.compose.ui:ui-test-manifest:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\917efdd78dfb9c7746eab89c0e79ccf7\transformed\ui-test-manifest-1.4.0\AndroidManifest.xml:23:9-25:39
-189            android:name="androidx.activity.ComponentActivity"
-189-->[androidx.compose.ui:ui-test-manifest:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\917efdd78dfb9c7746eab89c0e79ccf7\transformed\ui-test-manifest-1.4.0\AndroidManifest.xml:24:13-63
-190            android:exported="true" />
-190-->[androidx.compose.ui:ui-test-manifest:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\917efdd78dfb9c7746eab89c0e79ccf7\transformed\ui-test-manifest-1.4.0\AndroidManifest.xml:25:13-36
-191        <activity
-191-->[androidx.compose.ui:ui-tooling:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\f2532dff0d0587f8e3aee6e320d48fc5\transformed\ui-tooling-1.4.0\AndroidManifest.xml:23:9-25:39
-192            android:name="androidx.compose.ui.tooling.PreviewActivity"
-192-->[androidx.compose.ui:ui-tooling:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\f2532dff0d0587f8e3aee6e320d48fc5\transformed\ui-tooling-1.4.0\AndroidManifest.xml:24:13-71
-193            android:exported="true" />
-193-->[androidx.compose.ui:ui-tooling:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\f2532dff0d0587f8e3aee6e320d48fc5\transformed\ui-tooling-1.4.0\AndroidManifest.xml:25:13-36
-194
-195        <service
-195-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\cryst\.gradle\caches\transforms-3\20cbcb0627ea3da5359cc6a41e8c9a16\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:24:9-32:19
-196            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
-196-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\cryst\.gradle\caches\transforms-3\20cbcb0627ea3da5359cc6a41e8c9a16\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:25:13-94
-197            android:enabled="true"
-197-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\cryst\.gradle\caches\transforms-3\20cbcb0627ea3da5359cc6a41e8c9a16\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:26:13-35
-198            android:exported="false" >
-198-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\cryst\.gradle\caches\transforms-3\20cbcb0627ea3da5359cc6a41e8c9a16\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:27:13-37
-199            <meta-data
-199-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\cryst\.gradle\caches\transforms-3\20cbcb0627ea3da5359cc6a41e8c9a16\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:29:13-31:104
-200                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
-200-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\cryst\.gradle\caches\transforms-3\20cbcb0627ea3da5359cc6a41e8c9a16\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:30:17-76
-201                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
-201-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\cryst\.gradle\caches\transforms-3\20cbcb0627ea3da5359cc6a41e8c9a16\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:31:17-101
-202        </service>
-203
-204        <activity
-204-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\cryst\.gradle\caches\transforms-3\20cbcb0627ea3da5359cc6a41e8c9a16\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:34:9-41:20
-205            android:name="androidx.credentials.playservices.HiddenActivity"
-205-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\cryst\.gradle\caches\transforms-3\20cbcb0627ea3da5359cc6a41e8c9a16\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:35:13-76
-206            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-206-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\cryst\.gradle\caches\transforms-3\20cbcb0627ea3da5359cc6a41e8c9a16\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:36:13-87
-207            android:enabled="true"
-207-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\cryst\.gradle\caches\transforms-3\20cbcb0627ea3da5359cc6a41e8c9a16\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:37:13-35
-208            android:exported="false"
-208-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\cryst\.gradle\caches\transforms-3\20cbcb0627ea3da5359cc6a41e8c9a16\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:38:13-37
-209            android:fitsSystemWindows="true"
-209-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\cryst\.gradle\caches\transforms-3\20cbcb0627ea3da5359cc6a41e8c9a16\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:39:13-45
-210            android:theme="@style/Theme.Hidden" >
-210-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\cryst\.gradle\caches\transforms-3\20cbcb0627ea3da5359cc6a41e8c9a16\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:40:13-48
-211        </activity>
-212        <activity
-212-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\cryst\.gradle\caches\transforms-3\d6723d4abc5b61c45e02a33cc2a387af\transformed\play-services-auth-20.7.0\AndroidManifest.xml:23:9-27:75
-213            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-213-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\cryst\.gradle\caches\transforms-3\d6723d4abc5b61c45e02a33cc2a387af\transformed\play-services-auth-20.7.0\AndroidManifest.xml:24:13-93
-214            android:excludeFromRecents="true"
-214-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\cryst\.gradle\caches\transforms-3\d6723d4abc5b61c45e02a33cc2a387af\transformed\play-services-auth-20.7.0\AndroidManifest.xml:25:13-46
-215            android:exported="false"
-215-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\cryst\.gradle\caches\transforms-3\d6723d4abc5b61c45e02a33cc2a387af\transformed\play-services-auth-20.7.0\AndroidManifest.xml:26:13-37
-216            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-216-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\cryst\.gradle\caches\transforms-3\d6723d4abc5b61c45e02a33cc2a387af\transformed\play-services-auth-20.7.0\AndroidManifest.xml:27:13-72
-217        <!--
-218            Service handling Google Sign-In user revocation. For apps that do not integrate with
-219            Google Sign-In, this service will never be started.
-220        -->
-221        <service
-221-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\cryst\.gradle\caches\transforms-3\d6723d4abc5b61c45e02a33cc2a387af\transformed\play-services-auth-20.7.0\AndroidManifest.xml:33:9-37:51
-222            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-222-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\cryst\.gradle\caches\transforms-3\d6723d4abc5b61c45e02a33cc2a387af\transformed\play-services-auth-20.7.0\AndroidManifest.xml:34:13-89
-223            android:exported="true"
-223-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\cryst\.gradle\caches\transforms-3\d6723d4abc5b61c45e02a33cc2a387af\transformed\play-services-auth-20.7.0\AndroidManifest.xml:35:13-36
-224            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-224-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\cryst\.gradle\caches\transforms-3\d6723d4abc5b61c45e02a33cc2a387af\transformed\play-services-auth-20.7.0\AndroidManifest.xml:36:13-107
-225            android:visibleToInstantApps="true" />
-225-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\cryst\.gradle\caches\transforms-3\d6723d4abc5b61c45e02a33cc2a387af\transformed\play-services-auth-20.7.0\AndroidManifest.xml:37:13-48
-226
-227        <provider
-227-->[com.google.firebase:firebase-common:21.0.0] C:\Users\cryst\.gradle\caches\transforms-3\09dbf02251a0679bb97ba50046000330\transformed\firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
-228            android:name="com.google.firebase.provider.FirebaseInitProvider"
-228-->[com.google.firebase:firebase-common:21.0.0] C:\Users\cryst\.gradle\caches\transforms-3\09dbf02251a0679bb97ba50046000330\transformed\firebase-common-21.0.0\AndroidManifest.xml:24:13-77
-229            android:authorities="com.example.playsnapui.firebaseinitprovider"
-229-->[com.google.firebase:firebase-common:21.0.0] C:\Users\cryst\.gradle\caches\transforms-3\09dbf02251a0679bb97ba50046000330\transformed\firebase-common-21.0.0\AndroidManifest.xml:25:13-72
-230            android:directBootAware="true"
-230-->[com.google.firebase:firebase-common:21.0.0] C:\Users\cryst\.gradle\caches\transforms-3\09dbf02251a0679bb97ba50046000330\transformed\firebase-common-21.0.0\AndroidManifest.xml:26:13-43
-231            android:exported="false"
-231-->[com.google.firebase:firebase-common:21.0.0] C:\Users\cryst\.gradle\caches\transforms-3\09dbf02251a0679bb97ba50046000330\transformed\firebase-common-21.0.0\AndroidManifest.xml:27:13-37
-232            android:initOrder="100" />
-232-->[com.google.firebase:firebase-common:21.0.0] C:\Users\cryst\.gradle\caches\transforms-3\09dbf02251a0679bb97ba50046000330\transformed\firebase-common-21.0.0\AndroidManifest.xml:28:13-36
-233
-234        <activity
-234-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\cryst\.gradle\caches\transforms-3\47d1d967546a50d3c32e08b665375736\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
-235            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-235-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\cryst\.gradle\caches\transforms-3\47d1d967546a50d3c32e08b665375736\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:19-85
-236            android:exported="false"
-236-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\cryst\.gradle\caches\transforms-3\47d1d967546a50d3c32e08b665375736\transformed\play-services-base-18.0.1\AndroidManifest.xml:22:19-43
-237            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-237-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\cryst\.gradle\caches\transforms-3\47d1d967546a50d3c32e08b665375736\transformed\play-services-base-18.0.1\AndroidManifest.xml:21:19-78
-238
-239        <meta-data
-239-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\cryst\.gradle\caches\transforms-3\1c28c6e38df06a10aa93f192d9faa2da\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
-240            android:name="com.google.android.gms.version"
-240-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\cryst\.gradle\caches\transforms-3\1c28c6e38df06a10aa93f192d9faa2da\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
-241            android:value="@integer/google_play_services_version" />
-241-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\cryst\.gradle\caches\transforms-3\1c28c6e38df06a10aa93f192d9faa2da\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
-242
-243        <provider
-243-->[androidx.emoji2:emoji2:1.3.0] C:\Users\cryst\.gradle\caches\transforms-3\0feb2ce08b81920c087049d7c8eac30b\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-244            android:name="androidx.startup.InitializationProvider"
-244-->[androidx.emoji2:emoji2:1.3.0] C:\Users\cryst\.gradle\caches\transforms-3\0feb2ce08b81920c087049d7c8eac30b\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
-245            android:authorities="com.example.playsnapui.androidx-startup"
-245-->[androidx.emoji2:emoji2:1.3.0] C:\Users\cryst\.gradle\caches\transforms-3\0feb2ce08b81920c087049d7c8eac30b\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
-246            android:exported="false" >
-246-->[androidx.emoji2:emoji2:1.3.0] C:\Users\cryst\.gradle\caches\transforms-3\0feb2ce08b81920c087049d7c8eac30b\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
-247            <meta-data
-247-->[androidx.emoji2:emoji2:1.3.0] C:\Users\cryst\.gradle\caches\transforms-3\0feb2ce08b81920c087049d7c8eac30b\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-248                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-248-->[androidx.emoji2:emoji2:1.3.0] C:\Users\cryst\.gradle\caches\transforms-3\0feb2ce08b81920c087049d7c8eac30b\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
-249                android:value="androidx.startup" />
-249-->[androidx.emoji2:emoji2:1.3.0] C:\Users\cryst\.gradle\caches\transforms-3\0feb2ce08b81920c087049d7c8eac30b\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
-250            <meta-data
-250-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\cryst\.gradle\caches\transforms-3\7cdb1a6ad3e6b7087eef1dba5a0a8b83\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
-251                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-251-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\cryst\.gradle\caches\transforms-3\7cdb1a6ad3e6b7087eef1dba5a0a8b83\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
-252                android:value="androidx.startup" />
-252-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\cryst\.gradle\caches\transforms-3\7cdb1a6ad3e6b7087eef1dba5a0a8b83\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
-253            <meta-data
-253-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
-254                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-254-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
-255                android:value="androidx.startup" />
-255-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
-256        </provider>
-257
-258        <receiver
-258-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
-259            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-259-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
-260            android:directBootAware="false"
-260-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
-261            android:enabled="true"
-261-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
-262            android:exported="true"
-262-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
-263            android:permission="android.permission.DUMP" >
-263-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
-264            <intent-filter>
-264-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
-265                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-265-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
-265-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
-266            </intent-filter>
-267            <intent-filter>
-267-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
-268                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-268-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
-268-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
-269            </intent-filter>
-270            <intent-filter>
-270-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
-271                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-271-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
-271-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
-272            </intent-filter>
-273            <intent-filter>
-273-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
-274                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-274-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
-274-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\cryst\.gradle\caches\transforms-3\0bad8de5b28e44d46bd18380c509b78f\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
-275            </intent-filter>
-276        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
-277        <activity
-277-->[com.google.android.play:core-common:2.0.3] C:\Users\cryst\.gradle\caches\transforms-3\344cf92bceb7273231bff2ec4d0fd1e3\transformed\core-common-2.0.3\AndroidManifest.xml:14:9-18:65
-278            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
-278-->[com.google.android.play:core-common:2.0.3] C:\Users\cryst\.gradle\caches\transforms-3\344cf92bceb7273231bff2ec4d0fd1e3\transformed\core-common-2.0.3\AndroidManifest.xml:15:13-93
-279            android:exported="false"
-279-->[com.google.android.play:core-common:2.0.3] C:\Users\cryst\.gradle\caches\transforms-3\344cf92bceb7273231bff2ec4d0fd1e3\transformed\core-common-2.0.3\AndroidManifest.xml:16:13-37
-280            android:stateNotNeeded="true"
-280-->[com.google.android.play:core-common:2.0.3] C:\Users\cryst\.gradle\caches\transforms-3\344cf92bceb7273231bff2ec4d0fd1e3\transformed\core-common-2.0.3\AndroidManifest.xml:17:13-42
-281            android:theme="@style/Theme.PlayCore.Transparent" />
-281-->[com.google.android.play:core-common:2.0.3] C:\Users\cryst\.gradle\caches\transforms-3\344cf92bceb7273231bff2ec4d0fd1e3\transformed\core-common-2.0.3\AndroidManifest.xml:18:13-62
-282    </application>
-283
-284</manifest>
+27    <uses-permission android:name="com.example.playsnapui.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+27-->[androidx.core:core:1.13.0] C:\Users\diane\.gradle\caches\transforms-3\6c25d772d9be7f493c51fa15dd6bac02\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+27-->[androidx.core:core:1.13.0] C:\Users\diane\.gradle\caches\transforms-3\6c25d772d9be7f493c51fa15dd6bac02\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+28
+29    <application
+29-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:12:5-48:19
+30        android:name="com.example.playsnapui.MyApplication"
+30-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:21:9-38
+31        android:allowBackup="true"
+31-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:13:9-35
+32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+32-->[androidx.core:core:1.13.0] C:\Users\diane\.gradle\caches\transforms-3\6c25d772d9be7f493c51fa15dd6bac02\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+33        android:dataExtractionRules="@xml/data_extraction_rules"
+33-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:14:9-65
+34        android:debuggable="true"
+35        android:extractNativeLibs="false"
+36        android:fullBackupContent="@xml/backup_rules"
+36-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:15:9-54
+37        android:icon="@drawable/playsnaplogo"
+37-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:16:9-46
+38        android:label="PlaySnap"
+38-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:17:9-33
+39        android:roundIcon="@drawable/playsnaplogo"
+39-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:18:9-51
+40        android:supportsRtl="true"
+40-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:19:9-35
+41        android:testOnly="true"
+42        android:theme="@style/Theme.PlaySnapUI" >
+42-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:22:9-48
+43
+44        <!-- SplashActivity as the launcher activity -->
+45        <activity
+45-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:27:9-35:20
+46            android:name="com.example.playsnapui.SplashActivity"
+46-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:28:13-43
+47            android:exported="true"
+47-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:30:13-36
+48            android:theme="@style/Theme.PlaySnapUI.Splash" >
+48-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:29:13-59
+49            <intent-filter>
+49-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:31:13-34:29
+50                <action android:name="android.intent.action.MAIN" />
+50-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:32:17-69
+50-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:32:25-66
+51
+52                <category android:name="android.intent.category.LAUNCHER" />
+52-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:33:17-77
+52-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:33:27-74
+53            </intent-filter>
+54        </activity>
+55
+56        <!-- AuthActivity -->
+57        <activity
+57-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:39:9-41:40
+58            android:name="com.example.playsnapui.AuthActivity"
+58-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:40:13-41
+59            android:exported="false" />
+59-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:41:13-37
+60
+61        <!-- HomeActivity -->
+62        <activity
+62-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:44:9-46:40
+63            android:name="com.example.playsnapui.HomeActivity"
+63-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:45:13-41
+64            android:exported="false" />
+64-->C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\AndroidManifest.xml:46:13-37
+65
+66        <service
+66-->[androidx.camera:camera-camera2:1.4.1] C:\Users\diane\.gradle\caches\transforms-3\11ef47ae9746154d032774983630ba25\transformed\jetified-camera-camera2-1.4.1\AndroidManifest.xml:24:9-33:19
+67            android:name="androidx.camera.core.impl.MetadataHolderService"
+67-->[androidx.camera:camera-camera2:1.4.1] C:\Users\diane\.gradle\caches\transforms-3\11ef47ae9746154d032774983630ba25\transformed\jetified-camera-camera2-1.4.1\AndroidManifest.xml:25:13-75
+68            android:enabled="false"
+68-->[androidx.camera:camera-camera2:1.4.1] C:\Users\diane\.gradle\caches\transforms-3\11ef47ae9746154d032774983630ba25\transformed\jetified-camera-camera2-1.4.1\AndroidManifest.xml:26:13-36
+69            android:exported="false" >
+69-->[androidx.camera:camera-camera2:1.4.1] C:\Users\diane\.gradle\caches\transforms-3\11ef47ae9746154d032774983630ba25\transformed\jetified-camera-camera2-1.4.1\AndroidManifest.xml:27:13-37
+70            <meta-data
+70-->[androidx.camera:camera-camera2:1.4.1] C:\Users\diane\.gradle\caches\transforms-3\11ef47ae9746154d032774983630ba25\transformed\jetified-camera-camera2-1.4.1\AndroidManifest.xml:30:13-32:89
+71                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+71-->[androidx.camera:camera-camera2:1.4.1] C:\Users\diane\.gradle\caches\transforms-3\11ef47ae9746154d032774983630ba25\transformed\jetified-camera-camera2-1.4.1\AndroidManifest.xml:31:17-103
+72                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+72-->[androidx.camera:camera-camera2:1.4.1] C:\Users\diane\.gradle\caches\transforms-3\11ef47ae9746154d032774983630ba25\transformed\jetified-camera-camera2-1.4.1\AndroidManifest.xml:32:17-86
+73        </service>
+74
+75        <activity
+75-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:29:9-46:20
+76            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+76-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:30:13-80
+77            android:excludeFromRecents="true"
+77-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:31:13-46
+78            android:exported="true"
+78-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:32:13-36
+79            android:launchMode="singleTask"
+79-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:33:13-44
+80            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+80-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:34:13-72
+81            <intent-filter>
+81-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:35:13-45:29
+82                <action android:name="android.intent.action.VIEW" />
+82-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:36:17-69
+82-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:36:25-66
+83
+84                <category android:name="android.intent.category.DEFAULT" />
+84-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:38:17-76
+84-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:38:27-73
+85                <category android:name="android.intent.category.BROWSABLE" />
+85-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:39:17-78
+85-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:39:27-75
+86
+87                <data
+87-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:41:17-44:51
+88                    android:host="firebase.auth"
+88-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:42:21-49
+89                    android:path="/"
+89-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:43:21-37
+90                    android:scheme="genericidp" />
+90-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:44:21-48
+91            </intent-filter>
+92        </activity>
+93        <activity
+93-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:47:9-64:20
+94            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+94-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:48:13-79
+95            android:excludeFromRecents="true"
+95-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:49:13-46
+96            android:exported="true"
+96-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:50:13-36
+97            android:launchMode="singleTask"
+97-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:51:13-44
+98            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+98-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:52:13-72
+99            <intent-filter>
+99-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:53:13-63:29
+100                <action android:name="android.intent.action.VIEW" />
+100-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:36:17-69
+100-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:36:25-66
+101
+102                <category android:name="android.intent.category.DEFAULT" />
+102-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:38:17-76
+102-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:38:27-73
+103                <category android:name="android.intent.category.BROWSABLE" />
+103-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:39:17-78
+103-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:39:27-75
+104
+105                <data
+105-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:41:17-44:51
+106                    android:host="firebase.auth"
+106-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:42:21-49
+107                    android:path="/"
+107-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:43:21-37
+108                    android:scheme="recaptcha" />
+108-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:44:21-48
+109            </intent-filter>
+110        </activity>
+111
+112        <service
+112-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:66:9-72:19
+113            android:name="com.google.firebase.components.ComponentDiscoveryService"
+113-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:67:13-84
+114            android:directBootAware="true"
+114-->[com.google.firebase:firebase-common:20.3.2] C:\Users\diane\.gradle\caches\transforms-3\80306710c50457a239ec1812e4ac83da\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:34:13-43
+115            android:exported="false" >
+115-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:68:13-37
+116            <meta-data
+116-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:69:13-71:85
+117                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+117-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:70:17-109
+118                android:value="com.google.firebase.components.ComponentRegistrar" />
+118-->[com.google.firebase:firebase-auth:21.3.0] C:\Users\diane\.gradle\caches\transforms-3\f60a8816538bc159b2bb7ef769f6286d\transformed\jetified-firebase-auth-21.3.0\AndroidManifest.xml:71:17-82
+119            <meta-data
+119-->[com.google.firebase:firebase-firestore:24.5.0] C:\Users\diane\.gradle\caches\transforms-3\7b6d5bccff0a823bf14cd8e6de2c047b\transformed\jetified-firebase-firestore-24.5.0\AndroidManifest.xml:19:13-21:85
+120                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+120-->[com.google.firebase:firebase-firestore:24.5.0] C:\Users\diane\.gradle\caches\transforms-3\7b6d5bccff0a823bf14cd8e6de2c047b\transformed\jetified-firebase-firestore-24.5.0\AndroidManifest.xml:20:17-111
+121                android:value="com.google.firebase.components.ComponentRegistrar" />
+121-->[com.google.firebase:firebase-firestore:24.5.0] C:\Users\diane\.gradle\caches\transforms-3\7b6d5bccff0a823bf14cd8e6de2c047b\transformed\jetified-firebase-firestore-24.5.0\AndroidManifest.xml:21:17-82
+122            <meta-data
+122-->[com.google.android.gms:play-services-measurement-api:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\65a040812c905e10cf7b7ad3c377f75c\transformed\jetified-play-services-measurement-api-21.2.2\AndroidManifest.xml:31:13-33:85
+123                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+123-->[com.google.android.gms:play-services-measurement-api:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\65a040812c905e10cf7b7ad3c377f75c\transformed\jetified-play-services-measurement-api-21.2.2\AndroidManifest.xml:32:17-139
+124                android:value="com.google.firebase.components.ComponentRegistrar" />
+124-->[com.google.android.gms:play-services-measurement-api:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\65a040812c905e10cf7b7ad3c377f75c\transformed\jetified-play-services-measurement-api-21.2.2\AndroidManifest.xml:33:17-82
+125            <meta-data
+125-->[com.google.firebase:firebase-installations:17.1.3] C:\Users\diane\.gradle\caches\transforms-3\6b2554022838113f3eaba13fd7f9cc2f\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:17:13-19:85
+126                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+126-->[com.google.firebase:firebase-installations:17.1.3] C:\Users\diane\.gradle\caches\transforms-3\6b2554022838113f3eaba13fd7f9cc2f\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:18:17-127
+127                android:value="com.google.firebase.components.ComponentRegistrar" />
+127-->[com.google.firebase:firebase-installations:17.1.3] C:\Users\diane\.gradle\caches\transforms-3\6b2554022838113f3eaba13fd7f9cc2f\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:19:17-82
+128        </service>
+129
+130        <receiver
+130-->[com.google.android.gms:play-services-measurement:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\d337fa7540949bbf5b96b7db7a2425c7\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:29:9-33:20
+131            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+131-->[com.google.android.gms:play-services-measurement:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\d337fa7540949bbf5b96b7db7a2425c7\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:30:13-85
+132            android:enabled="true"
+132-->[com.google.android.gms:play-services-measurement:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\d337fa7540949bbf5b96b7db7a2425c7\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:31:13-35
+133            android:exported="false" >
+133-->[com.google.android.gms:play-services-measurement:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\d337fa7540949bbf5b96b7db7a2425c7\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:32:13-37
+134        </receiver>
+135
+136        <service
+136-->[com.google.android.gms:play-services-measurement:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\d337fa7540949bbf5b96b7db7a2425c7\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:35:9-38:40
+137            android:name="com.google.android.gms.measurement.AppMeasurementService"
+137-->[com.google.android.gms:play-services-measurement:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\d337fa7540949bbf5b96b7db7a2425c7\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:36:13-84
+138            android:enabled="true"
+138-->[com.google.android.gms:play-services-measurement:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\d337fa7540949bbf5b96b7db7a2425c7\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:37:13-35
+139            android:exported="false" />
+139-->[com.google.android.gms:play-services-measurement:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\d337fa7540949bbf5b96b7db7a2425c7\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:38:13-37
+140        <service
+140-->[com.google.android.gms:play-services-measurement:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\d337fa7540949bbf5b96b7db7a2425c7\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:39:9-43:72
+141            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+141-->[com.google.android.gms:play-services-measurement:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\d337fa7540949bbf5b96b7db7a2425c7\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:40:13-87
+142            android:enabled="true"
+142-->[com.google.android.gms:play-services-measurement:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\d337fa7540949bbf5b96b7db7a2425c7\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:41:13-35
+143            android:exported="false"
+143-->[com.google.android.gms:play-services-measurement:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\d337fa7540949bbf5b96b7db7a2425c7\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:42:13-37
+144            android:permission="android.permission.BIND_JOB_SERVICE" />
+144-->[com.google.android.gms:play-services-measurement:21.2.2] C:\Users\diane\.gradle\caches\transforms-3\d337fa7540949bbf5b96b7db7a2425c7\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:43:13-69
+145
+146        <provider
+146-->[com.google.firebase:firebase-common:20.3.2] C:\Users\diane\.gradle\caches\transforms-3\80306710c50457a239ec1812e4ac83da\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:25:9-30:39
+147            android:name="com.google.firebase.provider.FirebaseInitProvider"
+147-->[com.google.firebase:firebase-common:20.3.2] C:\Users\diane\.gradle\caches\transforms-3\80306710c50457a239ec1812e4ac83da\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:26:13-77
+148            android:authorities="com.example.playsnapui.firebaseinitprovider"
+148-->[com.google.firebase:firebase-common:20.3.2] C:\Users\diane\.gradle\caches\transforms-3\80306710c50457a239ec1812e4ac83da\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:27:13-72
+149            android:directBootAware="true"
+149-->[com.google.firebase:firebase-common:20.3.2] C:\Users\diane\.gradle\caches\transforms-3\80306710c50457a239ec1812e4ac83da\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:28:13-43
+150            android:exported="false"
+150-->[com.google.firebase:firebase-common:20.3.2] C:\Users\diane\.gradle\caches\transforms-3\80306710c50457a239ec1812e4ac83da\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:29:13-37
+151            android:initOrder="100" />
+151-->[com.google.firebase:firebase-common:20.3.2] C:\Users\diane\.gradle\caches\transforms-3\80306710c50457a239ec1812e4ac83da\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:30:13-36
+152
+153        <activity
+153-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\diane\.gradle\caches\transforms-3\c7071108d99cca2d841698b952079459\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+154            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+154-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\diane\.gradle\caches\transforms-3\c7071108d99cca2d841698b952079459\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+155            android:exported="false"
+155-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\diane\.gradle\caches\transforms-3\c7071108d99cca2d841698b952079459\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+156            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+156-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\diane\.gradle\caches\transforms-3\c7071108d99cca2d841698b952079459\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+157        <activity
+157-->[androidx.compose.ui:ui-test-manifest:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\e74ae577dc2aa4168e00f95b3203b392\transformed\jetified-ui-test-manifest-1.4.0\AndroidManifest.xml:23:9-25:39
+158            android:name="androidx.activity.ComponentActivity"
+158-->[androidx.compose.ui:ui-test-manifest:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\e74ae577dc2aa4168e00f95b3203b392\transformed\jetified-ui-test-manifest-1.4.0\AndroidManifest.xml:24:13-63
+159            android:exported="true" />
+159-->[androidx.compose.ui:ui-test-manifest:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\e74ae577dc2aa4168e00f95b3203b392\transformed\jetified-ui-test-manifest-1.4.0\AndroidManifest.xml:25:13-36
+160        <activity
+160-->[androidx.compose.ui:ui-tooling:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\56e8ef3431048425aee4e3403c2fa95a\transformed\jetified-ui-tooling-1.4.0\AndroidManifest.xml:23:9-25:39
+161            android:name="androidx.compose.ui.tooling.PreviewActivity"
+161-->[androidx.compose.ui:ui-tooling:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\56e8ef3431048425aee4e3403c2fa95a\transformed\jetified-ui-tooling-1.4.0\AndroidManifest.xml:24:13-71
+162            android:exported="true" />
+162-->[androidx.compose.ui:ui-tooling:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\56e8ef3431048425aee4e3403c2fa95a\transformed\jetified-ui-tooling-1.4.0\AndroidManifest.xml:25:13-36
+163
+164        <provider
+164-->[androidx.emoji2:emoji2:1.3.0] C:\Users\diane\.gradle\caches\transforms-3\e0bb324d79781c9b951dcae5964306a0\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+165            android:name="androidx.startup.InitializationProvider"
+165-->[androidx.emoji2:emoji2:1.3.0] C:\Users\diane\.gradle\caches\transforms-3\e0bb324d79781c9b951dcae5964306a0\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:25:13-67
+166            android:authorities="com.example.playsnapui.androidx-startup"
+166-->[androidx.emoji2:emoji2:1.3.0] C:\Users\diane\.gradle\caches\transforms-3\e0bb324d79781c9b951dcae5964306a0\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:26:13-68
+167            android:exported="false" >
+167-->[androidx.emoji2:emoji2:1.3.0] C:\Users\diane\.gradle\caches\transforms-3\e0bb324d79781c9b951dcae5964306a0\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:27:13-37
+168            <meta-data
+168-->[androidx.emoji2:emoji2:1.3.0] C:\Users\diane\.gradle\caches\transforms-3\e0bb324d79781c9b951dcae5964306a0\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+169                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+169-->[androidx.emoji2:emoji2:1.3.0] C:\Users\diane\.gradle\caches\transforms-3\e0bb324d79781c9b951dcae5964306a0\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:30:17-75
+170                android:value="androidx.startup" />
+170-->[androidx.emoji2:emoji2:1.3.0] C:\Users\diane\.gradle\caches\transforms-3\e0bb324d79781c9b951dcae5964306a0\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:31:17-49
+171            <meta-data
+171-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\diane\.gradle\caches\transforms-3\88ec80cb729094950ade8900bf100b66\transformed\jetified-lifecycle-process-2.8.7\AndroidManifest.xml:29:13-31:52
+172                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+172-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\diane\.gradle\caches\transforms-3\88ec80cb729094950ade8900bf100b66\transformed\jetified-lifecycle-process-2.8.7\AndroidManifest.xml:30:17-78
+173                android:value="androidx.startup" />
+173-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\diane\.gradle\caches\transforms-3\88ec80cb729094950ade8900bf100b66\transformed\jetified-lifecycle-process-2.8.7\AndroidManifest.xml:31:17-49
+174            <meta-data
+174-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+175                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+175-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+176                android:value="androidx.startup" />
+176-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+177        </provider>
+178
+179        <uses-library
+179-->[androidx.window:window:1.0.0] C:\Users\diane\.gradle\caches\transforms-3\2e642f664d094a1d7d5a30d8f1cbff79\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
+180            android:name="androidx.window.extensions"
+180-->[androidx.window:window:1.0.0] C:\Users\diane\.gradle\caches\transforms-3\2e642f664d094a1d7d5a30d8f1cbff79\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
+181            android:required="false" />
+181-->[androidx.window:window:1.0.0] C:\Users\diane\.gradle\caches\transforms-3\2e642f664d094a1d7d5a30d8f1cbff79\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
+182        <uses-library
+182-->[androidx.window:window:1.0.0] C:\Users\diane\.gradle\caches\transforms-3\2e642f664d094a1d7d5a30d8f1cbff79\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
+183            android:name="androidx.window.sidecar"
+183-->[androidx.window:window:1.0.0] C:\Users\diane\.gradle\caches\transforms-3\2e642f664d094a1d7d5a30d8f1cbff79\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
+184            android:required="false" />
+184-->[androidx.window:window:1.0.0] C:\Users\diane\.gradle\caches\transforms-3\2e642f664d094a1d7d5a30d8f1cbff79\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
+185
+186        <meta-data
+186-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\diane\.gradle\caches\transforms-3\e0bdfc2b91fdecebb40324ea617ce812\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+187            android:name="com.google.android.gms.version"
+187-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\diane\.gradle\caches\transforms-3\e0bdfc2b91fdecebb40324ea617ce812\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+188            android:value="@integer/google_play_services_version" />
+188-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\diane\.gradle\caches\transforms-3\e0bdfc2b91fdecebb40324ea617ce812\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+189
+190        <receiver
+190-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+191            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+191-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+192            android:directBootAware="false"
+192-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+193            android:enabled="true"
+193-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+194            android:exported="true"
+194-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+195            android:permission="android.permission.DUMP" >
+195-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+196            <intent-filter>
+196-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+197                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+197-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+197-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+198            </intent-filter>
+199            <intent-filter>
+199-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+200                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+200-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+200-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+201            </intent-filter>
+202            <intent-filter>
+202-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+203                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+203-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+203-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+204            </intent-filter>
+205            <intent-filter>
+205-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+206                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+206-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+206-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\diane\.gradle\caches\transforms-3\a29160d8332427b299fa014e3937f908\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+207            </intent-filter>
+208        </receiver>
+209    </application>
+210
+211</manifest>

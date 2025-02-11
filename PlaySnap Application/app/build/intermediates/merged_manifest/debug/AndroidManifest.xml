@@ -16,7 +16,9 @@
         android:maxSdkVersion="34" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
 
     <permission
         android:name="com.example.playsnapui.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -25,6 +27,7 @@
     <uses-permission android:name="com.example.playsnapui.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
+        android:name="com.example.playsnapui.MyApplication"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -37,94 +40,38 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.PlaySnapUI" >
+
+        <!-- SplashActivity as the launcher activity -->
         <activity
-            android:name="com.example.playsnapui.SearchByTypeActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.SearchByCameraActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.ReportPageActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.SettingsAccountPageActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.EditPasswordPageActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.EditProfilePageActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.ReportPageSuccessActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.HelpPageReqSuccessActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.HelpPageReqActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.HelpPageQ7Activity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.HelpPageQ6Activity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.HelpPageQ5Activity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.HelpPageQ4Activity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.HelpPageQ3Activity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.HelpPageQ2Activity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.HelpPageQ1Activity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.HelpPageActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.ProfilePageActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.BookmarkPageActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.LikePageActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.NavigationBar"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.HomePageActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name="com.example.playsnapui.RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.playsnapui.MainActivity"
-            android:exported="true" >
+            android:name="com.example.playsnapui.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.PlaySnapUI.Splash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- AuthActivity -->
         <activity
-            android:name="com.example.playsnapui.BottomSheet"
-            android:theme="@style/TransparentTheme" />
-        <activity
-            android:name="com.example.playsnapui.FilterPageActivity"
+            android:name="com.example.playsnapui.AuthActivity"
             android:exported="false" />
+
+        <!-- HomeActivity -->
+        <activity
+            android:name="com.example.playsnapui.HomeActivity"
+            android:exported="false" />
+
+        <service
+            android:name="androidx.camera.core.impl.MetadataHolderService"
+            android:enabled="false"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+        </service>
+
         <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"
             android:excludeFromRecents="true"
@@ -170,59 +117,31 @@
                 android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
         </service>
-        <service
-            android:name="androidx.camera.core.impl.MetadataHolderService"
-            android:enabled="false"
-            android:exported="false" >
-            <meta-data
-                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
-                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
-        </service>
 
-        <activity
-            android:name="androidx.activity.ComponentActivity"
-            android:exported="true" />
-        <activity
-            android:name="androidx.compose.ui.tooling.PreviewActivity"
-            android:exported="true" />
-
-        <service
-            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
             android:enabled="true"
             android:exported="false" >
-            <meta-data
-                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
-                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
-        </service>
+        </receiver>
 
-        <activity
-            android:name="androidx.credentials.playservices.HiddenActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
             android:enabled="true"
             android:exported="false"
-            android:fitsSystemWindows="true"
-            android:theme="@style/Theme.Hidden" >
-        </activity>
-        <activity
-            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-            android:excludeFromRecents="true"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <!--
-            Service handling Google Sign-In user revocation. For apps that do not integrate with
-            Google Sign-In, this service will never be started.
-        -->
-        <service
-            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-            android:exported="true"
-            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-            android:visibleToInstantApps="true" />
+            android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
@@ -235,10 +154,12 @@
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
+        <activity
+            android:name="androidx.activity.ComponentActivity"
+            android:exported="true" />
+        <activity
+            android:name="androidx.compose.ui.tooling.PreviewActivity"
+            android:exported="true" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"
@@ -254,6 +175,17 @@
                 android:name="androidx.profileinstaller.ProfileInstallerInitializer"
                 android:value="androidx.startup" />
         </provider>
+
+        <uses-library
+            android:name="androidx.window.extensions"
+            android:required="false" />
+        <uses-library
+            android:name="androidx.window.sidecar"
+            android:required="false" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
         <receiver
             android:name="androidx.profileinstaller.ProfileInstallReceiver"
@@ -273,12 +205,7 @@
             <intent-filter>
                 <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
             </intent-filter>
-        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
-        <activity
-            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
-            android:exported="false"
-            android:stateNotNeeded="true"
-            android:theme="@style/Theme.PlayCore.Transparent" />
+        </receiver>
     </application>
 
 </manifest>
