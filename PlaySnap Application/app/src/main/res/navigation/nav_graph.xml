@@ -14,6 +14,11 @@
             app:destination="@id/snapFragment"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/action_homeFragment_to_filterFragment"
+            app:destination="@id/filterFragment" />
+
     </fragment>
 
     <fragment
@@ -31,6 +36,18 @@
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true"/>
     </fragment>
+
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.example.playsnapui.ui.filter.FilterFragment"
+        android:label="Filter">
+        <action
+            android:id="@+id/action_FilterFragment_to_HomeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
 
     <fragment
         android:id="@+id/scrollGalleryFragment"
@@ -54,5 +71,7 @@
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true"/>
     </fragment>
+
+
 </navigation>
 

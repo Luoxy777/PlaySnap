@@ -14,6 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
@@ -26,7 +27,7 @@ class HomeActivity : AppCompatActivity() {
         // Hide Bottom Navigation Bar in specific fragments
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.snapFragment, R.id.swipeGalleryFragment, R.id.scrollGalleryFragment -> {
+                R.id.snapFragment, R.id.swipeGalleryFragment, R.id.scrollGalleryFragment, R.id.filterFragment -> {
                     binding.bottomNavigationView.visibility = View.GONE
                 }
                 else -> {
@@ -34,6 +35,9 @@ class HomeActivity : AppCompatActivity() {
                 }
             }
         }
+
+    }
+
         // Set up Bottom Navigation
 //        binding.bottomNavigationView.setOnItemSelectedListener { item ->
 //            when (item.itemId) {
@@ -42,6 +46,6 @@ class HomeActivity : AppCompatActivity() {
 //            true
 //        }
 
-    }
+
 
 }
