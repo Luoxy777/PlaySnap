@@ -69,8 +69,8 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
-        android:layout_width="265dp"
-        android:layout_height="281dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/scroll_bg_object"
         app:layout_constraintEnd_toEndOf="@+id/scroll_bg_object"
         app:layout_constraintStart_toStartOf="@+id/scroll_bg_object"

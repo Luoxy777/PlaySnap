@@ -7,15 +7,18 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.playsnapui.R
+import com.example.playsnapui.databinding.FragmentScrollGaleryBinding
 
 class ScrollGalleryFragment : Fragment() {
 
-    private lateinit var recyclerView: RecyclerView
+    private var _binding: FragmentScrollGaleryBinding? = null
+    private val binding get() = _binding!!
+
     private lateinit var adapter: ScrollGalleryAdapter
     private val imagePaths = mutableListOf<String>()
     private val selectedItems = mutableSetOf<Int>() // Stores checked images' positions
@@ -23,14 +26,20 @@ class ScrollGalleryFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_scroll_galery, container, false)
-        recyclerView = view.findViewById(R.id.recent_recycler_popgame)
-        val hapusButton: Button = view.findViewById(R.id.hapus_button)
+    ): View {
+        _binding = FragmentScrollGaleryBinding.inflate(inflater, container, false)
+        val view = binding.root
 
-        recyclerView.layoutManager = GridLayoutManager(requireContext(), 3)
-
+        setupRecyclerView()
         loadRecentImages()
+        setupButtons()
+
+        return view
+    }
+
+    private fun setupRecyclerView() {
+        binding.recentRecyclerPopgame.layoutManager = GridLayoutManager(requireContext(), 3)
+
         adapter = ScrollGalleryAdapter(imagePaths) { position, isChecked ->
             if (isChecked) {
                 selectedItems.add(position)
@@ -38,21 +47,17 @@ class ScrollGalleryFragment : Fragment() {
                 selectedItems.remove(position)
             }
         }
-        recyclerView.adapter = adapter
+        binding.recentRecyclerPopgame.adapter = adapter
 
         val spacingInPixels = 16
         val columnCount = 3
 
-        val layoutManager = GridLayoutManager(requireContext(), columnCount)
-        recyclerView.layoutManager = layoutManager
-        recyclerView.setPadding(spacingInPixels, 0, spacingInPixels, 0)
-        recyclerView.clipToPadding = false
+        binding.recentRecyclerPopgame.setPadding(spacingInPixels, 0, spacingInPixels, 0)
+        binding.recentRecyclerPopgame.clipToPadding = false
 
-        recyclerView.addItemDecoration(object : RecyclerView.ItemDecoration() {
+        binding.recentRecyclerPopgame.addItemDecoration(object : RecyclerView.ItemDecoration() {
             override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
                 val position = parent.getChildAdapterPosition(view)
-                val itemCount = state.itemCount
-
                 outRect.left = spacingInPixels / 2
                 outRect.right = spacingInPixels / 2
                 outRect.bottom = spacingInPixels
@@ -62,9 +67,10 @@ class ScrollGalleryFragment : Fragment() {
                 }
             }
         })
+    }
 
-        // Handle delete button click
-        hapusButton.setOnClickListener {
+    private fun setupButtons() {
+        binding.hapusButton.setOnClickListener {
             val sortedSelectedItems = selectedItems.sortedDescending()
             for (index in sortedSelectedItems) {
                 imagePaths.removeAt(index)
@@ -73,7 +79,14 @@ class ScrollGalleryFragment : Fragment() {
             adapter.notifyDataSetChanged()
         }
 
-        return view
+        binding.btnSwitchLayout.setOnClickListener {
+            val bundle = Bundle().apply {
+                putStringArrayList("IMAGE_PATHS", ArrayList(imagePaths))
+                putIntegerArrayList("SELECTED_ITEMS", ArrayList(selectedItems.toList())) // 🔥 FIXED
+            }
+            findNavController().navigate(R.id.action_ScrollGalleryFragment_to_SwipeGalleryFragment, bundle)
+        }
+
     }
 
     private fun loadRecentImages() {
@@ -92,5 +105,10 @@ class ScrollGalleryFragment : Fragment() {
                 if (imagePaths.size >= 20) break
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

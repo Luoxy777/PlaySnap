@@ -756,10 +756,6 @@
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\ic_batu_rumput.png"
     },
     {
-        "merged": "com.example.playsnapui.app-merged_res-5:/layout_layout_taken_photo_bigger.xml.flat",
-        "source": "com.example.playsnapui.app-main-7:/layout/layout_taken_photo_bigger.xml"
-    },
-    {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\layout_layout_popgame_list_item.xml.flat",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\layout_popgame_list_item.xml"
     },
