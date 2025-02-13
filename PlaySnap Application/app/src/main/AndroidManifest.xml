@@ -2,12 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-<<<<<<< HEAD
     <uses-permission android:name="android.permission.INTERNET"/>
 
-=======
     <uses-permission android:name="android.permission.INTERNET" />
->>>>>>> ac7b0daf03455b9aa09836a6ac87ccfa70501b42
     <uses-feature android:name="android.hardware.camera.any" />
     <uses-permission android:name="android.permission.CAMERA" />
 

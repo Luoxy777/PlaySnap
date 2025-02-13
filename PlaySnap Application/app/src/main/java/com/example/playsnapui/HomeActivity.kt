@@ -27,7 +27,7 @@ class HomeActivity : AppCompatActivity() {
         // Hide Bottom Navigation Bar in specific fragments
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.snapFragment, R.id.swipeGalleryFragment, R.id.scrollGalleryFragment -> {
+                R.id.snapFragment, R.id.swipeGalleryFragment, R.id.scrollGalleryFragment, R.id.filterFragment -> {
                     binding.bottomNavigationView.visibility = View.GONE
                 }
                 else -> {

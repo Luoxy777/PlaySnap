@@ -163,6 +163,7 @@ font leaguespartanregular
 font leaguespartansemibold
 font leaguespartanthin
 id MyScrollView
+id action_FilterFragment_to_HomeFragment
 id action_HomeFragment_to_SnapFragment
 id action_ScrollGalleryFragment_to_SwipeGalleryFragment
 id action_SnapFragment_to_HomeFragment
@@ -191,6 +192,7 @@ id bookmark_button_tutorial
 id bottomNavigationView
 id bottom_sheet_container
 id bottom_sheet_filter_page
+id bottom_sheet_filter_page_id
 id btn_apa_itu
 id btn_back
 id btn_bagaimana_cara_cari
@@ -319,6 +321,7 @@ id lokasi_opt2_btn
 id lokasi_section_blue_dinamic
 id lokasi_section_title
 id lokasi_title_filter_opt
+id lokasi_value
 id maskotTopFilterPage
 id maskot_awan_image
 id maskot_awan_image_atas
@@ -337,6 +340,7 @@ id pemain_opt3_btn
 id pemain_section_blue_dinamic
 id pemain_section_title
 id pemain_title_filter_opt
+id pemain_value
 id photo_count_text
 id player_count_feedback
 id player_count_feedback_number
@@ -350,6 +354,7 @@ id properti_opt2_btn
 id properti_section_blue_dinamic
 id properti_section_title
 id properti_title_filter_opt
+id properti_value
 id rating
 id rating_star_feedback
 id recent_recycler_bookmark
@@ -465,6 +470,7 @@ id usia_opt3_btn
 id usia_section_blue_dinamic
 id usia_section_title
 id usia_title_filter_opt
+id usia_value
 id viewPager
 layout activity_auth
 layout activity_bookmark_page

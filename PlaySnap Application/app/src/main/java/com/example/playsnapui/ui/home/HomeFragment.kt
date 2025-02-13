@@ -75,6 +75,28 @@ class HomeFragment : Fragment() {
         recyclerViewForYou.adapter = homeAdapterForYou
     }
 
+    private fun setRecyclerViewHeightBasedOnItems(recyclerView: RecyclerView) {
+        val adapter = recyclerView.adapter ?: return
+
+        val itemCount = adapter.itemCount
+        if (itemCount > 0) {
+            val layoutManager = recyclerView.layoutManager as? LinearLayoutManager ?: return
+
+            val firstItemView = layoutManager.findViewByPosition(0) ?: return
+            val itemHeight = firstItemView.measuredHeight
+
+            // Calculate total height (items * item height)
+            val totalHeight = itemHeight * itemCount + recyclerView.paddingTop + recyclerView.paddingBottom + (itemHeight * 3)
+
+            // Set the new height
+            val layoutParams = recyclerView.layoutParams
+            layoutParams.height = totalHeight
+            recyclerView.layoutParams = layoutParams
+
+            Log.d("RecyclerViewHeight", "Item Height: $itemHeight, Total Height: $totalHeight")
+        }
+    }
+
     private fun setupListeners() {
         binding.btnFilterGame.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_filterFragment)
@@ -99,6 +121,10 @@ class HomeFragment : Fragment() {
 
             homeAdapterPopular.notifyDataSetChanged()
             homeAdapterForYou.notifyDataSetChanged()
+
+            binding.recentRecyclerForyou.post {
+                setRecyclerViewHeightBasedOnItems(binding.recentRecyclerForyou)
+            }
         }
         binding.btnScanObject.setOnClickListener {
             findNavController().navigate(R.id.action_HomeFragment_to_SnapFragment)
