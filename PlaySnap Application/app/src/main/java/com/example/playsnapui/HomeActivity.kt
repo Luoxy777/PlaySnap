@@ -9,6 +9,7 @@ import com.example.playsnapui.ui.home.HomeFragment
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
@@ -24,7 +25,10 @@ class HomeActivity : AppCompatActivity() {
             }
             true
         }
+
     }
+
+
 
     private fun loadFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()

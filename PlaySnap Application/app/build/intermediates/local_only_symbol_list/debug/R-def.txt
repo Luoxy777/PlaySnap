@@ -466,7 +466,6 @@ layout activity_help_page_q7
 layout activity_help_page_req
 layout activity_help_page_req_success
 layout activity_home
-layout activity_home_page
 layout activity_like_page
 layout activity_loading_page
 layout activity_login
@@ -485,6 +484,7 @@ layout activity_splash
 layout activity_tutorial_page
 layout bottom_sheet_filter_page
 layout fragment_auth
+layout fragment_filter
 layout fragment_home
 layout fragment_login
 layout fragment_register
