@@ -26,11 +26,11 @@ class SplashActivity : AppCompatActivity() {
 
         // Add a delay before navigation
         Handler(Looper.getMainLooper()).postDelayed({
-//            if (auth.currentUser != null) {
-//                startActivity(Intent(this, HomeActivity::class.java))
-//            } else {
+            if (auth.currentUser != null) {
+                startActivity(Intent(this, HomeActivity::class.java))
+            } else {
                 startActivity(Intent(this, AuthActivity::class.java))
-//            }
+            }
             finish() // Close SplashActivity
         }, 1500) // 1.5 seconds delay
     }

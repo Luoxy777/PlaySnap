@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue">
+
+    <ImageView
+        android:id="@+id/field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_field"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_back"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/back_button"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gallery_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/leaguespartanbold"
+        android:text="Yey, Kerja Bagus!"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_back" />
+
+    <TextView
+        android:id="@+id/tv_manage_object_subtitle"
+        android:layout_width="282dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/andikaregular"
+        android:gravity="center"
+        android:text="Apakah ada gambar yang ingin dihapus?"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/scroll_bg_object"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gallery_title"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/scroll_bg_object"
+        android:layout_width="361dp"
+        android:layout_height="328dp"
+        android:background="@drawable/background_object_search_by_type"
+        app:layout_constraintBottom_toBottomOf="@id/field"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52" />
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/recent_recycler_popgame"-->
+    <!--        android:layout_width="430dp"-->
+    <!--        android:layout_height="269dp"-->
+    <!--        android:clipToPadding="false"-->
+    <!--        android:gravity="center"-->
+    <!--        android:paddingStart="24dp"-->
+    <!--        android:paddingEnd="24dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/scroll_bg_object"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/scroll_bg_object"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/scroll_bg_object"-->
+    <!--        app:layout_constraintHorizontal_bias="0.362"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/scroll_bg_object"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/scroll_bg_object"-->
+    <!--        app:layout_constraintVertical_bias="0.355" />-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recent_recycler_popgame"
+        android:layout_width="316dp"
+        android:layout_height="261dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:padding="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/scroll_bg_object"
+        app:layout_constraintEnd_toEndOf="@+id/scroll_bg_object"
+        app:layout_constraintStart_toStartOf="@+id/scroll_bg_object"
+        app:layout_constraintTop_toTopOf="@+id/scroll_bg_object" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="88dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/ic_maskot_main_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/scroll_bg_object"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.215" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_switch_layout"
+        style="@style/ButtonWhite"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/mulai_button_oultline"
+        android:drawableTop="@drawable/baseline_image_24"
+        android:elevation="100dp"
+        android:padding="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/scroll_bg_object"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.21" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@id/mulai_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/mulai_button_oultline"
+        android:text="@string/mulai_btn_text"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/hapus_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/hapus_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/hapus_button_oultline"
+        android:text="HAPUS"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scroll_bg_object"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

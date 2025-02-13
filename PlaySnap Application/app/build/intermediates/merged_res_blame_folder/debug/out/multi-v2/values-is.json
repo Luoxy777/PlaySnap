@@ -4,6 +4,23 @@
             "outputFile": "com.example.playsnapui.app-mergeDebugResources-3:/values-is/values-is.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\d52ade455182404a9b0906a457ed1aa4\\transformed\\jetified-ui-release\\res\\values-is\\values-is.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,196,277,376,475,560,640,735,824,906,974,1042,1120,1203,1273,1350,1418",
+                        "endColumns": "90,80,98,98,84,79,94,88,81,67,67,77,82,69,76,67,119",
+                        "endOffsets": "191,272,371,470,555,635,730,819,901,969,1037,1115,1198,1268,1345,1413,1533"
+                    },
+                    "to": {
+                        "startLines": "48,49,70,71,73,82,83,143,144,145,146,148,149,153,156,157,158",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4392,4483,6892,6991,7162,7905,7985,12716,12805,12887,12955,13103,13181,13508,13754,13831,13899",
+                        "endColumns": "90,80,98,98,84,79,94,88,81,67,67,77,82,69,76,67,119",
+                        "endOffsets": "4478,4559,6986,7085,7242,7980,8075,12800,12882,12950,13018,13176,13259,13573,13826,13894,14014"
+                    }
+                },
+                {
                     "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\16b6113b4b0212b4d7ef8969c4e792df\\transformed\\browser-1.4.0\\res\\values-is\\values-is.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -74,23 +91,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\ef775f90ea9afc82fcfa3a65904ce15e\\transformed\\jetified-ui-1.4.0\\res\\values-is\\values-is.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,196,277,376,475,560,640,735,824,906,974,1042,1120,1203,1273,1350,1418",
-                        "endColumns": "90,80,98,98,84,79,94,88,81,67,67,77,82,69,76,67,119",
-                        "endOffsets": "191,272,371,470,555,635,730,819,901,969,1037,1115,1198,1268,1345,1413,1533"
-                    },
-                    "to": {
-                        "startLines": "48,49,70,71,73,82,83,143,144,145,146,148,149,153,156,157,158",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "4392,4483,6892,6991,7162,7905,7985,12716,12805,12887,12955,13103,13181,13508,13754,13831,13899",
-                        "endColumns": "90,80,98,98,84,79,94,88,81,67,67,77,82,69,76,67,119",
-                        "endOffsets": "4478,4559,6986,7085,7242,7980,8075,12800,12882,12950,13018,13176,13259,13573,13826,13894,14014"
-                    }
-                },
-                {
                     "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\c7071108d99cca2d841698b952079459\\transformed\\jetified-play-services-base-18.0.1\\res\\values-is\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
@@ -105,6 +105,23 @@
                         "startOffsets": "4640,4746,4900,5025,5134,5275,5400,5509,5743,5897,6003,6160,6286,6428,6582,6646,6709",
                         "endColumns": "105,153,124,108,140,124,108,104,153,105,156,125,141,153,63,62,78",
                         "endOffsets": "4741,4895,5020,5129,5270,5395,5504,5609,5892,5998,6155,6281,6423,6577,6641,6704,6783"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\8b9a8db555f06e0b50151dfa10d47818\\transformed\\jetified-foundation-release\\res\\values-is\\values-is.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,142",
+                        "endColumns": "86,86",
+                        "endOffsets": "137,224"
+                    },
+                    "to": {
+                        "startLines": "159,160",
+                        "startColumns": "4,4",
+                        "startOffsets": "14019,14106",
+                        "endColumns": "86,86",
+                        "endOffsets": "14101,14188"
                     }
                 },
                 {

@@ -4,6 +4,23 @@
             "outputFile": "com.example.playsnapui.app-mergeDebugResources-3:/values-bs/values-bs.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\d52ade455182404a9b0906a457ed1aa4\\transformed\\jetified-ui-release\\res\\values-bs\\values-bs.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,206,294,388,487,573,650,742,834,919,991,1062,1143,1229,1302,1382,1452",
+                        "endColumns": "100,87,93,98,85,76,91,91,84,71,70,80,85,72,79,69,117",
+                        "endOffsets": "201,289,383,482,568,645,737,829,914,986,1057,1138,1224,1297,1377,1447,1565"
+                    },
+                    "to": {
+                        "startLines": "49,50,71,72,74,83,84,144,145,146,147,149,150,154,157,158,159",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4572,4673,7133,7227,7407,8181,8258,13066,13158,13243,13315,13466,13547,13882,14133,14213,14283",
+                        "endColumns": "100,87,93,98,85,76,91,91,84,71,70,80,85,72,79,69,117",
+                        "endOffsets": "4668,4756,7222,7321,7488,8253,8345,13153,13238,13310,13381,13542,13628,13950,14208,14278,14396"
+                    }
+                },
+                {
                     "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\16b6113b4b0212b4d7ef8969c4e792df\\transformed\\browser-1.4.0\\res\\values-bs\\values-bs.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -108,20 +125,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\ef775f90ea9afc82fcfa3a65904ce15e\\transformed\\jetified-ui-1.4.0\\res\\values-bs\\values-bs.xml",
+                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\8b9a8db555f06e0b50151dfa10d47818\\transformed\\jetified-foundation-release\\res\\values-bs\\values-bs.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,206,294,388,487,573,650,742,834,919,991,1062,1143,1229,1302,1382,1452",
-                        "endColumns": "100,87,93,98,85,76,91,91,84,71,70,80,85,72,79,69,117",
-                        "endOffsets": "201,289,383,482,568,645,737,829,914,986,1057,1138,1224,1297,1377,1447,1565"
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,145",
+                        "endColumns": "89,91",
+                        "endOffsets": "140,232"
                     },
                     "to": {
-                        "startLines": "49,50,71,72,74,83,84,144,145,146,147,149,150,154,157,158,159",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "4572,4673,7133,7227,7407,8181,8258,13066,13158,13243,13315,13466,13547,13882,14133,14213,14283",
-                        "endColumns": "100,87,93,98,85,76,91,91,84,71,70,80,85,72,79,69,117",
-                        "endOffsets": "4668,4756,7222,7321,7488,8253,8345,13153,13238,13310,13381,13542,13628,13950,14208,14278,14396"
+                        "startLines": "160,161",
+                        "startColumns": "4,4",
+                        "startOffsets": "14401,14491",
+                        "endColumns": "89,91",
+                        "endOffsets": "14486,14578"
                     }
                 },
                 {

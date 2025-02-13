@@ -4,6 +4,23 @@
             "outputFile": "com.example.playsnapui.app-mergeDebugResources-3:/values-ky/values-ky.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\d52ade455182404a9b0906a457ed1aa4\\transformed\\jetified-ui-release\\res\\values-ky\\values-ky.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,198,282,392,492,577,659,757,846,931,997,1064,1149,1236,1309,1388,1456",
+                        "endColumns": "92,83,109,99,84,81,97,88,84,65,66,84,86,72,78,67,117",
+                        "endOffsets": "193,277,387,487,572,654,752,841,926,992,1059,1144,1231,1304,1383,1451,1569"
+                    },
+                    "to": {
+                        "startLines": "48,49,70,71,73,82,83,143,144,145,146,148,149,153,156,157,158",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4562,4655,7126,7236,7408,8187,8269,13080,13169,13254,13320,13469,13554,13885,14142,14221,14289",
+                        "endColumns": "92,83,109,99,84,81,97,88,84,65,66,84,86,72,78,67,117",
+                        "endOffsets": "4650,4734,7231,7331,7488,8264,8362,13164,13249,13315,13382,13549,13636,13953,14216,14284,14402"
+                    }
+                },
+                {
                     "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\16b6113b4b0212b4d7ef8969c4e792df\\transformed\\browser-1.4.0\\res\\values-ky\\values-ky.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -57,23 +74,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\ef775f90ea9afc82fcfa3a65904ce15e\\transformed\\jetified-ui-1.4.0\\res\\values-ky\\values-ky.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,198,282,392,492,577,659,757,846,931,997,1064,1149,1236,1309,1388,1456",
-                        "endColumns": "92,83,109,99,84,81,97,88,84,65,66,84,86,72,78,67,117",
-                        "endOffsets": "193,277,387,487,572,654,752,841,926,992,1059,1144,1231,1304,1383,1451,1569"
-                    },
-                    "to": {
-                        "startLines": "48,49,70,71,73,82,83,143,144,145,146,148,149,153,156,157,158",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "4562,4655,7126,7236,7408,8187,8269,13080,13169,13254,13320,13469,13554,13885,14142,14221,14289",
-                        "endColumns": "92,83,109,99,84,81,97,88,84,65,66,84,86,72,78,67,117",
-                        "endOffsets": "4650,4734,7231,7331,7488,8264,8362,13164,13249,13315,13382,13549,13636,13953,14216,14284,14402"
-                    }
-                },
-                {
                     "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\175d44deb58c57438f52fe46d51907c3\\transformed\\jetified-material3-1.0.0\\res\\values-ky\\values-ky.xml",
                     "from": {
                         "startLines": "2,3,4",
@@ -122,6 +122,23 @@
                         "startOffsets": "5807",
                         "endColumns": "157",
                         "endOffsets": "5960"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\8b9a8db555f06e0b50151dfa10d47818\\transformed\\jetified-foundation-release\\res\\values-ky\\values-ky.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,154",
+                        "endColumns": "98,103",
+                        "endOffsets": "149,253"
+                    },
+                    "to": {
+                        "startLines": "159,160",
+                        "startColumns": "4,4",
+                        "startOffsets": "14407,14506",
+                        "endColumns": "98,103",
+                        "endOffsets": "14501,14605"
                     }
                 },
                 {
