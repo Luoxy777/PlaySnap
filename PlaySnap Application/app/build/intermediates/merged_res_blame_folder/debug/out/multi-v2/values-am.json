@@ -4,7 +4,7 @@
             "outputFile": "com.example.playsnapui.app-mergeDebugResources-3:/values-am/values-am.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\chris\\.gradle\\caches\\transforms-3\\ef775f90ea9afc82fcfa3a65904ce15e\\transformed\\jetified-ui-1.4.0\\res\\values-am\\values-am.xml",
+                    "source": "C:\\Users\\chris\\.gradle\\caches\\transforms-3\\d52ade455182404a9b0906a457ed1aa4\\transformed\\jetified-ui-release\\res\\values-am\\values-am.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -71,6 +71,23 @@
                         "startOffsets": "4496,4598,4737,4859,4961,5088,5211,5319,5553,5681,5784,5929,6052,6187,6314,6374,6431",
                         "endColumns": "101,138,121,101,126,122,107,101,127,102,144,122,134,126,59,56,70",
                         "endOffsets": "4593,4732,4854,4956,5083,5206,5314,5416,5676,5779,5924,6047,6182,6309,6369,6426,6497"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\chris\\.gradle\\caches\\transforms-3\\8b9a8db555f06e0b50151dfa10d47818\\transformed\\jetified-foundation-release\\res\\values-am\\values-am.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,142",
+                        "endColumns": "86,85",
+                        "endOffsets": "137,223"
+                    },
+                    "to": {
+                        "startLines": "159,160",
+                        "startColumns": "4,4",
+                        "startOffsets": "13388,13475",
+                        "endColumns": "86,85",
+                        "endOffsets": "13470,13556"
                     }
                 },
                 {

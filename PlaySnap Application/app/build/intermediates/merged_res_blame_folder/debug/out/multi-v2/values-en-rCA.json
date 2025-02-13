@@ -38,23 +38,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\chris\\.gradle\\caches\\transforms-3\\ef775f90ea9afc82fcfa3a65904ce15e\\transformed\\jetified-ui-1.4.0\\res\\values-en-rCA\\values-en-rCA.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,197,279,373,472,558,640,730,819,903,968,1032,1110,1192,1265,1342,1408",
-                        "endColumns": "91,81,93,98,85,81,89,88,83,64,63,77,81,72,76,65,119",
-                        "endOffsets": "192,274,368,467,553,635,725,814,898,963,1027,1105,1187,1260,1337,1403,1523"
-                    },
-                    "to": {
-                        "startLines": "36,37,40,41,43,48,49,50,51,52,53,54,55,57,59,60,61",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3480,3572,3830,3924,4097,4564,4646,4736,4825,4909,4974,5038,5116,5281,5455,5532,5598",
-                        "endColumns": "91,81,93,98,85,81,89,88,83,64,63,77,81,72,76,65,119",
-                        "endOffsets": "3567,3649,3919,4018,4178,4641,4731,4820,4904,4969,5033,5111,5193,5349,5527,5593,5713"
-                    }
-                },
-                {
                     "source": "C:\\Users\\chris\\.gradle\\caches\\transforms-3\\6c25d772d9be7f493c51fa15dd6bac02\\transformed\\core-1.13.0\\res\\values-en-rCA\\values-en-rCA.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -86,6 +69,40 @@
                         "startOffsets": "3732,4259,4356,4465",
                         "endColumns": "97,96,108,98",
                         "endOffsets": "3825,4351,4460,4559"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\chris\\.gradle\\caches\\transforms-3\\d52ade455182404a9b0906a457ed1aa4\\transformed\\jetified-ui-release\\res\\values-en-rCA\\values-en-rCA.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,197,279,373,472,558,640,730,819,903,968,1032,1110,1192,1265,1342,1408",
+                        "endColumns": "91,81,93,98,85,81,89,88,83,64,63,77,81,72,76,65,119",
+                        "endOffsets": "192,274,368,467,553,635,725,814,898,963,1027,1105,1187,1260,1337,1403,1523"
+                    },
+                    "to": {
+                        "startLines": "36,37,40,41,43,48,49,50,51,52,53,54,55,57,59,60,61",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3480,3572,3830,3924,4097,4564,4646,4736,4825,4909,4974,5038,5116,5281,5455,5532,5598",
+                        "endColumns": "91,81,93,98,85,81,89,88,83,64,63,77,81,72,76,65,119",
+                        "endOffsets": "3567,3649,3919,4018,4178,4641,4731,4820,4904,4969,5033,5111,5193,5349,5527,5593,5713"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\chris\\.gradle\\caches\\transforms-3\\8b9a8db555f06e0b50151dfa10d47818\\transformed\\jetified-foundation-release\\res\\values-en-rCA\\values-en-rCA.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,141",
+                        "endColumns": "85,84",
+                        "endOffsets": "136,221"
+                    },
+                    "to": {
+                        "startLines": "62,63",
+                        "startColumns": "4,4",
+                        "startOffsets": "5718,5804",
+                        "endColumns": "85,84",
+                        "endOffsets": "5799,5884"
                     }
                 }
             ]

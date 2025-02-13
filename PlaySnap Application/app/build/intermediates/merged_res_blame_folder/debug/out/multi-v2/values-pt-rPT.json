@@ -40,23 +40,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\chris\\.gradle\\caches\\transforms-3\\ef775f90ea9afc82fcfa3a65904ce15e\\transformed\\jetified-ui-1.4.0\\res\\values-pt-rPT\\values-pt-rPT.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,200,283,380,479,565,644,741,832,919,991,1060,1145,1235,1311,1387,1459",
-                        "endColumns": "94,82,96,98,85,78,96,90,86,71,68,84,89,75,75,71,121",
-                        "endOffsets": "195,278,375,474,560,639,736,827,914,986,1055,1140,1230,1306,1382,1454,1576"
-                    },
-                    "to": {
-                        "startLines": "48,49,70,71,73,82,83,143,144,145,146,148,149,153,156,157,158",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "4528,4623,7233,7330,7511,8283,8362,13236,13327,13414,13486,13641,13726,14064,14320,14396,14468",
-                        "endColumns": "94,82,96,98,85,78,96,90,86,71,68,84,89,75,75,71,121",
-                        "endOffsets": "4618,4701,7325,7424,7592,8357,8454,13322,13409,13481,13550,13721,13811,14135,14391,14463,14585"
-                    }
-                },
-                {
                     "source": "C:\\Users\\chris\\.gradle\\caches\\transforms-3\\e0bdfc2b91fdecebb40324ea617ce812\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-pt-rPT\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -71,6 +54,40 @@
                         "startOffsets": "5814",
                         "endColumns": "144",
                         "endOffsets": "5954"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\chris\\.gradle\\caches\\transforms-3\\8b9a8db555f06e0b50151dfa10d47818\\transformed\\jetified-foundation-release\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,142",
+                        "endColumns": "86,88",
+                        "endOffsets": "137,226"
+                    },
+                    "to": {
+                        "startLines": "159,160",
+                        "startColumns": "4,4",
+                        "startOffsets": "14590,14677",
+                        "endColumns": "86,88",
+                        "endOffsets": "14672,14761"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\chris\\.gradle\\caches\\transforms-3\\d52ade455182404a9b0906a457ed1aa4\\transformed\\jetified-ui-release\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,200,283,380,479,565,644,741,832,919,991,1060,1145,1235,1311,1387,1459",
+                        "endColumns": "94,82,96,98,85,78,96,90,86,71,68,84,89,75,75,71,121",
+                        "endOffsets": "195,278,375,474,560,639,736,827,914,986,1055,1140,1230,1306,1382,1454,1576"
+                    },
+                    "to": {
+                        "startLines": "48,49,70,71,73,82,83,143,144,145,146,148,149,153,156,157,158",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4528,4623,7233,7330,7511,8283,8362,13236,13327,13414,13486,13641,13726,14064,14320,14396,14468",
+                        "endColumns": "94,82,96,98,85,78,96,90,86,71,68,84,89,75,75,71,121",
+                        "endOffsets": "4618,4701,7325,7424,7592,8357,8454,13322,13409,13481,13550,13721,13811,14135,14391,14463,14585"
                     }
                 },
                 {

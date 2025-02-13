@@ -2,57 +2,69 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/authFragment">
-
-    <!-- Authentication Fragment -->
-    <fragment
-        android:id="@+id/authFragment"
-        android:name="com.example.playsnapui.ui.auth.AuthFragment"
-        android:label="Auth">
-
-        <action
-            android:id="@+id/action_authFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-
-        <action
-            android:id="@+id/action_authFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
-
-        <action
-            android:id="@+id/action_authFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/authFragment"
-            app:popUpToInclusive="true"/>
-    </fragment>
-
-    <!-- Login Fragment -->
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.playsnapui.ui.login.LoginFragment"
-        android:label="Login">
-
-        <action
-            android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/authFragment"
-            app:popUpToInclusive="true"/>
-    </fragment>
-
-    <!-- Register Fragment -->
-    <fragment
-        android:id="@+id/registerFragment"
-        android:name="com.example.playsnapui.ui.register.RegisterFragment"
-        android:label="Register">
-        <action
-            android:id="@+id/action_registerFragment_to_loginFragment"
-            app:destination="@id/loginFragment"
-            app:popUpTo="@id/authFragment"
-            app:popUpToInclusive="true"/>
-    </fragment>
+    app:startDestination="@+id/homeFragment">
 
     <!-- Home Fragment -->
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.playsnapui.ui.home.HomeFragment"
-        android:label="Home"/>
+        android:label="Home">
+        <action
+            android:id="@+id/action_HomeFragment_to_SnapFragment"
+            app:destination="@id/snapFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/action_homeFragment_to_filterFragment"
+            app:destination="@id/filterFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/snapFragment"
+        android:name="com.example.playsnapui.ui.snap.SnapFragment"
+        android:label="Snap">
+        <action
+            android:id="@+id/action_SnapFragment_to_ScrollGalleryFragment"
+            app:destination="@id/scrollGalleryFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_SnapFragment_to_HomeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.example.playsnapui.ui.filter.FilterFragment"
+        android:label="Filter" />
+
+    <fragment
+        android:id="@+id/scrollGalleryFragment"
+        android:name="com.example.playsnapui.ui.gallery.scroll.ScrollGalleryFragment"
+        android:label="ScrollGallery">
+        <action
+            android:id="@+id/action_ScrollGalleryFragment_to_SwipeGalleryFragment"
+            app:destination="@id/swipeGalleryFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/swipeGalleryFragment"
+        android:name="com.example.playsnapui.ui.gallery.swipe.SwipeGalleryFragment"
+        android:label="SwipeGallery">
+        <action
+            android:id="@+id/action_SwipeGalleryFragment_to_ScrollGalleryFragment"
+            app:destination="@id/scrollGalleryFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+
 </navigation>
+

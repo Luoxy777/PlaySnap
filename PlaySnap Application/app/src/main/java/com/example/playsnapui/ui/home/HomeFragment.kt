@@ -7,11 +7,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.playsnapui.data.Games
+import com.example.playsnapui.R
 import com.example.playsnapui.databinding.FragmentHomeBinding
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
@@ -98,6 +100,15 @@ class HomeFragment : Fragment() {
             homeAdapterPopular.notifyDataSetChanged()
             homeAdapterForYou.notifyDataSetChanged()
         }
+        binding.btnScanObject.setOnClickListener {
+            findNavController().navigate(R.id.action_HomeFragment_to_SnapFragment)
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            requireActivity().finish()
+        }
+
+
     }
 
     override fun onDestroyView() {

@@ -31,6 +31,7 @@ class SplashActivity : AppCompatActivity() {
 //            } else {
 //                startActivity(Intent(this, AuthActivity::class.java))
 //            }
+
             finish() // Close SplashActivity
         }, 1500) // 1.5 seconds delay
     }

@@ -98,8 +98,14 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:31.5.0"))
     implementation("com.google.firebase:firebase-analytics")
 
-    implementation("androidx.core:core-splashscreen:1.0.1") // Add this
+    implementation("androidx.core:core-splashscreen:1.0.1")
 
+    implementation("io.coil-kt:coil:2.6.0")
+    implementation("io.coil-kt:coil-compose:2.6.0")
+    implementation("io.coil-kt:coil-svg:2.6.0")
+
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    kapt("com.github.bumptech.glide:compiler:4.12.0")
 }
 
 kapt {
