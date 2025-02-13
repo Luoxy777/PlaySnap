@@ -14,12 +14,12 @@ class SwipeGalleryAdapter(
     private val onItemChecked: (Int, Boolean) -> Unit
 ) : RecyclerView.Adapter<SwipeGalleryAdapter.GalleryViewHolder>() {
 
-    private val checkedState = mutableSetOf<Int>() // Track checked items
+    val selectedItems = mutableSetOf<Int>() // Track checked items
 
     fun submitList(newImages: List<String>) {
         images.clear() // ✅ Fix: Now images is mutable
         images.addAll(newImages)
-        checkedState.clear() // Reset checked state
+        selectedItems.clear() // Reset checked state
         notifyDataSetChanged()
     }
 
@@ -48,12 +48,12 @@ class SwipeGalleryAdapter(
             updateCheckButton(position)
 
             checkButton.setOnClickListener {
-                if (checkedState.contains(position)) {
-                    checkedState.remove(position)
+                if (selectedItems.contains(position)) {
+                    selectedItems.remove(position)
                 } else {
-                    checkedState.add(position)
+                    selectedItems.add(position)
                 }
-                onItemChecked(position, checkedState.contains(position))
+                onItemChecked(position, selectedItems.contains(position))
                 updateCheckButton(position)
             }
         }
@@ -62,7 +62,7 @@ class SwipeGalleryAdapter(
         private fun updateCheckButton(position: Int) {
             checkButton.setCompoundDrawablesWithIntrinsicBounds(
                 0,
-                if (checkedState.contains(position)) R.drawable.baseline_check_24 else 0,
+                if (selectedItems.contains(position)) R.drawable.baseline_check_24 else 0,
                 0,
                 0
             )
@@ -71,19 +71,29 @@ class SwipeGalleryAdapter(
 
     // Function to remove selected images
     fun removeCheckedImages() {
-        val uncheckedImages = images.filterIndexed { index, _ -> index !in checkedState }
+        val uncheckedImages = images.filterIndexed { index, _ -> index !in selectedItems }
         images.clear()
         images.addAll(uncheckedImages)
-        checkedState.clear()
+        selectedItems.clear()
         notifyDataSetChanged()
     }
 
     fun setChecked(position: Int, isChecked: Boolean) {
         if (isChecked) {
-            checkedState.add(position)
+            selectedItems.add(position)
         } else {
-            checkedState.remove(position)
+            selectedItems.remove(position)
         }
         notifyItemChanged(position)
     }
+
+    fun getCurrentImagePaths(): List<String> {
+        return images
+    }
+    fun updateImages(newImages: List<String>) {
+        images = newImages.toMutableList()
+        notifyDataSetChanged() // Refresh UI
+    }
+
+
 }

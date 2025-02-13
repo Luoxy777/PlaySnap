@@ -176,7 +176,6 @@ id action_homeFragment_to_filterFragment
 id action_loginFragment_to_homeFragment
 id action_registerFragment_to_loginFragment
 id appCompatButton
-id appCompatButton2
 id authFragment
 id awanTopFilterPage
 id awanTopFilterPage2
@@ -382,6 +381,8 @@ id started_title
 id subtitle_bottom
 id sun_loading_page
 id swipeGalleryFragment
+id swipeLeft
+id swipeRight
 id tenda_loading_page
 id textView
 id textView2

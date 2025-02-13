@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,25 +22,19 @@ class ScrollGalleryFragment : Fragment() {
 
     private lateinit var adapter: ScrollGalleryAdapter
     private val imagePaths = mutableListOf<String>()
-    private val selectedItems = mutableSetOf<Int>() // Stores checked images' positions
+    private val selectedItems = mutableSetOf<Int>()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         _binding = FragmentScrollGaleryBinding.inflate(inflater, container, false)
-        val view = binding.root
-
-        setupRecyclerView()
-        loadRecentImages()
-        setupButtons()
-
-        return view
+        return binding.root
     }
 
-    private fun setupRecyclerView() {
-        binding.recentRecyclerPopgame.layoutManager = GridLayoutManager(requireContext(), 3)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        // Initialize adapter
         adapter = ScrollGalleryAdapter(imagePaths) { position, isChecked ->
             if (isChecked) {
                 selectedItems.add(position)
@@ -47,6 +42,20 @@ class ScrollGalleryFragment : Fragment() {
                 selectedItems.remove(position)
             }
         }
+
+        // Set up RecyclerView
+        setupRecyclerView()
+
+        // Load images and set up buttons
+        loadRecentImages()
+        setupButtons()
+
+        // Observe fragment result from SwipeGalleryFragment
+        observeSwipeResult()
+    }
+
+    private fun setupRecyclerView() {
+        binding.recentRecyclerPopgame.layoutManager = GridLayoutManager(requireContext(), 3)
         binding.recentRecyclerPopgame.adapter = adapter
 
         val spacingInPixels = 16
@@ -72,21 +81,55 @@ class ScrollGalleryFragment : Fragment() {
     private fun setupButtons() {
         binding.hapusButton.setOnClickListener {
             val sortedSelectedItems = selectedItems.sortedDescending()
+
+            // Delete selected items
             for (index in sortedSelectedItems) {
                 imagePaths.removeAt(index)
             }
+
+            // Clear the selectedItems set
             selectedItems.clear()
+
+            // Reinitialize the adapter with the updated imagePaths and selectedItems
+            adapter = ScrollGalleryAdapter(imagePaths) { position, isChecked ->
+                if (isChecked) {
+                    selectedItems.add(position)
+                } else {
+                    selectedItems.remove(position)
+                }
+            }
+
+            // Set the adapter to the RecyclerView
+            binding.recentRecyclerPopgame.adapter = adapter
+
+            // Notify the adapter of changes
             adapter.notifyDataSetChanged()
         }
 
         binding.btnSwitchLayout.setOnClickListener {
             val bundle = Bundle().apply {
                 putStringArrayList("IMAGE_PATHS", ArrayList(imagePaths))
-                putIntegerArrayList("SELECTED_ITEMS", ArrayList(selectedItems.toList())) // 🔥 FIXED
+                putIntegerArrayList("SELECTED_ITEMS", ArrayList(selectedItems.toList()))
             }
             findNavController().navigate(R.id.action_ScrollGalleryFragment_to_SwipeGalleryFragment, bundle)
         }
+    }
 
+    private fun observeSwipeResult() {
+        setFragmentResultListener("SWIPE_TO_SCROLL") { _, bundle ->
+            val updatedImages = bundle.getStringArrayList("IMAGE_PATHS") ?: return@setFragmentResultListener
+            val updatedCheckedItems = bundle.getIntegerArrayList("SELECTED_ITEMS") ?: return@setFragmentResultListener
+
+            // Update image paths and selected items
+            imagePaths.clear()
+            imagePaths.addAll(updatedImages)
+
+            selectedItems.clear()
+            selectedItems.addAll(updatedCheckedItems)
+
+            // Restore the checked state in the adapter
+            adapter.setSelectedItems(selectedItems)
+        }
     }
 
     private fun loadRecentImages() {

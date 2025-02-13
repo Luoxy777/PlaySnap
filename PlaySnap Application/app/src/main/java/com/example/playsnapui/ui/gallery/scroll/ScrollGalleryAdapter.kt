@@ -11,10 +11,17 @@ import com.example.playsnapui.R
 
 class ScrollGalleryAdapter(
     private val imagePaths: MutableList<String>,
-    private val onItemChecked: (Int, Boolean) -> Unit // Callback to notify selection
+    private val onItemChecked: (Int, Boolean) -> Unit
 ) : RecyclerView.Adapter<ScrollGalleryAdapter.GalleryViewHolder>() {
 
-    private val selectedItems = mutableSetOf<Int>() // Store checked item positions
+    private val selectedItems = mutableSetOf<Int>()
+
+    // Add this method to restore checked state
+    fun setSelectedItems(selectedItems: Set<Int>) {
+        this.selectedItems.clear()
+        this.selectedItems.addAll(selectedItems)
+        notifyDataSetChanged()
+    }
 
     inner class GalleryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imageView: ImageView = view.findViewById(R.id.imageView)
@@ -58,13 +65,4 @@ class ScrollGalleryAdapter(
     }
 
     override fun getItemCount(): Int = imagePaths.size
-
-    // Function to remove selected items
-    fun removeSelectedItems() {
-        val newList = imagePaths.filterIndexed { index, _ -> !selectedItems.contains(index) }
-        imagePaths.clear()
-        imagePaths.addAll(newList)
-        selectedItems.clear()
-        notifyDataSetChanged()
-    }
 }
