@@ -1,61 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.playsnapui.app-mergeDebugResources-3:/values-ka/values-ka.xml",
+            "outputFile": "com.example.playsnapui.app-mergeDebugResources-71:/values-ka/values-ka.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\47d1d967546a50d3c32e08b665375736\\transformed\\play-services-base-18.0.1\\res\\values-ka\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "193,294,439,563,669,819,949,1067,1171,1340,1444,1595,1719,1876,2011,2073,2130",
-                        "endColumns": "100,144,123,105,149,129,117,103,168,103,150,123,156,134,61,56,71",
-                        "endOffsets": "293,438,562,668,818,948,1066,1170,1339,1443,1594,1718,1875,2010,2072,2129,2201"
-                    },
-                    "to": {
-                        "startLines": "53,54,55,56,57,58,59,60,62,63,64,65,66,67,68,69,70",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "4977,5082,5231,5359,5469,5623,5757,5879,6130,6303,6411,6566,6694,6855,6994,7060,7121",
-                        "endColumns": "104,148,127,109,153,133,121,107,172,107,154,127,160,138,65,60,75",
-                        "endOffsets": "5077,5226,5354,5464,5618,5752,5874,5982,6298,6406,6561,6689,6850,6989,7055,7116,7192"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\944cf7a39b3dd9ccb48d2cd9efaf5af4\\transformed\\browser-1.4.0\\res\\values-ka\\values-ka.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,161,264,374",
-                        "endColumns": "105,102,109,104",
-                        "endOffsets": "156,259,369,474"
-                    },
-                    "to": {
-                        "startLines": "71,80,81,82",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "7197,7976,8079,8189",
-                        "endColumns": "105,102,109,104",
-                        "endOffsets": "7298,8074,8184,8289"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\ed96e895b4408c899385064e24e6594c\\transformed\\ui-1.4.0\\res\\values-ka\\values-ka.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,201,287,386,489,579,659,755,845,932,1003,1072,1161,1252,1324,1403,1473",
-                        "endColumns": "95,85,98,102,89,79,95,89,86,70,68,88,90,71,78,69,120",
-                        "endOffsets": "196,282,381,484,574,654,750,840,927,998,1067,1156,1247,1319,1398,1468,1589"
-                    },
-                    "to": {
-                        "startLines": "50,51,72,73,75,84,85,145,146,147,148,150,151,155,158,159,160",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "4718,4814,7303,7402,7578,8363,8443,13258,13348,13435,13506,13655,13744,14082,14336,14415,14485",
-                        "endColumns": "95,85,98,102,89,79,95,89,86,70,68,88,90,71,78,69,120",
-                        "endOffsets": "4809,4895,7397,7500,7663,8438,8534,13343,13430,13501,13570,13739,13830,14149,14410,14480,14601"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\65164b46674f0e0d2c12a3bbb4e8d236\\transformed\\material3-1.0.0\\res\\values-ka\\values-ka.xml",
+                    "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\65164b46674f0e0d2c12a3bbb4e8d236\\transformed\\material3-1.0.0\\res\\values-ka\\values-ka.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -72,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\eda511739b6133ec74b6d8450ccb7fba\\transformed\\material-1.12.0\\res\\values-ka\\values-ka.xml",
+                    "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\eda511739b6133ec74b6d8450ccb7fba\\transformed\\material-1.12.0\\res\\values-ka\\values-ka.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -91,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\b3a3dff2fd1f4fcc42b825d7fc0556bb\\transformed\\appcompat-1.7.0\\res\\values-ka\\values-ka.xml",
+                    "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\b3a3dff2fd1f4fcc42b825d7fc0556bb\\transformed\\appcompat-1.7.0\\res\\values-ka\\values-ka.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -108,24 +57,41 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\1c28c6e38df06a10aa93f192d9faa2da\\transformed\\play-services-basement-18.4.0\\res\\values-ka\\values.xml",
+                    "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\47d1d967546a50d3c32e08b665375736\\transformed\\play-services-base-18.0.1\\res\\values-ka\\values.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "138",
-                        "endOffsets": "333"
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "193,294,439,563,669,819,949,1067,1171,1340,1444,1595,1719,1876,2011,2073,2130",
+                        "endColumns": "100,144,123,105,149,129,117,103,168,103,150,123,156,134,61,56,71",
+                        "endOffsets": "293,438,562,668,818,948,1066,1170,1339,1443,1594,1718,1875,2010,2072,2129,2201"
                     },
                     "to": {
-                        "startLines": "61",
-                        "startColumns": "4",
-                        "startOffsets": "5987",
-                        "endColumns": "142",
-                        "endOffsets": "6125"
+                        "startLines": "53,54,55,56,57,58,59,60,62,63,64,65,66,67,68,69,70",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4977,5082,5231,5359,5469,5623,5757,5879,6130,6303,6411,6566,6694,6855,6994,7060,7121",
+                        "endColumns": "104,148,127,109,153,133,121,107,172,107,154,127,160,138,65,60,75",
+                        "endOffsets": "5077,5226,5354,5464,5618,5752,5874,5982,6298,6406,6561,6689,6850,6989,7055,7116,7192"
                     }
                 },
                 {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\c182ba55479e14ed40c9fadac9ce6289\\transformed\\credentials-1.2.0-rc01\\res\\values-ka\\values-ka.xml",
+                    "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\2f55ca72d86bb37246b4715357c2511c\\transformed\\core-1.13.0\\res\\values-ka\\values-ka.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,151,253,352,451,557,661,779",
+                        "endColumns": "95,101,98,98,105,103,117,100",
+                        "endOffsets": "146,248,347,446,552,656,774,875"
+                    },
+                    "to": {
+                        "startLines": "40,41,42,43,44,45,46,157",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "3682,3778,3880,3979,4078,4184,4288,14235",
+                        "endColumns": "95,101,98,98,105,103,117,100",
+                        "endOffsets": "3773,3875,3974,4073,4179,4283,4401,14331"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\c182ba55479e14ed40c9fadac9ce6289\\transformed\\credentials-1.2.0-rc01\\res\\values-ka\\values-ka.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -142,20 +108,54 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\2f55ca72d86bb37246b4715357c2511c\\transformed\\core-1.13.0\\res\\values-ka\\values-ka.xml",
+                    "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\944cf7a39b3dd9ccb48d2cd9efaf5af4\\transformed\\browser-1.4.0\\res\\values-ka\\values-ka.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,151,253,352,451,557,661,779",
-                        "endColumns": "95,101,98,98,105,103,117,100",
-                        "endOffsets": "146,248,347,446,552,656,774,875"
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,161,264,374",
+                        "endColumns": "105,102,109,104",
+                        "endOffsets": "156,259,369,474"
                     },
                     "to": {
-                        "startLines": "40,41,42,43,44,45,46,157",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "3682,3778,3880,3979,4078,4184,4288,14235",
-                        "endColumns": "95,101,98,98,105,103,117,100",
-                        "endOffsets": "3773,3875,3974,4073,4179,4283,4401,14331"
+                        "startLines": "71,80,81,82",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "7197,7976,8079,8189",
+                        "endColumns": "105,102,109,104",
+                        "endOffsets": "7298,8074,8184,8289"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\ed96e895b4408c899385064e24e6594c\\transformed\\ui-1.4.0\\res\\values-ka\\values-ka.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,201,287,386,489,579,659,755,845,932,1003,1072,1161,1252,1324,1403,1473",
+                        "endColumns": "95,85,98,102,89,79,95,89,86,70,68,88,90,71,78,69,120",
+                        "endOffsets": "196,282,381,484,574,654,750,840,927,998,1067,1156,1247,1319,1398,1468,1589"
+                    },
+                    "to": {
+                        "startLines": "50,51,72,73,75,84,85,145,146,147,148,150,151,155,158,159,160",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4718,4814,7303,7402,7578,8363,8443,13258,13348,13435,13506,13655,13744,14082,14336,14415,14485",
+                        "endColumns": "95,85,98,102,89,79,95,89,86,70,68,88,90,71,78,69,120",
+                        "endOffsets": "4809,4895,7397,7500,7663,8438,8534,13343,13430,13501,13570,13739,13830,14149,14410,14480,14601"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\1c28c6e38df06a10aa93f192d9faa2da\\transformed\\play-services-basement-18.4.0\\res\\values-ka\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "138",
+                        "endOffsets": "333"
+                    },
+                    "to": {
+                        "startLines": "61",
+                        "startColumns": "4",
+                        "startOffsets": "5987",
+                        "endColumns": "142",
+                        "endOffsets": "6125"
                     }
                 }
             ]

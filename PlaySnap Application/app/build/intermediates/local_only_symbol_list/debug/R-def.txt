@@ -428,6 +428,7 @@ layout activity_search_object_by_type_page
 layout activity_settings_account_page
 layout activity_tutorial_page
 layout bottom_sheet_filter_page
+layout fragment_blank
 layout layout_bookgame_list_item
 layout layout_delete_object_confirmation
 layout layout_foryougame_list_item

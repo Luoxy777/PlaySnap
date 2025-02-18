@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.playsnapui.app-mergeDebugResources-3:/values-it/values-it.xml",
+            "outputFile": "com.example.playsnapui.app-mergeDebugResources-71:/values-it/values-it.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\2f55ca72d86bb37246b4715357c2511c\\transformed\\core-1.13.0\\res\\values-it\\values-it.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,153,255,354,456,565,672,802",
-                        "endColumns": "97,101,98,101,108,106,129,100",
-                        "endOffsets": "148,250,349,451,560,667,797,898"
-                    },
-                    "to": {
-                        "startLines": "40,41,42,43,44,45,46,157",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "3674,3772,3874,3973,4075,4184,4291,14359",
-                        "endColumns": "97,101,98,101,108,106,129,100",
-                        "endOffsets": "3767,3869,3968,4070,4179,4286,4416,14455"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\1c28c6e38df06a10aa93f192d9faa2da\\transformed\\play-services-basement-18.4.0\\res\\values-it\\values.xml",
+                    "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\1c28c6e38df06a10aa93f192d9faa2da\\transformed\\play-services-basement-18.4.0\\res\\values-it\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\b3a3dff2fd1f4fcc42b825d7fc0556bb\\transformed\\appcompat-1.7.0\\res\\values-it\\values-it.xml",
+                    "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\b3a3dff2fd1f4fcc42b825d7fc0556bb\\transformed\\appcompat-1.7.0\\res\\values-it\\values-it.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\eda511739b6133ec74b6d8450ccb7fba\\transformed\\material-1.12.0\\res\\values-it\\values-it.xml",
+                    "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\eda511739b6133ec74b6d8450ccb7fba\\transformed\\material-1.12.0\\res\\values-it\\values-it.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -74,7 +57,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\65164b46674f0e0d2c12a3bbb4e8d236\\transformed\\material3-1.0.0\\res\\values-it\\values-it.xml",
+                    "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\65164b46674f0e0d2c12a3bbb4e8d236\\transformed\\material3-1.0.0\\res\\values-it\\values-it.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -91,7 +74,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\47d1d967546a50d3c32e08b665375736\\transformed\\play-services-base-18.0.1\\res\\values-it\\values.xml",
+                    "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\ed96e895b4408c899385064e24e6594c\\transformed\\ui-1.4.0\\res\\values-it\\values-it.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,205,292,390,490,577,656,762,855,950,1015,1079,1163,1251,1336,1414,1483",
+                        "endColumns": "99,86,97,99,86,78,105,92,94,64,63,83,87,84,77,68,120",
+                        "endOffsets": "200,287,385,485,572,651,757,850,945,1010,1074,1158,1246,1331,1409,1478,1599"
+                    },
+                    "to": {
+                        "startLines": "50,51,72,73,75,84,85,145,146,147,148,150,151,155,158,159,160",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4743,4843,7340,7438,7623,8416,8495,13377,13470,13565,13630,13774,13858,14192,14460,14538,14607",
+                        "endColumns": "99,86,97,99,86,78,105,92,94,64,63,83,87,84,77,68,120",
+                        "endOffsets": "4838,4925,7433,7533,7705,8490,8596,13465,13560,13625,13689,13853,13941,14272,14533,14602,14723"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\47d1d967546a50d3c32e08b665375736\\transformed\\play-services-base-18.0.1\\res\\values-it\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -108,7 +108,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\c182ba55479e14ed40c9fadac9ce6289\\transformed\\credentials-1.2.0-rc01\\res\\values-it\\values-it.xml",
+                    "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\c182ba55479e14ed40c9fadac9ce6289\\transformed\\credentials-1.2.0-rc01\\res\\values-it\\values-it.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -125,7 +125,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\944cf7a39b3dd9ccb48d2cd9efaf5af4\\transformed\\browser-1.4.0\\res\\values-it\\values-it.xml",
+                    "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\2f55ca72d86bb37246b4715357c2511c\\transformed\\core-1.13.0\\res\\values-it\\values-it.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,255,354,456,565,672,802",
+                        "endColumns": "97,101,98,101,108,106,129,100",
+                        "endOffsets": "148,250,349,451,560,667,797,898"
+                    },
+                    "to": {
+                        "startLines": "40,41,42,43,44,45,46,157",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "3674,3772,3874,3973,4075,4184,4291,14359",
+                        "endColumns": "97,101,98,101,108,106,129,100",
+                        "endOffsets": "3767,3869,3968,4070,4179,4286,4416,14455"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\944cf7a39b3dd9ccb48d2cd9efaf5af4\\transformed\\browser-1.4.0\\res\\values-it\\values-it.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -139,23 +156,6 @@
                         "startOffsets": "7240,8020,8118,8228",
                         "endColumns": "99,97,109,102",
                         "endOffsets": "7335,8113,8223,8326"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\ed96e895b4408c899385064e24e6594c\\transformed\\ui-1.4.0\\res\\values-it\\values-it.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,205,292,390,490,577,656,762,855,950,1015,1079,1163,1251,1336,1414,1483",
-                        "endColumns": "99,86,97,99,86,78,105,92,94,64,63,83,87,84,77,68,120",
-                        "endOffsets": "200,287,385,485,572,651,757,850,945,1010,1074,1158,1246,1331,1409,1478,1599"
-                    },
-                    "to": {
-                        "startLines": "50,51,72,73,75,84,85,145,146,147,148,150,151,155,158,159,160",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "4743,4843,7340,7438,7623,8416,8495,13377,13470,13565,13630,13774,13858,14192,14460,14538,14607",
-                        "endColumns": "99,86,97,99,86,78,105,92,94,64,63,83,87,84,77,68,120",
-                        "endOffsets": "4838,4925,7433,7533,7705,8490,8596,13465,13560,13625,13689,13853,13941,14272,14533,14602,14723"
                     }
                 }
             ]
