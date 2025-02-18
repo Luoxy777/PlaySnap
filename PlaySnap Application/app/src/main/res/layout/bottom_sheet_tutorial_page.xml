@@ -61,7 +61,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Lompat Tali"
+                        android:text="@string/title_header_game_tutorial_page"
                         android:textSize="35dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -73,7 +73,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginBottom="15dp"
                         android:fontFamily="@font/andikaregular"
-                        android:text="Outdoor, Usia > 6 Tahun"
+                        android:text="@string/subtitle_header_game_tutorial_page"
                         android:textColor="@color/grey"
                         android:textSize="13dp"
                         app:layout_constraintBottom_toBottomOf="@id/line_game_desc_header"
@@ -90,6 +90,7 @@
                         app:layout_constraintStart_toStartOf="parent" />
 
                     <RelativeLayout
+                        android:id="@+id/jumlah_pemain_section"
                         android:layout_width="70dp"
                         android:layout_height="60dp"
                         android:background="@drawable/bg_player_tutorial_page"
@@ -106,11 +107,12 @@
                             android:layout_marginStart="16dp"
                             android:layout_marginEnd="16dp"
                             android:fontFamily="@font/leaguespartanbold"
-                            android:text="1-3"
+                            android:text="@string/number_player_tutorial_page"
                             android:textColor="@color/white"
                             android:textSize="30dp" />
 
                         <TextView
+                            android:id="@+id/orang_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
@@ -136,7 +138,7 @@
             </RelativeLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/deskripsi_text"
+                android:id="@+id/deskripsi_section"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -155,10 +157,11 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/deskripsi_content"
                     android:layout_width="match_parent"
                     android:layout_height="65dp"
                     android:fontFamily="@font/andikaregular"
-                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    android:text="@string/deskripsi_game_content_tutorial_page"
                     android:textColor="@color/grey"
                     android:textSize="12dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -166,6 +169,7 @@
                     app:layout_constraintTop_toBottomOf="@id/title_deskripsi" />
 
                 <TextView
+                    android:id="@+id/baca_selengkapnya"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
@@ -180,13 +184,13 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/alat_bermain_desc"
+                android:id="@+id/alat_bermain_section"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/deskripsi_text">
+                app:layout_constraintTop_toBottomOf="@id/deskripsi_section">
 
                 <TextView
                     android:id="@+id/title_alat_bermain"
@@ -208,11 +212,12 @@
                     app:layout_constraintTop_toBottomOf="@id/title_alat_bermain" />
 
                 <TextView
+                    android:id="@+id/alat_bermain_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:fontFamily="@font/andikabold"
-                    android:text="Karet Gelang (min. 50 pcs)"
+                    android:text="@string/alat_bermain_content_tutorial_page"
                     android:textColor="@color/grey"
                     android:textSize="12dp"
                     app:layout_constraintStart_toEndOf="@id/btn_check_alat_bermain"
@@ -221,13 +226,13 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/tutorial_desc"
+                android:id="@+id/tutorial_section"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/alat_bermain_desc">
+                app:layout_constraintTop_toBottomOf="@id/alat_bermain_section">
 
                 <TextView
                     android:id="@+id/title_tutorial"
@@ -241,7 +246,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/subtitle_tutorial"
+                    android:id="@+id/video_tutorial_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/leaguespartanbold"
@@ -252,7 +257,7 @@
                     app:layout_constraintTop_toBottomOf="@id/title_tutorial" />
 
                 <LinearLayout
-                    android:id="@+id/video_tutorial"
+                    android:id="@+id/video_tutorial_content"
                     android:layout_width="240dp"
                     android:layout_height="135dp"
                     android:layout_marginTop="15dp"
@@ -260,10 +265,10 @@
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/subtitle_tutorial" />
+                    app:layout_constraintTop_toBottomOf="@id/video_tutorial_text" />
 
                 <TextView
-                    android:id="@+id/langkah_bermain_text"
+                    android:id="@+id/langkah_bermain_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -272,22 +277,23 @@
                     android:textColor="@color/dark_blue"
                     android:textSize="17dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/video_tutorial" />
+                    app:layout_constraintTop_toBottomOf="@id/video_tutorial_content" />
 
                 <TextView
-                    android:id="@+id/langkah_bermain_desc"
+                    android:id="@+id/langkah_bermain_content"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/andikaregular"
-                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    android:text="@string/langkah_bermain_content_tutorial_page"
                     android:textSize="12dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/langkah_bermain_text" />
+                    app:layout_constraintTop_toBottomOf="@id/langkah_bermain_title" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/mainkan_button_tutorial"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="25dp"
@@ -298,7 +304,7 @@
                 android:textSize="17dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tutorial_desc" />
+                app:layout_constraintTop_toBottomOf="@id/tutorial_section" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
