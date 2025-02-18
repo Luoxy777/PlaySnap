@@ -101,6 +101,14 @@ class HomeFragment : Fragment() {
         binding.btnFilterGame.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_filterFragment)
         }
+
+        binding.btnScanObject.setOnClickListener {
+            findNavController().navigate(R.id.action_HomeFragment_to_SnapFragment)
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            requireActivity().finish()
+        }
     }
 
     private fun loadGamesFromFirestore() {
@@ -126,15 +134,6 @@ class HomeFragment : Fragment() {
                 setRecyclerViewHeightBasedOnItems(binding.recentRecyclerForyou)
             }
         }
-        binding.btnScanObject.setOnClickListener {
-            findNavController().navigate(R.id.action_HomeFragment_to_SnapFragment)
-        }
-
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
-            requireActivity().finish()
-        }
-
-
     }
 
     override fun onDestroyView() {
