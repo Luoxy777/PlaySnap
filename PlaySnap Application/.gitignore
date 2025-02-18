@@ -1,16 +1,6 @@
 *.iml
-<<<<<<< HEAD
-.gradle
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-=======
 .gradle/
 .idea/
->>>>>>> 4dca2cba997a8f107734db8bb8163f63e850ef6e
 .DS_Store
 build/
 captures/
