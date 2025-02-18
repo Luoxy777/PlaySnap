@@ -145,6 +145,7 @@ drawable properti_opt1
 drawable properti_opt2
 drawable rounded_rectangle_dragable
 drawable search_background
+drawable silang
 drawable tenda_karnaval
 drawable usia_opt1
 drawable usia_opt2
@@ -163,8 +164,11 @@ font leaguespartanregular
 font leaguespartansemibold
 font leaguespartanthin
 id MyScrollView
+id ObjectFragment
 id action_FilterFragment_to_HomeFragment
+id action_FilterFragment_to_RecGameFragment
 id action_HomeFragment_to_SnapFragment
+id action_ScrollGalleryFragment_to_ObjectFragment
 id action_ScrollGalleryFragment_to_SwipeGalleryFragment
 id action_SnapFragment_to_HomeFragment
 id action_SnapFragment_to_ScrollGalleryFragment
@@ -176,7 +180,6 @@ id action_homeFragment_to_filterFragment
 id action_loginFragment_to_homeFragment
 id action_registerFragment_to_loginFragment
 id appCompatButton
-id appCompatButton2
 id authFragment
 id awanTopFilterPage
 id awanTopFilterPage2
@@ -348,6 +351,7 @@ id player_count_feedback_person_text
 id previewView
 id profile
 id profile_pic
+id progressBar
 id properti_opt
 id properti_opt1_btn
 id properti_opt2_btn
@@ -361,6 +365,8 @@ id recent_recycler_bookmark
 id recent_recycler_foryou
 id recent_recycler_like
 id recent_recycler_popgame
+id recommendGameFragment
+id recycler_popobject
 id registerButton
 id registerFragment
 id register_have_account
@@ -382,6 +388,8 @@ id started_title
 id subtitle_bottom
 id sun_loading_page
 id swipeGalleryFragment
+id swipeLeft
+id swipeRight
 id tenda_loading_page
 id textView
 id textView2
@@ -477,7 +485,6 @@ layout activity_bookmark_page
 layout activity_edit_password_page
 layout activity_edit_profile_page
 layout activity_feedback_page
-layout activity_filter_page
 layout activity_gallery_view_object_scroll_page
 layout activity_gallery_view_object_swipe_page
 layout activity_help_page
@@ -512,6 +519,8 @@ layout fragment_auth
 layout fragment_filter
 layout fragment_home
 layout fragment_login
+layout fragment_object
+layout fragment_recommend_game
 layout fragment_register
 layout fragment_scroll_galery
 layout fragment_snap
@@ -689,3 +698,4 @@ style TitleGame
 style TransparentTheme
 xml backup_rules
 xml data_extraction_rules
+xml network_security_config

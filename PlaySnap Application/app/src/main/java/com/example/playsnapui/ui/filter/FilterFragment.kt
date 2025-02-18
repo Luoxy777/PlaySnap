@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.playsnapui.R
 import com.example.playsnapui.databinding.BottomSheetFilterPageBinding
@@ -16,7 +17,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import androidx.lifecycle.lifecycleScope
 import com.example.playsnapui.data.Games
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
 
 
 class FilterFragment : Fragment() {
@@ -41,12 +44,12 @@ class FilterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var usiaMinContainer : Int = 0
-        var usiaMaxContainer : Int = 0
-        var lokasiContainer : String = ""
-        var pemainMinContainer : Int = 0
-        var pemainMaxContainer : Int = 0
-        var propertiContainer : String = ""
+        var usiaMinContainer : Int ?= null
+        var usiaMaxContainer : Int ?= null
+        var lokasiContainer : String ?= null
+        var pemainMinContainer : Int ?= null
+        var pemainMaxContainer : Int ?= null
+        var propertiContainer : String ?= null
 
         binding!!.btnBack.setOnClickListener {
             findNavController().navigate(R.id.action_FilterFragment_to_HomeFragment)
@@ -56,18 +59,18 @@ class FilterFragment : Fragment() {
             // Set listener untuk tombol usia
             sheetBinding.usiaOpt1Btn.setOnClickListener {
                 binding.usiaValue.text = "<6 th"
-                usiaMinContainer = 6
-                usiaMaxContainer = 0
+                usiaMinContainer = 0
+                usiaMaxContainer = 5
             }
             sheetBinding.usiaOpt2Btn.setOnClickListener {
                 binding.usiaValue.text = "6 - 10 th"
-                usiaMinContainer = 6
-                usiaMaxContainer = 10
+                usiaMinContainer = 5
+                usiaMaxContainer = 11
             }
             sheetBinding.usiaOpt3Btn.setOnClickListener {
                 binding.usiaValue.text = ">10 th"
-                usiaMinContainer = 0
-                usiaMaxContainer = 10
+                usiaMinContainer = 11
+                usiaMaxContainer = null
             }
 
             // Set listener untuk tombol lokasi
@@ -83,7 +86,8 @@ class FilterFragment : Fragment() {
             // Set listener untuk tombol jumlah pemain
             sheetBinding.pemainOpt1Btn.setOnClickListener {
                 binding.pemainValue.text = "<3 org"
-                pemainMaxContainer = 2
+                pemainMinContainer = 0
+                pemainMaxContainer = 3
             }
             sheetBinding.pemainOpt2Btn.setOnClickListener {
                 binding.pemainValue.text = "3 - 5 org"
@@ -93,6 +97,7 @@ class FilterFragment : Fragment() {
             sheetBinding.pemainOpt3Btn.setOnClickListener {
                 binding.pemainValue.text = ">5 org"
                 pemainMinContainer = 6
+                pemainMaxContainer = null
             }
 
             // Set listener untuk tombol properti
@@ -106,46 +111,111 @@ class FilterFragment : Fragment() {
             }
         }
 
-        compareGamesWithDatabase(usiaMinContainer, usiaMaxContainer, lokasiContainer, pemainMinContainer, pemainMaxContainer, propertiContainer)
+
+        binding.mulaiButton.setOnClickListener {
+            compareGamesWithDatabase(usiaMinContainer, usiaMaxContainer, lokasiContainer, pemainMinContainer, pemainMaxContainer, propertiContainer)
+        }
+
 
     }
 
-    private fun compareGamesWithDatabase(usiaMinContainer : Int, usiaMaxContainer : Int, lokasiContainer : String, pemainMinContainer : Int, pemainMaxContainer : Int, propertiContainer : String){
+    private fun compareGamesWithDatabase(usiaMinContainer : Int?, usiaMaxContainer : Int?, lokasiContainer : String?, pemainMinContainer : Int?, pemainMaxContainer : Int?, propertiContainer : String?){
         lifecycleScope.launch(Dispatchers.IO) {
             try {
                 val gamesSnapshot = db.collection("games").get().await()
-                val matchingGames = mutableListOf<Games>()
+                val matchingGames: MutableSet<Games> = mutableSetOf()
 
                 for (document in gamesSnapshot.documents) {
                     val game = document.toObject(Games::class.java)  // 🔥 Konversi langsung ke objek Game
 
                     if (game != null) {
-                        // Bandingkan pemainMaxContainer dengan pemainMax dari Firestore
-                        if (pemainMaxContainer == 2 && game.pemainMax < 3) {
-                            matchingGames.add(game)
-                        } else if (pemainMinContainer == 3 && pemainMaxContainer == 5 && game.pemainMin in 3 .. 5 && game.pemainMax in 3..5) {
-                            matchingGames.add(game)
-                        } else if (pemainMinContainer == 6 && game.pemainMin > 5) {
-                            matchingGames.add(game)
-                        }
+                        // cek games filter
+
+//                        cekGames(game, matchingGames, usiaContainer, lokasiContainer, pemainContainer, propertiContainer)
+
+                        if (usiaMaxContainer != null && usiaMaxContainer >= game.usiaMin && usiaMaxContainer >= game.usiaMax) continue
+
+                        // Filter berdasarkan lokasi
+                        if (lokasiContainer != null && game.jenisLokasi != lokasiContainer) continue
+
+                        // Filter berdasarkan jumlah pemain
+                        if (pemainMinContainer != null && game.pemainMax > pemainMinContainer) continue
+                        if (pemainMaxContainer != null && game.pemainMin < pemainMaxContainer) continue
+
+
+                        // Filter berdasarkan properti
+                        if (propertiContainer == "Ya" && game.properti == null) continue
+                        if (propertiContainer == "Tidak" && game.properti != null) continue
+
+
+                        matchingGames.add(game)
                     }
+
+                    var index = 0
+
+                    for (game in matchingGames){
+                        index++
+                        Log.d("Games", "Games : $game")
+                    }
+
+                    Log.d("Index", "Total : $index")
                 }
 
-                // Update UI di Main Thread
-                lifecycleScope.launch(Dispatchers.Main) {
-                    if (matchingGames.isNotEmpty()) {
-                        val gameNames = matchingGames.joinToString(", ") { it.namaPermainan }
-                        binding.resultTextView.text = "Game cocok: $gameNames"
-                    } else {
-                        binding.resultTextView.text = "Tidak ada game yang cocok"
-                    }
+                val bundle = Bundle().apply {
+                    putParcelableArrayList("MATCHING_GAMES", ArrayList(matchingGames.toList()))
                 }
+
+                findNavController().navigate(R.id.action_FilterFragment_to_RecGameFragment, bundle)
 
             } catch (e: Exception) {
                 lifecycleScope.launch(Dispatchers.Main) {
-                    binding.resultTextView.text = "Error: ${e.message}"
+
                 }
             }
+        }
+    }
+
+    private fun cekGames(game : Games, matchingGames: MutableSet<Games>, usiaContainer : String, lokasiContainer : String, pemainContainer : String, propertiContainer : String){
+        if (pemainContainer.equals("<3") && game.pemainMax < 3) {
+            cekUsia(game, matchingGames, usiaContainer, lokasiContainer, propertiContainer)
+        } else if (pemainContainer.equals("3-5") && game.pemainMin >= 3 && game.pemainMax <= 5) {
+            cekUsia(game, matchingGames, usiaContainer, lokasiContainer, propertiContainer)
+        } else if (pemainContainer.equals(">5") && game.pemainMin > 5) {
+            cekUsia(game, matchingGames, usiaContainer, lokasiContainer, propertiContainer)
+        }else{
+            cekUsia(game, matchingGames, usiaContainer, lokasiContainer, propertiContainer)
+        }
+    }
+
+    private fun cekUsia(game: Games, matchingGames: MutableSet<Games>, usiaContainer : String, lokasiContainer : String, propertiContainer : String){
+        if (usiaContainer.equals("<6") && game.usiaMax < 6) {
+            cekLokasi(game, matchingGames, lokasiContainer, propertiContainer)
+        } else if (usiaContainer.equals("6-10") && game.usiaMin >= 6 && game.usiaMax <= 10) {
+            cekLokasi(game, matchingGames, lokasiContainer, propertiContainer)
+        } else if (usiaContainer.equals(">10") && game.usiaMin > 10) {
+            cekLokasi(game, matchingGames, lokasiContainer, propertiContainer)
+        } else{
+            cekLokasi(game, matchingGames, lokasiContainer, propertiContainer)
+        }
+    }
+
+    private fun cekLokasi(game: Games, matchingGames: MutableSet<Games>, lokasiContainer : String, propertiContainer : String){
+        if (lokasiContainer.equals("Indoor") && game.jenisLokasi.equals("Indoor")) {
+            cekProperti(game, matchingGames, propertiContainer)
+        } else if (lokasiContainer.equals("Outdoor") && game.jenisLokasi.equals("Outdoor")) {
+            cekProperti(game, matchingGames, propertiContainer)
+        } else{
+            cekProperti(game, matchingGames, propertiContainer)
+        }
+    }
+
+    private fun cekProperti(game: Games, matchingGames: MutableSet<Games>, propertiContainer: String){
+        if (propertiContainer.equals("Ya") && game.properti != null) {
+            matchingGames.add(game)
+        } else if (propertiContainer.equals("Tidak") && game.properti == null) {
+            matchingGames.add(game)
+        } else{
+            matchingGames.add(game)
         }
     }
 

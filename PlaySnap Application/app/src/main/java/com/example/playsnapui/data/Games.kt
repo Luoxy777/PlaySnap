@@ -1,5 +1,6 @@
 package com.example.playsnapui.data
 
+import android.os.Parcel
 import android.os.Parcelable
 
 data class Games(
@@ -15,7 +16,54 @@ data class Games(
     val step : String = "",
     val tutorial : String = "",
     val linkVideo : String = "",
-    val rating : Float,
+    val rating : Float = 0f,
     val totalLike : Int = 0,
     val totalShare : Int = 0
-)
+) : Parcelable {
+    override fun describeContents(): Int {
+        TODO("Not yet implemented")
+    }
+
+    override fun writeToParcel(parcel: Parcel, p1: Int) {
+        parcel.writeString(namaPermainan)
+        parcel.writeString(deskripsi)
+        parcel.writeInt(pemainMin)
+        parcel.writeInt(pemainMax)
+        parcel.writeString(jenisLokasi)
+        parcel.writeInt(usiaMin)
+        parcel.writeInt(usiaMax)
+        parcel.writeString(properti)
+        parcel.writeString(bahanProperti)
+        parcel.writeString(step)
+        parcel.writeString(tutorial)
+        parcel.writeString(linkVideo)
+        parcel.writeFloat(rating)
+        parcel.writeInt(totalLike)
+        parcel.writeInt(totalShare)
+    }
+    companion object CREATOR : Parcelable.Creator<Games> {
+        override fun createFromParcel(parcel: Parcel): Games {
+            return Games(
+                namaPermainan = parcel.readString() ?: "",
+                deskripsi = parcel.readString() ?: "",
+                pemainMin = parcel.readInt(),
+                pemainMax = parcel.readInt(),
+                jenisLokasi = parcel.readString() ?: "",
+                usiaMin = parcel.readInt(),
+                usiaMax = parcel.readInt(),
+                properti = parcel.readString() ?: "",
+                bahanProperti = parcel.readString() ?: "",
+                step = parcel.readString() ?: "",
+                tutorial = parcel.readString() ?: "",
+                linkVideo = parcel.readString() ?: "",
+                rating = parcel.readFloat(),
+                totalLike = parcel.readInt(),
+                totalShare = parcel.readInt()
+            )
+        }
+
+        override fun newArray(size: Int): Array<Games?> {
+            return arrayOfNulls(size)
+        }
+    }
+}
