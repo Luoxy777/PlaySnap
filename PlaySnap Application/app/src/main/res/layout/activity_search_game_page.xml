@@ -7,47 +7,48 @@
     android:background="@color/white">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="40dp"
+        android:id="@+id/btn_back"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginTop="40dp"
+        android:layout_marginStart="40dp"
         android:background="@drawable/back_button"
         android:backgroundTint="@color/dark_blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tittle_search_game"
         style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/started_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@id/maskot_search_game"
+        app:layout_constraintTop_toBottomOf="@id/btn_back" />
 
     <ImageView
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:id="@+id/maskot_search_game"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/ic_trees"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintStart_toEndOf="@+id/tittle_search_game"
+        app:layout_constraintBottom_toTopOf="@id/line_search_game" />
 
     <ImageView
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginTop="34dp"
         android:background="@drawable/ic_maskot_main_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toEndOf="@+id/tittle_search_game"
+        app:layout_constraintBottom_toTopOf="@id/line_search_game" />
 
     <View
+        android:id="@+id/line_search_game"
         android:layout_width="350dp"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
@@ -55,14 +56,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tittle_search_game" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/et_search_game"
         style="@style/TextInputEditText_search"
         android:layout_width="340dp"
         android:layout_height="40dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/search_background"
         android:drawableStart="@drawable/ic_search"
         android:elevation="8dp"
@@ -76,7 +77,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line_search_game"
         app:startIconDrawable="@drawable/ic_search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_search_game"
+        android:layout_marginTop="30dp">
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
