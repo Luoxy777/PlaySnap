@@ -40,8 +40,16 @@
         "source": "com.example.playsnapui.app-main-7:/layout/fragment_scroll_galery.xml"
     },
     {
+        "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/bottom_sheet_tutorial_page.xml",
+        "source": "com.example.playsnapui.app-main-7:/layout/bottom_sheet_tutorial_page.xml"
+    },
+    {
         "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/activity_report_page.xml",
         "source": "com.example.playsnapui.app-main-7:/layout/activity_report_page.xml"
+    },
+    {
+        "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/pop_up_lokasi_category.xml",
+        "source": "com.example.playsnapui.app-main-7:/layout/pop_up_lokasi_category.xml"
     },
     {
         "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/activity_splash.xml",
@@ -50,6 +58,10 @@
     {
         "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/layout_popgame_list_item.xml",
         "source": "com.example.playsnapui.app-main-7:/layout/layout_popgame_list_item.xml"
+    },
+    {
+        "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/pop_up_usia_category.xml",
+        "source": "com.example.playsnapui.app-main-7:/layout/pop_up_usia_category.xml"
     },
     {
         "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/activity_home.xml",
@@ -148,16 +160,20 @@
         "source": "com.example.playsnapui.app-main-7:/layout/activity_search_game_page.xml"
     },
     {
-        "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/activity_help_page_req.xml",
-        "source": "com.example.playsnapui.app-main-7:/layout/activity_help_page_req.xml"
-    },
-    {
         "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/activity_help_page.xml",
         "source": "com.example.playsnapui.app-main-7:/layout/activity_help_page.xml"
     },
     {
+        "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/activity_help_page_req.xml",
+        "source": "com.example.playsnapui.app-main-7:/layout/activity_help_page_req.xml"
+    },
+    {
         "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/activity_rec_game_page.xml",
         "source": "com.example.playsnapui.app-main-7:/layout/activity_rec_game_page.xml"
+    },
+    {
+        "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/pop_up_pemain_category.xml",
+        "source": "com.example.playsnapui.app-main-7:/layout/pop_up_pemain_category.xml"
     },
     {
         "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/activity_help_page_q4.xml",

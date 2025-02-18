@@ -24,6 +24,7 @@ drawable back_button_mini
 drawable background_object_search_by_type
 drawable background_option_filter_page
 drawable background_rating_feedback
+drawable baseline_add_circle_outline_24
 drawable baseline_arrow_drop_down_24
 drawable baseline_cancel_24
 drawable baseline_check_24
@@ -34,6 +35,7 @@ drawable baseline_flip_camera_android_24
 drawable baseline_grid_view_24
 drawable baseline_image_24
 drawable batal_hapus_button
+drawable bg_add_search_bar
 drawable bg_button
 drawable bg_button_back
 drawable bg_button_blue
@@ -42,6 +44,7 @@ drawable bg_button_grey
 drawable bg_button_selesai_feedback
 drawable bg_button_white
 drawable bg_outlined_category_rec_page
+drawable bg_player_tutorial_page
 drawable bg_profile
 drawable bg_text_field
 drawable bianglala
@@ -179,10 +182,14 @@ id action_authFragment_to_registerFragment
 id action_homeFragment_to_filterFragment
 id action_loginFragment_to_homeFragment
 id action_registerFragment_to_loginFragment
+id add_button
+id alat_bermain_content
+id alat_bermain_section
 id appCompatButton
 id authFragment
 id awanTopFilterPage
 id awanTopFilterPage2
+id baca_selengkapnya
 id background_list_of_object
 id background_rating_feedback
 id balonTopFilterPage
@@ -205,6 +212,7 @@ id btn_bagaimana_cara_pindai
 id btn_change_pass
 id btn_change_profile
 id btn_check
+id btn_check_alat_bermain
 id btn_checklist
 id btn_delete
 id btn_edit_profile
@@ -235,6 +243,8 @@ id cloud2_feedback
 id cloud2_loading_page
 id count_like
 id daftar
+id deskripsi_content
+id deskripsi_section
 id display_game
 id drag_icon
 id edit1_name
@@ -257,8 +267,11 @@ id filterFragment
 id gallery_item
 id gallery_thumbnail
 id gallery_title
+id game_desc_header
+id game_desc_header_wrapped
 id game_details_feedback
 id game_found_text
+id game_icon_header
 id game_title_feedback
 id generated_object_card
 id guideline
@@ -295,6 +308,9 @@ id iv_maskot_bottom
 id iv_sign_out
 id iv_success
 id jumlah_pemain_opt
+id jumlah_pemain_section
+id langkah_bermain_content
+id langkah_bermain_title
 id layout_delete_object_confirmation
 id layout_display_game
 id layout_popup
@@ -305,9 +321,11 @@ id line1_feedback
 id line1_lokasi_opt
 id line1_pemain_opt
 id line1_properti_opt
-id line1_rec_page
 id line1_usia_opt
 id line2_feedback
+id line_game_desc_header
+id line_rec_page
+id line_search_game
 id llc_edit1_name_fill
 id llc_edit1_old_pass
 id llc_edit2_new_pass
@@ -325,10 +343,13 @@ id lokasi_section_blue_dinamic
 id lokasi_section_title
 id lokasi_title_filter_opt
 id lokasi_value
+id mainkan_button_tutorial
 id maskotTopFilterPage
 id maskot_awan_image
 id maskot_awan_image_atas
 id maskot_main_layangan
+id maskot_rec_game
+id maskot_search_game
 id masuk
 id masukButton
 id matahariTopFilterPage
@@ -336,6 +357,8 @@ id moon_feedback
 id mulai_button
 id nav_host_fragment
 id nav_host_fragment_auth
+id number_player
+id orang_text
 id pemain_button_cat
 id pemain_opt1_btn
 id pemain_opt2_btn
@@ -348,6 +371,9 @@ id photo_count_text
 id player_count_feedback
 id player_count_feedback_number
 id player_count_feedback_person_text
+id pop_up_lokasi_category
+id pop_up_pemain_category
+id pop_up_usia_category
 id previewView
 id profile
 id profile_pic
@@ -386,6 +412,7 @@ id snapFragment
 id started_subtitle
 id started_title
 id subtitle_bottom
+id subtitle_header_desc
 id sun_loading_page
 id swipeGalleryFragment
 id swipeLeft
@@ -400,13 +427,20 @@ id til_fullname
 id til_helpreq
 id til_password
 id til_username
+id title_alat_bermain
 id title_bottom
 id title_change_pass
+id title_deskripsi
 id title_game
+id title_game_desc_header
 id title_loading_page
 id title_profile
 id title_settings
+id title_tutorial
+id tittle_rec_game
+id tittle_search_game
 id toolbar
+id tutorial_section
 id tv_account
 id tv_edit1_name
 id tv_edit1_name_fill
@@ -472,6 +506,9 @@ id tv_title_q7
 id tv_title_recommendation
 id tv_title_sign_out
 id usia_button_cat
+id usia_cat_opt_1_rec
+id usia_cat_opt_2_rec
+id usia_cat_opt_3_rec
 id usia_opt1_btn
 id usia_opt2_btn
 id usia_opt3_btn
@@ -479,6 +516,8 @@ id usia_section_blue_dinamic
 id usia_section_title
 id usia_title_filter_opt
 id usia_value
+id video_tutorial_content
+id video_tutorial_text
 id viewPager
 layout activity_auth
 layout activity_bookmark_page
@@ -515,6 +554,7 @@ layout activity_settings_account_page
 layout activity_splash
 layout activity_tutorial_page
 layout bottom_sheet_filter_page
+layout bottom_sheet_tutorial_page
 layout fragment_auth
 layout fragment_filter
 layout fragment_home
@@ -533,6 +573,9 @@ layout layout_likegame_list_item
 layout layout_popgame_list_item
 layout layout_taken_photo
 layout layout_taken_photo_bigger
+layout pop_up_lokasi_category
+layout pop_up_pemain_category
+layout pop_up_usia_category
 layout popup_delete_account
 layout popup_sign_out
 menu buttom_nav
@@ -544,6 +587,7 @@ mipmap ic_started_picture_foreground
 mipmap ic_started_picture_round
 navigation nav_graph
 navigation nav_graph_auth
+string alat_bermain_content_tutorial_page
 string app_name
 string btn_change_pass
 string btn_delete
@@ -554,6 +598,7 @@ string btn_sign_out
 string btn_signup
 string daftar
 string delete_message
+string deskripsi_game_content_tutorial_page
 string edit1_name
 string edit1_old_pass
 string edit1_subtitle
@@ -591,6 +636,7 @@ string helpreq_success_title
 string helpreq_title
 string hint_manage_object
 string history_game
+string langkah_bermain_content_tutorial_page
 string login_email
 string login_forgot_pw
 string login_havent_account
@@ -598,6 +644,7 @@ string login_password
 string masuk
 string mulai_btn_text
 string no_message
+string number_player_tutorial_page
 string project_id
 string q1_answer
 string q2_answer
@@ -633,6 +680,7 @@ string string_send
 string sub_permainan
 string subtitle_bookmark
 string subtitle_bottom_helpreq
+string subtitle_header_game_tutorial_page
 string subtitle_help
 string subtitle_home
 string subtitle_home2
@@ -643,6 +691,7 @@ string title_bottom_helpreq
 string title_change_pass
 string title_foryou
 string title_greating
+string title_header_game_tutorial_page
 string title_help
 string title_like
 string title_name

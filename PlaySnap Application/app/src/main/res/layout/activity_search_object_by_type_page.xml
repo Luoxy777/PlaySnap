@@ -35,7 +35,7 @@
         android:textSize="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Siap Bermain?"
+        android:text="Ketik Objek"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,14 +54,43 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
+        android:translationZ="-100dp"
         app:layout_constraintTop_toBottomOf="@+id/tv_manage_object_title" />
+
+    <ImageView
+        android:id="@+id/ic_balok_kayu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="141dp"
+        android:background="@drawable/ic_balok_kayu"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="40dp"
+        android:scaleX="-1"
+        android:elevation="-100dp"
+        app:layout_constraintHorizontal_bias="0.919"
+        android:layout_marginEnd="35dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ic_toys"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="139dp"
+        android:background="@drawable/ic_toys"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleX="-1"
+        android:elevation="-100dp"
+        app:layout_constraintHorizontal_bias="0.919"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/et_search_game"
         style="@style/TextInputEditText_search"
         android:layout_width="340dp"
         android:layout_height="40dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="185dp"
         android:background="@drawable/search_background"
         android:drawableStart="@drawable/ic_search"
         android:elevation="8dp"
@@ -76,37 +105,31 @@
         app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:startIconDrawable="@drawable/ic_search" />
+        app:startIconDrawable="@drawable/ic_search"
+        android:translationZ="-10dp" />
 
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="130dp"
-        android:background="@drawable/ic_balok_kayu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.919"
-        android:layout_marginEnd="35dp"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/add_button"
+        android:layout_width="55dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_add_search_bar"
+        app:layout_constraintTop_toTopOf="@id/et_search_game"
+        app:layout_constraintEnd_toEndOf="@id/et_search_game"
+        android:elevation="10dp"
+        android:drawableTop="@drawable/baseline_add_circle_outline_24"
+        android:paddingTop="7dp"
+        android:drawableTint="@color/white"/>
 
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="130dp"
-        android:background="@drawable/ic_toys"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/background_list_of_object"
         android:layout_width="350dp"
         android:layout_height="330dp"
         android:background="@drawable/background_object_search_by_type"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_search_game"
-        app:layout_constraintVertical_bias="0.104" />
+        android:layout_marginTop="30dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/hapus_button"
@@ -115,7 +138,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="40dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="60dp"
         android:background="@drawable/hapus_button_oultline"
         android:text="HAPUS"
         android:textColor="@color/white"
@@ -129,7 +152,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="60dp"
         android:background="@drawable/mulai_button_oultline"
         android:text="@string/mulai_btn_text"
         android:textColor="@color/white"
