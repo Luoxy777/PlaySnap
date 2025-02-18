@@ -4,6 +4,7 @@
             "outputFile": "com.example.playsnapui.app-mergeDebugResources-71:/values-v28/values-v28.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\eda511739b6133ec74b6d8450ccb7fba\\transformed\\material-1.12.0\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
@@ -24,6 +25,9 @@
                 },
                 {
                     "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\b3a3dff2fd1f4fcc42b825d7fc0556bb\\transformed\\appcompat-1.7.0\\res\\values-v28\\values-v28.xml",
+=======
+                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\8618f9bfc202d2285f657456cdf02fa6\\transformed\\appcompat-1.7.0\\res\\values-v28\\values-v28.xml",
+>>>>>>> 1eb8aa7a6ce41e35fa4d45eaf493e1e88e32d80f
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",
@@ -39,6 +43,25 @@
                         "endLines": "14,15,19,23",
                         "endColumns": "74,86,12,12",
                         "endOffsets": "1211,1298,1478,1670"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\b980608a3a26f23a56169ba4ffeba24c\\transformed\\material-1.12.0\\res\\values-v28\\values-v28.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,249,344,441,529,617,705,793,880,967,1054,1141",
+                        "endLines": "2,3,4,5,6,7,8,9,10,11,12,13,17",
+                        "endColumns": "97,95,94,96,87,87,87,87,86,86,86,86,10",
+                        "endOffsets": "148,244,339,436,524,612,700,788,875,962,1049,1136,1423"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,24",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,249,344,441,529,617,705,793,880,967,1054,1675",
+                        "endLines": "2,3,4,5,6,7,8,9,10,11,12,13,27",
+                        "endColumns": "97,95,94,96,87,87,87,87,86,86,86,86,10",
+                        "endOffsets": "148,244,339,436,524,612,700,788,875,962,1049,1136,1957"
                     }
                 }
             ]

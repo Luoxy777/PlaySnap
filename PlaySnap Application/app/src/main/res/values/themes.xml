@@ -6,6 +6,15 @@
     </style>
     <style name="Theme.PlaySnapUI" parent="Base.Theme.PlaySnapUI" />
 
+    <style name="Theme.PlaySnapUI.Splash.Test" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/sky_blue</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_field</item>
+        <item name="postSplashScreenTheme">@style/Theme.PlaySnapUI</item>
+    </style>
+
+    <style name="Theme.PlaySnapUI.Splash" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+
     <style name="ButtonWhite">
         <item name="android:background">@drawable/bg_button</item>
         <item name="android:fontFamily">@font/andikabold</item>

@@ -4,6 +4,7 @@
             "outputFile": "com.example.playsnapui.app-mergeDebugResources-71:/values-land/values-land.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\b3a3dff2fd1f4fcc42b825d7fc0556bb\\transformed\\appcompat-1.7.0\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
@@ -15,6 +16,9 @@
                 },
                 {
                     "source": "C:\\Users\\teres\\.gradle\\caches\\transforms-3\\eda511739b6133ec74b6d8450ccb7fba\\transformed\\material-1.12.0\\res\\values-land\\values-land.xml",
+=======
+                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\b980608a3a26f23a56169ba4ffeba24c\\transformed\\material-1.12.0\\res\\values-land\\values-land.xml",
+>>>>>>> 1eb8aa7a6ce41e35fa4d45eaf493e1e88e32d80f
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,26,35,40",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -31,6 +35,19 @@
                         "endColumns": "74,73,72,69,71,69,64,66,69,71,68,68,81,89,75,67,66,77,64,66,10,10,10,10",
                         "endOffsets": "334,408,481,551,623,693,758,825,895,967,1036,1105,1187,1277,1353,1421,1488,1566,1631,1698,1870,2439,2708,2936"
                     }
+<<<<<<< HEAD
+=======
+                },
+                {
+                    "source": "C:\\Users\\diane\\.gradle\\caches\\transforms-3\\8618f9bfc202d2285f657456cdf02fa6\\transformed\\appcompat-1.7.0\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,196",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "120,191,259"
+                    }
+>>>>>>> 1eb8aa7a6ce41e35fa4d45eaf493e1e88e32d80f
                 }
             ]
         }

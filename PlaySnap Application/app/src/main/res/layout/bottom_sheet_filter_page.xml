@@ -1,28 +1,362 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".BottomSheet">
 
-
-    <FrameLayout
-        android:id="@+id/bottom_sheet"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/bottom_sheet_container"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
-        android:layout_gravity="bottom"
+        android:layout_height="wrap_content"
         android:background="@drawable/rounded_rectangle_dragable"
-        app:layout_behavior="" >
-        <ImageView
-            android:layout_width="70dp"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="275dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_bottom_sheet_drag"
-            android:paddingTop="10dp"
-            android:scaleType="centerCrop"
-            android:layout_gravity="center|top">
-        </ImageView>
-    </FrameLayout>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingBottom="120dp"
+            android:paddingHorizontal="30dp">
 
+            <ImageView
+                android:id="@+id/drag_icon"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bottom_sheet_drag"
+                android:paddingTop="10dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/rentang_usia_opt"
+                android:layout_width="350dp"
+                android:layout_height="175dp"
+                app:cardCornerRadius="15dp"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/drag_icon"
+                android:layout_marginTop="40dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/usia_title_filter_opt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Title"
+                        android:text="Rentang Usia"
+                        android:textSize="35dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/ic_kuda_kayu"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/line1_usia_opt"
+                        android:layout_marginEnd="20dp"/>
+
+                    <ImageView
+                        android:id="@+id/line1_usia_opt"
+                        android:layout_width="300dp"
+                        android:layout_height="1dp"
+                        android:background="@color/light_grey"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/usia_title_filter_opt"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/usia_opt1_btn"
+                        android:layout_width="82dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/background_option_filter_page"
+                        app:layout_constraintTop_toTopOf="@id/line1_usia_opt"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="20dp"
+                        android:drawableTop="@drawable/usia_opt1"
+                        android:paddingTop="15dp"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/usia_opt2_btn"
+                        android:layout_width="82dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/background_option_filter_page"
+                        app:layout_constraintTop_toTopOf="@id/line1_usia_opt"
+                        app:layout_constraintStart_toEndOf="@id/usia_opt1_btn"
+                        app:layout_constraintEnd_toStartOf="@id/usia_opt3_btn"
+                        android:layout_marginTop="20dp"
+                        android:drawableTop="@drawable/usia_opt2"
+                        android:paddingTop="15dp"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/usia_opt3_btn"
+                        android:layout_width="82dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/background_option_filter_page"
+                        app:layout_constraintTop_toTopOf="@id/line1_usia_opt"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="30dp"
+                        android:drawableTop="@drawable/usia_opt3"
+                        android:paddingTop="15dp"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/lokasi_opt"
+                android:layout_width="350dp"
+                android:layout_height="175dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rentang_usia_opt"
+                android:layout_marginTop="40dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/lokasi_title_filter_opt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Title"
+                        android:text="Tipe Lokasi"
+                        android:textSize="35dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/ic_lokasi"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/line1_lokasi_opt"
+                        android:layout_marginEnd="20dp"/>
+
+                    <ImageView
+                        android:id="@+id/line1_lokasi_opt"
+                        android:layout_width="300dp"
+                        android:layout_height="1dp"
+                        android:background="@color/light_grey"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/lokasi_title_filter_opt"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/lokasi_opt1_btn"
+                        android:layout_width="82dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/background_option_filter_page"
+                        app:layout_constraintTop_toTopOf="@id/line1_lokasi_opt"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/lokasi_opt2_btn"
+                        android:layout_marginStart="45dp"
+                        android:layout_marginTop="20dp"
+                        android:drawableTop="@drawable/lokasi_opt1"
+                        android:paddingTop="15dp"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/lokasi_opt2_btn"
+                        android:layout_width="82dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/background_option_filter_page"
+                        app:layout_constraintTop_toTopOf="@id/line1_lokasi_opt"
+                        app:layout_constraintStart_toEndOf="@id/lokasi_opt1_btn"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="45dp"
+                        android:drawableTop="@drawable/lokasi_opt2"
+                        android:paddingTop="15dp"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/jumlah_pemain_opt"
+                android:layout_width="350dp"
+                android:layout_height="175dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lokasi_opt"
+                android:layout_marginTop="40dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/pemain_title_filter_opt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Title"
+                        android:text="Jumlah Pemain"
+                        android:textSize="35dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/ic_pemain"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/line1_pemain_opt"
+                        android:layout_marginEnd="20dp"/>
+
+                    <ImageView
+                        android:id="@+id/line1_pemain_opt"
+                        android:layout_width="300dp"
+                        android:layout_height="1dp"
+                        android:background="@color/light_grey"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/pemain_title_filter_opt"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/pemain_opt1_btn"
+                        android:layout_width="82dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/background_option_filter_page"
+                        app:layout_constraintTop_toTopOf="@id/line1_pemain_opt"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="20dp"
+                        android:drawableTop="@drawable/pemain_opt1"
+                        android:paddingTop="15dp"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/pemain_opt2_btn"
+                        android:layout_width="82dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/background_option_filter_page"
+                        app:layout_constraintTop_toTopOf="@id/line1_pemain_opt"
+                        app:layout_constraintStart_toEndOf="@id/pemain_opt1_btn"
+                        app:layout_constraintEnd_toStartOf="@id/pemain_opt3_btn"
+                        android:layout_marginTop="20dp"
+                        android:drawableTop="@drawable/pemain_opt2"
+                        android:paddingTop="15dp"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/pemain_opt3_btn"
+                        android:layout_width="82dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/background_option_filter_page"
+                        app:layout_constraintTop_toTopOf="@id/line1_pemain_opt"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="30dp"
+                        android:drawableTop="@drawable/pemain_opt3"
+                        android:paddingTop="15dp"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/properti_opt"
+                android:layout_width="350dp"
+                android:layout_height="175dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/jumlah_pemain_opt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="40dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/properti_title_filter_opt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Title"
+                        android:text="Properti Main"
+                        android:textSize="35dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ic_toys"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="5dp"/>
+
+                    <ImageView
+                        android:id="@+id/line1_properti_opt"
+                        android:layout_width="300dp"
+                        android:layout_height="1dp"
+                        android:background="@color/light_grey"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/properti_title_filter_opt"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/properti_opt1_btn"
+                        android:layout_width="82dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/background_option_filter_page"
+                        app:layout_constraintTop_toTopOf="@id/line1_properti_opt"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/properti_opt2_btn"
+                        android:layout_marginStart="45dp"
+                        android:layout_marginTop="20dp"
+                        android:drawableTop="@drawable/properti_opt1"
+                        android:paddingTop="15dp"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/properti_opt2_btn"
+                        android:layout_width="82dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/background_option_filter_page"
+                        app:layout_constraintTop_toTopOf="@id/line1_properti_opt"
+                        app:layout_constraintStart_toEndOf="@id/properti_opt1_btn"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="45dp"
+                        android:drawableTop="@drawable/properti_opt2"
+                        android:paddingTop="15dp"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -40,7 +40,7 @@
             android:paddingTop="7.5dp"
             ></androidx.appcompat.widget.AppCompatButton>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <ImageButton
             android:id="@+id/btn_back"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -80,7 +80,7 @@
             android:text="@string/mulai_btn_text"
             android:textColor="@color/white" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <ImageButton
             android:id="@+id/camera_button"
             android:layout_width="70dp"
             android:layout_height="70dp"
@@ -91,7 +91,7 @@
             android:background="@drawable/camera_shoot_icon"/>
 
 
-        <androidx.appcompat.widget.AppCompatButton
+        <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
@@ -112,5 +112,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
         app:layout_constraintVertical_bias="0.491" />
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/camera_scanning_layout"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

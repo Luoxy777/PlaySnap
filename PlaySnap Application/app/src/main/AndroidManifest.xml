@@ -2,9 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-feature android:name="android.hardware.camera.any"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="34"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="34" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,96 +22,36 @@
         android:label="PlaySnap"
         android:roundIcon="@drawable/playsnaplogo"
         android:supportsRtl="true"
+        tools:targetApi="31"
+        android:name=".MyApplication"
         android:theme="@style/Theme.PlaySnapUI"
-        tools:targetApi="31">
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:usesCleartextTraffic="true"
+        >
+
+
+        <!-- SplashActivity as the launcher activity -->
         <activity
-            android:name=".SearchByTypeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SearchByCameraActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ReportPageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SettingsAccountPageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EditPasswordPageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EditProfilePageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ReportPageSuccessActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HelpPageReqSuccessActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HelpPageReqActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HelpPageQ7Activity"
-            android:exported="false" />
-        <activity
-            android:name=".HelpPageQ6Activity"
-            android:exported="false" />
-        <activity
-            android:name=".HelpPageQ5Activity"
-            android:exported="false" />
-        <activity
-            android:name=".HelpPageQ4Activity"
-            android:exported="false" />
-        <activity
-            android:name=".HelpPageQ3Activity"
-            android:exported="false" />
-        <activity
-            android:name=".HelpPageQ2Activity"
-            android:exported="false" />
-        <activity
-            android:name=".HelpPageQ1Activity"
-            android:exported="false" />
-        <activity
-            android:name=".HelpPageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ProfilePageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BookmarkPageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LikePageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".NavigationBar"
-            android:exported="false" />
-        <activity
-            android:name=".HomePageActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
+            android:theme="@style/Theme.PlaySnapUI.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <!-- AuthActivity -->
         <activity
-            android:name=".BottomSheet"
-            android:theme="@style/TransparentTheme" />
-        <activity
-            android:name=".FilterPageActivity"
+            android:name=".AuthActivity"
             android:exported="false" />
+
+        <!-- HomeActivity -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:launchMode="singleTop"/>
 
     </application>
 
