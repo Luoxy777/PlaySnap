@@ -28,12 +28,12 @@
         <action
             android:id="@+id/action_SnapFragment_to_ScrollGalleryFragment"
             app:destination="@id/scrollGalleryFragment"
-            app:popUpTo="@id/homeFragment"
+            app:popUpTo="@id/snapFragment"
             app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_SnapFragment_to_HomeFragment"
             app:destination="@id/homeFragment"
-            app:popUpTo="@id/homeFragment"
+            app:popUpTo="@id/snapFragment"
             app:popUpToInclusive="true"/>
     </fragment>
 
@@ -56,9 +56,13 @@
         <action
             android:id="@+id/action_ScrollGalleryFragment_to_SwipeGalleryFragment"
             app:destination="@id/swipeGalleryFragment"
-            app:popUpTo="@id/homeFragment"
+            app:popUpTo="@id/scrollGalleryFragment"
             app:popUpToInclusive="true"/>
-
+        <action
+            android:id="@+id/action_ScrollGalleryFragment_to_ObjectFragment"
+            app:destination="@id/ObjectFragment"
+            app:popUpTo="@id/scrollGalleryFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
@@ -68,8 +72,14 @@
         <action
             android:id="@+id/action_SwipeGalleryFragment_to_ScrollGalleryFragment"
             app:destination="@id/scrollGalleryFragment"
-            app:popUpTo="@id/homeFragment"
+            app:popUpTo="@id/swipeGalleryFragment"
             app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/ObjectFragment"
+        android:name="com.example.playsnapui.ui.object.ObjectFragment"
+        android:label="ObjectGallery">
     </fragment>
 
 
