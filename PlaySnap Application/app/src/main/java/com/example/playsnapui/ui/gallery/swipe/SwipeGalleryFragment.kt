@@ -1,6 +1,8 @@
 package com.example.playsnapui.ui.gallery.swipe
 
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,9 +11,10 @@ import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import com.example.app.ui.gallery.swipe.SwipeGalleryViewModel
+import com.example.playsnapui.R
 import com.example.playsnapui.databinding.FragmentSwipeGalleryBinding
 import dagger.hilt.android.AndroidEntryPoint
+import java.io.File
 
 @AndroidEntryPoint
 class SwipeGalleryFragment : Fragment() {
@@ -20,6 +23,7 @@ class SwipeGalleryFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: SwipeGalleryViewModel by viewModels()
     private lateinit var adapter: SwipeGalleryAdapter
+    private val imagePaths = mutableListOf<String>()
     private val selectedItems = mutableSetOf<Int>() // Combined selected items
     private val scrollCheckedItems = mutableSetOf<Int>() // Selected items from ScrollGalleryFragment
 
@@ -74,7 +78,7 @@ class SwipeGalleryFragment : Fragment() {
             }
 
             setFragmentResult("SWIPE_TO_SCROLL", resultBundle)
-            findNavController().navigateUp()
+            findNavController().navigate(R.id.action_SwipeGalleryFragment_to_ScrollGalleryFragment, resultBundle)
         }
 
         binding.swipeLeft.setOnClickListener {
@@ -89,6 +93,10 @@ class SwipeGalleryFragment : Fragment() {
             if (currentItem < adapter.itemCount - 1) {
                 binding.viewPager.currentItem = currentItem + 1
             }
+        }
+
+        binding.btnBack.setOnClickListener{
+            findNavController().navigate(R.id.action_SwipeGalleryFragment_to_homeFragment)
         }
 
         binding.hapusButton.setOnClickListener {
@@ -114,12 +122,43 @@ class SwipeGalleryFragment : Fragment() {
             // Notify the adapter of changes
             adapter.notifyDataSetChanged()
         }
+
+        binding.mulaiButton.setOnClickListener {
+            val updatedList = adapter.getCurrentImagePaths().toMutableList()
+            val remainingImageUris = updatedList.filterIndexed { index, _ -> index !in selectedItems }
+                .map { createUri(it) }
+            viewModel.startGame(remainingImageUris)
+        }
+
     }
 
     private fun observeViewModel() {
-        viewModel.images.observe(viewLifecycleOwner, Observer { images ->
-            adapter.submitList(images)
+        viewModel.loading.observe(viewLifecycleOwner, Observer<Boolean> { isLoading ->
+            binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
         })
+
+        viewModel.success.observe(viewLifecycleOwner, Observer<Boolean> { isSuccess ->
+            if (isSuccess) {
+                viewModel.detectedObjects.observe(viewLifecycleOwner) { detectedList ->
+                    if (detectedList.isNotEmpty()) {
+                        SharedData.detectedObjects = detectedList
+
+                        // Now navigate to another fragment or perform any other operation
+                        findNavController().navigate(R.id.action_SwipeGalleryFragment_to_ObjectFragment)
+                    }
+                }
+            }
+        })
+
+        viewModel.error.observe(viewLifecycleOwner, Observer { errorMessage ->
+            errorMessage?.let {
+                Log.e("API_ERROR", it.toString())
+            }
+        })
+    }
+    private fun createUri(imagePath: String): Uri? {
+        val file = File(imagePath)
+        return if (file.exists()) Uri.fromFile(file) else null
     }
 
     override fun onDestroyView() {

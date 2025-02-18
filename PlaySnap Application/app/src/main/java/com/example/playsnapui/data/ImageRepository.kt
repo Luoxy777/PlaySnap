@@ -1,8 +1,8 @@
 package com.example.playsnapui.data
 
+import DetectionResponse
 import YOLOApiService
 import android.util.Log
-import com.example.playsnapui.data.api.DetectionResponse
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ImageRepository {
     private val retrofit = Retrofit.Builder()
-        .baseUrl("http://YOUR_FASTAPI_SERVER_IP:8000")
+        .baseUrl("http://174.139.116.194:8000")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 

@@ -1,0 +1,85 @@
+com.example.playsnapui.app-pngs-0 C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\build\generated\res\pngs\debug
+com.example.playsnapui.app-res-1 C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\build\generated\res\processDebugGoogleServices
+com.example.playsnapui.app-resValues-2 C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\build\generated\res\resValues\debug
+com.example.playsnapui.app-packageDebugResources-3 C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.playsnapui.app-packageDebugResources-4 C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.playsnapui.app-merged_res-5 C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\build\intermediates\merged_res\debug
+com.example.playsnapui.app-debug-6 C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\debug\res
+com.example.playsnapui.app-main-7 C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\res
+com.example.playsnapui.app-material-1.12.0-8 C:\Users\diane\.gradle\caches\transforms-3\01c2e5fc7a8eb32e71a16406be1db314\transformed\material-1.12.0\res
+com.example.playsnapui.app-browser-1.4.0-9 C:\Users\diane\.gradle\caches\transforms-3\01eccac0f8df181706d9fdd4b78ff089\transformed\browser-1.4.0\res
+com.example.playsnapui.app-constraintlayout-2.2.0-10 C:\Users\diane\.gradle\caches\transforms-3\022fcb44ccd5404270392ea32bfd1de2\transformed\constraintlayout-2.2.0\res
+com.example.playsnapui.app-jetified-core-splashscreen-1.0.1-11 C:\Users\diane\.gradle\caches\transforms-3\032abe6745f013ebb09b50a33c89abdc\transformed\jetified-core-splashscreen-1.0.1\res
+com.example.playsnapui.app-cardview-1.0.0-12 C:\Users\diane\.gradle\caches\transforms-3\06fe4b66288efcdb81cecc81c1b39063\transformed\cardview-1.0.0\res
+com.example.playsnapui.app-jetified-ui-graphics-release-13 C:\Users\diane\.gradle\caches\transforms-3\0d6fffe99b648f43e16d913b255729df\transformed\jetified-ui-graphics-release\res
+com.example.playsnapui.app-coordinatorlayout-1.1.0-14 C:\Users\diane\.gradle\caches\transforms-3\184c96f7b41091ac846db48f0ab93fb5\transformed\coordinatorlayout-1.1.0\res
+com.example.playsnapui.app-jetified-startup-runtime-1.1.1-15 C:\Users\diane\.gradle\caches\transforms-3\1d7a81fc6a2e1d2206d40de38d68e6b6\transformed\jetified-startup-runtime-1.1.1\res
+com.example.playsnapui.app-fragment-1.6.2-16 C:\Users\diane\.gradle\caches\transforms-3\1f6c7ac806a2c2865e65c2dc62988cda\transformed\fragment-1.6.2\res
+com.example.playsnapui.app-jetified-runtime-saveable-release-17 C:\Users\diane\.gradle\caches\transforms-3\1fe288d32da5a31c78f91f5bc9f8eb54\transformed\jetified-runtime-saveable-release\res
+com.example.playsnapui.app-jetified-customview-poolingcontainer-1.0.0-18 C:\Users\diane\.gradle\caches\transforms-3\2170e3166a910a765ab8457aca6d1c09\transformed\jetified-customview-poolingcontainer-1.0.0\res
+com.example.playsnapui.app-jetified-ui-geometry-release-19 C:\Users\diane\.gradle\caches\transforms-3\255ca15a88c46664453f6569db48e13b\transformed\jetified-ui-geometry-release\res
+com.example.playsnapui.app-jetified-appcompat-resources-1.7.0-20 C:\Users\diane\.gradle\caches\transforms-3\25d501e0aa330f1b6e16b36155e10b30\transformed\jetified-appcompat-resources-1.7.0\res
+com.example.playsnapui.app-jetified-camera-core-1.4.1-21 C:\Users\diane\.gradle\caches\transforms-3\29c86c83e76a4cb02c6c4aa816082b4a\transformed\jetified-camera-core-1.4.1\res
+com.example.playsnapui.app-jetified-ui-test-manifest-1.6.1-22 C:\Users\diane\.gradle\caches\transforms-3\2c4712ffd3f8bd09b2b71441ccf78a06\transformed\jetified-ui-test-manifest-1.6.1\res
+com.example.playsnapui.app-jetified-emoji2-1.3.0-23 C:\Users\diane\.gradle\caches\transforms-3\2d00741a324bf4d99ab573fe1546cd2e\transformed\jetified-emoji2-1.3.0\res
+com.example.playsnapui.app-jetified-play-services-basement-18.1.0-24 C:\Users\diane\.gradle\caches\transforms-3\36e05239ea18c7d984515f19c0d85877\transformed\jetified-play-services-basement-18.1.0\res
+com.example.playsnapui.app-jetified-play-services-base-18.0.1-25 C:\Users\diane\.gradle\caches\transforms-3\388513711661e158c4bae3f99d2bf9e9\transformed\jetified-play-services-base-18.0.1\res
+com.example.playsnapui.app-lifecycle-livedata-core-2.8.7-26 C:\Users\diane\.gradle\caches\transforms-3\412799391e8671b09341760f35dc639b\transformed\lifecycle-livedata-core-2.8.7\res
+com.example.playsnapui.app-jetified-activity-1.9.3-27 C:\Users\diane\.gradle\caches\transforms-3\47b96aeadb8cac408a94d5d20f7ccd7d\transformed\jetified-activity-1.9.3\res
+com.example.playsnapui.app-jetified-foundation-layout-release-28 C:\Users\diane\.gradle\caches\transforms-3\48e3836dea80508c29c5d25ded3fd59d\transformed\jetified-foundation-layout-release\res
+com.example.playsnapui.app-jetified-emoji2-views-helper-1.3.0-29 C:\Users\diane\.gradle\caches\transforms-3\4b09226a98605432f69cb5ccf7517111\transformed\jetified-emoji2-views-helper-1.3.0\res
+com.example.playsnapui.app-jetified-camera-view-1.4.1-30 C:\Users\diane\.gradle\caches\transforms-3\4ec8048a17275fc4918b4ae352bd288d\transformed\jetified-camera-view-1.4.1\res
+com.example.playsnapui.app-jetified-lifecycle-livedata-ktx-2.8.7-31 C:\Users\diane\.gradle\caches\transforms-3\53c1a64b1ce58e588a38dc88ffaf3aab\transformed\jetified-lifecycle-livedata-ktx-2.8.7\res
+com.example.playsnapui.app-navigation-common-2.8.6-32 C:\Users\diane\.gradle\caches\transforms-3\59d8c1d67de289fa0d9ceb1f1f3a7674\transformed\navigation-common-2.8.6\res
+com.example.playsnapui.app-jetified-ui-tooling-data-release-33 C:\Users\diane\.gradle\caches\transforms-3\63db2691562968d083195e87a5fb98c3\transformed\jetified-ui-tooling-data-release\res
+com.example.playsnapui.app-slidingpanelayout-1.2.0-34 C:\Users\diane\.gradle\caches\transforms-3\6744b68a63f2695980935f1da9fcd7aa\transformed\slidingpanelayout-1.2.0\res
+com.example.playsnapui.app-jetified-lifecycle-viewmodel-ktx-2.8.7-35 C:\Users\diane\.gradle\caches\transforms-3\69294c73133395d8652860d71fc1ab7f\transformed\jetified-lifecycle-viewmodel-ktx-2.8.7\res
+com.example.playsnapui.app-jetified-material3-1.0.0-36 C:\Users\diane\.gradle\caches\transforms-3\6a86cc5e86efb2b0b5a0b7e70d6d4be9\transformed\jetified-material3-1.0.0\res
+com.example.playsnapui.app-jetified-material-1.4.0-37 C:\Users\diane\.gradle\caches\transforms-3\6bf329d5570e7c6aff845186b5b80ffd\transformed\jetified-material-1.4.0\res
+com.example.playsnapui.app-lifecycle-livedata-2.8.7-38 C:\Users\diane\.gradle\caches\transforms-3\7892a34a99cbbc3ae545927cf9b6181e\transformed\lifecycle-livedata-2.8.7\res
+com.example.playsnapui.app-jetified-lifecycle-runtime-ktx-release-39 C:\Users\diane\.gradle\caches\transforms-3\79597a47d51165966c757a812550784a\transformed\jetified-lifecycle-runtime-ktx-release\res
+com.example.playsnapui.app-jetified-coil-base-2.6.0-40 C:\Users\diane\.gradle\caches\transforms-3\7b6954ce780f29e6f6574580d788cef7\transformed\jetified-coil-base-2.6.0\res
+com.example.playsnapui.app-jetified-camera-camera2-1.4.1-41 C:\Users\diane\.gradle\caches\transforms-3\8956877315b45b719a7d84d9fa359e16\transformed\jetified-camera-camera2-1.4.1\res
+com.example.playsnapui.app-navigation-fragment-2.8.6-42 C:\Users\diane\.gradle\caches\transforms-3\8b172ebeac8ab8f2130f4619c5877983\transformed\navigation-fragment-2.8.6\res
+com.example.playsnapui.app-jetified-animation-release-43 C:\Users\diane\.gradle\caches\transforms-3\914d74a4e56f05b97d3adb463c193d47\transformed\jetified-animation-release\res
+com.example.playsnapui.app-jetified-annotation-experimental-1.4.1-44 C:\Users\diane\.gradle\caches\transforms-3\9343d0c55fdd7d6f1651bf631d788e0c\transformed\jetified-annotation-experimental-1.4.1\res
+com.example.playsnapui.app-jetified-androidsvg-aar-1.4-45 C:\Users\diane\.gradle\caches\transforms-3\9528d3d0aee25c472f7ec09ca6e4b026\transformed\jetified-androidsvg-aar-1.4\res
+com.example.playsnapui.app-jetified-camera-lifecycle-1.4.1-46 C:\Users\diane\.gradle\caches\transforms-3\9681dffb8c4a40cced54868110ee4b89\transformed\jetified-camera-lifecycle-1.4.1\res
+com.example.playsnapui.app-jetified-tracing-1.2.0-47 C:\Users\diane\.gradle\caches\transforms-3\96fa9614f3df3e351675c4c9aeb50294\transformed\jetified-tracing-1.2.0\res
+com.example.playsnapui.app-jetified-lifecycle-livedata-core-ktx-2.8.7-48 C:\Users\diane\.gradle\caches\transforms-3\9f042169dda9b7d41ae0361fdd19952e\transformed\jetified-lifecycle-livedata-core-ktx-2.8.7\res
+com.example.playsnapui.app-jetified-camera-video-1.4.1-49 C:\Users\diane\.gradle\caches\transforms-3\a212b6a6acb8e70bb1338c988aec624a\transformed\jetified-camera-video-1.4.1\res
+com.example.playsnapui.app-jetified-ui-text-release-50 C:\Users\diane\.gradle\caches\transforms-3\a2381c6718cf0b877b5878c0baf2a74d\transformed\jetified-ui-text-release\res
+com.example.playsnapui.app-jetified-viewpager2-1.0.0-51 C:\Users\diane\.gradle\caches\transforms-3\a38d8083542004f37103dfd566d31931\transformed\jetified-viewpager2-1.0.0\res
+com.example.playsnapui.app-drawerlayout-1.1.1-52 C:\Users\diane\.gradle\caches\transforms-3\b01f39b6d478595cddc0111305df6335\transformed\drawerlayout-1.1.1\res
+com.example.playsnapui.app-jetified-ui-release-53 C:\Users\diane\.gradle\caches\transforms-3\b24f1c2063d373389d2ee1726af82b0e\transformed\jetified-ui-release\res
+com.example.playsnapui.app-jetified-material-icons-core-1.4.0-54 C:\Users\diane\.gradle\caches\transforms-3\b5c9576a55793c5aad8760afe39ae6e2\transformed\jetified-material-icons-core-1.4.0\res
+com.example.playsnapui.app-jetified-savedstate-1.2.1-55 C:\Users\diane\.gradle\caches\transforms-3\b63b76ad73d49adb7f875b8c1eaaf628\transformed\jetified-savedstate-1.2.1\res
+com.example.playsnapui.app-transition-1.5.0-56 C:\Users\diane\.gradle\caches\transforms-3\b7c892c4af2ad3506d3cc8f7e2c53a38\transformed\transition-1.5.0\res
+com.example.playsnapui.app-jetified-animation-core-release-57 C:\Users\diane\.gradle\caches\transforms-3\b9fdee8606d4829376350aa6b7956c0c\transformed\jetified-animation-core-release\res
+com.example.playsnapui.app-jetified-glide-4.12.0-58 C:\Users\diane\.gradle\caches\transforms-3\bb4918b8baf3fcc9d5bdbfd6e9795dce\transformed\jetified-glide-4.12.0\res
+com.example.playsnapui.app-jetified-activity-ktx-1.9.3-59 C:\Users\diane\.gradle\caches\transforms-3\bfd056170b602ed61c34b53253d387cb\transformed\jetified-activity-ktx-1.9.3\res
+com.example.playsnapui.app-jetified-foundation-release-60 C:\Users\diane\.gradle\caches\transforms-3\c0635779cb3d3bfdbd9d6782d4ae80b7\transformed\jetified-foundation-release\res
+com.example.playsnapui.app-jetified-ui-util-release-61 C:\Users\diane\.gradle\caches\transforms-3\c2e745f69456d0ecc3901f920671b780\transformed\jetified-ui-util-release\res
+com.example.playsnapui.app-jetified-fragment-ktx-1.6.2-62 C:\Users\diane\.gradle\caches\transforms-3\c317517b6c29d98f6f79c32f6f215b0c\transformed\jetified-fragment-ktx-1.6.2\res
+com.example.playsnapui.app-appcompat-1.7.0-63 C:\Users\diane\.gradle\caches\transforms-3\c473a0afb7be33e44a64fbb773a8e9b7\transformed\appcompat-1.7.0\res
+com.example.playsnapui.app-recyclerview-1.1.0-64 C:\Users\diane\.gradle\caches\transforms-3\cff6315877690902822b6b729d2922b6\transformed\recyclerview-1.1.0\res
+com.example.playsnapui.app-jetified-ui-tooling-release-65 C:\Users\diane\.gradle\caches\transforms-3\d534fa4040c95241f628dc60a262010b\transformed\jetified-ui-tooling-release\res
+com.example.playsnapui.app-jetified-runtime-release-66 C:\Users\diane\.gradle\caches\transforms-3\d5628aec4a1955fab495c24427a33aed\transformed\jetified-runtime-release\res
+com.example.playsnapui.app-jetified-lifecycle-viewmodel-savedstate-2.8.7-67 C:\Users\diane\.gradle\caches\transforms-3\d89c5a40bdb99dbc625605d6186201e5\transformed\jetified-lifecycle-viewmodel-savedstate-2.8.7\res
+com.example.playsnapui.app-jetified-firebase-common-20.3.2-68 C:\Users\diane\.gradle\caches\transforms-3\d8b86a4c2daa49ade08f96ed28b8a314\transformed\jetified-firebase-common-20.3.2\res
+com.example.playsnapui.app-jetified-activity-compose-1.9.3-69 C:\Users\diane\.gradle\caches\transforms-3\dce0c562bdff2aad3f9d0bea3634e23a\transformed\jetified-activity-compose-1.9.3\res
+com.example.playsnapui.app-jetified-profileinstaller-1.4.0-70 C:\Users\diane\.gradle\caches\transforms-3\de01c538a5d0ecd013ffa915e48849d9\transformed\jetified-profileinstaller-1.4.0\res
+com.example.playsnapui.app-jetified-ui-unit-release-71 C:\Users\diane\.gradle\caches\transforms-3\df4acde57c502bf873aa265e131cdd93\transformed\jetified-ui-unit-release\res
+com.example.playsnapui.app-jetified-tracing-ktx-1.2.0-72 C:\Users\diane\.gradle\caches\transforms-3\e64f87ffbb0c1ac6a2969fbe1e0b534c\transformed\jetified-tracing-ktx-1.2.0\res
+com.example.playsnapui.app-navigation-runtime-2.8.6-73 C:\Users\diane\.gradle\caches\transforms-3\e72b74d732a6e8247c8fdac130617cce\transformed\navigation-runtime-2.8.6\res
+com.example.playsnapui.app-jetified-lifecycle-viewmodel-release-74 C:\Users\diane\.gradle\caches\transforms-3\ea32b6b2b37cb4cbc16e139e4294608d\transformed\jetified-lifecycle-viewmodel-release\res
+com.example.playsnapui.app-jetified-ui-tooling-preview-release-75 C:\Users\diane\.gradle\caches\transforms-3\ed01635e642a3b203b9f3b640529503d\transformed\jetified-ui-tooling-preview-release\res
+com.example.playsnapui.app-jetified-window-1.0.0-76 C:\Users\diane\.gradle\caches\transforms-3\ed2956b3325518a86d9913a5afb978c9\transformed\jetified-window-1.0.0\res
+com.example.playsnapui.app-core-runtime-2.2.0-77 C:\Users\diane\.gradle\caches\transforms-3\f15a4664ebe7579fc4d2807c75678c0c\transformed\core-runtime-2.2.0\res
+com.example.playsnapui.app-media-1.0.0-78 C:\Users\diane\.gradle\caches\transforms-3\f17aeb8f51e83b6c5e938e60d7eeeb65\transformed\media-1.0.0\res
+com.example.playsnapui.app-core-1.13.0-79 C:\Users\diane\.gradle\caches\transforms-3\f25526611bafe9cf3e45021a00067e6f\transformed\core-1.13.0\res
+com.example.playsnapui.app-jetified-savedstate-ktx-1.2.1-80 C:\Users\diane\.gradle\caches\transforms-3\f43e53feb93e6367eeb22cbde98ffb5c\transformed\jetified-savedstate-ktx-1.2.1\res
+com.example.playsnapui.app-jetified-lifecycle-runtime-release-81 C:\Users\diane\.gradle\caches\transforms-3\f6508ac0d69f686c7634e7c8d944e8a2\transformed\jetified-lifecycle-runtime-release\res
+com.example.playsnapui.app-jetified-lifecycle-process-2.8.7-82 C:\Users\diane\.gradle\caches\transforms-3\f9a4dbadd9be07b11858d45ebdf250d8\transformed\jetified-lifecycle-process-2.8.7\res
+com.example.playsnapui.app-jetified-core-ktx-1.13.0-83 C:\Users\diane\.gradle\caches\transforms-3\fc5ea7a9e41d235ee40d4c3fa1bc70b7\transformed\jetified-core-ktx-1.13.0\res
+com.example.playsnapui.app-jetified-material-ripple-1.4.0-84 C:\Users\diane\.gradle\caches\transforms-3\fdd32619b59961a58ca170a0886a473a\transformed\jetified-material-ripple-1.4.0\res

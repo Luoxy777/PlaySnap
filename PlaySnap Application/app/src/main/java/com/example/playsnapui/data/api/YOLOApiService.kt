@@ -1,4 +1,3 @@
-import com.example.playsnapui.data.api.DetectionResponse
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.Multipart

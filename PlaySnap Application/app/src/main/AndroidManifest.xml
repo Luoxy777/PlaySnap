@@ -45,13 +45,15 @@
         <!-- AuthActivity -->
         <activity
             android:name=".AuthActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing"/>
 
         <!-- HomeActivity -->
         <activity
             android:name=".HomeActivity"
             android:exported="false"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustNothing"/>
 
     </application>
 
