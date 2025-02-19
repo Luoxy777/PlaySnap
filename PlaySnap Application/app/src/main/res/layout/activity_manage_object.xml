@@ -132,20 +132,6 @@
         android:layout_marginTop="30dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/hapus_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="60dp"
-        android:background="@drawable/hapus_button_oultline"
-        android:text="HAPUS"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
         android:id="@id/mulai_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

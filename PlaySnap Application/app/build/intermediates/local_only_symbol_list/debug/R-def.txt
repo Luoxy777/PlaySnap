@@ -171,6 +171,7 @@ id ObjectFragment
 id action_FilterFragment_to_HomeFragment
 id action_FilterFragment_to_RecGameFragment
 id action_HomeFragment_to_SnapFragment
+id action_ObjectFragment_to_RecommendGameFragment
 id action_ScrollGalleryFragment_to_ObjectFragment
 id action_ScrollGalleryFragment_to_SwipeGalleryFragment
 id action_ScrollGalleryFragment_to_homeFragment
@@ -300,8 +301,6 @@ id ic_toys
 id imageView
 id imageView2
 id imageView3
-id imageView4
-id imageView5
 id image_icon_account
 id image_illustration_started
 id image_ilustration_cloud
@@ -400,6 +399,7 @@ id recent_recycler_like
 id recent_recycler_popgame
 id recommendGameFragment
 id recycler_popobject
+id recycler_recommend_games
 id registerButton
 id registerFragment
 id register_have_account

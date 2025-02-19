@@ -99,7 +99,11 @@
         android:id="@+id/ObjectFragment"
         android:name="com.example.playsnapui.ui.object.ObjectFragment"
         android:label="ObjectGallery">
-
+        <action
+            android:id="@+id/action_ObjectFragment_to_RecommendGameFragment"
+            app:destination="@id/recommendGameFragment"
+            app:popUpTo="@id/ObjectFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment

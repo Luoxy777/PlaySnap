@@ -260,6 +260,10 @@
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\mipmap-anydpi-v26\\ic_started_picture_round.xml"
     },
     {
+        "merged": "com.example.playsnapui.app-merged_res-5:/layout_fragment_recommend_game.xml.flat",
+        "source": "com.example.playsnapui.app-main-7:/layout/fragment_recommend_game.xml"
+    },
+    {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_ic_help_background.xml.flat",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\ic_help_background.xml"
     },
@@ -522,10 +526,6 @@
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_ic_success.xml.flat",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\ic_success.xml"
-    },
-    {
-        "merged": "com.example.playsnapui.app-merged_res-5:/layout_fragment_object.xml.flat",
-        "source": "com.example.playsnapui.app-main-7:/layout/fragment_object.xml"
     },
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_ic_report.xml.flat",

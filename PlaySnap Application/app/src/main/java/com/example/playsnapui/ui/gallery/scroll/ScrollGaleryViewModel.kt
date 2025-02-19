@@ -65,7 +65,7 @@ class ScrollGalleryViewModel : ViewModel() {
             .build()
 
         val request = Request.Builder()
-            .url("http://174.139.116.194:8000/detect/")
+            .url("http://10.68.111.243:8000/detect/")
             .post(multipartBody)
             .build()
 
