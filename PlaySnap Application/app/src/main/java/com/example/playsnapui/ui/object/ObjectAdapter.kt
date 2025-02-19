@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.playsnapui.databinding.LayoutGeneratedObjectBinding
 
-class ObjectAdapter(private val objects: List<String>, private val onRemoveClick: (Int) -> Unit) :
+class ObjectAdapter(private val objects: MutableList<String>, private val onRemoveClick: (Int) -> Unit) :
     RecyclerView.Adapter<ObjectAdapter.ObjectViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ObjectViewHolder {
@@ -21,6 +21,12 @@ class ObjectAdapter(private val objects: List<String>, private val onRemoveClick
     }
 
     override fun getItemCount(): Int = objects.size
+
+    fun updateData(newObjects: List<String>) {
+        objects.clear()
+        objects.addAll(newObjects)
+        notifyDataSetChanged()
+    }
 
     inner class ObjectViewHolder(private val binding: LayoutGeneratedObjectBinding) :
         RecyclerView.ViewHolder(binding.root) {

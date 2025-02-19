@@ -207,4 +207,10 @@
     <string name="yes_message">YA</string>
     <string name="report_title">Laporkan</string>
     <string name="report_subtitle">Ada permasalahan?</string>
+    <string name="title_header_game_tutorial_page">Lompat Tali</string>
+    <string name="number_player_tutorial_page">1-3</string>
+    <string name="subtitle_header_game_tutorial_page">Outdoor, Usia &lt; 6 tahun</string>
+    <string name="alat_bermain_content_tutorial_page">Karet Gelang (min 50 pcs)</string>
+    <string name="deskripsi_game_content_tutorial_page">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="langkah_bermain_content_tutorial_page">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
 </resources>
