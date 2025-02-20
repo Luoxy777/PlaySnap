@@ -44,12 +44,20 @@ class FilterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var usiaMinContainer : Int ?= null
-        var usiaMaxContainer : Int ?= null
-        var lokasiContainer : String ?= null
-        var pemainMinContainer : Int ?= null
-        var pemainMaxContainer : Int ?= null
-        var propertiContainer : String ?= null
+        var batasUsia1 : Int = 0
+        var batasUsia2Bawah : Int = 0
+        var batasUsia2Atas : Int = 0
+        var batasUsia3 : Int = 0
+        var batasPemain1 : Int = 0
+        var batasPemain2Bawah : Int = 0
+        var batasPemain2Atas : Int = 0
+        var batasPemain3 : Int = 0
+        var lokasiContainer : String = ""
+        var propertiContainer : String = ""
+        var isNullUsia : Boolean = true
+        var isNullLokasi : Boolean = true
+        var isNullPemain : Boolean = true
+        var isNullProperti : Boolean = true
 
         binding!!.btnBack.setOnClickListener {
             findNavController().navigate(R.id.action_FilterFragment_to_HomeFragment)
@@ -58,72 +66,166 @@ class FilterFragment : Fragment() {
         bottomSheetBinding?.let { sheetBinding ->
             // Set listener untuk tombol usia
             sheetBinding.usiaOpt1Btn.setOnClickListener {
-                binding.usiaValue.text = "<6 th"
-                usiaMinContainer = 0
-                usiaMaxContainer = 5
+                if(isNullUsia == true){
+                    isNullUsia = false
+                    binding.usiaValue.text = "<6 th"
+                    batasUsia1 = 5
+                }
+                else if(isNullUsia == false){
+                    isNullUsia = true
+                    binding.usiaValue.text = "-"
+                    batasUsia1 = 0
+                    batasUsia2Bawah = 0
+                    batasUsia2Atas = 0
+                    batasUsia3 = 0
+                }
             }
             sheetBinding.usiaOpt2Btn.setOnClickListener {
-                binding.usiaValue.text = "6 - 10 th"
-                usiaMinContainer = 5
-                usiaMaxContainer = 11
+                if(isNullUsia == true){
+                    isNullUsia = false
+                    binding.usiaValue.text = "6 - 10 th"
+                    batasUsia2Bawah = 6
+                    batasUsia2Atas = 10
+                }
+                else if(isNullUsia == false){
+                    isNullUsia = true
+                    binding.usiaValue.text = "-"
+                    batasUsia1 = 0
+                    batasUsia2Bawah = 0
+                    batasUsia2Atas = 0
+                    batasUsia3 = 0
+                }
             }
             sheetBinding.usiaOpt3Btn.setOnClickListener {
-                binding.usiaValue.text = ">10 th"
-                usiaMinContainer = 11
-                usiaMaxContainer = null
+                if(isNullUsia == true){
+                    isNullUsia = false
+                    binding.usiaValue.text = ">10 th"
+                    batasUsia3 = 11
+                }
+                else if(isNullUsia == false){
+                    isNullUsia = true
+                    binding.usiaValue.text = "-"
+                    batasUsia1 = 0
+                    batasUsia2Bawah = 0
+                    batasUsia2Atas = 0
+                    batasUsia3 = 0
+                }
             }
 
             // Set listener untuk tombol lokasi
             sheetBinding.lokasiOpt1Btn.setOnClickListener {
-                binding.lokasiValue.text = "Indoor"
-                lokasiContainer = "Indoor"
+                if(isNullLokasi == true){
+                    isNullLokasi = false
+                    binding.lokasiValue.text = "Indoor"
+                    lokasiContainer = "Indoor"
+                }
+                else if(isNullLokasi == false){
+                    isNullLokasi = true
+                    binding.lokasiValue.text = "-"
+                    lokasiContainer = ""
+                }
             }
             sheetBinding.lokasiOpt2Btn.setOnClickListener {
-                binding.lokasiValue.text = "Outdoor"
-                lokasiContainer = "Outdoor"
+                if(isNullLokasi == true){
+                    isNullLokasi = false
+                    binding.lokasiValue.text = "Outdoor"
+                    lokasiContainer = "Outdoor"
+                }
+                else if(isNullLokasi == false){
+                    isNullLokasi = true
+                    binding.lokasiValue.text = "-"
+                    lokasiContainer = ""
+                }
             }
 
             // Set listener untuk tombol jumlah pemain
             sheetBinding.pemainOpt1Btn.setOnClickListener {
-                binding.pemainValue.text = "<3 org"
-                pemainMinContainer = 0
-                pemainMaxContainer = 3
+                if(isNullPemain == true){
+                    isNullPemain = false
+                    binding.pemainValue.text = "<3 org"
+                    batasPemain1 = 2
+                }
+                else if(isNullPemain == false){
+                    isNullPemain = true
+                    binding.pemainValue.text = "-"
+                    batasPemain1 = 0
+                    batasPemain2Bawah = 0
+                    batasPemain2Atas = 0
+                    batasPemain3 = 0
+                }
             }
             sheetBinding.pemainOpt2Btn.setOnClickListener {
-                binding.pemainValue.text = "3 - 5 org"
-                pemainMinContainer = 3
-                pemainMaxContainer = 5
+                if(isNullPemain == true){
+                    isNullPemain = false
+                    binding.pemainValue.text = "3 - 5 org"
+                    batasPemain2Bawah = 3
+                    batasPemain2Atas = 5
+                }
+                else if(isNullPemain == false){
+                    isNullPemain = true
+                    binding.pemainValue.text = "-"
+                    batasPemain1 = 0
+                    batasPemain2Bawah = 0
+                    batasPemain2Atas = 0
+                    batasPemain3 = 0
+                }
             }
             sheetBinding.pemainOpt3Btn.setOnClickListener {
-                binding.pemainValue.text = ">5 org"
-                pemainMinContainer = 6
-                pemainMaxContainer = null
+                if(isNullPemain == true){
+                    isNullPemain = false
+                    binding.pemainValue.text = ">5 org"
+                    batasPemain3 = 6
+                }
+                else if(isNullPemain == false){
+                    isNullPemain = true
+                    binding.pemainValue.text = "-"
+                    batasPemain1 = 0
+                    batasPemain2Bawah = 0
+                    batasPemain2Atas = 0
+                    batasPemain3 = 0
+                }
             }
 
             // Set listener untuk tombol properti
             sheetBinding.propertiOpt1Btn.setOnClickListener {
-                binding.propertiValue.text = "Ya"
-                propertiContainer = "Ya"
+                if(isNullProperti == true){
+                    isNullProperti = false
+                    binding.propertiValue.text = "Ya"
+                    propertiContainer = "Ya"
+                }
+                else if(isNullProperti == false){
+                    isNullProperti = true
+                    binding.lokasiValue.text = "-"
+                    propertiContainer = ""
+                }
             }
             sheetBinding.propertiOpt2Btn.setOnClickListener {
-                binding.propertiValue.text = "Tidak"
-                propertiContainer = "Tidak"
+                if(isNullProperti == true){
+                    isNullProperti = false
+                    binding.propertiValue.text = "Tidak"
+                    propertiContainer = "Tidak"
+                }
+                else if(isNullProperti == false){
+                    isNullProperti = true
+                    binding.lokasiValue.text = "-"
+                    propertiContainer = ""
+                }
             }
         }
 
 
         binding.mulaiButton.setOnClickListener {
-            compareGamesWithDatabase(usiaMinContainer, usiaMaxContainer, lokasiContainer, pemainMinContainer, pemainMaxContainer, propertiContainer)
+            compareGamesWithDatabase(isNullUsia, isNullLokasi, isNullPemain, isNullProperti, batasPemain1, batasPemain2Bawah, batasPemain2Atas, batasPemain3, batasUsia1, batasUsia2Bawah, batasUsia2Atas, batasUsia3, lokasiContainer, propertiContainer)
         }
 
 
     }
 
-    private fun compareGamesWithDatabase(usiaMinContainer : Int?, usiaMaxContainer : Int?, lokasiContainer : String?, pemainMinContainer : Int?, pemainMaxContainer : Int?, propertiContainer : String?){
+    private fun compareGamesWithDatabase(isNullUsia : Boolean, isNullLokasi : Boolean, isNullPemain : Boolean, isNullProperti : Boolean, batasPemain1 : Int, batasPemain2Bawah : Int, batasPemain2Atas : Int, batasPemain3 : Int, batasUsia1 : Int, batasUsia2Bawah : Int, batasUsia2Atas : Int, batasUsia3 : Int, lokasiContainer : String, propertiContainer : String){
         lifecycleScope.launch(Dispatchers.IO) {
             try {
                 val gamesSnapshot = db.collection("games").get().await()
-                val matchingGames: MutableSet<Games> = mutableSetOf()
+                var matchingGames: MutableSet<Games> = mutableSetOf()
 
                 for (document in gamesSnapshot.documents) {
                     val game = document.toObject(Games::class.java)  // 🔥 Konversi langsung ke objek Game
@@ -131,35 +233,111 @@ class FilterFragment : Fragment() {
                     if (game != null) {
                         // cek games filter
 
-//                        cekGames(game, matchingGames, usiaContainer, lokasiContainer, pemainContainer, propertiContainer)
-
-                        if (usiaMaxContainer != null && usiaMaxContainer >= game.usiaMin && usiaMaxContainer >= game.usiaMax) continue
-
-                        // Filter berdasarkan lokasi
-                        if (lokasiContainer != null && game.jenisLokasi != lokasiContainer) continue
-
-                        // Filter berdasarkan jumlah pemain
-                        if (pemainMinContainer != null && game.pemainMax > pemainMinContainer) continue
-                        if (pemainMaxContainer != null && game.pemainMin < pemainMaxContainer) continue
+                        var batasUsia : Int = 11
+                        var indexUsia : Int = game.usiaMin
+                        var flag1 : Boolean = false
 
 
-                        // Filter berdasarkan properti
-                        if (propertiContainer == "Ya" && game.properti == null) continue
-                        if (propertiContainer == "Tidak" && game.properti != null) continue
-
-
-                        matchingGames.add(game)
+                        // Usia
+                        if(isNullUsia == false){
+                            for (i in indexUsia..game.usiaMax) {
+                                if (indexUsia <= batasUsia1) {
+                                    matchingGames.add(game)
+                                }
+                                if (indexUsia in batasUsia2Bawah..batasUsia2Atas) {
+                                    matchingGames.add(game)
+                                }
+                                if (indexUsia >= batasUsia3) {
+                                    flag1 = true
+                                    matchingGames.add(game)
+                                    if (flag1 == true) {
+                                        break
+                                    }
+                                }
+                                indexUsia++
+                            }
+                            if(game.usiaMin >= batasUsia){
+                                matchingGames.add(game)
+                            }
+                        }
+                        else if(isNullUsia == true){
+                            matchingGames.add(game)
+                        }
                     }
-
-                    var index = 0
-
-                    for (game in matchingGames){
-                        index++
-                        Log.d("Games", "Games : $game")
-                    }
-
-                    Log.d("Index", "Total : $index")
                 }
+
+                var tempGames: MutableSet<Games> = mutableSetOf()
+                tempGames = matchingGames.toMutableSet()
+
+                var index1 = 0
+                for(game in tempGames){
+                    Log.d("Games Temp", "Games : $game")
+                    index1++
+                }
+                Log.d("Games Temp 1" , "Total 1 : $index1")
+
+                if (isNullLokasi == false) {
+                    tempGames.removeIf { game ->
+                        (lokasiContainer == "Indoor" && game.jenisLokasi == "Outdoor") || (lokasiContainer == "Outdoor" && game.jenisLokasi == "Indoor")
+                    }
+                }
+
+                var index2 = 0
+                for(game in tempGames){
+                    Log.d("Games Temp", "Games : $game")
+                    index2++
+                }
+                Log.d("Games Temp 2", "Total 2 : $index2")
+
+
+                if (isNullProperti == false) {
+                    tempGames.removeIf { game ->
+                        (propertiContainer == "Ya" && game.properti == "") || (propertiContainer == "Tidak" && game.properti != "")
+                    }
+                }
+
+                var index3 = 0
+                for(game in tempGames){
+                    Log.d("Games Temp", "Games : $game")
+                    index3++
+                }
+                Log.d("Games Temp 3", "Total 3 : $index3")
+
+                if (!isNullPemain) {
+                    val batasPemain = 6
+                    tempGames.removeIf { game ->
+                        val rangePemain = game.pemainMin..game.pemainMax
+                        var shouldRemove = false
+
+                        if (batasPemain1 != 0) {
+                            shouldRemove = shouldRemove || rangePemain.all { it > batasPemain1 }
+                        }
+                        if (batasPemain2Bawah != 0 && batasPemain2Atas != 0) {
+                            shouldRemove = shouldRemove || (rangePemain.all { it < batasPemain2Bawah } || rangePemain.all { it > batasPemain2Atas })
+                        }
+                        if (batasPemain3 != 0) {
+                            shouldRemove = shouldRemove || rangePemain.all { it < batasPemain3 }
+                        }
+
+                        shouldRemove
+                    }
+                }
+
+                var index4 = 0
+                for(game in tempGames){
+                    Log.d("Games Temp", "Games : $game")
+                    index4++
+                }
+                Log.d("Games Temp 4", "Total 4 : $index4")
+
+                matchingGames = tempGames.toMutableSet()
+
+                var index = 0
+                for (game in matchingGames){
+                    index++
+                    Log.d("Games", "Games : $game")
+                }
+                Log.d("Index", "Total : $index")
 
                 val bundle = Bundle().apply {
                     putParcelableArrayList("MATCHING_GAMES", ArrayList(matchingGames.toList()))
@@ -175,48 +353,27 @@ class FilterFragment : Fragment() {
         }
     }
 
-    private fun cekGames(game : Games, matchingGames: MutableSet<Games>, usiaContainer : String, lokasiContainer : String, pemainContainer : String, propertiContainer : String){
-        if (pemainContainer.equals("<3") && game.pemainMax < 3) {
-            cekUsia(game, matchingGames, usiaContainer, lokasiContainer, propertiContainer)
-        } else if (pemainContainer.equals("3-5") && game.pemainMin >= 3 && game.pemainMax <= 5) {
-            cekUsia(game, matchingGames, usiaContainer, lokasiContainer, propertiContainer)
-        } else if (pemainContainer.equals(">5") && game.pemainMin > 5) {
-            cekUsia(game, matchingGames, usiaContainer, lokasiContainer, propertiContainer)
-        }else{
-            cekUsia(game, matchingGames, usiaContainer, lokasiContainer, propertiContainer)
-        }
+    private fun cekGames(game : Games, matchingGames: MutableSet<Games>, batasPemain1 : Int, batasPemain2Bawah : Int, batasPemain2Atas : Int, batasPemain3 : Int, batasUsia1 : Int, batasUsia2Bawah : Int, batasUsia2Atas : Int, batasUsia3 : Int, lokasiContainer : String, propertiContainer : String){
+        cekUsia(game, matchingGames, batasUsia1, batasUsia2Bawah, batasUsia2Atas, batasUsia3)
+        cekLokasi(game, matchingGames, lokasiContainer)
+        cekPemain(game, matchingGames, batasPemain1, batasPemain2Bawah, batasPemain2Atas, batasPemain3)
+        cekProperti(game, matchingGames, propertiContainer)
     }
 
-    private fun cekUsia(game: Games, matchingGames: MutableSet<Games>, usiaContainer : String, lokasiContainer : String, propertiContainer : String){
-        if (usiaContainer.equals("<6") && game.usiaMax < 6) {
-            cekLokasi(game, matchingGames, lokasiContainer, propertiContainer)
-        } else if (usiaContainer.equals("6-10") && game.usiaMin >= 6 && game.usiaMax <= 10) {
-            cekLokasi(game, matchingGames, lokasiContainer, propertiContainer)
-        } else if (usiaContainer.equals(">10") && game.usiaMin > 10) {
-            cekLokasi(game, matchingGames, lokasiContainer, propertiContainer)
-        } else{
-            cekLokasi(game, matchingGames, lokasiContainer, propertiContainer)
-        }
+    private fun cekUsia(game: Games, matchingGames: MutableSet<Games>, batasUsia1 : Int, batasUsia2Bawah : Int, batasUsia2Atas : Int, batasUsia3 : Int){
+
     }
 
-    private fun cekLokasi(game: Games, matchingGames: MutableSet<Games>, lokasiContainer : String, propertiContainer : String){
-        if (lokasiContainer.equals("Indoor") && game.jenisLokasi.equals("Indoor")) {
-            cekProperti(game, matchingGames, propertiContainer)
-        } else if (lokasiContainer.equals("Outdoor") && game.jenisLokasi.equals("Outdoor")) {
-            cekProperti(game, matchingGames, propertiContainer)
-        } else{
-            cekProperti(game, matchingGames, propertiContainer)
-        }
+    private fun cekPemain(game: Games, matchingGames: MutableSet<Games>, batasPemain1 : Int, batasPemain2Bawah : Int, batasPemain2Atas : Int, batasPemain3 : Int){
+
+    }
+
+    private fun cekLokasi(game: Games, matchingGames: MutableSet<Games>, lokasiContainer : String){
+
     }
 
     private fun cekProperti(game: Games, matchingGames: MutableSet<Games>, propertiContainer: String){
-        if (propertiContainer.equals("Ya") && game.properti != null) {
-            matchingGames.add(game)
-        } else if (propertiContainer.equals("Tidak") && game.properti == null) {
-            matchingGames.add(game)
-        } else{
-            matchingGames.add(game)
-        }
+
     }
 
 
