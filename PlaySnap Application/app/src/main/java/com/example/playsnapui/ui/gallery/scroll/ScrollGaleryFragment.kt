@@ -1,5 +1,6 @@
 package com.example.playsnapui.ui.gallery.scroll
 
+import SharedData
 import android.database.Cursor
 import android.graphics.Rect
 import android.net.Uri
@@ -126,6 +127,10 @@ class ScrollGalleryFragment : Fragment() {
                 .mapNotNull { createUri(it) }
             viewModel.startGame(remainingImageUris)
         }
+
+        binding.btnBack.setOnClickListener{
+            findNavController().navigate(R.id.action_ScrollGalleryFragment_to_homeFragment)
+        }
     }
 
     private fun observeSwipeResult() {
@@ -151,7 +156,14 @@ class ScrollGalleryFragment : Fragment() {
 
         viewModel.success.observe(viewLifecycleOwner, Observer<Boolean> { isSuccess ->
             if (isSuccess) {
-                findNavController().navigate(R.id.action_ScrollGalleryFragment_to_ObjectFragment)
+                viewModel.detectedObjects.observe(viewLifecycleOwner) { detectedList ->
+                    if (detectedList.isNotEmpty()) {
+                        SharedData.detectedObjects = detectedList
+
+                        // Now navigate to another fragment or perform any other operation
+                        findNavController().navigate(R.id.action_ScrollGalleryFragment_to_ObjectFragment)
+                    }
+                }
             }
         })
 
