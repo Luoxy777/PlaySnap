@@ -43,8 +43,8 @@
 
             <RelativeLayout
                 android:id="@+id/game_desc_header_wrapped"
-                android:layout_width="350dp"
-                android:layout_height="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -53,13 +53,14 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/game_desc_header"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/title_game_desc_header"
                         style="@style/Title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:layout_constraintWidth_max="200dp"
                         android:layout_marginTop="10dp"
                         android:text="@string/title_header_game_tutorial_page"
                         android:textSize="35dp"
@@ -70,6 +71,7 @@
                         android:id="@+id/subtitle_header_desc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:layout_constraintWidth_max="200dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginBottom="15dp"
                         android:fontFamily="@font/andikaregular"
@@ -77,7 +79,8 @@
                         android:textColor="@color/grey"
                         android:textSize="13dp"
                         app:layout_constraintBottom_toBottomOf="@id/line_game_desc_header"
-                        app:layout_constraintStart_toEndOf="@id/game_icon_header" />
+                        app:layout_constraintStart_toEndOf="@id/game_icon_header"
+                        app:layout_constraintTop_toBottomOf="@+id/title_game_desc_header" />
 
                     <ImageView
                         android:id="@+id/game_icon_header"
@@ -87,24 +90,30 @@
                         android:background="@drawable/ic_game"
                         android:backgroundTint="@color/light_grey"
                         app:layout_constraintBottom_toBottomOf="@id/line_game_desc_header"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/subtitle_header_desc" />
 
                     <RelativeLayout
                         android:id="@+id/jumlah_pemain_section"
-                        android:layout_width="70dp"
+                        android:layout_width="wrap_content"
+                        android:layout_marginStart="25dp"
                         android:layout_height="60dp"
                         android:background="@drawable/bg_player_tutorial_page"
                         app:layout_constraintBottom_toBottomOf="@id/line_game_desc_header"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                        app:layout_constraintHorizontal_bias="0.838"
+                        app:layout_constraintStart_toEndOf="@+id/title_game_desc_header"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.575">
 
                         <TextView
                             android:id="@+id/number_player"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
-                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
                             android:layout_marginStart="16dp"
+                            android:layout_marginTop="0dp"
                             android:layout_marginEnd="16dp"
                             android:fontFamily="@font/leaguespartanbold"
                             android:text="@string/number_player_tutorial_page"
@@ -115,8 +124,9 @@
                             android:id="@+id/orang_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_below="@+id/number_player"
                             android:layout_marginStart="16dp"
-                            android:layout_marginTop="32dp"
+                            android:layout_marginTop="-11dp"
                             android:layout_marginEnd="16dp"
                             android:fontFamily="@font/andikaregular"
                             android:text="orang"
@@ -125,7 +135,7 @@
 
                     <ImageView
                         android:id="@+id/line_game_desc_header"
-                        android:layout_width="350dp"
+                        android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginTop="10dp"
                         android:background="@color/light_grey"
@@ -139,7 +149,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/deskripsi_section"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -185,12 +195,11 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/alat_bermain_section"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginTop="25dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/deskripsi_section">
+                app:layout_constraintTop_toBottomOf="@+id/deskripsi_section"
+                tools:layout_editor_absoluteX="1dp">
 
                 <TextView
                     android:id="@+id/title_alat_bermain"
@@ -227,7 +236,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/tutorial_section"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -281,7 +290,7 @@
 
                 <TextView
                     android:id="@+id/langkah_bermain_content"
-                    android:layout_width="300dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/andikaregular"
                     android:text="@string/langkah_bermain_content_tutorial_page"
@@ -294,7 +303,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/mainkan_button_tutorial"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="25dp"
                 android:background="@drawable/bg_button_selesai_feedback"

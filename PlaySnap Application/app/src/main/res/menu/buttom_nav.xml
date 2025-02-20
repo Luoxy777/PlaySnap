@@ -2,26 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/nav_home"
         android:icon="@drawable/logo_home"
-        android:title="Beranda"
-        android:iconTint="@color/orange"
-        />
+        android:title="home" />
     <item
-        android:id="@+id/like"
+        android:id="@+id/nav_like"
         android:icon="@drawable/logo_like"
-        android:title="Suka"
-        />
+        android:title="like" />
     <item
-        android:id="@+id/bookmark"
+        android:id="@+id/nav_bookmark"
         android:icon="@drawable/logo_bookmark"
-        android:title="Simpan" />
+        android:title="bookmark" />
     <item
-        android:id="@+id/profile"
+        android:id="@+id/nav_profile"
         android:icon="@drawable/logo_profile"
-        android:title="Profil"
-
-        />
+        android:title="profile" />
 
 
 </menu>

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.example.playsnapui.databinding.ActivityHomeBinding
 import com.example.playsnapui.ui.home.HomeFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,11 +25,13 @@ class HomeActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
 
+        binding.bottomNavigationView.setupWithNavController(navController)
+
         // Hide Bottom Navigation Bar in specific fragments
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.snapFragment, R.id.swipeGalleryFragment, R.id.scrollGalleryFragment, R.id.filterFragment, R.id.ObjectFragment,
-                R.id.recommendGameFragment -> {
+                R.id.recommendGameFragment, R.id.tutorialFragment -> {
                     binding.bottomNavigationView.visibility = View.GONE
                 }
                 else -> {
@@ -37,15 +40,28 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
-    }
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    navController.navigate(R.id.homeFragment)
+                    true
+                }
+                R.id.nav_profile -> {
+                    navController.navigate(R.id.profileFragment)
+                    true
+                }
+                R.id.nav_bookmark -> {
+                    navController.navigate(R.id.bookmarkFragment)
+                    true
+                }
 
-        // Set up Bottom Navigation
-//        binding.bottomNavigationView.setOnItemSelectedListener { item ->
-//            when (item.itemId) {
-//                R.id.home -> loadFragment(HomeFragment())
-//            }
-//            true
-//        }
+
+                else -> false
+            }
+        }
+
+
+    }
 
 
 

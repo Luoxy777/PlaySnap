@@ -60,12 +60,12 @@
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\ic_profile_pic.png"
     },
     {
-        "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\mipmap-xxhdpi_ic_started_picture_round.webp.flat",
-        "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\mipmap-xxhdpi\\ic_started_picture_round.webp"
-    },
-    {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_pemain_opt3.xml.flat",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\pemain_opt3.xml"
+    },
+    {
+        "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\mipmap-xxhdpi_ic_started_picture_round.webp.flat",
+        "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\mipmap-xxhdpi\\ic_started_picture_round.webp"
     },
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_pemain_opt2.xml.flat",
@@ -96,12 +96,12 @@
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\ic_sun.png"
     },
     {
-        "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\mipmap-mdpi_ic_started_picture_foreground.webp.flat",
-        "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\mipmap-mdpi\\ic_started_picture_foreground.webp"
-    },
-    {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\mipmap-mdpi_ic_started_picture_foreground.webp.flat",
+        "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\mipmap-mdpi\\ic_started_picture_foreground.webp"
     },
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\layout_activity_report_page.xml.flat",
@@ -128,12 +128,12 @@
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\menu\\buttom_nav.xml"
     },
     {
-        "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\mipmap-mdpi_ic_started_picture_round.webp.flat",
-        "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\mipmap-mdpi\\ic_started_picture_round.webp"
-    },
-    {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_background_rating_feedback.xml.flat",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\background_rating_feedback.xml"
+    },
+    {
+        "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\mipmap-mdpi_ic_started_picture_round.webp.flat",
+        "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\mipmap-mdpi\\ic_started_picture_round.webp"
     },
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\layout_fragment_login.xml.flat",
@@ -164,16 +164,16 @@
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\mipmap-mdpi\\ic_started_picture.webp"
     },
     {
-        "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_image_illustration_started.xml.flat",
-        "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\image_illustration_started.xml"
+        "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_pemain_opt1.xml.flat",
+        "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\pemain_opt1.xml"
     },
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_ic_rate15.xml.flat",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\ic_rate15.xml"
     },
     {
-        "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_pemain_opt1.xml.flat",
-        "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\pemain_opt1.xml"
+        "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_image_illustration_started.xml.flat",
+        "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\image_illustration_started.xml"
     },
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\layout_layout_taken_photo.xml.flat",
@@ -194,6 +194,10 @@
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\layout_fragment_swipe_gallery.xml.flat",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\fragment_swipe_gallery.xml"
+    },
+    {
+        "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\layout_fragment_like.xml.flat",
+        "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\fragment_like.xml"
     },
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_lokasi_opt2.xml.flat",
@@ -260,12 +264,12 @@
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\mipmap-anydpi-v26\\ic_started_picture_round.xml"
     },
     {
-        "merged": "com.example.playsnapui.app-merged_res-5:/layout_fragment_recommend_game.xml.flat",
-        "source": "com.example.playsnapui.app-main-7:/layout/fragment_recommend_game.xml"
-    },
-    {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_ic_help_background.xml.flat",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\ic_help_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\layout_fragment_tutorial.xml.flat",
+        "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\fragment_tutorial.xml"
     },
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
@@ -296,12 +300,20 @@
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\ic_awan2.png"
     },
     {
+        "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\layout_fragment_profile.xml.flat",
+        "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\fragment_profile.xml"
+    },
+    {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_hapus_button_oultline.xml.flat",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\hapus_button_oultline.xml"
+    },
+    {
+        "merged": "com.example.playsnapui.app-merged_res-5:/layout_bottom_sheet_tutorial_page.xml.flat",
+        "source": "com.example.playsnapui.app-main-7:/layout/bottom_sheet_tutorial_page.xml"
     },
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\layout_activity_help_page_q7.xml.flat",
@@ -970,6 +982,10 @@
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\font_leaguespartanblack.ttf.flat",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\font\\leaguespartanblack.ttf"
+    },
+    {
+        "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\layout_fragment_bookmark.xml.flat",
+        "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\fragment_bookmark.xml"
     },
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\layout_activity_manage_object.xml.flat",

@@ -1,5 +1,6 @@
 package com.example.playsnapui.ui.home
 
+import SharedData.userProfile
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
@@ -31,15 +32,18 @@ class HomeFragment : Fragment() {
     private lateinit var gamesListForYou: ArrayList<Games>
     private lateinit var viewModel: HomeViewModel
 
-    companion object {
-        fun newInstance() = HomeFragment()
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        userProfile?.let {
+            binding.tvTitleName.text = it.fullName ?: "N/A"
+        }
+        Log.d("HomeFragment", "User Profile: ${userProfile?.fullName ?: "N/A"}")
+
         return binding.root
     }
 
@@ -47,9 +51,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
 
-        viewModel.welcomeMessage.observe(viewLifecycleOwner, Observer { message ->
-            binding.tvTitleName.text = message
-        })
+
 
         db = FirebaseFirestore.getInstance()
         gamesListPopular = arrayListOf()

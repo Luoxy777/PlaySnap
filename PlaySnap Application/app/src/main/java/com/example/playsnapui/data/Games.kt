@@ -18,7 +18,8 @@ data class Games(
     val linkVideo : String = "",
     val rating : Float = 0f,
     val totalLike : Int = 0,
-    val totalShare : Int = 0
+    val totalShare : Int = 0,
+    val game_id : String = ""
 ) : Parcelable {
     override fun describeContents(): Int {
         TODO("Not yet implemented")
@@ -40,6 +41,7 @@ data class Games(
         parcel.writeFloat(rating)
         parcel.writeInt(totalLike)
         parcel.writeInt(totalShare)
+        parcel.writeString(game_id)
     }
     companion object CREATOR : Parcelable.Creator<Games> {
         override fun createFromParcel(parcel: Parcel): Games {
@@ -58,7 +60,8 @@ data class Games(
                 linkVideo = parcel.readString() ?: "",
                 rating = parcel.readFloat(),
                 totalLike = parcel.readInt(),
-                totalShare = parcel.readInt()
+                totalShare = parcel.readInt(),
+                game_id = parcel.readString() ?: ""
             )
         }
 

@@ -170,7 +170,9 @@ id MyScrollView
 id ObjectFragment
 id action_FilterFragment_to_HomeFragment
 id action_FilterFragment_to_RecGameFragment
+id action_HomeFragment_to_ProfileFragment
 id action_HomeFragment_to_SnapFragment
+id action_HomeFragment_to_TutorialFragment
 id action_ObjectFragment_to_RecommendGameFragment
 id action_ScrollGalleryFragment_to_ObjectFragment
 id action_ScrollGalleryFragment_to_SwipeGalleryFragment
@@ -202,8 +204,10 @@ id banner_background
 id banner_mascot
 id bianglala_loading_page
 id bookmark
+id bookmarkFragment
 id bookmark_button_tutorial
 id bottomNavigationView
+id bottom_sheet
 id bottom_sheet_container
 id bottom_sheet_filter_page
 id bottom_sheet_filter_page_id
@@ -285,7 +289,6 @@ id hanabi2
 id hanabi3
 id hapus_button
 id help_button
-id home
 id homeFragment
 id ic_account
 id ic_account_rectangle
@@ -321,7 +324,6 @@ id layout_delete_object_confirmation
 id layout_display_game
 id layout_popup
 id layout_rating
-id like
 id like_button_tutorial
 id line1_feedback
 id line1_lokasi_opt
@@ -361,8 +363,12 @@ id masukButton
 id matahariTopFilterPage
 id moon_feedback
 id mulai_button
+id nav_bookmark
+id nav_home
 id nav_host_fragment
 id nav_host_fragment_auth
+id nav_like
+id nav_profile
 id number_player
 id orang_text
 id pemain_button_cat
@@ -381,7 +387,7 @@ id pop_up_lokasi_category
 id pop_up_pemain_category
 id pop_up_usia_category
 id previewView
-id profile
+id profileFragment
 id profile_pic
 id progressBar
 id properti_opt
@@ -447,6 +453,7 @@ id title_tutorial
 id tittle_rec_game
 id tittle_search_game
 id toolbar
+id tutorialFragment
 id tutorial_section
 id tv_account
 id tv_edit1_name
@@ -563,15 +570,19 @@ layout activity_tutorial_page
 layout bottom_sheet_filter_page
 layout bottom_sheet_tutorial_page
 layout fragment_auth
+layout fragment_bookmark
 layout fragment_filter
 layout fragment_home
+layout fragment_like
 layout fragment_login
 layout fragment_object
+layout fragment_profile
 layout fragment_recommend_game
 layout fragment_register
 layout fragment_scroll_galery
 layout fragment_snap
 layout fragment_swipe_gallery
+layout fragment_tutorial
 layout layout_bookgame_list_item
 layout layout_delete_object_confirmation
 layout layout_foryougame_list_item

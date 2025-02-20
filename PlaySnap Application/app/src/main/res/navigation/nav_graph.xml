@@ -18,6 +18,16 @@
         <action
             android:id="@+id/action_homeFragment_to_filterFragment"
             app:destination="@id/filterFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_ProfileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_HomeFragment_to_TutorialFragment"
+            app:destination="@id/tutorialFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
 
     </fragment>
 
@@ -110,6 +120,24 @@
         android:id="@+id/recommendGameFragment"
         android:name="com.example.playsnapui.ui.recommendgame.RecommendGameFragment"
         android:label="RecommendGame">
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.playsnapui.ui.profile.ProfileFragment"
+        android:label="profile">
+    </fragment>
+
+    <fragment
+        android:id="@+id/bookmarkFragment"
+        android:name="com.example.playsnapui.ui.bookmark.BookmarkFragment"
+        android:label="bookmark">
+    </fragment>
+
+    <fragment
+        android:id="@+id/tutorialFragment"
+        android:name="com.example.playsnapui.ui.tutorial.TutorialFragment"
+        android:label="tutorial">
     </fragment>
 
 

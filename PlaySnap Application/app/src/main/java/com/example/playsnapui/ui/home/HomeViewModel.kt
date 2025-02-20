@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class HomeViewModel : ViewModel() {
-    private val _welcomeMessage = MutableLiveData("Totok!")
-    val welcomeMessage: LiveData<String> get() = _welcomeMessage
+//    private val _welcomeMessage = MutableLiveData("Totok!")
+//    val welcomeMessage: LiveData<String> get() = _welcomeMessage
 
 }

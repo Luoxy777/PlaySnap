@@ -1,15 +1,21 @@
 package com.example.playsnapui
 
+import SharedData.userProfile
+import UserProfile
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.playsnapui.databinding.ActivitySplashBinding
 import com.google.firebase.auth.FirebaseAuth
 import androidx.core.splashscreen.SplashScreen
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.google.firebase.firestore.FirebaseFirestore
 
+@SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashBinding
@@ -24,16 +30,40 @@ class SplashActivity : AppCompatActivity() {
         // Firebase Auth instance
         val auth = FirebaseAuth.getInstance()
 
-        // Add a delay before navigation
-        Handler(Looper.getMainLooper()).postDelayed({
-//            if (auth.currentUser != null) {
-                startActivity(Intent(this, HomeActivity::class.java))
-//            } else {
-//                startActivity(Intent(this, AuthActivity::class.java))
-//            }
+        if (auth.currentUser != null) {
+            val user = auth.currentUser
+            user?.let {
+                val userId = user.uid // Get UID of authenticated user
+                val db = FirebaseFirestore.getInstance()
 
-            finish() // Close SplashActivity
-        }, 1500) // 1.5 seconds delay
+                // Fetch user data
+                db.collection("users").document(userId).get()
+                    .addOnSuccessListener { document ->
+                        if (document != null) {
+                            val email = document.getString("email")
+                            val fullName = document.getString("fullName")
+                            val username = document.getString("username")
+
+                            // Store user profile globally
+                            userProfile = UserProfile(email, fullName, username)
+                            Log.d("Splash", "User Profile Loaded: ${userProfile?.fullName ?: "N/A"}")
+
+                            // ✅ Navigate **after** user profile is set
+                            startActivity(Intent(this, HomeActivity::class.java))
+                            finish()
+                        }
+                    }
+                    .addOnFailureListener { exception ->
+                        Log.w("Error", "Error getting document: ", exception)
+                        startActivity(Intent(this, HomeActivity::class.java))
+                        finish()
+                    }
+            }
+        } else {
+            // If no user is logged in, go to AuthActivity
+            startActivity(Intent(this, AuthActivity::class.java))
+            finish()
+        }
     }
 }
 
