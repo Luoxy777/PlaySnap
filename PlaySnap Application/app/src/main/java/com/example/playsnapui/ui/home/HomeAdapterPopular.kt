@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.playsnapui.R
 import com.example.playsnapui.data.Games
 import com.google.firebase.auth.FirebaseAuth
@@ -25,6 +27,15 @@ class HomeAdapterPopular(internal val gameList: ArrayList<Games>) : RecyclerView
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val game: Games = gameList[position]
         holder.gamesName.text = game.namaPermainan
+
+        // Fetch the thumbnail URL for the game (assuming it's stored in game.thumbnailUrl)
+        val thumbnailUrl = game.landThumb // Update this according to your data structure
+
+        // Load the image into the squareView (ImageView) using Glide
+        Glide.with(holder.itemView.context)
+            .load(thumbnailUrl) // URL for the thumbnail image
+            .into(holder.landView)
+
 
         // Fetch the bookmark status from Firestore based on user and game
         val userId = FirebaseAuth.getInstance().currentUser?.uid
@@ -145,7 +156,10 @@ class HomeAdapterPopular(internal val gameList: ArrayList<Games>) : RecyclerView
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val gamesName: TextView = itemView.findViewById(R.id.title_game)
-        val bookmarkButton: ImageButton = itemView.findViewById(R.id.bookmark) // Bookmark button
+        val gamesName: TextView = itemView.findViewById(R.id.title_game_pop)
+        val bookmarkButton: ImageButton =
+            itemView.findViewById(R.id.bookmark_pop) // Bookmark button
+        val landView: ImageView = itemView.findViewById(R.id.display_game_pop)
+
     }
 }

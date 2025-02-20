@@ -138,6 +138,11 @@
         android:id="@+id/tutorialFragment"
         android:name="com.example.playsnapui.ui.tutorial.TutorialFragment"
         android:label="tutorial">
+        <action
+            android:id="@+id/action_TutorialFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/tutorialFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
 

@@ -1,6 +1,7 @@
 package com.example.playsnapui.ui.home
 
 import SharedData.userProfile
+import android.annotation.SuppressLint
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
@@ -113,6 +114,7 @@ class HomeFragment : Fragment() {
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun loadGamesFromFirestore() {
         db.collection("games").addSnapshotListener { value, error ->
             if (error != null) {

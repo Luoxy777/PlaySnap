@@ -36,7 +36,7 @@ class RecommendGameAdapter(private val gameList: ArrayList<Games>) : RecyclerVie
 
     public class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
-        val gamesName : TextView = itemView.findViewById(R.id.title_game)
+        val gamesName : TextView = itemView.findViewById(R.id.title_game_foryou)
     }
 
 }
