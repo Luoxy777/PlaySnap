@@ -6,6 +6,6 @@ import retrofit2.http.Part
 
 interface YOLOApiService {
     @Multipart
-    @POST("detect/")
+    @POST("predict/")
     fun uploadImage(@Part image: MultipartBody.Part): Call<DetectionResponse> // Response is JSON
 }
