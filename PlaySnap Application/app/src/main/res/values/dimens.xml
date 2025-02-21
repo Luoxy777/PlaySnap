@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Normal video dimensions -->
+    <dimen name="video_width">240dp</dimen>
+    <dimen name="video_height">135dp</dimen>
+</resources>

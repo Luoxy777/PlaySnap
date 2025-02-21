@@ -20,6 +20,8 @@ color transparent_blue
 color transparent_white
 color white
 color yellow
+dimen video_height
+dimen video_width
 drawable back_button
 drawable back_button_mini
 drawable background_object_search_by_type
@@ -173,8 +175,8 @@ id action_FilterFragment_to_HomeFragment
 id action_FilterFragment_to_RecGameFragment
 id action_HomeFragment_to_ProfileFragment
 id action_HomeFragment_to_SnapFragment
-id action_HomeFragment_to_TutorialFragment
 id action_ObjectFragment_to_RecommendGameFragment
+id action_PopularFragment_to_TutorialFragment
 id action_ScrollGalleryFragment_to_ObjectFragment
 id action_ScrollGalleryFragment_to_SwipeGalleryFragment
 id action_ScrollGalleryFragment_to_homeFragment
@@ -347,6 +349,7 @@ id layout_like
 id layout_popup
 id layout_rating
 id layout_share
+id likeFragment
 id like_button_tutorial
 id line1_feedback
 id line1_lokasi_opt

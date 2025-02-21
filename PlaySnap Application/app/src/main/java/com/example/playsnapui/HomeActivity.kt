@@ -54,8 +54,10 @@ class HomeActivity : AppCompatActivity() {
                     navController.navigate(R.id.bookmarkFragment)
                     true
                 }
-
-
+                R.id.nav_like -> {
+                    navController.navigate(R.id.likeFragment)
+                    true
+                }
                 else -> false
             }
         }

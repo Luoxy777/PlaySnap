@@ -49,11 +49,14 @@
             <TextView
                 android:id="@+id/title_game_pop"
                 android:layout_width="100dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/leaguespartanbold"
-                android:lines="1"
+                android:maxLines="2"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="16sp"
                 android:text="@string/title_game_card"
                 android:textColor="@color/dark_blue"
                 android:textSize="14dp" />
@@ -65,14 +68,14 @@
 
                 <ImageButton
                     android:id="@+id/btn_like_pop"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
+                    android:layout_width="12dp"
+                    android:layout_height="17dp"
                     android:layout_marginTop="5dp"
                     android:backgroundTint="@color/white"
                     android:src="@drawable/ic_unlike"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/count_like_pop"

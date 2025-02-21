@@ -1,52 +1,60 @@
 package com.example.playsnapui.ui.like
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.playsnapui.R
+import com.example.playsnapui.data.Games
+import com.example.playsnapui.databinding.FragmentBookmarkBinding
 import com.example.playsnapui.databinding.FragmentLikeBinding
+import com.example.playsnapui.ui.bookmark.BookmarkViewModel
 import com.example.playsnapui.ui.home.HomeAdapterPopular
 
-class LikePageFragment : Fragment() {
+class LikeFragment : Fragment() {
 
-    private var _binding: FragmentLikeBinding? = null
-    private val binding get() = _binding!!
-    private val viewModel: LikeViewModel by viewModels()
+    private lateinit var binding: FragmentLikeBinding
+    private val likeViewModel: LikeViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentLikeBinding.inflate(inflater, container, false)
+    ): View {
+        binding = FragmentLikeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Set up RecyclerView
-        val recyclerView = binding.recentRecyclerLike
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        val adapter = HomeAdapterPopular(arrayListOf())
-        recyclerView.adapter = adapter
+        // Initialize RecyclerView
+        val adapter = HomeAdapterPopular(arrayListOf()) // Pass an empty list initially
+        val layoutManager = GridLayoutManager(requireContext(), 2) // 2 columns in the grid
+        binding.recentRecyclerLike.layoutManager = layoutManager
+        binding.recentRecyclerLike.adapter = adapter
 
-        // Observe LiveData from ViewModel
-//        viewModel.recentItems.observe(viewLifecycleOwner, Observer {
-//            adapter.submitList(it)
-//        })
 
-        // Set up any other views, such as title and subtitle
-        binding.tvTitleLike.text = getString(R.string.title_like)
-        binding.tvSubtitleLike.text = getString(R.string.subtitle_like)
-    }
+        Log.d("Haha", "Cek1")
+        likeViewModel.fetchLikedGames()
+        Log.d("Haha", "Cek2")
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        // Observe the bookmarked games
+        likeViewModel.likedGames.observe(viewLifecycleOwner, Observer { games ->
+            games?.let {
+                adapter.gameList.clear()
+                adapter.gameList.addAll(it)
+                adapter.notifyDataSetChanged()
+            }
+        })
+
+
     }
 }

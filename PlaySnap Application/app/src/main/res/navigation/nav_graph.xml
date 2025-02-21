@@ -24,10 +24,8 @@
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true"/>
         <action
-            android:id="@+id/action_HomeFragment_to_TutorialFragment"
-            app:destination="@id/tutorialFragment"
-            app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="true"/>
+            android:id="@+id/action_PopularFragment_to_TutorialFragment"
+            app:destination="@id/tutorialFragment" />
 
     </fragment>
 
@@ -132,6 +130,9 @@
         android:id="@+id/bookmarkFragment"
         android:name="com.example.playsnapui.ui.bookmark.BookmarkFragment"
         android:label="bookmark">
+        <action
+            android:id="@+id/action_PopularFragment_to_TutorialFragment"
+            app:destination="@id/tutorialFragment" />
     </fragment>
 
     <fragment
@@ -143,6 +144,15 @@
             app:destination="@id/homeFragment"
             app:popUpTo="@id/tutorialFragment"
             app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/likeFragment"
+        android:name="com.example.playsnapui.ui.like.LikeFragment"
+        android:label="like">
+        <action
+            android:id="@+id/action_PopularFragment_to_TutorialFragment"
+            app:destination="@id/tutorialFragment" />
     </fragment>
 
 
