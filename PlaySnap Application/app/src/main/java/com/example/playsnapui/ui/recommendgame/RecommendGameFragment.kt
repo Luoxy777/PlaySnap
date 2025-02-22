@@ -44,7 +44,7 @@ class RecommendGameFragment : Fragment() {
     var batasPemain2Atas = arguments?.getInt("batasPemain2Atas") ?: 0
     var batasPemain3 = arguments?.getInt("batasPemain3") ?: 0
     var lokasiContainer = arguments?.getString("lokasiContainer") ?: ""
-    val propertyContainer = requireArguments().getString("propertyContainer")
+    val propertyContainer = arguments?.getString("propertyContainer") ?: ""
     var isNullUsia : Boolean = true
     var isNullPemain : Boolean = true
     var isNullLokasi : Boolean = true

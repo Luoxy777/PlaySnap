@@ -32,11 +32,6 @@ class HomeAdapterForYou (private val gameList: ArrayList<Games>) : RecyclerView.
     override fun onBindViewHolder(holder: HomeAdapterForYou.MyViewHolder, position: Int) {
         val game : Games = gameList[position]
         holder.gamesName.text = game.namaPermainan
-    }
-
-    public class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val gamesName : TextView = itemView.findViewById(R.id.title_game)
-
         holder.likeCount.text = "${game.totalLike}"
         holder.shareCount.text = "${game.totalShare}"
 
@@ -48,7 +43,6 @@ class HomeAdapterForYou (private val gameList: ArrayList<Games>) : RecyclerView.
             .load(thumbnailUrl) // URL for the thumbnail image
             .into(holder.squareView)
 
-        // Fetch the bookmark status from Firestore based on user and game
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         if (userId != null) {
             val db = FirebaseFirestore.getInstance()
@@ -134,6 +128,19 @@ class HomeAdapterForYou (private val gameList: ArrayList<Games>) : RecyclerView.
             it.findNavController().navigate(R.id.action_PopularFragment_to_TutorialFragment)
 
         }
+    }
+
+    public class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+        val gamesName: TextView = itemView.findViewById(R.id.title_game_foryou)
+        val bookmarkButton: ImageButton = itemView.findViewById(R.id.bookmark_foryou) // Bookmark button
+        val likeButton: ImageButton = itemView.findViewById(R.id.btn_like_foryou)
+        val squareView: ImageView = itemView.findViewById(R.id.display_game_foryou)
+        val likeCount: TextView = itemView.findViewById(R.id.count_like_foryou)
+        val shareCount: TextView = itemView.findViewById(R.id.count_share_foryou)
+
+
+
+        // Fetch the bookmark status from Firestore based on user and game
 
     }
 
@@ -240,15 +247,6 @@ class HomeAdapterForYou (private val gameList: ArrayList<Games>) : RecyclerView.
                     Log.w("Firestore", "Error fetching document for like status", exception)
                 }
         }
-    }
-
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val gamesName: TextView = itemView.findViewById(R.id.title_game_foryou)
-        val bookmarkButton: ImageButton = itemView.findViewById(R.id.bookmark_foryou) // Bookmark button
-        val likeButton: ImageButton = itemView.findViewById(R.id.btn_like_foryou)
-        val squareView: ImageView = itemView.findViewById(R.id.display_game_foryou)
-        val likeCount: TextView = itemView.findViewById(R.id.count_like_foryou)
-        val shareCount: TextView = itemView.findViewById(R.id.count_share_foryou)
     }
 
     fun updateGames(newGames: List<Games>) {
