@@ -28,8 +28,8 @@
                     android:layout_height="130dp"
                     android:background="@color/dark_blue"
                     android:paddingTop="40dp"
-                    android:paddingStart="40dp"
-                    android:paddingEnd="40dp">
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp">
 
                     <TextView
                         android:id="@+id/tv_title_bookmark"

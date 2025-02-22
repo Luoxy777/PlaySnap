@@ -1,5 +1,6 @@
 package com.example.playsnapui.ui.filter
 
+import SharedData
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
@@ -17,6 +18,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import androidx.lifecycle.lifecycleScope
 import com.example.playsnapui.data.Games
+import com.example.playsnapui.ui.recommendgame.RecommendGameFragment
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
@@ -53,7 +55,7 @@ class FilterFragment : Fragment() {
         var batasPemain2Atas : Int = 0
         var batasPemain3 : Int = 0
         var lokasiContainer : String = ""
-        var propertiContainer : String = ""
+        var propertyContainer : String = ""
         var isNullUsia : Boolean = true
         var isNullLokasi : Boolean = true
         var isNullPemain : Boolean = true
@@ -191,37 +193,37 @@ class FilterFragment : Fragment() {
                 if(isNullProperti == true){
                     isNullProperti = false
                     binding.propertiValue.text = "Ya"
-                    propertiContainer = "Ya"
+                    propertyContainer = "Ya"
                 }
                 else if(isNullProperti == false){
                     isNullProperti = true
                     binding.lokasiValue.text = "-"
-                    propertiContainer = ""
+                    propertyContainer = ""
                 }
             }
             sheetBinding.propertiOpt2Btn.setOnClickListener {
                 if(isNullProperti == true){
                     isNullProperti = false
                     binding.propertiValue.text = "Tidak"
-                    propertiContainer = "Tidak"
+                    propertyContainer = "Tidak"
                 }
                 else if(isNullProperti == false){
                     isNullProperti = true
                     binding.lokasiValue.text = "-"
-                    propertiContainer = ""
+                    propertyContainer = ""
                 }
             }
         }
 
 
         binding.mulaiButton.setOnClickListener {
-            compareGamesWithDatabase(isNullUsia, isNullLokasi, isNullPemain, isNullProperti, batasPemain1, batasPemain2Bawah, batasPemain2Atas, batasPemain3, batasUsia1, batasUsia2Bawah, batasUsia2Atas, batasUsia3, lokasiContainer, propertiContainer)
+            compareGamesWithDatabase(isNullUsia, isNullLokasi, isNullPemain, isNullProperti, batasPemain1, batasPemain2Bawah, batasPemain2Atas, batasPemain3, batasUsia1, batasUsia2Bawah, batasUsia2Atas, batasUsia3, lokasiContainer, propertyContainer)
         }
 
 
     }
 
-    private fun compareGamesWithDatabase(isNullUsia : Boolean, isNullLokasi : Boolean, isNullPemain : Boolean, isNullProperti : Boolean, batasPemain1 : Int, batasPemain2Bawah : Int, batasPemain2Atas : Int, batasPemain3 : Int, batasUsia1 : Int, batasUsia2Bawah : Int, batasUsia2Atas : Int, batasUsia3 : Int, lokasiContainer : String, propertiContainer : String){
+    private fun compareGamesWithDatabase(isNullUsia : Boolean, isNullLokasi : Boolean, isNullPemain : Boolean, isNullProperti : Boolean, batasPemain1 : Int, batasPemain2Bawah : Int, batasPemain2Atas : Int, batasPemain3 : Int, batasUsia1 : Int, batasUsia2Bawah : Int, batasUsia2Atas : Int, batasUsia3 : Int, lokasiContainer : String, propertyContainer : String){
         lifecycleScope.launch(Dispatchers.IO) {
             try {
                 val gamesSnapshot = db.collection("games").get().await()
@@ -292,7 +294,7 @@ class FilterFragment : Fragment() {
 
                 if (isNullProperti == false) {
                     tempGames.removeIf { game ->
-                        (propertiContainer == "Ya" && game.properti == "") || (propertiContainer == "Tidak" && game.properti != "")
+                        (propertyContainer == "Ya" && game.properti == "") || (propertyContainer == "Tidak" && game.properti != "")
                     }
                 }
 
@@ -339,9 +341,35 @@ class FilterFragment : Fragment() {
                 }
                 Log.d("Index", "Total : $index")
 
-                val bundle = Bundle().apply {
-                    putParcelableArrayList("MATCHING_GAMES", ArrayList(matchingGames.toList()))
+                val bundle = Bundle()
+                Log.d("Properti Filter", "Properti : $propertyContainer")
+
+                bundle.putParcelableArrayList("MATCHING_GAMES", ArrayList(matchingGames.toList()))
+                bundle.putString("propertyContainer", propertyContainer)
+                bundle.putInt("batasUsia1", batasUsia1)
+                bundle.putInt("batasUsia2Bawah", batasUsia2Bawah)
+                bundle.putInt("batasUsia2Atas", batasUsia2Atas)
+                bundle.putInt("batasUsia3", batasUsia3)
+                bundle.putInt("batasPemain1", batasPemain1)
+                bundle.putInt("batasPemain2Bawah", batasPemain2Bawah)
+                bundle.putInt("batasPemain2Atas", batasPemain2Atas)
+                bundle.putInt("batasPemain3", batasPemain3)
+                bundle.putString("lokasiContainer", lokasiContainer)
+
+
+                val fragmentRec = RecommendGameFragment()
+                fragmentRec.arguments = bundle
+
+                val emptySet : MutableSet<Games> = mutableSetOf()
+                SharedData.recommendedGames = emptySet.toList()
+                SharedData.recommendedGames = matchingGames.toList()
+
+                var i : Int = 0
+                for(game in SharedData.recommendedGames){
+                    Log.d("Shared Data Games", "Games : $game")
+                    i++
                 }
+                Log.d("Shared Data Index", "Total : $i")
 
                 findNavController().navigate(R.id.action_FilterFragment_to_RecGameFragment, bundle)
 
@@ -352,30 +380,6 @@ class FilterFragment : Fragment() {
             }
         }
     }
-
-    private fun cekGames(game : Games, matchingGames: MutableSet<Games>, batasPemain1 : Int, batasPemain2Bawah : Int, batasPemain2Atas : Int, batasPemain3 : Int, batasUsia1 : Int, batasUsia2Bawah : Int, batasUsia2Atas : Int, batasUsia3 : Int, lokasiContainer : String, propertiContainer : String){
-        cekUsia(game, matchingGames, batasUsia1, batasUsia2Bawah, batasUsia2Atas, batasUsia3)
-        cekLokasi(game, matchingGames, lokasiContainer)
-        cekPemain(game, matchingGames, batasPemain1, batasPemain2Bawah, batasPemain2Atas, batasPemain3)
-        cekProperti(game, matchingGames, propertiContainer)
-    }
-
-    private fun cekUsia(game: Games, matchingGames: MutableSet<Games>, batasUsia1 : Int, batasUsia2Bawah : Int, batasUsia2Atas : Int, batasUsia3 : Int){
-
-    }
-
-    private fun cekPemain(game: Games, matchingGames: MutableSet<Games>, batasPemain1 : Int, batasPemain2Bawah : Int, batasPemain2Atas : Int, batasPemain3 : Int){
-
-    }
-
-    private fun cekLokasi(game: Games, matchingGames: MutableSet<Games>, lokasiContainer : String){
-
-    }
-
-    private fun cekProperti(game: Games, matchingGames: MutableSet<Games>, propertiContainer: String){
-
-    }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

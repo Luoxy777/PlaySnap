@@ -265,12 +265,12 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/title_tutorial" />
 
-                <LinearLayout
+                <android.widget.VideoView
                     android:id="@+id/video_tutorial_content"
                     android:layout_width="240dp"
                     android:layout_height="135dp"
                     android:layout_marginTop="15dp"
-                    android:background="@color/dark_blue"
+                    android:layout_centerInParent="true"
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

@@ -17,7 +17,7 @@ data class Games(
     val tutorial : String = "",
     val linkVideo : String = "",
     val rating : Float = 0f,
-    val totalLike : Int = 0,
+    var totalLike : Int = 0,
     val totalShare : Int = 0,
     val game_id : String = "",
     val squareThumb: String = "",

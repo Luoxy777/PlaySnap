@@ -27,13 +27,13 @@ class HomeAdapterForYou (private val gameList: ArrayList<Games>) : RecyclerView.
 
     override fun getItemCount(): Int {
         return gameList.size
-
-
     }
 
     override fun onBindViewHolder(holder: HomeAdapterForYou.MyViewHolder, position: Int) {
         val game : Games = gameList[position]
         holder.gamesName.text = game.namaPermainan
+        holder.likeCount.text = "${game.totalLike}"
+        holder.shareCount.text = "${game.totalShare}"
 
 // Fetch the thumbnail URL for the game (assuming it's stored in game.thumbnailUrl)
         val thumbnailUrl = game.squareThumb // Update this according to your data structure
@@ -43,7 +43,6 @@ class HomeAdapterForYou (private val gameList: ArrayList<Games>) : RecyclerView.
             .load(thumbnailUrl) // URL for the thumbnail image
             .into(holder.squareView)
 
-        // Fetch the bookmark status from Firestore based on user and game
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         if (userId != null) {
             val db = FirebaseFirestore.getInstance()
@@ -57,6 +56,7 @@ class HomeAdapterForYou (private val gameList: ArrayList<Games>) : RecyclerView.
                     if (documents.isEmpty) {
                         // If no document, the game is not bookmarked yet
                         holder.bookmarkButton.setImageResource(R.drawable.ic_unbookmark)
+                        holder.likeButton.setImageResource(R.drawable.ic_unlike)
                     } else {
                         // If document exists, set the bookmark icon based on the status
                         val doc = documents.first()
@@ -66,6 +66,14 @@ class HomeAdapterForYou (private val gameList: ArrayList<Games>) : RecyclerView.
                             holder.bookmarkButton.tag = true
                         } else {
                             holder.bookmarkButton.setImageResource(R.drawable.ic_unbookmark) // Not bookmarked
+                        }
+
+                        val likeStatus = doc.getBoolean("like_status") ?: false
+                        if (likeStatus) {
+                            holder.likeButton.setImageResource(R.drawable.ic_like) // Bookmarked
+                            holder.likeButton.tag = true
+                        } else {
+                            holder.likeButton.setImageResource(R.drawable.ic_unlike) // Not bookmarked
                         }
                     }
                 }
@@ -93,16 +101,46 @@ class HomeAdapterForYou (private val gameList: ArrayList<Games>) : RecyclerView.
             holder.bookmarkButton.tag = newBookmarkStatus
         }
 
+
+        holder.likeButton.setOnClickListener {
+            // Toggle the bookmark status
+            val currentLikeStatus = holder.likeButton.tag as? Boolean ?: false
+            val newLikeStatus = !currentLikeStatus
+            Log.d("Bookmark Status", "Current Bookmark Status: $newLikeStatus")  // Log the current state
+
+            // Update Firestore
+            updateLikeStatus(game, newLikeStatus)
+
+            // Update the UI based on the new status
+            if (newLikeStatus) {
+                holder.likeButton.setImageResource(R.drawable.ic_like) // Bookmarked
+            } else {
+                holder.likeButton.setImageResource(R.drawable.ic_unlike) // Not bookmarked
+            }
+            holder.likeButton.tag = newLikeStatus
+        }
+
         holder.itemView.setOnClickListener {
             // Save the game details in SharedData
             SharedData.gameDetails = game
 
             // Navigate to the tutorialFragment
-            val action = HomeFragmentDirections.actionHomeFragmentToTutorialFragment()
+            it.findNavController().navigate(R.id.action_PopularFragment_to_TutorialFragment)
 
-            // Perform the navigation
-            it.findNavController().navigate(action)
         }
+    }
+
+    public class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+        val gamesName: TextView = itemView.findViewById(R.id.title_game_foryou)
+        val bookmarkButton: ImageButton = itemView.findViewById(R.id.bookmark_foryou) // Bookmark button
+        val likeButton: ImageButton = itemView.findViewById(R.id.btn_like_foryou)
+        val squareView: ImageView = itemView.findViewById(R.id.display_game_foryou)
+        val likeCount: TextView = itemView.findViewById(R.id.count_like_foryou)
+        val shareCount: TextView = itemView.findViewById(R.id.count_share_foryou)
+
+
+
+        // Fetch the bookmark status from Firestore based on user and game
 
     }
 
@@ -156,11 +194,65 @@ class HomeAdapterForYou (private val gameList: ArrayList<Games>) : RecyclerView.
                     Log.w("Firestore", "Error fetching document for bookmark status", exception)
                 }
         }
+
     }
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val gamesName: TextView = itemView.findViewById(R.id.title_game_foryou)
-        val bookmarkButton: ImageButton = itemView.findViewById(R.id.bookmark_foryou) // Bookmark button
-        val squareView: ImageView = itemView.findViewById(R.id.display_game_foryou)
+
+    private fun updateLikeStatus(game: Games, likeStatus: Boolean) {
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+        if (userId != null) {
+            val db = FirebaseFirestore.getInstance()
+
+            db.collection("social_interaction")
+                .whereEqualTo("user_ID", userId)
+                .whereEqualTo("game_ID", game.game_id)
+                .get()
+                .addOnSuccessListener { documents ->
+                    if (documents.isEmpty) {
+                        // If no existing document, create a new one
+                        val socialInteraction = hashMapOf(
+                            "user_ID" to userId,
+                            "game_ID" to game.game_id,
+                            "date_visit" to null, // Initially set to null (or current date when visited)
+                            "like_status" to likeStatus,
+                            "bookmark_status" to false, // Default bookmark status
+                            "rating" to 0 // Default rating
+                        )
+                        db.collection("social_interaction").add(socialInteraction)
+                    } else {
+                        // If document exists, check the bookmark status
+                        for (document in documents) {
+                            val dateVisit = document.getString("date_visit") // Get the visit date from the document
+                            val bookmarkStatus = document.getBoolean("bookmark_status")
+                            if (!bookmarkStatus!! && !likeStatus && (dateVisit == "null" || dateVisit == null)) {
+                                // If unbookmarking and no date visit, delete the document
+                                db.collection("social_interaction")
+                                    .document(document.id)
+                                    .delete()
+                                    .addOnSuccessListener {
+                                        Log.d("Firestore", "Document deleted because the game hasn't been visited.")
+                                    }
+                                    .addOnFailureListener { exception ->
+                                        Log.w("Firestore", "Error deleting document", exception)
+                                    }
+                            } else {
+                                // Update the bookmark status
+                                db.collection("social_interaction")
+                                    .document(document.id)
+                                    .update("like_status", likeStatus)
+                            }
+                        }
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.w("Firestore", "Error fetching document for like status", exception)
+                }
+        }
+    }
+
+    fun updateGames(newGames: List<Games>) {
+        gameList.clear()
+        gameList.addAll(newGames)
+        notifyDataSetChanged()
     }
 
 }
