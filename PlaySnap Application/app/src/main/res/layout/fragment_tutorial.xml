@@ -23,7 +23,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="40dp"
-        android:layout_marginRight="40dp">
+        android:layout_marginRight="20dp">
         <ImageButton
             android:id="@+id/bookmark_button_tutorial"
             android:layout_width="25dp"
@@ -58,7 +58,7 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginTop="40dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="20dp"
         android:background="@drawable/back_button"
         android:backgroundTint="@color/dark_blue"
         app:layout_constraintStart_toStartOf="parent"

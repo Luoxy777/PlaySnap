@@ -265,6 +265,8 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
+                        android:drawableEnd="@drawable/back_button_down"
+                        android:drawableTint="@color/light_grey"
                         android:text="@string/edit4_gender"
                         android:textSize="18dp"
                         android:textColor="@color/dark_blue"
