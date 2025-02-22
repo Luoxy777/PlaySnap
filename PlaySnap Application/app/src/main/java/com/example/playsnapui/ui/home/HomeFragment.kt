@@ -112,6 +112,10 @@ class HomeFragment : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             requireActivity().finish()
         }
+
+        binding.helpButton.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_HelpFragment)
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")

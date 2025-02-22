@@ -341,35 +341,23 @@ class FilterFragment : Fragment() {
                 }
                 Log.d("Index", "Total : $index")
 
-                val bundle = Bundle()
-                Log.d("Properti Filter", "Properti : $propertyContainer")
-
-                bundle.putParcelableArrayList("MATCHING_GAMES", ArrayList(matchingGames.toList()))
-                bundle.putString("propertyContainer", propertyContainer)
-                bundle.putInt("batasUsia1", batasUsia1)
-                bundle.putInt("batasUsia2Bawah", batasUsia2Bawah)
-                bundle.putInt("batasUsia2Atas", batasUsia2Atas)
-                bundle.putInt("batasUsia3", batasUsia3)
-                bundle.putInt("batasPemain1", batasPemain1)
-                bundle.putInt("batasPemain2Bawah", batasPemain2Bawah)
-                bundle.putInt("batasPemain2Atas", batasPemain2Atas)
-                bundle.putInt("batasPemain3", batasPemain3)
-                bundle.putString("lokasiContainer", lokasiContainer)
-
-
-                val fragmentRec = RecommendGameFragment()
-                fragmentRec.arguments = bundle
+                val bundle = Bundle().apply{
+                    putString("propertyContainer", propertyContainer)
+                    Log.d("Properti Filter", "Properti : $propertyContainer")
+                    putInt("batasUsia1", batasUsia1)
+                    putInt("batasUsia2Bawah", batasUsia2Bawah)
+                    putInt("batasUsia2Atas", batasUsia2Atas)
+                    putInt("batasUsia3", batasUsia3)
+                    putInt("batasPemain1", batasPemain1)
+                    putInt("batasPemain2Bawah", batasPemain2Bawah)
+                    putInt("batasPemain2Atas", batasPemain2Atas)
+                    putInt("batasPemain3", batasPemain3)
+                    putString("lokasiContainer", lokasiContainer)
+                }
 
                 val emptySet : MutableSet<Games> = mutableSetOf()
                 SharedData.recommendedGames = emptySet.toList()
                 SharedData.recommendedGames = matchingGames.toList()
-
-                var i : Int = 0
-                for(game in SharedData.recommendedGames){
-                    Log.d("Shared Data Games", "Games : $game")
-                    i++
-                }
-                Log.d("Shared Data Index", "Total : $i")
 
                 findNavController().navigate(R.id.action_FilterFragment_to_RecGameFragment, bundle)
 

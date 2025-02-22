@@ -60,15 +60,21 @@
         android:background="@color/white"
         style="@style/TextInputLayout">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_helpreq"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Ketik permasalahanmu di sini..."
-            android:fontFamily="@font/andikaregular"
-            android:textSize="14dp"
-            android:layout_gravity="top"
-            style="@style/TextInputEditText"/>
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_helpreq"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/andikaregular"
+                android:textSize="14sp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
     </com.google.android.material.textfield.TextInputLayout>
 

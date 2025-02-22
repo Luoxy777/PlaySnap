@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.playsnapui.R
 import com.example.playsnapui.databinding.FragmentProfileBinding
@@ -63,6 +64,7 @@ class ProfileFragment : Fragment() {
 
         binding.btnReport.setOnClickListener {
             // Navigate to report screen
+            findNavController().navigate(R.id.action_ProfileFragment_to_ReportFragment)
         }
 
         binding.btnSettingAcc.setOnClickListener {

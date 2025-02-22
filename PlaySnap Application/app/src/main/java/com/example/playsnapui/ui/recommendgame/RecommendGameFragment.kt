@@ -35,6 +35,7 @@ class RecommendGameFragment : Fragment() {
     private val db = FirebaseFirestore.getInstance()
     private lateinit var popupWindow : PopupWindow
 
+
     var batasUsia1 = arguments?.getInt("batasUsia1") ?: 0
     var batasUsia2Bawah = arguments?.getInt("batasUsia2Bawah") ?: 0
     var batasUsia2Atas = arguments?.getInt("batasUsia2Atas") ?: 0
@@ -48,6 +49,7 @@ class RecommendGameFragment : Fragment() {
     var isNullUsia : Boolean = true
     var isNullPemain : Boolean = true
     var isNullLokasi : Boolean = true
+
 
     @SuppressLint("SetTextI18n")
     override fun onCreateView(
@@ -63,8 +65,11 @@ class RecommendGameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Log.d("Properti", "Properti : $propertyContainer")
+        Log.d("RecGameFragment", "arguments: $arguments")
 
+        Log.d("Batas 1", "batas usia 1 : $batasPemain1")
+        Log.d("Lokasi", "Lokasi : $lokasiContainer")
+        Log.d("Properti", "Properti : $propertyContainer")
         popupWindow = PopupWindow(requireContext())
 
         // Display the recommended games
