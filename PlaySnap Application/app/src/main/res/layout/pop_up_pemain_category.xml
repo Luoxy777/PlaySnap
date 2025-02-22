@@ -12,7 +12,7 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp">
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/usia_cat_opt_1_rec"
+            android:id="@+id/pemain_cat_opt_1_rec"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -23,10 +23,10 @@
             android:background="@drawable/bg_button_white"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/usia_cat_opt_2_rec"
+            android:id="@+id/pemain_cat_opt_2_rec"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/usia_cat_opt_1_rec"
+            app:layout_constraintTop_toBottomOf="@id/pemain_cat_opt_1_rec"
             android:layout_marginTop="5dp"
             android:layout_width="120dp"
             android:layout_height="25dp"
@@ -35,10 +35,10 @@
             android:background="@drawable/bg_button_white"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/usia_cat_opt_3_rec"
+            android:id="@+id/pemain_cat_opt_3_rec"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/usia_cat_opt_2_rec"
+            app:layout_constraintTop_toBottomOf="@id/pemain_cat_opt_2_rec"
             android:layout_marginTop="5dp"
             android:layout_width="120dp"
             android:layout_height="25dp"
