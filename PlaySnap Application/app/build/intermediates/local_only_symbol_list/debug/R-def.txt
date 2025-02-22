@@ -342,6 +342,8 @@ id llc_edit4_gender_fill
 id loading_text
 id loginFragment
 id lokasi_button_cat
+id lokasi_cat_opt_1_rec
+id lokasi_cat_opt_2_rec
 id lokasi_opt
 id lokasi_opt1_btn
 id lokasi_opt2_btn
@@ -366,6 +368,9 @@ id nav_host_fragment_auth
 id number_player
 id orang_text
 id pemain_button_cat
+id pemain_cat_opt_1_rec
+id pemain_cat_opt_2_rec
+id pemain_cat_opt_3_rec
 id pemain_opt1_btn
 id pemain_opt2_btn
 id pemain_opt3_btn

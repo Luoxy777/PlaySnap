@@ -21,21 +21,21 @@ class HomeAdapterForYou (private val gameList: ArrayList<Games>) : RecyclerView.
 
     override fun getItemCount(): Int {
         return gameList.size
-
-
     }
 
     override fun onBindViewHolder(holder: HomeAdapterForYou.MyViewHolder, position: Int) {
         val game : Games = gameList[position]
         holder.gamesName.text = game.namaPermainan
-
-        Log.d("Adapter", "Game di posisi $position: ${game.namaPermainan}")
-        Log.d("Adapter", "RecyclerView Height: ${holder.itemView.height}")
     }
 
     public class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-
         val gamesName : TextView = itemView.findViewById(R.id.title_game)
+    }
+
+    fun updateGames(newGames: List<Games>) {
+        gameList.clear()
+        gameList.addAll(newGames)
+        notifyDataSetChanged()
     }
 
 }
