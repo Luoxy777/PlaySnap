@@ -213,4 +213,9 @@
     <string name="alat_bermain_content_tutorial_page">Karet Gelang (min 50 pcs)</string>
     <string name="deskripsi_game_content_tutorial_page">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
     <string name="langkah_bermain_content_tutorial_page">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="title_game_card">Petak Umpet</string>
+    <string name="location_category_card">Outdoor</string>
+    <string name="age_category_card">3-5 tahun</string>
+    <string name="like_count_card">121</string>
+    <string name="share_count_card">121</string>
 </resources>

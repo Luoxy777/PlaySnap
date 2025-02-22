@@ -65,7 +65,7 @@ class ScrollGalleryViewModel : ViewModel() {
             .build()
 
         val request = Request.Builder()
-            .url("http://10.68.111.243:8000/detect/")
+            .url("https://kohakkun-my-yolo-api.hf.space/predict/")
             .post(multipartBody)
             .build()
 

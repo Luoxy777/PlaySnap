@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ImageRepository {
     private val retrofit = Retrofit.Builder()
-        .baseUrl("http://10.68.111.243:8000")
+        .baseUrl("https://kohakkun-my-yolo-api.hf.space/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
