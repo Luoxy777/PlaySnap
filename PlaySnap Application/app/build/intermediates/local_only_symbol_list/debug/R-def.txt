@@ -171,6 +171,7 @@ font leaguespartansemibold
 font leaguespartanthin
 id MyScrollView
 id ObjectFragment
+id accountSettingFragment
 id action_FilterFragment_to_HomeFragment
 id action_FilterFragment_to_RecGameFragment
 id action_HomeFragment_to_ProfileFragment
@@ -191,6 +192,10 @@ id action_authFragment_to_loginFragment
 id action_authFragment_to_registerFragment
 id action_homeFragment_to_filterFragment
 id action_loginFragment_to_homeFragment
+id action_profileFragment_to_accountSettingFragment
+id action_profileFragment_to_editProfileFragment
+id action_profileFragment_to_historyFragment
+id action_profileFragment_to_reportFragment
 id action_registerFragment_to_loginFragment
 id add_button
 id alat_bermain_content
@@ -285,6 +290,7 @@ id edit2_username
 id edit3_email
 id edit3_new_pass_confirm
 id edit4_gender
+id editProfileFragment
 id et_confirmpass
 id et_email
 id et_fullname
@@ -312,6 +318,7 @@ id hanabi2
 id hanabi3
 id hapus_button
 id help_button
+id historyFragment
 id homeFragment
 id ic_account
 id ic_account_rectangle
@@ -441,6 +448,7 @@ id register_have_account
 id relativeLayout
 id relativeLayout2
 id rentang_usia_opt
+id reportFragment
 id scrollGalleryFragment
 id scroll_bg_object
 id section_lokasi_main
@@ -602,9 +610,12 @@ layout activity_splash
 layout activity_tutorial_page
 layout bottom_sheet_filter_page
 layout bottom_sheet_tutorial_page
+layout fragment_account_setting
 layout fragment_auth
 layout fragment_bookmark
+layout fragment_edit_profile
 layout fragment_filter
+layout fragment_history
 layout fragment_home
 layout fragment_like
 layout fragment_login
@@ -612,6 +623,7 @@ layout fragment_object
 layout fragment_profile
 layout fragment_recommend_game
 layout fragment_register
+layout fragment_report
 layout fragment_scroll_galery
 layout fragment_snap
 layout fragment_swipe_gallery

@@ -124,6 +124,26 @@
         android:id="@+id/profileFragment"
         android:name="com.example.playsnapui.ui.profile.ProfileFragment"
         android:label="profile">
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_profileFragment_to_historyFragment"
+            app:destination="@id/historyFragment"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_profileFragment_to_reportFragment"
+            app:destination="@id/reportFragment"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_profileFragment_to_accountSettingFragment"
+            app:destination="@id/accountSettingFragment"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
@@ -155,6 +175,29 @@
             app:destination="@id/tutorialFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.playsnapui.ui.editProfile.EditProfileFragment"
+        android:label="editProfile">
+    </fragment>
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.playsnapui.ui.history.HistoryFragment"
+        android:label="history">
+    </fragment>
+
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.example.playsnapui.ui.report.ReportFragment"
+        android:label="report">
+    </fragment>
+
+    <fragment
+        android:id="@+id/accountSettingFragment"
+        android:name="com.example.playsnapui.ui.accountSetting.AccountSettingFragment"
+        android:label="accountSetting">
+    </fragment>
 
 
 </navigation>

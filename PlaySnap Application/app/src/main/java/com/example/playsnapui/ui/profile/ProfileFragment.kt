@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.playsnapui.R
 import com.example.playsnapui.databinding.FragmentProfileBinding
@@ -54,19 +55,23 @@ class ProfileFragment : Fragment() {
         // Handle the edit profile button click (for example, navigate to another screen)
         binding.btnEditProfile.setOnClickListener {
             // Open image picker or navigate to the edit profile screen
+            findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
         }
 
         // Handle other buttons (e.g., History Game, Report, Settings, etc.)
         binding.btnHistoryGame.setOnClickListener {
             // Navigate to history game screen
+            findNavController().navigate(R.id.action_profileFragment_to_historyFragment)
         }
 
         binding.btnReport.setOnClickListener {
             // Navigate to report screen
+            findNavController().navigate(R.id.action_profileFragment_to_reportFragment)
         }
 
         binding.btnSettingAcc.setOnClickListener {
             // Navigate to settings screen
+            findNavController().navigate(R.id.action_profileFragment_to_accountSettingFragment)
         }
     }
 
