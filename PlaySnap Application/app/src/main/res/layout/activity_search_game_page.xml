@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/light_blue">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_back"
@@ -66,7 +66,8 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/search_background"
         android:drawableStart="@drawable/ic_search"
-        android:elevation="8dp"
+        android:elevation="10dp"
+        android:translationZ="-10dp"
         android:hint="   Cari permainan..."
         android:padding="10dp"
         android:shadowColor="@color/light_grey"
@@ -78,7 +79,19 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/line_search_game"
-        app:startIconDrawable="@drawable/ic_search" />
+        app:startIconDrawable="@drawable/ic_search"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/add_button"
+        android:layout_width="55dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_add_search_bar"
+        android:backgroundTint="@color/orange"
+        app:layout_constraintTop_toTopOf="@id/et_search_game"
+        app:layout_constraintEnd_toEndOf="@id/et_search_game"
+        android:drawableTop="@drawable/ic_search"
+        android:paddingTop="9dp"
+        android:drawableTint="@color/white"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="350dp"

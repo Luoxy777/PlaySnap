@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.RatingBar
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -34,8 +35,11 @@ class HomeAdapterPopular(internal val gameList: ArrayList<Games>) : RecyclerView
         var countLike = game.totalLike
         var countShare = game.totalShare
 
+
         holder.likeCount.text = "${game.totalLike}"
         holder.shareCount.text = "${game.totalShare}"
+        holder.rating.rating = game.rating
+
 
         // Fetch the thumbnail URL for the game (assuming it's stored in game.thumbnailUrl)
         val thumbnailUrl = game.landThumb // Update this according to your data structure
@@ -288,6 +292,8 @@ class HomeAdapterPopular(internal val gameList: ArrayList<Games>) : RecyclerView
         val landView: ImageView = itemView.findViewById(R.id.display_game_pop)
         val likeCount: TextView = itemView.findViewById(R.id.count_like_pop)
         val shareCount: TextView = itemView.findViewById(R.id.count_share_pop)
+        val rating : RatingBar = itemView.findViewById(R.id.rating_pop)
+
 
     }
 }

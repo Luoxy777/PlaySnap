@@ -184,6 +184,10 @@ class TutorialFragment : Fragment() {
 
         // Share button click listener
         binding.shareButtonTutorial.setOnClickListener { v -> viewModel?.toggleShare() }
+
+        binding.bottomSheet.mainkanButtonTutorial.setOnClickListener {
+            findNavController().navigate(R.id.action_TutorialFragment_to_FeedbackFragment)
+        }
     }
 
 

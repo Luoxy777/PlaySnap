@@ -22,9 +22,9 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
         android:background="@drawable/back_button"
         android:backgroundTint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -61,7 +61,7 @@
 
     <ImageView
         android:id="@+id/scroll_bg_object"
-        android:layout_width="361dp"
+        android:layout_width="360dp"
         android:layout_height="328dp"
         android:background="@drawable/background_object_search_by_type"
         app:layout_constraintBottom_toBottomOf="@id/field"
@@ -132,7 +132,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="100dp"
         android:background="@drawable/mulai_button_oultline"
         android:text="@string/mulai_btn_text"
@@ -148,7 +148,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="20dp"
         android:layout_marginBottom="100dp"
         android:background="@drawable/hapus_button_oultline"
         android:text="HAPUS"

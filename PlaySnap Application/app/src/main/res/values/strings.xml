@@ -218,4 +218,9 @@
     <string name="age_category_card">3-5 tahun</string>
     <string name="like_count_card">121</string>
     <string name="share_count_card">121</string>
+    <string name="title_history">Gas, Main lagi!</string>
+    <string name="subtitle_history">Kumpulan riwayat permainanmu</string>
+    <string name="option_laki">Laki-laki</string>
+    <string name="option_perempuan">Perempuan</string>
+    <string name="option_none">-</string>
 </resources>

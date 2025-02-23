@@ -46,10 +46,12 @@ class FilterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var batasUsia1 : Int = 0
-        var batasUsia2Bawah : Int = 0
-        var batasUsia2Atas : Int = 0
-        var batasUsia3 : Int = 0
+//        var batasUsia1 : Int = 0
+//        var batasUsia2Bawah : Int = 0
+//        var batasUsia2Atas : Int = 0
+//        var batasUsia3 : Int = 0
+        var batasUsiaBawah : Int = 0
+        var batasUsiaAtas : Int = 0
         var batasPemain1 : Int = 0
         var batasPemain2Bawah : Int = 0
         var batasPemain2Atas : Int = 0
@@ -71,46 +73,42 @@ class FilterFragment : Fragment() {
                 if(isNullUsia == true){
                     isNullUsia = false
                     binding.usiaValue.text = "<6 th"
-                    batasUsia1 = 5
+                    batasUsiaBawah = 0
+                    batasUsiaAtas = 5
                 }
                 else if(isNullUsia == false){
                     isNullUsia = true
                     binding.usiaValue.text = "-"
-                    batasUsia1 = 0
-                    batasUsia2Bawah = 0
-                    batasUsia2Atas = 0
-                    batasUsia3 = 0
+                    batasUsiaBawah = 0
+                    batasUsiaAtas = 0
                 }
             }
             sheetBinding.usiaOpt2Btn.setOnClickListener {
                 if(isNullUsia == true){
                     isNullUsia = false
                     binding.usiaValue.text = "6 - 10 th"
-                    batasUsia2Bawah = 6
-                    batasUsia2Atas = 10
+                    batasUsiaBawah = 6
+                    batasUsiaAtas = 10
                 }
                 else if(isNullUsia == false){
                     isNullUsia = true
                     binding.usiaValue.text = "-"
-                    batasUsia1 = 0
-                    batasUsia2Bawah = 0
-                    batasUsia2Atas = 0
-                    batasUsia3 = 0
+                    batasUsiaBawah = 0
+                    batasUsiaAtas = 0
                 }
             }
             sheetBinding.usiaOpt3Btn.setOnClickListener {
                 if(isNullUsia == true){
                     isNullUsia = false
                     binding.usiaValue.text = ">10 th"
-                    batasUsia3 = 11
+                    batasUsiaBawah = 11
+                    batasUsiaAtas = 13
                 }
                 else if(isNullUsia == false){
                     isNullUsia = true
                     binding.usiaValue.text = "-"
-                    batasUsia1 = 0
-                    batasUsia2Bawah = 0
-                    batasUsia2Atas = 0
-                    batasUsia3 = 0
+                    batasUsiaBawah = 0
+                    batasUsiaAtas = 0
                 }
             }
 
@@ -217,13 +215,13 @@ class FilterFragment : Fragment() {
 
 
         binding.mulaiButton.setOnClickListener {
-            compareGamesWithDatabase(isNullUsia, isNullLokasi, isNullPemain, isNullProperti, batasPemain1, batasPemain2Bawah, batasPemain2Atas, batasPemain3, batasUsia1, batasUsia2Bawah, batasUsia2Atas, batasUsia3, lokasiContainer, propertyContainer)
+            compareGamesWithDatabase(isNullUsia, isNullLokasi, isNullPemain, isNullProperti, batasPemain1, batasPemain2Bawah, batasPemain2Atas, batasPemain3, batasUsiaBawah, batasUsiaAtas, lokasiContainer, propertyContainer)
         }
 
 
     }
 
-    private fun compareGamesWithDatabase(isNullUsia : Boolean, isNullLokasi : Boolean, isNullPemain : Boolean, isNullProperti : Boolean, batasPemain1 : Int, batasPemain2Bawah : Int, batasPemain2Atas : Int, batasPemain3 : Int, batasUsia1 : Int, batasUsia2Bawah : Int, batasUsia2Atas : Int, batasUsia3 : Int, lokasiContainer : String, propertyContainer : String){
+    private fun compareGamesWithDatabase(isNullUsia : Boolean, isNullLokasi : Boolean, isNullPemain : Boolean, isNullProperti : Boolean, batasPemain1 : Int, batasPemain2Bawah : Int, batasPemain2Atas : Int, batasPemain3 : Int, batasUsiaBawah : Int, batasUsiaAtas : Int, lokasiContainer : String, propertyContainer : String){
         lifecycleScope.launch(Dispatchers.IO) {
             try {
                 val gamesSnapshot = db.collection("games").get().await()
@@ -235,31 +233,17 @@ class FilterFragment : Fragment() {
                     if (game != null) {
                         // cek games filter
 
-                        var batasUsia : Int = 11
-                        var indexUsia : Int = game.usiaMin
                         var flag1 : Boolean = false
-
 
                         // Usia
                         if(isNullUsia == false){
-                            for (i in indexUsia..game.usiaMax) {
-                                if (indexUsia <= batasUsia1) {
+                            for (i in game.usiaMin..game.usiaMax) {
+                                if (i in batasUsiaBawah..batasUsiaAtas) {
                                     matchingGames.add(game)
-                                }
-                                if (indexUsia in batasUsia2Bawah..batasUsia2Atas) {
-                                    matchingGames.add(game)
-                                }
-                                if (indexUsia >= batasUsia3) {
-                                    flag1 = true
-                                    matchingGames.add(game)
-                                    if (flag1 == true) {
+                                    if(i > 13){
                                         break
                                     }
                                 }
-                                indexUsia++
-                            }
-                            if(game.usiaMin >= batasUsia){
-                                matchingGames.add(game)
                             }
                         }
                         else if(isNullUsia == true){
@@ -341,37 +325,25 @@ class FilterFragment : Fragment() {
                 }
                 Log.d("Index", "Total : $index")
 
-                val bundle = Bundle()
-                Log.d("Properti Filter", "Properti : $propertyContainer")
-
-                bundle.putParcelableArrayList("MATCHING_GAMES", ArrayList(matchingGames.toList()))
-                bundle.putString("propertyContainer", propertyContainer)
-                bundle.putInt("batasUsia1", batasUsia1)
-                bundle.putInt("batasUsia2Bawah", batasUsia2Bawah)
-                bundle.putInt("batasUsia2Atas", batasUsia2Atas)
-                bundle.putInt("batasUsia3", batasUsia3)
-                bundle.putInt("batasPemain1", batasPemain1)
-                bundle.putInt("batasPemain2Bawah", batasPemain2Bawah)
-                bundle.putInt("batasPemain2Atas", batasPemain2Atas)
-                bundle.putInt("batasPemain3", batasPemain3)
-                bundle.putString("lokasiContainer", lokasiContainer)
-
-
-                val fragmentRec = RecommendGameFragment()
-                fragmentRec.arguments = bundle
+                // kirim data ke fragment sebelah
+//                SharedData.batasUsia1 = batasUsia1
+//                SharedData.batasUsia2Bawah = batasUsia2Bawah
+//                SharedData.batasUsia2Atas = batasUsia2Atas
+//                SharedData.batasUsia3 = batasUsia3
+                SharedData.batasUsiaBawah = batasUsiaBawah
+                SharedData.batasUsiaAtas = batasUsiaAtas
+                SharedData.batasPemain1 = batasPemain1
+                SharedData.batasPemain2Bawah = batasPemain2Bawah
+                SharedData.batasPemain2Atas = batasPemain2Atas
+                SharedData.batasPemain3 = batasPemain3
+                SharedData.lokasiContainer = lokasiContainer
+                SharedData.propertyContainer = propertyContainer
 
                 val emptySet : MutableSet<Games> = mutableSetOf()
                 SharedData.recommendedGames = emptySet.toList()
                 SharedData.recommendedGames = matchingGames.toList()
 
-                var i : Int = 0
-                for(game in SharedData.recommendedGames){
-                    Log.d("Shared Data Games", "Games : $game")
-                    i++
-                }
-                Log.d("Shared Data Index", "Total : $i")
-
-                findNavController().navigate(R.id.action_FilterFragment_to_RecGameFragment, bundle)
+                findNavController().navigate(R.id.action_FilterFragment_to_RecGameFragment)
 
             } catch (e: Exception) {
                 lifecycleScope.launch(Dispatchers.Main) {

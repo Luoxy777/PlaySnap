@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.RatingBar
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -34,6 +35,54 @@ class HomeAdapterForYou (private val gameList: ArrayList<Games>) : RecyclerView.
         holder.gamesName.text = game.namaPermainan
         holder.likeCount.text = "${game.totalLike}"
         holder.shareCount.text = "${game.totalShare}"
+        holder.rating.rating = game.rating
+        holder.lokasiText.text = game.jenisLokasi
+        holder.usiaText.text = "${game.usiaMin}-${game.usiaMax} tahun"
+        val rangePemain = game.usiaMin..game.usiaMax
+        var tempUsia1 : Int = 0
+        var tempUsia2 : Int = 0
+        var tempUsia3 : Int = 0
+        var isFlag1 : Boolean = false
+        var isFlag2 : Boolean = false
+        var isFlag3 : Boolean = false
+        var isFlagAlr : Boolean = false
+
+        Log.d("Games", "Games = ${game.namaPermainan}, usia Min = ${game.usiaMin}, usia Max = ${game.usiaMax}")
+//        for(usia in rangePemain){
+//            if (usia < 6) {
+//                isFlag1 = true
+//            }
+//            else if (usia >= 6 && usia <= 10) {
+//                isFlag2 = true
+//            }
+//            else if (usia > 10) {
+//                isFlag3 = true
+//            }
+//            if(isFlag1 && isFlag2 && isFlag3){
+//                holder.usiaText.text = "Semua Umur"
+//                isFlagAlr = true
+//                break
+//            }
+//            else if(isFlag2 && isFlag3){
+//                holder.usiaText.text = ">=6 tahun"
+//                isFlagAlr = true
+//                break
+//            }
+//        }
+//        if(!isFlagAlr){
+//            if(isFlag1 && isFlag2){
+//                holder.usiaText.text = "<=10 tahun"
+//            }
+//            else if(isFlag1){
+//                holder.usiaText.text = "<6 tahun"
+//            }
+//            else if(isFlag2){
+//                holder.usiaText.text = "6-10 tahun"
+//            }
+//            else if(isFlag3){
+//                holder.usiaText.text = ">10 tahun"
+//            }
+//        }
 
 // Fetch the thumbnail URL for the game (assuming it's stored in game.thumbnailUrl)
         val thumbnailUrl = game.squareThumb // Update this according to your data structure
@@ -137,8 +186,9 @@ class HomeAdapterForYou (private val gameList: ArrayList<Games>) : RecyclerView.
         val squareView: ImageView = itemView.findViewById(R.id.display_game_foryou)
         val likeCount: TextView = itemView.findViewById(R.id.count_like_foryou)
         val shareCount: TextView = itemView.findViewById(R.id.count_share_foryou)
-
-
+        val rating : RatingBar = itemView.findViewById(R.id.rating_foryou)
+        val lokasiText : TextView = itemView.findViewById(R.id.tv_game_foryou)
+        val usiaText : TextView = itemView.findViewById(R.id.tv_player_foryou)
 
         // Fetch the bookmark status from Firestore based on user and game
 
