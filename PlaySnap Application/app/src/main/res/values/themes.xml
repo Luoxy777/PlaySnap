@@ -96,4 +96,9 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
+    <style name="CircularShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item> <!-- Makes it a circle -->
+    </style>
+
 </resources>

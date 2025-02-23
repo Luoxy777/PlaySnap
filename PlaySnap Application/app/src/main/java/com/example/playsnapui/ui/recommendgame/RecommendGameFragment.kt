@@ -92,6 +92,10 @@ class RecommendGameFragment : Fragment() {
             showPopupWindowLokasi(it)
             binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
         }
+
+        binding.btnBack.setOnClickListener {
+            findNavController().navigate(R.id.action_RecommendGameFragment_to_HomeFragment)
+        }
     }
 
     private fun cekGamesFilter(){

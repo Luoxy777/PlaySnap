@@ -62,6 +62,7 @@ drawable card_bg
 drawable card_bg_landscape
 drawable checklist
 drawable cloud_right
+drawable edittext_underline_blue
 drawable ellips
 drawable ellips_help_banner
 drawable ellips_help_bottom
@@ -174,10 +175,13 @@ id ObjectFragment
 id accountSettingFragment
 id action_FilterFragment_to_HomeFragment
 id action_FilterFragment_to_RecGameFragment
+id action_HomeFragment_to_ObjectFragment
 id action_HomeFragment_to_ProfileFragment
 id action_HomeFragment_to_SnapFragment
+id action_ObjectFragment_to_HomeFragment
 id action_ObjectFragment_to_RecommendGameFragment
 id action_PopularFragment_to_TutorialFragment
+id action_RecommendGameFragment_to_HomeFragment
 id action_ScrollGalleryFragment_to_ObjectFragment
 id action_ScrollGalleryFragment_to_SwipeGalleryFragment
 id action_ScrollGalleryFragment_to_homeFragment
@@ -377,6 +381,8 @@ id llc_edit4_gender_fill
 id loading_text
 id loginFragment
 id lokasi_button_cat
+id lokasi_cat_opt_1_rec
+id lokasi_cat_opt_2_rec
 id lokasi_opt
 id lokasi_opt1_btn
 id lokasi_opt2_btn
@@ -405,6 +411,9 @@ id nav_profile
 id number_player
 id orang_text
 id pemain_button_cat
+id pemain_cat_opt_1_rec
+id pemain_cat_opt_2_rec
+id pemain_cat_opt_3_rec
 id pemain_opt1_btn
 id pemain_opt2_btn
 id pemain_opt3_btn
@@ -801,6 +810,7 @@ style ButtonBlue
 style ButtonNavbar
 style ButtonWhite
 style ButtonWhite2
+style CircularShape
 style EditText
 style Subtitle
 style TextInputEditText

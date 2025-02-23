@@ -26,6 +26,11 @@
         <action
             android:id="@+id/action_PopularFragment_to_TutorialFragment"
             app:destination="@id/tutorialFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_ObjectFragment"
+            app:destination="@id/ObjectFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
 
     </fragment>
 
@@ -112,12 +117,22 @@
             app:destination="@id/recommendGameFragment"
             app:popUpTo="@id/ObjectFragment"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_ObjectFragment_to_HomeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/ObjectFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
         android:id="@+id/recommendGameFragment"
         android:name="com.example.playsnapui.ui.recommendgame.RecommendGameFragment"
         android:label="RecommendGame">
+        <action
+            android:id="@+id/action_RecommendGameFragment_to_HomeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/recommendGameFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment

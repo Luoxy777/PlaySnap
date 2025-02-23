@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.example.playsnapui.R
 import com.example.playsnapui.databinding.FragmentProfileBinding
 
@@ -44,12 +45,12 @@ class ProfileFragment : Fragment() {
             binding.tvEmail.text = it.email ?: "N/A"
 //            binding.tvUsername.text = it.username ?: "N/A"
 
-            // Load the profile picture (if any)
-//            val profilePicUri = it.profilePicUri // Assuming you have a URI for profile picture
-//            Glide.with(this)
-//                .load(profilePicUri)
-//                .placeholder(R.drawable.ic_profile_pic) // Placeholder for profile picture
-//                .into(binding.profilePic)
+//             Load the profile picture (if any)
+            val profilePicUri = it.profilePicture // Assuming you have a URI for profile picture
+            Glide.with(this)
+                .load(profilePicUri)
+                .transform(CircleCrop())
+                .into(binding.profilePic)
         }
 
         // Handle the edit profile button click (for example, navigate to another screen)

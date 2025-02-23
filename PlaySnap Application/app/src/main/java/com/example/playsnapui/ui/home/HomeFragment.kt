@@ -109,9 +109,14 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_HomeFragment_to_SnapFragment)
         }
 
+        binding.btnTypeObject.setOnClickListener{
+            findNavController().navigate(R.id.action_HomeFragment_to_ObjectFragment)
+        }
+
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             requireActivity().finish()
         }
+
     }
 
     @SuppressLint("NotifyDataSetChanged")
