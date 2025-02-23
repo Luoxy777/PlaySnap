@@ -36,16 +36,18 @@ class RecommendGameFragment : Fragment() {
     private lateinit var popupWindow : PopupWindow
 
 
-    var batasUsia1 = arguments?.getInt("batasUsia1") ?: 0
-    var batasUsia2Bawah = arguments?.getInt("batasUsia2Bawah") ?: 0
-    var batasUsia2Atas = arguments?.getInt("batasUsia2Atas") ?: 0
-    var batasUsia3 = arguments?.getInt("batasUsia3") ?: 0
-    var batasPemain1 = arguments?.getInt("batasPemain1") ?: 0
-    var batasPemain2Bawah = arguments?.getInt("batasPemain2Bawah") ?: 0
-    var batasPemain2Atas = arguments?.getInt("batasPemain2Atas") ?: 0
-    var batasPemain3 = arguments?.getInt("batasPemain3") ?: 0
-    var lokasiContainer = arguments?.getString("lokasiContainer") ?: ""
-    val propertyContainer = arguments?.getString("propertyContainer") ?: ""
+//    var batasUsia1 = SharedData.batasUsia1
+//    var batasUsia2Bawah = SharedData.batasUsia2Bawah
+//    var batasUsia2Atas = SharedData.batasUsia2Atas
+//    var batasUsia3 = SharedData.batasUsia3
+    var batasUsiaBawah = SharedData.batasUsiaBawah
+    var batasUsiaAtas = SharedData.batasUsiaAtas
+    var batasPemain1 = SharedData.batasPemain1
+    var batasPemain2Bawah = SharedData.batasPemain2Bawah
+    var batasPemain2Atas = SharedData.batasPemain2Atas
+    var batasPemain3 = SharedData.batasPemain3
+    var lokasiContainer = SharedData.lokasiContainer
+    val propertyContainer = SharedData.propertyContainer
     var isNullUsia : Boolean = true
     var isNullPemain : Boolean = true
     var isNullLokasi : Boolean = true
@@ -97,6 +99,10 @@ class RecommendGameFragment : Fragment() {
             showPopupWindowLokasi(it)
             binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
         }
+
+        binding.btnBack.setOnClickListener {
+            parentFragmentManager.popBackStack()  // Kembali ke fragment sebelumnya
+        }
     }
 
     private fun cekGamesFilter(){
@@ -112,30 +118,17 @@ class RecommendGameFragment : Fragment() {
                         // cek games filter
 
                         var batasUsia : Int = 11
-                        var indexUsia : Int = game.usiaMin
                         var flag1 : Boolean = false
-
 
                         // Usia
                         if(isNullUsia == false){
-                            for (i in indexUsia..game.usiaMax) {
-                                if (indexUsia <= batasUsia1) {
+                            for (i in game.usiaMin..game.usiaMax) {
+                                if (i in batasUsiaBawah..batasUsiaAtas) {
                                     matchingGames.add(game)
-                                }
-                                if (indexUsia in batasUsia2Bawah..batasUsia2Atas) {
-                                    matchingGames.add(game)
-                                }
-                                if (indexUsia >= batasUsia3) {
-                                    flag1 = true
-                                    matchingGames.add(game)
-                                    if (flag1 == true) {
+                                    if(i > 13){
                                         break
                                     }
                                 }
-                                indexUsia++
-                            }
-                            if(game.usiaMin >= batasUsia){
-                                matchingGames.add(game)
                             }
                         }
                         else if(isNullUsia == true){
@@ -202,153 +195,6 @@ class RecommendGameFragment : Fragment() {
         }
     }
 
-
-    private fun cekGamesFilterUsia(){
-        lifecycleScope.launch(Dispatchers.IO) {
-            try {
-                val gamesSnapshot = db.collection("games").get().await()
-                var tempGames: MutableSet<Games> = mutableSetOf()
-
-                for (document in gamesSnapshot.documents) {
-                    val game = document.toObject(Games::class.java)  // 🔥 Konversi langsung ke objek Game
-
-                    if (game != null) {
-                        // cek games filter
-
-                        var batasUsia : Int = 11
-                        var indexUsia : Int = game.usiaMin
-                        var flag1 : Boolean = false
-
-
-                        // Usia
-                        if(isNullUsia == false){
-                            for (i in indexUsia..game.usiaMax) {
-                                if (indexUsia <= batasUsia1) {
-                                    tempGames.add(game)
-                                }
-                                if (indexUsia in batasUsia2Bawah..batasUsia2Atas) {
-                                    tempGames.add(game)
-                                }
-                                if (indexUsia >= batasUsia3) {
-                                    flag1 = true
-                                    tempGames.add(game)
-                                    if (flag1 == true) {
-                                        break
-                                    }
-                                }
-                                indexUsia++
-                            }
-                            if(game.usiaMin >= batasUsia){
-                                tempGames.add(game)
-                            }
-                        }
-                        else if(isNullUsia == true){
-                            tempGames.add(game)
-                        }
-                    }
-                }
-                SharedData.recommendedGames = tempGames.toList()
-                Log.d("Debug", "Jumlah game setelah filter: ${SharedData.recommendedGames.size}")
-            } catch (e: Exception) {
-                lifecycleScope.launch(Dispatchers.Main) {
-
-                }
-            }
-        }
-    }
-
-    private fun cekGamesFilterPemain(){
-        lifecycleScope.launch(Dispatchers.IO) {
-            try {
-                val gamesSnapshot = db.collection("games").get().await()
-                var tempGames: MutableSet<Games> = mutableSetOf()
-
-                for (document in gamesSnapshot.documents) {
-                    val game = document.toObject(Games::class.java)  // 🔥 Konversi langsung ke objek Game
-
-                    if (game != null) {
-                        // cek games filter
-
-                        var batasUsia : Int = 11
-                        var indexUsia : Int = game.usiaMin
-                        var flag1 : Boolean = false
-
-
-                        // Usia
-                        if(isNullUsia == false){
-                            for (i in indexUsia..game.usiaMax) {
-                                if (indexUsia <= batasUsia1) {
-                                    tempGames.add(game)
-                                }
-                                if (indexUsia in batasUsia2Bawah..batasUsia2Atas) {
-                                    tempGames.add(game)
-                                }
-                                if (indexUsia >= batasUsia3) {
-                                    flag1 = true
-                                    tempGames.add(game)
-                                    if (flag1 == true) {
-                                        break
-                                    }
-                                }
-                                indexUsia++
-                            }
-                            if(game.usiaMin >= batasUsia){
-                                tempGames.add(game)
-                            }
-                        }
-                        else if(isNullUsia == true){
-                            tempGames.add(game)
-                        }
-                    }
-                }
-                SharedData.recommendedGames = tempGames.toList()
-                Log.d("Debug", "Jumlah game setelah filter: ${SharedData.recommendedGames.size}")
-            } catch (e: Exception) {
-                lifecycleScope.launch(Dispatchers.Main) {
-
-                }
-            }
-        }
-
-        var tempGames: MutableSet<Games> = mutableSetOf()
-        tempGames = SharedData.recommendedGames.toMutableSet()
-        if(isNullPemain == false){
-            Log.d("tes", "jalan bang")
-            tempGames.removeIf { game ->
-                val rangePemain = game.pemainMin..game.pemainMax
-                var shouldRemove = false
-
-                if (batasPemain1 != 0) {
-                    shouldRemove = shouldRemove || rangePemain.all { it > batasPemain1 }
-                }
-                if (batasPemain2Bawah != 0 && batasPemain2Atas != 0) {
-                    shouldRemove = shouldRemove || (rangePemain.all { it < batasPemain2Bawah } || rangePemain.all { it > batasPemain2Atas })
-                }
-                if (batasPemain3 != 0) {
-                    shouldRemove = shouldRemove || rangePemain.all { it < batasPemain3 }
-                }
-
-                shouldRemove
-            }
-        }
-        SharedData.recommendedGames = tempGames.toList()
-        Log.d("Debug", "Jumlah game setelah filter: ${SharedData.recommendedGames.size}")
-
-    }
-
-    private fun cekGamesFilterLokasi(){
-        var tempGames: MutableSet<Games> = mutableSetOf()
-        tempGames = SharedData.recommendedGames.toMutableSet()
-        if(isNullLokasi == false){
-            tempGames.removeIf { game ->
-                (lokasiContainer == "Indoor" && game.jenisLokasi == "Outdoor") || (lokasiContainer == "Outdoor" && game.jenisLokasi == "Indoor")
-            }
-        }
-        SharedData.recommendedGames = tempGames.toList()
-        Log.d("Debug", "Jumlah game setelah filter: ${SharedData.recommendedGames.size}")
-
-    }
-
     private fun showPopupWindowUsia(anchorView : View){
         val popupView = layoutInflater.inflate(R.layout.pop_up_usia_category, null)
 
@@ -368,10 +214,12 @@ class RecommendGameFragment : Fragment() {
         val usiaOpt3 = popupView.findViewById<AppCompatButton>(R.id.usia_cat_opt_3_rec)
 
         usiaOpt1.setOnClickListener {
-            batasUsia1 = 5
-            batasUsia2Bawah = 0
-            batasUsia2Atas = 0
-            batasUsia3 = 0
+//            batasUsia1 = 5
+//            batasUsia2Bawah = 0
+//            batasUsia2Atas = 0
+//            batasUsia3 = 0
+            batasUsiaBawah = 0
+            batasUsiaAtas = 5
             isNullUsia = false
             cekGamesFilter()
             popupWindow.dismiss()
@@ -379,10 +227,12 @@ class RecommendGameFragment : Fragment() {
         }
 
         usiaOpt2.setOnClickListener {
-            batasUsia1 = 0
-            batasUsia2Bawah = 6
-            batasUsia2Atas = 10
-            batasUsia3 = 0
+//            batasUsia1 = 0
+//            batasUsia2Bawah = 6
+//            batasUsia2Atas = 10
+//            batasUsia3 = 0
+            batasUsiaBawah = 6
+            batasUsiaAtas = 10
             isNullUsia = false
             cekGamesFilter()
             popupWindow.dismiss()
@@ -390,10 +240,12 @@ class RecommendGameFragment : Fragment() {
         }
 
         usiaOpt3.setOnClickListener {
-            batasUsia1 = 0
-            batasUsia2Bawah = 0
-            batasUsia2Atas = 0
-            batasUsia3 = 11
+//            batasUsia1 = 0
+//            batasUsia2Bawah = 0
+//            batasUsia2Atas = 0
+//            batasUsia3 = 11
+            batasUsiaBawah = 11
+            batasUsiaAtas = 13
             isNullUsia = false
             cekGamesFilter()
             popupWindow.dismiss()

@@ -137,6 +137,7 @@
                 android:layout_marginStart="10dp"
                 android:progressBackgroundTint="@color/light_grey2"
                 android:progressTint="@color/yellow"
+                android:isIndicator="true"
                 android:scaleX="0.35"
                 android:scaleY="0.35"
                 android:transformPivotX="0dp"
