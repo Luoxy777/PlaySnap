@@ -115,6 +115,9 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:startIconDrawable="@drawable/ic_search"
+                android:focusable="false"
+                android:clickable="false"
+                android:inputType="none"
                 style="@style/TextInputEditText_search" />
 
             <androidx.appcompat.widget.AppCompatButton

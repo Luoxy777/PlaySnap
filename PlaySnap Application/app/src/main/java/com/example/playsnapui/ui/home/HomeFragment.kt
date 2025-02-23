@@ -116,6 +116,10 @@ class HomeFragment : Fragment() {
         binding.helpButton.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_HelpFragment)
         }
+
+        binding.etSearchGame.setOnClickListener{
+            findNavController().navigate(R.id.action_HomeFragment_to_SearchByTitleFragment)
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")
