@@ -42,9 +42,9 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         userProfile?.let {
-            binding.tvTitleName.text = it.fullName ?: "N/A"
+            binding.tvTitleName.text = it.username ?: "N/A"
         }
-        Log.d("HomeFragment", "User Profile: ${userProfile?.fullName ?: "N/A"}")
+        Log.d("HomeFragment", "User Profile: ${userProfile?.username ?: "N/A"}")
 
         return binding.root
     }
