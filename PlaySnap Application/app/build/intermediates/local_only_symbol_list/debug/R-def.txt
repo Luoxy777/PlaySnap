@@ -173,9 +173,11 @@ font leaguespartanmedium
 font leaguespartanregular
 font leaguespartansemibold
 font leaguespartanthin
+id ChangePassFragment
 id MyScrollView
 id ObjectFragment
 id accountSettingFragment
+id action_ChangePassFragment_to_EditProfileFragment
 id action_FeedbackFragment_to_HomeFragment
 id action_FilterFragment_to_HomeFragment
 id action_FilterFragment_to_RecGameFragment
@@ -210,6 +212,8 @@ id action_TutorialFragment_to_homeFragment
 id action_authFragment_to_homeFragment
 id action_authFragment_to_loginFragment
 id action_authFragment_to_registerFragment
+id action_editProfileFragment_to_ChangePassFragment
+id action_editProfileFragment_to_ProfileFragment
 id action_historyFragment_to_profileFragment
 id action_homeFragment_to_HelpFragment
 id action_homeFragment_to_filterFragment
@@ -650,6 +654,7 @@ layout bottom_sheet_tutorial_page
 layout fragment_account_setting
 layout fragment_auth
 layout fragment_bookmark
+layout fragment_edit_password
 layout fragment_edit_profile
 layout fragment_feedback
 layout fragment_filter

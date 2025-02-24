@@ -217,6 +217,12 @@
         android:id="@+id/editProfileFragment"
         android:name="com.example.playsnapui.ui.editProfile.EditProfileFragment"
         android:label="editProfile">
+        <action
+            android:id="@+id/action_editProfileFragment_to_ChangePassFragment"
+            app:destination="@id/ChangePassFragment" />
+        <action
+            android:id="@+id/action_editProfileFragment_to_ProfileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
 
     <fragment
@@ -342,6 +348,15 @@
         android:id="@+id/helpFragmentReqSuccess"
         android:name="com.example.playsnapui.ui.help.HelpFragmentReqSuccess"
         android:label="helpReqSuccess">
+    </fragment>
+
+    <fragment
+        android:id="@+id/ChangePassFragment"
+        android:name="com.example.playsnapui.ui.editPassword.editPasswordFragment"
+        android:label="editPassword">
+        <action
+            android:id="@+id/action_ChangePassFragment_to_EditProfileFragment"
+            app:destination="@id/editProfileFragment" />
     </fragment>
 
 

@@ -110,7 +110,7 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
 
     private fun setupListeners() {
         binding.btnBack.setOnClickListener {
-            findNavController().navigateUp() // Go back to previous screen
+            findNavController().navigate(R.id.action_editProfileFragment_to_ProfileFragment) // Go back to previous screen
         }
 
         binding.btnChecklist.setOnClickListener {
@@ -126,6 +126,7 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
 
         binding.btnChangePass.setOnClickListener {
             // Navigate to Change Password screen or show a dialog
+            findNavController().navigate(R.id.action_editProfileFragment_to_ChangePassFragment)
         }
     }
 
