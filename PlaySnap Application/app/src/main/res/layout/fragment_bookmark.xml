@@ -54,7 +54,7 @@
                         android:text="@string/subtitle_bookmark"
                         android:textAlignment="center"
                         android:textColor="@color/white"
-                        android:textSize="16dp"
+                        android:textSize="14dp"
                         android:paddingStart="20dp"
                         android:paddingEnd="20dp"
                         app:layout_constraintEnd_toEndOf="parent"
