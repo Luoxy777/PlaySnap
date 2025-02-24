@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.playsnapui.data.Games
 import com.example.playsnapui.R
 import com.example.playsnapui.databinding.FragmentHomeBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -41,15 +42,17 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         userProfile?.let {
-            binding.tvTitleName.text = it.fullName ?: "N/A"
+            binding.tvTitleName.text = it.username ?: "N/A"
         }
-        Log.d("HomeFragment", "User Profile: ${userProfile?.fullName ?: "N/A"}")
+        Log.d("HomeFragment", "User Profile: ${userProfile?.username ?: "N/A"}")
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility = View.VISIBLE
+
         viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
 
 

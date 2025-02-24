@@ -87,21 +87,21 @@ class RecommendGameFragment : Fragment() {
 
         binding.usiaButtonCat.setOnClickListener {
             showPopupWindowUsia(it)
-            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
+//            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
         }
 
         binding.pemainButtonCat.setOnClickListener {
             showPopupWindowPemain(it)
-            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
+//            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
         }
 
         binding.lokasiButtonCat.setOnClickListener {
             showPopupWindowLokasi(it)
-            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
+//            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
         }
 
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(R.id.action_RecommendGameFragment_to_HomeFragment)
+            findNavController().navigateUp()
         }
     }
 
@@ -222,6 +222,7 @@ class RecommendGameFragment : Fragment() {
             batasUsiaAtas = 5
             isNullUsia = false
             cekGamesFilter()
+            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
             popupWindow.dismiss()
             adapter.updateGames(SharedData.recommendedGames)
         }
@@ -235,6 +236,7 @@ class RecommendGameFragment : Fragment() {
             batasUsiaAtas = 10
             isNullUsia = false
             cekGamesFilter()
+            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
             popupWindow.dismiss()
             adapter.updateGames(SharedData.recommendedGames)
         }
@@ -248,6 +250,7 @@ class RecommendGameFragment : Fragment() {
             batasUsiaAtas = 13
             isNullUsia = false
             cekGamesFilter()
+            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
             popupWindow.dismiss()
             adapter.updateGames(SharedData.recommendedGames)
         }
@@ -278,6 +281,7 @@ class RecommendGameFragment : Fragment() {
             batasPemain3 = 0
             isNullPemain = false
             cekGamesFilter()
+            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
             popupWindow.dismiss()
             adapter.updateGames(SharedData.recommendedGames)
         }
@@ -289,6 +293,7 @@ class RecommendGameFragment : Fragment() {
             batasPemain3 = 0
             isNullPemain = false
             cekGamesFilter()
+            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
             popupWindow.dismiss()
             adapter.updateGames(SharedData.recommendedGames)
         }
@@ -300,6 +305,7 @@ class RecommendGameFragment : Fragment() {
             batasPemain3 = 6
             isNullPemain = false
             cekGamesFilter()
+            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
             popupWindow.dismiss()
             adapter.updateGames(SharedData.recommendedGames)
         }
@@ -327,6 +333,7 @@ class RecommendGameFragment : Fragment() {
             lokasiContainer = "Indoor"
             isNullLokasi = false
             cekGamesFilter()
+            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
             popupWindow.dismiss()
             adapter.updateGames(SharedData.recommendedGames)
         }
@@ -335,6 +342,7 @@ class RecommendGameFragment : Fragment() {
             lokasiContainer = "Outdoor"
             isNullLokasi = false
             cekGamesFilter()
+            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
             popupWindow.dismiss()
             adapter.updateGames(SharedData.recommendedGames)
         }

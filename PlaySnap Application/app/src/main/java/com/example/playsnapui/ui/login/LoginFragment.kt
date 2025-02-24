@@ -16,7 +16,7 @@ import com.example.playsnapui.R
 import com.example.playsnapui.databinding.FragmentLoginBinding
 import com.example.playsnapui.ui.login.LoginViewModel
 
-class LoginFragment : Fragment() {
+class  LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
