@@ -1,6 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\main\shaders"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Oxy_PlaySnap\PlaySnap_Fixed\PlaySnap\PlaySnap Application\app\src\debug\shaders"/></dataSet></merger>
-=======
 <merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\Project Kelompok 1 AoL\PlaySnap\PlaySnap\PlaySnap Application\app\src\main\shaders"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\teres\OneDrive - Bina Nusantara (1)\Cawu 4\Software Engineering\Project Kelompok 1 AoL\PlaySnap\PlaySnap\PlaySnap Application\app\src\debug\shaders"/></dataSet></merger>
->>>>>>> 07ccf9418e081c12991abdde0adcc74f4daff178

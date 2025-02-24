@@ -193,11 +193,11 @@
     <string name="btn_change_pass">Ubah Password</string>
     <string name="title_change_pass">Ubah Password</string>
     <string name="edit1_subtitle_pass">Password Lama</string>
-    <string name="edit1_old_pass">**********</string>
+    <string name="edit1_old_pass">12345678910</string>
     <string name="edit2_subtitle_pass">Buat Password Baru</string>
-    <string name="edit2_new_pass">**********</string>
+    <string name="edit2_new_pass">12345678910</string>
     <string name="edit3_subtitle_pass">Konfirmasi Password</string>
-    <string name="edit3_new_pass_confirm">**********</string>
+    <string name="edit3_new_pass_confirm">12345678910</string>
     <string name="title_settings">Atur Akun</string>
     <string name="btn_sign_out">Keluar Akun</string>
     <string name="btn_delete">Hapus Akun</string>

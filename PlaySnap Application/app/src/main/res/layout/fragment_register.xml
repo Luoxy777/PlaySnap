@@ -98,6 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="15dp"
+        android:paddingEnd="20dp"
         android:hint="@string/register_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/ic_lock"

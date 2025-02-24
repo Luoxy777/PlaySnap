@@ -29,13 +29,11 @@ class SplashActivity : AppCompatActivity() {
 
         // Firebase Auth instance
         val auth = FirebaseAuth.getInstance()
-
         if (auth.currentUser != null) {
             val user = auth.currentUser
             user?.let {
                 val userId = user.uid // Get UID of authenticated user
                 val db = FirebaseFirestore.getInstance()
-
                 // Fetch user data
                 db.collection("users").document(userId).get()
                     .addOnSuccessListener { document ->

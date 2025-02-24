@@ -326,6 +326,9 @@ id et_confirmpass
 id et_email
 id et_fullname
 id et_helpreq
+id et_new_pass
+id et_new_pass_confirm
+id et_old_pass
 id et_password
 id et_search_game
 id et_search_help
@@ -411,11 +414,8 @@ id line_rec_page
 id line_search_game
 id list_games_searchtitle
 id llc_edit1_name_fill
-id llc_edit1_old_pass
-id llc_edit2_new_pass
 id llc_edit2_username_fill
 id llc_edit3_email_fill
-id llc_edit3_new_pass_confirm
 id llc_edit4_gender_fill
 id loading_text
 id loginFragment
@@ -532,6 +532,9 @@ id til_confirmpass
 id til_email
 id til_fullname
 id til_helpreq
+id til_new_pass
+id til_new_pass_confirm
+id til_old_pass
 id til_password
 id til_username
 id title_alat_bermain
@@ -557,15 +560,12 @@ id tv_account
 id tv_edit1_name
 id tv_edit1_name_fill
 id tv_edit1_old_pass
-id tv_edit1_old_pass_fill
 id tv_edit2_new_pass
-id tv_edit2_new_pass_fill
 id tv_edit2_username
 id tv_edit2_username_fill
 id tv_edit3_email
 id tv_edit3_email_fill
 id tv_edit3_new_pass_confirm
-id tv_edit3_new_pass_confirm_fill
 id tv_edit4_gender
 id tv_edit4_gender_fill
 id tv_email
