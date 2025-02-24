@@ -56,7 +56,7 @@
             <ImageView
                 android:id="@+id/profile_pic"
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
+                android:layout_height="150dp"
                 android:src="@drawable/ic_profile_pic"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/title_profile"
@@ -248,28 +248,32 @@
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:id="@+id/llc_edit4_gender_fill"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_button_grey"
-                    android:layout_marginTop="7dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
+                    android:layout_marginTop="7dp"
                     android:layout_marginEnd="40dp"
-                    app:layout_constraintTop_toBottomOf="@id/tv_edit4_gender"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_button_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent">
+                    app:layout_constraintTop_toBottomOf="@id/tv_edit4_gender">
 
                     <TextView
                         android:id="@+id/tv_edit4_gender_fill"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
                         android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
                         android:layout_marginBottom="5dp"
-                        android:text="@string/edit4_gender"
-                        android:textSize="18dp"
-                        android:textColor="@color/dark_blue"
+                        android:drawableEnd="@drawable/back_button_down"
+                        android:drawableTint="@color/light_grey"
                         android:fontFamily="@font/andikaregular"
-                        />
+                        android:text="@string/edit4_gender"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="18dp" />
+
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 

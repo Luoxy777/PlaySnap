@@ -210,6 +210,7 @@ id action_TutorialFragment_to_homeFragment
 id action_authFragment_to_homeFragment
 id action_authFragment_to_loginFragment
 id action_authFragment_to_registerFragment
+id action_historyFragment_to_profileFragment
 id action_homeFragment_to_HelpFragment
 id action_homeFragment_to_filterFragment
 id action_loginFragment_to_homeFragment
@@ -485,6 +486,7 @@ id rating_pop
 id rating_star_feedback
 id recent_recycler_bookmark
 id recent_recycler_foryou
+id recent_recycler_history
 id recent_recycler_like
 id recent_recycler_popgame
 id recommendGameFragment

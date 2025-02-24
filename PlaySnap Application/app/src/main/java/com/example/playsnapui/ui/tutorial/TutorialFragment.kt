@@ -22,7 +22,12 @@ import com.example.playsnapui.R
 import com.example.playsnapui.data.Games
 import com.example.playsnapui.databinding.FragmentTutorialBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.QuerySnapshot
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class TutorialFragment : Fragment() {
     private var _binding: FragmentTutorialBinding? = null
@@ -186,6 +191,46 @@ class TutorialFragment : Fragment() {
         binding.shareButtonTutorial.setOnClickListener { v -> viewModel?.toggleShare() }
 
         binding.bottomSheet.mainkanButtonTutorial.setOnClickListener {
+            val currentTime = System.currentTimeMillis() // You can also use LocalDateTime if needed
+            val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+            val formattedDate = dateFormat.format(Date(currentTime))
+            val userId = FirebaseAuth.getInstance().currentUser?.uid
+            val db = FirebaseFirestore.getInstance()
+
+// Query to find the document that matches the user_ID and game_ID
+            db.collection("social_interaction")
+                .whereEqualTo("user_ID", userId)
+                .whereEqualTo("game_ID", gameDetails?.game_id)
+                .get()
+                .addOnSuccessListener { querySnapshot: QuerySnapshot ->
+                    if (!querySnapshot.isEmpty) {
+                        // If a document exists, get the first document
+                        val document = querySnapshot.documents[0]
+
+                        // Get the document reference to update it
+                        val documentReference: DocumentReference = db.collection("social_interaction").document(document.id)
+
+                        // Update the "date_visit" field with the current date
+                        documentReference.update("date_visit", formattedDate)
+                            .addOnSuccessListener {
+                                // Data updated successfully
+                                Log.d("Firestore", "Date visit updated successfully: $formattedDate")
+                            }
+                            .addOnFailureListener { e ->
+                                // Handle failure
+                                Log.e("Firestore", "Error updating date visit: ", e)
+                            }
+                    } else {
+                        // No document found, handle accordingly (you can choose to add a new document or show an error)
+                        Log.d("Firestore", "No document found matching the query")
+                    }
+                }
+                .addOnFailureListener { e ->
+                    // Handle query failure
+                    Log.e("Firestore", "Error getting documents: ", e)
+                }
+
+
             findNavController().navigate(R.id.action_TutorialFragment_to_FeedbackFragment)
         }
     }
