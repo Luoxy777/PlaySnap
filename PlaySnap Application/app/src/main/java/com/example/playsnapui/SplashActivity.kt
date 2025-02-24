@@ -43,9 +43,10 @@ class SplashActivity : AppCompatActivity() {
                             val email = document.getString("email")
                             val fullName = document.getString("fullName")
                             val username = document.getString("username")
-
+                            val profilePicture = document.getString("profilePicture")
+                            val gender = document.getString("gender")
                             // Store user profile globally
-                            userProfile = UserProfile(email, fullName, username)
+                            userProfile = UserProfile(email, fullName, username, profilePicture, gender)
                             Log.d("Splash", "User Profile Loaded: ${userProfile?.fullName ?: "N/A"}")
 
                             // ✅ Navigate **after** user profile is set

@@ -38,7 +38,7 @@ class ObjectFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnBack.setOnClickListener {
-            requireActivity().onBackPressedDispatcher.onBackPressed()
+            findNavController().navigate(R.id.action_ObjectFragment_to_HomeFragment)
         }
 
         // Set up RecyclerView

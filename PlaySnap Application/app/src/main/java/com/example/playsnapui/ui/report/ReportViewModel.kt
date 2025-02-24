@@ -37,5 +37,4 @@ class ReportViewModel : ViewModel() {
                 .addOnFailureListener { exception -> onFailure(exception) }
         }
     }
-
 }
