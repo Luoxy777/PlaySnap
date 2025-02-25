@@ -70,7 +70,7 @@
         android:elevation="10dp"
         android:translationZ="-10dp"
         android:hint="Cari permainan..."
-        android:padding="10dp"
+        android:inputType="text"        android:padding="10dp"
         android:shadowColor="@color/light_grey"
         android:shadowDx="100"
         android:shadowDy="100"

@@ -85,7 +85,7 @@
                         android:id="@+id/usia_opt1_btn"
                         android:layout_width="82dp"
                         android:layout_height="45dp"
-                        android:background="@drawable/background_option_filter_page"
+                        android:background="@drawable/background_option_filter_selector"
                         app:layout_constraintTop_toTopOf="@id/line1_usia_opt"
                         app:layout_constraintStart_toStartOf="parent"
                         android:layout_marginStart="30dp"

@@ -3,6 +3,8 @@ package com.example.playsnapui.ui.recommendgame
 import SharedData
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -34,9 +36,15 @@ class RecommendGameFragment : Fragment() {
 
     private val db = FirebaseFirestore.getInstance()
     private lateinit var popupWindow : PopupWindow
+    private val handler = Handler(Looper.getMainLooper())
+    private val updateRunnable = object : Runnable {
+        override fun run() {
+            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
+            handler.postDelayed(this, 1000) // Update setiap 1 detik
+        }
+    }
 
-
-//    var batasUsia1 = SharedData.batasUsia1
+    //    var batasUsia1 = SharedData.batasUsia1
 //    var batasUsia2Bawah = SharedData.batasUsia2Bawah
 //    var batasUsia2Atas = SharedData.batasUsia2Atas
 //    var batasUsia3 = SharedData.batasUsia3
@@ -67,8 +75,6 @@ class RecommendGameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Log.d("RecGameFragment", "arguments: $arguments")
-
         Log.d("Batas 1", "batas usia 1 : $batasPemain1")
         Log.d("Lokasi", "Lokasi : $lokasiContainer")
         Log.d("Properti", "Properti : $propertyContainer")
@@ -87,17 +93,14 @@ class RecommendGameFragment : Fragment() {
 
         binding.usiaButtonCat.setOnClickListener {
             showPopupWindowUsia(it)
-//            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
         }
 
         binding.pemainButtonCat.setOnClickListener {
             showPopupWindowPemain(it)
-//            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
         }
 
         binding.lokasiButtonCat.setOnClickListener {
             showPopupWindowLokasi(it)
-//            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
         }
 
         binding.btnBack.setOnClickListener {
@@ -186,10 +189,10 @@ class RecommendGameFragment : Fragment() {
                     i++
                 }
                 Log.d("Shared Data Index", "Total : $i")
-
+                lifecycleScope.launch(Dispatchers.Main) { adapter.updateGames(SharedData.recommendedGames) }
             } catch (e: Exception) {
                 lifecycleScope.launch(Dispatchers.Main) {
-
+                    adapter.updateGames(SharedData.recommendedGames)
                 }
             }
         }
@@ -214,45 +217,28 @@ class RecommendGameFragment : Fragment() {
         val usiaOpt3 = popupView.findViewById<AppCompatButton>(R.id.usia_cat_opt_3_rec)
 
         usiaOpt1.setOnClickListener {
-//            batasUsia1 = 5
-//            batasUsia2Bawah = 0
-//            batasUsia2Atas = 0
-//            batasUsia3 = 0
+
             batasUsiaBawah = 0
             batasUsiaAtas = 5
             isNullUsia = false
             cekGamesFilter()
-            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
             popupWindow.dismiss()
-            adapter.updateGames(SharedData.recommendedGames)
         }
 
         usiaOpt2.setOnClickListener {
-//            batasUsia1 = 0
-//            batasUsia2Bawah = 6
-//            batasUsia2Atas = 10
-//            batasUsia3 = 0
             batasUsiaBawah = 6
             batasUsiaAtas = 10
             isNullUsia = false
             cekGamesFilter()
-            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
             popupWindow.dismiss()
-            adapter.updateGames(SharedData.recommendedGames)
         }
 
         usiaOpt3.setOnClickListener {
-//            batasUsia1 = 0
-//            batasUsia2Bawah = 0
-//            batasUsia2Atas = 0
-//            batasUsia3 = 11
             batasUsiaBawah = 11
             batasUsiaAtas = 13
             isNullUsia = false
             cekGamesFilter()
-            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
             popupWindow.dismiss()
-            adapter.updateGames(SharedData.recommendedGames)
         }
     }
 
@@ -281,9 +267,8 @@ class RecommendGameFragment : Fragment() {
             batasPemain3 = 0
             isNullPemain = false
             cekGamesFilter()
-            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
+//            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
             popupWindow.dismiss()
-            adapter.updateGames(SharedData.recommendedGames)
         }
 
         pemainOpt2.setOnClickListener {
@@ -293,9 +278,7 @@ class RecommendGameFragment : Fragment() {
             batasPemain3 = 0
             isNullPemain = false
             cekGamesFilter()
-            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
             popupWindow.dismiss()
-            adapter.updateGames(SharedData.recommendedGames)
         }
 
         pemainOpt3.setOnClickListener {
@@ -305,9 +288,7 @@ class RecommendGameFragment : Fragment() {
             batasPemain3 = 6
             isNullPemain = false
             cekGamesFilter()
-            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
             popupWindow.dismiss()
-            adapter.updateGames(SharedData.recommendedGames)
         }
     }
 
@@ -333,18 +314,14 @@ class RecommendGameFragment : Fragment() {
             lokasiContainer = "Indoor"
             isNullLokasi = false
             cekGamesFilter()
-            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
             popupWindow.dismiss()
-            adapter.updateGames(SharedData.recommendedGames)
         }
 
         lokasiOpt2.setOnClickListener {
             lokasiContainer = "Outdoor"
             isNullLokasi = false
             cekGamesFilter()
-            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
             popupWindow.dismiss()
-            adapter.updateGames(SharedData.recommendedGames)
         }
     }
 
@@ -368,9 +345,19 @@ class RecommendGameFragment : Fragment() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        handler.post(updateRunnable)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        handler.removeCallbacks(updateRunnable)
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
+        handler.removeCallbacks(updateRunnable)
         _binding = null
     }
 }

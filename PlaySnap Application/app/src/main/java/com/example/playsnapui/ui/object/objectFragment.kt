@@ -4,9 +4,11 @@ import SharedData
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -74,6 +76,15 @@ class ObjectFragment : Fragment() {
                 viewModel.addObject(newObject)  // Add object to ViewModel
                 binding.etSearchGame.text?.clear()  // Clear input after adding
             }
+        }
+
+        binding.etSearchGame.setOnEditorActionListener { _, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH ||
+                (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN)) {
+                binding.addButton.performClick() // Panggil fungsi klik tombol pencarian
+                return@setOnEditorActionListener true // Konsumsi event
+            }
+            false
         }
 
         binding.mulaiButton.setOnClickListener {
