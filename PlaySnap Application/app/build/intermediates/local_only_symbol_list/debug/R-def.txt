@@ -28,6 +28,8 @@ drawable back_button_mini
 drawable back_button_up
 drawable background_object_search_by_type
 drawable background_option_filter_page
+drawable background_option_filter_pressed
+drawable background_option_filter_selector
 drawable background_rating_feedback
 drawable baseline_add_circle_outline_24
 drawable baseline_arrow_drop_down_24
@@ -60,6 +62,10 @@ drawable btn_check_pressed_taken_photo
 drawable btn_filter
 drawable btn_scan
 drawable btn_type
+drawable butterfly
+drawable butterfly_full_body
+drawable butterfly_fullbody
+drawable butterfly_no_outline
 drawable button_selector
 drawable camera_scanning_layout
 drawable camera_shoot_icon
@@ -207,6 +213,7 @@ id action_ReportFragment_to_ReportSuccessFragment
 id action_ScrollGalleryFragment_to_ObjectFragment
 id action_ScrollGalleryFragment_to_SwipeGalleryFragment
 id action_ScrollGalleryFragment_to_homeFragment
+id action_SettingsAccountFragment_to_AuthActivity
 id action_SnapFragment_to_HomeFragment
 id action_SnapFragment_to_ScrollGalleryFragment
 id action_SwipeGalleryFragment_to_ObjectFragment
@@ -527,6 +534,7 @@ id section_usia_main
 id selesai_button_feedback
 id sendButton
 id share_button_tutorial
+id sign_out_pop_up
 id snapFragment
 id square_view_tutorial
 id star_rating_layout
