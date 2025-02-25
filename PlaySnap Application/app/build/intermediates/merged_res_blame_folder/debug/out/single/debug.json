@@ -68,6 +68,10 @@
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\pemain_opt2.xml"
     },
     {
+        "merged": "com.example.playsnapui.app-merged_res-5:/navigation_nav_graph.xml.flat",
+        "source": "com.example.playsnapui.app-main-7:/navigation/nav_graph.xml"
+    },
+    {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_ic_account_rectangle.xml.flat",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\ic_account_rectangle.xml"
     },
@@ -482,10 +486,6 @@
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_baseline_add_circle_outline_24.xml.flat",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\baseline_add_circle_outline_24.xml"
-    },
-    {
-        "merged": "com.example.playsnapui.app-merged_res-5:/layout_layout_generated_object.xml.flat",
-        "source": "com.example.playsnapui.app-main-7:/layout/layout_generated_object.xml"
     },
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_ic_email.xml.flat",
