@@ -222,7 +222,17 @@ class TutorialFragment : Fragment() {
                             }
                     } else {
                         // No document found, handle accordingly (you can choose to add a new document or show an error)
-                        Log.d("Firestore", "No document found matching the query")
+                        Log.d("Firestore", "No document found matching the query, add new document")
+                        val socialInteraction = hashMapOf(
+                            "user_ID" to userId,
+                            "game_ID" to gameDetails?.game_id,
+                            "date_visit" to formattedDate, // Initially set to null (or current date when visited)
+                            "like_status" to false, // Or based on your logic
+                            "bookmark_status" to false,
+                            "rating" to 0 // Default rating
+                        )
+                        db.collection("social_interaction").add(socialInteraction)
+
                     }
                 }
                 .addOnFailureListener { e ->

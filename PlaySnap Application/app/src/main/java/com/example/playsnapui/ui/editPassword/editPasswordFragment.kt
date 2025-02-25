@@ -47,7 +47,6 @@ class EditPasswordFragment : Fragment() {
         // Handle password change submission
         binding.sendButton.setOnClickListener {
             changePassword()
-            findNavController().navigateUp()
         }
 
         return binding.root
@@ -81,6 +80,7 @@ class EditPasswordFragment : Fragment() {
                             } else {
                                 Toast.makeText(requireContext(), "Failed to change password", Toast.LENGTH_SHORT).show()
                             }
+                            findNavController().navigateUp()
                         }
                 } else {
                     Toast.makeText(requireContext(), "Old password is incorrect", Toast.LENGTH_SHORT).show()
