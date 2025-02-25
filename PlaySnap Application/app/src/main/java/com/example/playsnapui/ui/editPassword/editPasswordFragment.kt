@@ -152,9 +152,9 @@ class editPasswordFragment : Fragment() {
     }
 
     private fun changePassword() {
-        val oldPassword = binding.tvEdit1OldPassFill.text.toString()
-        val newPassword = binding.tvEdit2NewPassFill.text.toString()
-        val confirmPassword = binding.tvEdit3NewPassConfirmFill.text.toString()
+        val oldPassword = binding.etOldPass.text.toString()
+        val newPassword = binding.etNewPass.text.toString()
+        val confirmPassword = binding.etNewPassConfirm.text.toString()
 
         if (oldPassword.isEmpty() || newPassword.isEmpty() || confirmPassword.isEmpty()) {
             Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_SHORT).show()
