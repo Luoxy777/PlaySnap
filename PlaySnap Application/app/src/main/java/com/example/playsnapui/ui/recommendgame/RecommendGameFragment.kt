@@ -48,10 +48,6 @@ class RecommendGameFragment : Fragment() {
         }
     }
 
-    //    var batasUsia1 = SharedData.batasUsia1
-//    var batasUsia2Bawah = SharedData.batasUsia2Bawah
-//    var batasUsia2Atas = SharedData.batasUsia2Atas
-//    var batasUsia3 = SharedData.batasUsia3
     var batasUsiaBawah = SharedData.batasUsiaBawah
     var batasUsiaAtas = SharedData.batasUsiaAtas
     var batasPemain1 = SharedData.batasPemain1
@@ -72,12 +68,14 @@ class RecommendGameFragment : Fragment() {
     ): View {
         _binding = FragmentRecommendGameBinding.inflate(inflater, container, false)
         binding.numberOfGamesFound.text = "${recommendedGames.size}"
-
+        buttonUI()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        buttonUI()
 
         Log.d("isObject", "object : ${SharedData.isObject}")
         popupWindow = PopupWindow(requireContext())
@@ -93,24 +91,84 @@ class RecommendGameFragment : Fragment() {
             }
         }
 
-        binding.usiaButtonCat.setOnClickListener {
+        binding.usiaButtonChild.setOnClickListener {
             showPopupWindowUsia(it)
-
+            buttonUI()
             binding.numberOfGamesFound.text = "${recommendedGames.size}"
         }
 
-        binding.pemainButtonCat.setOnClickListener {
+        binding.pemainButtonChild.setOnClickListener {
             showPopupWindowPemain(it)
+            buttonUI()
             binding.numberOfGamesFound.text = "${recommendedGames.size}"
         }
 
-        binding.lokasiButtonCat.setOnClickListener {
+        binding.lokasiButtonChild.setOnClickListener {
             showPopupWindowLokasi(it)
+            buttonUI()
             binding.numberOfGamesFound.text = "${recommendedGames.size}"
         }
 
         binding.btnBack.setOnClickListener {
             findNavController().navigateUp()
+        }
+    }
+
+    private fun buttonUI(){
+        if(batasUsiaBawah == 0 && batasUsiaAtas == 0){
+            binding.usiaButtonChild.text = "Semua"
+        }
+        else{
+            if(batasUsiaBawah == 0 && batasUsiaAtas == 5){
+                binding.usiaButtonChild.text = "<6"
+            }
+            else if(batasUsiaBawah == 6 && batasUsiaAtas == 10){
+                binding.usiaButtonChild.text = "6-10"
+            }
+            else if(batasUsiaBawah == 11 && batasUsiaAtas == 13){
+                binding.usiaButtonChild.text = ">10"
+            }
+        }
+
+        if(batasPemain1 == 0
+            && batasPemain2Bawah == 0
+            && batasPemain2Atas == 0
+            && batasPemain3 == 0){
+            binding.pemainButtonChild.text = "Semua"
+            Log.d("pemain null", "0")
+        }
+        else{
+            Log.d("pemain ga null", "ga 0")
+            if(batasPemain1 == 2
+                && batasPemain2Bawah == 0
+                && batasPemain2Atas == 0
+                && batasPemain3 == 0){
+                binding.pemainButtonChild.text = "<3"
+            }
+            else if(batasPemain1 == 0
+                && batasPemain2Bawah == 3
+                && batasPemain2Atas == 5
+                && batasPemain3 == 0){
+                binding.pemainButtonChild.text = "3-5"
+            }
+            else if(batasPemain1 == 0
+                && batasPemain2Bawah == 0
+                && batasPemain2Atas == 0
+                && batasPemain3 == 6){
+                binding.pemainButtonChild.text = ">5"
+            }
+        }
+
+        if(lokasiContainer == ""){
+            binding.lokasiButtonChild.text = "Semua"
+        }
+        else{
+            if(lokasiContainer == "Indoor"){
+                binding.lokasiButtonChild.text = "Indoor"
+            }
+            else if(lokasiContainer == "Outdoor"){
+                binding.lokasiButtonChild.text = "Outdoor"
+            }
         }
     }
 
@@ -298,6 +356,8 @@ class RecommendGameFragment : Fragment() {
         val usiaOpt1 = popupView.findViewById<AppCompatButton>(R.id.usia_cat_opt_1_rec)
         val usiaOpt2 = popupView.findViewById<AppCompatButton>(R.id.usia_cat_opt_2_rec)
         val usiaOpt3 = popupView.findViewById<AppCompatButton>(R.id.usia_cat_opt_3_rec)
+        val usiaOpt4 = popupView.findViewById<AppCompatButton>(R.id.usia_cat_opt_4_rec)
+
 
         usiaOpt1.setOnClickListener {
 
@@ -310,6 +370,7 @@ class RecommendGameFragment : Fragment() {
             else if(SharedData.isObject == true){
                 cekGamesFilterObject()
             }
+            buttonUI()
             binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
@@ -324,6 +385,7 @@ class RecommendGameFragment : Fragment() {
             else if(SharedData.isObject == true){
                 cekGamesFilterObject()
             }
+            buttonUI()
             binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
@@ -338,6 +400,22 @@ class RecommendGameFragment : Fragment() {
             else if(SharedData.isObject == true){
                 cekGamesFilterObject()
             }
+            buttonUI()
+            binding.numberOfGamesFound.text = "${recommendedGames.size}"
+            popupWindow.dismiss()
+        }
+
+        usiaOpt4.setOnClickListener {
+            batasUsiaBawah = 0
+            batasUsiaAtas = 0
+            isNullUsia = true
+            if(SharedData.isObject == false){
+                cekGamesFilterNonObject()
+            }
+            else if(SharedData.isObject == true){
+                cekGamesFilterObject()
+            }
+            buttonUI()
             binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
@@ -360,6 +438,7 @@ class RecommendGameFragment : Fragment() {
         val pemainOpt1 = popupView.findViewById<AppCompatButton>(R.id.pemain_cat_opt_1_rec)
         val pemainOpt2 = popupView.findViewById<AppCompatButton>(R.id.pemain_cat_opt_2_rec)
         val pemainOpt3 = popupView.findViewById<AppCompatButton>(R.id.pemain_cat_opt_3_rec)
+        val pemainOpt4 = popupView.findViewById<AppCompatButton>(R.id.pemain_cat_opt_4_rec)
 
         pemainOpt1.setOnClickListener {
             batasPemain1 = 2
@@ -373,6 +452,7 @@ class RecommendGameFragment : Fragment() {
             else if(SharedData.isObject == true){
                 cekGamesFilterObject()
             }
+            buttonUI()
             binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
@@ -389,6 +469,7 @@ class RecommendGameFragment : Fragment() {
             else if(SharedData.isObject == true){
                 cekGamesFilterObject()
             }
+            buttonUI()
             binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
@@ -398,6 +479,23 @@ class RecommendGameFragment : Fragment() {
             batasPemain2Bawah = 0
             batasPemain2Atas = 0
             batasPemain3 = 6
+            isNullPemain = true
+            if(SharedData.isObject == false){
+                cekGamesFilterNonObject()
+            }
+            else if(SharedData.isObject == true){
+                cekGamesFilterObject()
+            }
+            buttonUI()
+            binding.numberOfGamesFound.text = "${recommendedGames.size}"
+            popupWindow.dismiss()
+        }
+
+        pemainOpt4.setOnClickListener {
+            batasPemain1 = 0
+            batasPemain2Bawah = 0
+            batasPemain2Atas = 0
+            batasPemain3 = 0
             isNullPemain = false
             if(SharedData.isObject == false){
                 cekGamesFilterNonObject()
@@ -405,6 +503,7 @@ class RecommendGameFragment : Fragment() {
             else if(SharedData.isObject == true){
                 cekGamesFilterObject()
             }
+            buttonUI()
             binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
@@ -427,6 +526,7 @@ class RecommendGameFragment : Fragment() {
         // Atur tombol dalam pop-up
         val lokasiOpt1 = popupView.findViewById<AppCompatButton>(R.id.lokasi_cat_opt_1_rec)
         val lokasiOpt2 = popupView.findViewById<AppCompatButton>(R.id.lokasi_cat_opt_2_rec)
+        val lokasiOpt3 = popupView.findViewById<AppCompatButton>(R.id.lokasi_cat_opt_3_rec)
 
         lokasiOpt1.setOnClickListener {
             lokasiContainer = "Indoor"
@@ -437,6 +537,7 @@ class RecommendGameFragment : Fragment() {
             else if(SharedData.isObject == true){
                 cekGamesFilterObject()
             }
+            buttonUI()
             binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
@@ -450,6 +551,21 @@ class RecommendGameFragment : Fragment() {
             else if(SharedData.isObject == true){
                 cekGamesFilterObject()
             }
+            buttonUI()
+            binding.numberOfGamesFound.text = "${recommendedGames.size}"
+            popupWindow.dismiss()
+        }
+
+        lokasiOpt3.setOnClickListener {
+            lokasiContainer = "-"
+            isNullLokasi = true
+            if(SharedData.isObject == false){
+                cekGamesFilterNonObject()
+            }
+            else if(SharedData.isObject == true){
+                cekGamesFilterObject()
+            }
+            buttonUI()
             binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
@@ -477,6 +593,7 @@ class RecommendGameFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        buttonUI()
         handler.post(updateRunnable)
     }
 

@@ -37,7 +37,7 @@
             android:background="@drawable/bg_button_white"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/lokasi_cat_opt_4_rec"
+            android:id="@+id/lokasi_cat_opt_3_rec"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/lokasi_cat_opt_2_rec"
