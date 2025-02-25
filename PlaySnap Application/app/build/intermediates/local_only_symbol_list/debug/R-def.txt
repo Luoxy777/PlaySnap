@@ -28,6 +28,8 @@ drawable back_button_mini
 drawable back_button_up
 drawable background_object_search_by_type
 drawable background_option_filter_page
+drawable background_option_filter_pressed
+drawable background_option_filter_selector
 drawable background_rating_feedback
 drawable baseline_add_circle_outline_24
 drawable baseline_arrow_drop_down_24
