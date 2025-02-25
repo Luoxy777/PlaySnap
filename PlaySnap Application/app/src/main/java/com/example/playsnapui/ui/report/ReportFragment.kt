@@ -54,7 +54,7 @@ class ReportFragment : Fragment() {
         }
 
         binding.btnBack.setOnClickListener {
-            parentFragmentManager.popBackStack()  // Kembali ke fragment sebelumnya
+            findNavController().navigate(R.id.action_ReportFragment_to_ProfileFragment)
         }
     }
 

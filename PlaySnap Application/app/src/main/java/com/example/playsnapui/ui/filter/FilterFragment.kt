@@ -540,6 +540,7 @@ class FilterFragment : Fragment() {
             Log.d("Usia bawah 2", "usia bawah : $batasUsiaBawah")
             Log.d("Usia atas 2", "usia atas : $batasUsiaAtas")
             compareGamesWithDatabase(isNullUsia, isNullLokasi, isNullPemain, isNullProperti, batasPemain1, batasPemain2Bawah, batasPemain2Atas, batasPemain3, batasUsiaBawah, batasUsiaAtas, lokasiContainer, propertyContainer)
+            SharedData.isObject = false
         }
 
 

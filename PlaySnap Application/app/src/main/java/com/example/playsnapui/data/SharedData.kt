@@ -2,6 +2,7 @@ import com.example.playsnapui.data.Games
 
 // SharedData.kt
 object SharedData {
+    var isObject : Boolean = false
     var detectedObjects: List<String> = emptyList()
     var recommendedGames: List<Games> = emptyList()
     var userProfile: UserProfile? = null

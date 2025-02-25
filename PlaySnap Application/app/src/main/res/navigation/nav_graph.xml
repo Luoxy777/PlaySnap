@@ -244,6 +244,9 @@
         <action
             android:id="@+id/action_ReportFragment_to_ReportSuccessFragment"
             app:destination="@id/reportSuccessFragment" />
+        <action
+            android:id="@+id/action_ReportFragment_to_ProfileFragment"
+            app:destination="@id/profileFragment"/>
     </fragment>
 
     <fragment
