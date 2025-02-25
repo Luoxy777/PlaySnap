@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.example.playsnapui.R
 import com.example.playsnapui.databinding.FragmentAccountSettingBinding
 
 class AccountSettingFragment : Fragment() {
@@ -27,8 +29,8 @@ class AccountSettingFragment : Fragment() {
         // Handle button clicks
         binding.btnBack.setOnClickListener {
             // Handle back button click
-            // You can pop the fragment from back stack, navigate up, or close the activity
-            requireActivity().onBackPressed() // Example of handling back press
+            // You can pop the fragment from back stack, navigate up, or close the activity \
+            findNavController().navigate(R.id.action_SettingsAccountFragment_to_ProfileFragment)
         }
 
         binding.btnSignOut.setOnClickListener {

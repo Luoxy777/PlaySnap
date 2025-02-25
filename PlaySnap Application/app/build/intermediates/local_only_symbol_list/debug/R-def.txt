@@ -28,6 +28,8 @@ drawable back_button_mini
 drawable back_button_up
 drawable background_object_search_by_type
 drawable background_option_filter_page
+drawable background_option_filter_pressed
+drawable background_option_filter_selector
 drawable background_rating_feedback
 drawable baseline_add_circle_outline_24
 drawable baseline_arrow_drop_down_24
@@ -60,6 +62,10 @@ drawable btn_check_pressed_taken_photo
 drawable btn_filter
 drawable btn_scan
 drawable btn_type
+drawable butterfly
+drawable butterfly_full_body
+drawable butterfly_fullbody
+drawable butterfly_no_outline
 drawable button_selector
 drawable camera_scanning_layout
 drawable camera_shoot_icon
@@ -203,10 +209,13 @@ id action_ObjectFragment_to_HomeFragment
 id action_ObjectFragment_to_RecommendGameFragment
 id action_PopularFragment_to_TutorialFragment
 id action_RecommendGameFragment_to_HomeFragment
+id action_ReportFragment_to_ProfileFragment
 id action_ReportFragment_to_ReportSuccessFragment
 id action_ScrollGalleryFragment_to_ObjectFragment
 id action_ScrollGalleryFragment_to_SwipeGalleryFragment
 id action_ScrollGalleryFragment_to_homeFragment
+id action_SettingsAccountFragment_to_AuthActivity
+id action_SettingsAccountFragment_to_ProfileFragment
 id action_SnapFragment_to_HomeFragment
 id action_SnapFragment_to_ScrollGalleryFragment
 id action_SwipeGalleryFragment_to_ObjectFragment
@@ -228,6 +237,7 @@ id action_profileFragment_to_editProfileFragment
 id action_profileFragment_to_historyFragment
 id action_profileFragment_to_reportFragment
 id action_registerFragment_to_loginFragment
+id action_reportSuccessFragment_to_homeFragment
 id add_button
 id alat_bermain_content
 id alat_bermain_section
@@ -265,6 +275,7 @@ id btn_change_pass
 id btn_change_profile
 id btn_check
 id btn_check_alat_bermain
+id btn_check_small
 id btn_checklist
 id btn_delete
 id btn_edit_profile
@@ -300,6 +311,7 @@ id cloud1_feedback
 id cloud1_loading_page
 id cloud2_feedback
 id cloud2_loading_page
+id constraintLayout
 id count_like_book
 id count_like_foryou
 id count_like_history
@@ -527,6 +539,7 @@ id section_usia_main
 id selesai_button_feedback
 id sendButton
 id share_button_tutorial
+id sign_out_pop_up
 id snapFragment
 id square_view_tutorial
 id star_rating_layout

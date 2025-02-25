@@ -223,12 +223,9 @@
     <string name="option_laki">Laki-laki</string>
     <string name="option_perempuan">Perempuan</string>
     <string name="option_none">-</string>
-<<<<<<< Updated upstream
     <string name="usia_desc">6-10</string>
     <string name="pemain_desc">3-5</string>
     <string name="lokasi_desc">Outdoor</string>
-=======
     <string name="title_game_rating">Lompat Tali</string>
     <string name="category_game_rating"><![CDATA[Outdoor, Usia >6 tahun]]></string>
->>>>>>> Stashed changes
 </resources>

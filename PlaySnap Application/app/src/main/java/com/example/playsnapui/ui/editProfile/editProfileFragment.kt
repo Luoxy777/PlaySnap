@@ -34,16 +34,19 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import java.io.OutputStream
+import kotlin.properties.Delegates
 
 class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
 
     private lateinit var viewModel: EditProfileViewModel
     private var _binding: FragmentEditProfileBinding? = null
     private val binding get() = _binding!!
+    private var editText: EditText? = null
 
     private val PICK_IMAGE_REQUEST = 1001
     private lateinit var pickImageLauncher: ActivityResultLauncher<Intent>  // Declare the launcher
 
+    private var flag: Int = 0
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -86,7 +89,7 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
         // Set click listeners for TextViews to make them editable
         makeEditableOnClick(binding.tvEdit1NameFill)
         makeEditableOnClick(binding.tvEdit2UsernameFill)
-        makeEditableOnClick(binding.tvEdit3EmailFill)
+//        makeEditableOnClick(binding.tvEdit3EmailFill)
         binding.tvEdit4GenderFill.tag = false;
         binding.tvEdit4GenderFill.setOnClickListener {
             // Show the gender popup when clicked
@@ -114,7 +117,7 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
         }
 
         binding.btnChecklist.setOnClickListener {
-            // When checklist button is clicked, save data to Firestore and SharedData
+            editText!!.clearFocus()
             updateUserProfileInFirestore()
         }
 
@@ -180,20 +183,20 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
         }
     }
 
-    @SuppressLint("ServiceCast")
+    @SuppressLint("ServiceCast", "ResourceType")
     private fun makeEditableOnClick(textView: TextView) {
         textView.setOnClickListener {
             // Create an EditText dynamically and set the text from TextView
-            val editText = EditText(requireContext())
-            editText.setText(textView.text)
+            editText = EditText(requireContext())
+            editText!!.setText(textView.text)
 
             // Optionally set properties like hint or input type
-            editText.hint = "Ketikkan yang baru"
-            editText.inputType = android.text.InputType.TYPE_CLASS_TEXT
+            editText!!.hint = "Ketikkan yang baru"
+            editText!!.inputType = android.text.InputType.TYPE_CLASS_TEXT
 
             // Set text color and hint color
-            editText.setTextColor(resources.getColor(R.color.black, null))
-            editText.setHintTextColor(resources.getColor(R.color.grey, null)) // You can adjust the hint color too
+            editText!!.setTextColor(resources.getColor(R.color.black, null))
+            editText!!.setHintTextColor(resources.getColor(R.color.grey, null)) // You can adjust the hint color too
 
             // Add padding to the right
             val layoutParams = ViewGroup.MarginLayoutParams(
@@ -203,9 +206,9 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
             layoutParams.setMargins(10, 5, 10, 5) // Set margins (top, left, right, bottom)
 
             // Set the layoutParams for the EditText
-            editText.layoutParams = layoutParams
+            editText!!.layoutParams = layoutParams
             val typeface = ResourcesCompat.getFont(requireContext(), R.font.andikaregular)
-            editText.typeface = typeface
+            editText!!.typeface = typeface
 
             // Replace TextView with EditText
             val parent = textView.parent as ViewGroup
@@ -214,7 +217,7 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
             parent.addView(editText, index)
 
             // Request focus to automatically show the keyboard
-            editText.requestFocus()
+            editText!!.requestFocus()
 
             // Store the editText reference in a field to be used later
             textView.tag = editText
@@ -224,33 +227,35 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
             imm.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT)
 
             // Set an OnFocusChangeListener to revert to TextView when focus is lost
-            editText.setOnFocusChangeListener { _, hasFocus ->
+
+            editText!!.setOnFocusChangeListener { _, hasFocus ->
                 if (!hasFocus) {
                     // When focus is lost, save the new value and convert back to TextView
-                    textView.text = editText.text
+                    textView.text = editText!!.text
                     parent.removeViewAt(index)
                     parent.addView(textView, index)
 
                     // Hide the keyboard
 //                    imm.hideSoftInputFromWindow(editText.windowToken, 0)
                 }
+                println("Not focus now")
             }
 
             // Handle "done" button press on the keyboard (Enter/Return key)
-            editText.setOnEditorActionListener { v, actionId, event ->
+            editText!!.setOnEditorActionListener { v, actionId, event ->
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
                     // Hide the keyboard
-                    imm.hideSoftInputFromWindow(editText.windowToken, 0)
+                    imm.hideSoftInputFromWindow(editText!!.windowToken, 0)
 
                     // Update the TextView with the new value from EditText
-                    textView.text = editText.text
+                    textView.text = editText!!.text
 
                     // Remove the EditText and add the TextView back
                     parent.removeViewAt(index)
                     parent.addView(textView, index)
 
                     // Clear the focus from EditText
-                    editText.clearFocus()
+                    editText!!.clearFocus()
 
                     true  // Return true to indicate that the action was handled
                 } else {

@@ -41,6 +41,9 @@
         android:id="@+id/searchByTitleFragment"
         android:name="com.example.playsnapui.ui.searchtitle.SearchByTitleFragment"
         android:label="searchbytitle">
+        <action
+            android:id="@+id/action_PopularFragment_to_TutorialFragment"
+            app:destination="@id/tutorialFragment" />
     </fragment>
 
     <fragment
@@ -247,6 +250,9 @@
         <action
             android:id="@+id/action_ReportFragment_to_ReportSuccessFragment"
             app:destination="@id/reportSuccessFragment" />
+        <action
+            android:id="@+id/action_ReportFragment_to_ProfileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
 
     <fragment
@@ -256,12 +262,18 @@
         <action
             android:id="@+id/action_SettingsAccountFragment_to_AuthActivity"
             app:destination="@id/authFragment" />
+        <action
+            android:id="@+id/action_SettingsAccountFragment_to_ProfileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/reportSuccessFragment"
         android:name="com.example.playsnapui.ui.report.ReportSuccessFragment"
         android:label="reportSuccess">
+        <action
+            android:id="@+id/action_reportSuccessFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 
     <fragment

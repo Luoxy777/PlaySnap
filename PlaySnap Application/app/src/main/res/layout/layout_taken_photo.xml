@@ -14,7 +14,7 @@
         android:scaleType="centerCrop"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_check"
+        android:id="@+id/btn_check_small"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:background="@drawable/btn_check_pressed_taken_photo"

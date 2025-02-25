@@ -31,7 +31,8 @@ class HomeActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.snapFragment, R.id.swipeGalleryFragment, R.id.scrollGalleryFragment, R.id.filterFragment, R.id.ObjectFragment,
-                R.id.recommendGameFragment, R.id.tutorialFragment, R.id.historyFragment -> {
+                R.id.recommendGameFragment, R.id.tutorialFragment, R.id.historyFragment, R.id.reportFragment, R.id.reportSuccessFragment,
+                R.id.editProfileFragment, R.id.accountSettingFragment -> {
                     binding.bottomNavigationView.visibility = View.GONE
                 }
                 else -> {

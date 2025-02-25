@@ -21,7 +21,7 @@ import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
-class editPasswordFragment : Fragment() {
+class EditPasswordFragment : Fragment() {
 
     private lateinit var binding: FragmentEditPasswordBinding
     private lateinit var firebaseAuth: FirebaseAuth
@@ -30,7 +30,7 @@ class editPasswordFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentEditPasswordBinding.inflate(inflater, container, false)
 
