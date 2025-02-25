@@ -241,6 +241,9 @@
         android:id="@+id/reportFragment"
         android:name="com.example.playsnapui.ui.report.ReportFragment"
         android:label="report">
+        <action
+            android:id="@+id/action_ReportFragment_to_ReportSuccessFragment"
+            app:destination="@id/reportSuccessFragment" />
     </fragment>
 
     <fragment
@@ -248,10 +251,8 @@
         android:name="com.example.playsnapui.ui.accountSetting.AccountSettingFragment"
         android:label="accountSetting">
         <action
-            android:id="@+id/action_ReportFragment_to_ReportSuccessFragment"
-            app:destination="@id/reportSuccessFragment"
-            app:popUpTo="@id/reportFragment"
-            app:popUpToInclusive="true"/>
+            android:id="@+id/action_SettingsAccountFragment_to_AuthActivity"
+            app:destination="@id/authFragment" />
     </fragment>
 
     <fragment
@@ -358,6 +359,8 @@
             android:id="@+id/action_ChangePassFragment_to_EditProfileFragment"
             app:destination="@id/editProfileFragment" />
     </fragment>
+
+
 
 
 </navigation>

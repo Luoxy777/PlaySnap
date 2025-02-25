@@ -41,7 +41,7 @@ class RegisterFragment : Fragment() {
             if (password == confirmPassword) {
                 viewModel.register(fullName, email, username, password)
             } else {
-                Toast.makeText(requireContext(), "Passwords do not match", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Kata sandi tidak cocok dengan konfirmasi", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -51,16 +51,16 @@ class RegisterFragment : Fragment() {
                 when (state) {
                     is RegisterState.Loading -> {
                         binding.registerButton.isEnabled = false
-                        Toast.makeText(requireContext(), "Registering...", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Mendaftarkan...", Toast.LENGTH_SHORT).show()
                     }
                     is RegisterState.Success -> {
                         binding.registerButton.isEnabled = true
-                        Toast.makeText(requireContext(), "Registration successful!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Pendaftaran Sukses!", Toast.LENGTH_SHORT).show()
                         findNavController().navigate(R.id.action_registerFragment_to_loginFragment) // ✅ Navigate to Login
                     }
                     is RegisterState.Error -> {
                         binding.registerButton.isEnabled = true
-                        Toast.makeText(requireContext(), "Error: ${state.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Eror: ${state.message}", Toast.LENGTH_SHORT).show()
                     }
                     else -> Unit
                 }

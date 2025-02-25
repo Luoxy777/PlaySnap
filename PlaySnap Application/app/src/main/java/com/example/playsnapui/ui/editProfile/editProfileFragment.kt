@@ -286,11 +286,11 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
             userDocRef.update(updatedProfileData)
                 .addOnSuccessListener {
                     Log.d("EditProfile", "User profile updated successfully in Firestore")
-                    Toast.makeText(requireContext(), "Update profile successful!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Ganti profil berhasil!", Toast.LENGTH_SHORT).show()
                 }
                 .addOnFailureListener { e ->
                     Log.e("EditProfile", "Error updating user profile in Firestore", e)
-                    Toast.makeText(requireContext(), "Update profile failed!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Ganti profil gagal!", Toast.LENGTH_SHORT).show()
                 }
         }
     }

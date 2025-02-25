@@ -117,6 +117,8 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
 
     implementation("androidx.navigation:navigation-ui-ktx:2.8.6")  // Navigation UI
+    implementation("com.google.android.flexbox:flexbox:3.0.0")
+
 }
 
 kapt {
