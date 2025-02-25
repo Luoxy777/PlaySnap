@@ -202,6 +202,7 @@ id action_ReportFragment_to_ReportSuccessFragment
 id action_ScrollGalleryFragment_to_ObjectFragment
 id action_ScrollGalleryFragment_to_SwipeGalleryFragment
 id action_ScrollGalleryFragment_to_homeFragment
+id action_SettingsAccountFragment_to_AuthActivity
 id action_SnapFragment_to_HomeFragment
 id action_SnapFragment_to_ScrollGalleryFragment
 id action_SwipeGalleryFragment_to_ObjectFragment
@@ -514,6 +515,7 @@ id section_usia_main
 id selesai_button_feedback
 id sendButton
 id share_button_tutorial
+id sign_out_pop_up
 id snapFragment
 id square_view_tutorial
 id started_subtitle

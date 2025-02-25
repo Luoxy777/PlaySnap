@@ -46,13 +46,13 @@ class  LoginFragment : Fragment() {
         // Observe login state
         viewModel.loginState.observe(viewLifecycleOwner, Observer { success ->
             if (success) {
-                Toast.makeText(requireContext(), "Login successful!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Berhasil masuk!", Toast.LENGTH_SHORT).show()
                 // Navigate to homeFragment
                 val intent = Intent(requireActivity(), HomeActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
             } else {
-                Toast.makeText(requireContext(), "Login failed. Check your credentials.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Gagal masuk. Periksa lagi pengenal Anda.", Toast.LENGTH_SHORT).show()
             }
         })
     }
