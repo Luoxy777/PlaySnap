@@ -90,7 +90,7 @@ class ObjectFragment : Fragment() {
         binding.mulaiButton.setOnClickListener {
             // Fetch recommended games from ViewModel based on detected objects
             val detectedObjects = viewModel.objects.value.orEmpty()
-
+            SharedData.detectedObjects = detectedObjects
             viewModel.getRecommendedGames(detectedObjects)
 
             // Observe recommended games from ViewModel
@@ -99,6 +99,7 @@ class ObjectFragment : Fragment() {
                 SharedData.recommendedGames = recommendedGames
                 Log.d("ObjectFragment", "Recommended games size: ${SharedData.recommendedGames.size}")
 
+                SharedData.isObject = true
                 // Navigate to the recommendation page
                 findNavController().navigate(R.id.action_ObjectFragment_to_RecommendGameFragment)
             })

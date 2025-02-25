@@ -184,7 +184,6 @@ font leaguespartanmedium
 font leaguespartanregular
 font leaguespartansemibold
 font leaguespartanthin
-id ChangePassFragment
 id MyScrollView
 id ObjectFragment
 id accountSettingFragment
@@ -311,7 +310,6 @@ id cloud1_feedback
 id cloud1_loading_page
 id cloud2_feedback
 id cloud2_loading_page
-id constraintLayout
 id count_like_book
 id count_like_foryou
 id count_like_history
@@ -338,6 +336,7 @@ id edit2_username
 id edit3_email
 id edit3_new_pass_confirm
 id edit4_gender
+id editPasswordFragment
 id editProfileFragment
 id etReportreq
 id et_confirmpass
@@ -442,7 +441,7 @@ id lokasi_button_cat
 id lokasi_button_child
 id lokasi_cat_opt_1_rec
 id lokasi_cat_opt_2_rec
-id lokasi_cat_opt_4_rec
+id lokasi_cat_opt_3_rec
 id lokasi_opt
 id lokasi_opt1_btn
 id lokasi_opt2_btn

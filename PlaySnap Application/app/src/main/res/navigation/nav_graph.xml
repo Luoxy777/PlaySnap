@@ -225,7 +225,7 @@
         android:label="editProfile">
         <action
             android:id="@+id/action_editProfileFragment_to_ChangePassFragment"
-            app:destination="@id/ChangePassFragment" />
+            app:destination="@id/editPasswordFragment" />
         <action
             android:id="@+id/action_editProfileFragment_to_ProfileFragment"
             app:destination="@id/profileFragment" />
@@ -253,6 +253,7 @@
         <action
             android:id="@+id/action_ReportFragment_to_ProfileFragment"
             app:destination="@id/profileFragment" />
+
     </fragment>
 
     <fragment
@@ -367,8 +368,8 @@
     </fragment>
 
     <fragment
-        android:id="@+id/ChangePassFragment"
-        android:name="com.example.playsnapui.ui.editPassword.editPasswordFragment"
+        android:id="@+id/editPasswordFragment"
+        android:name="com.example.playsnapui.ui.editPassword.EditPasswordFragment"
         android:label="editPassword">
         <action
             android:id="@+id/action_ChangePassFragment_to_EditProfileFragment"
