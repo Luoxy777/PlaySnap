@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".HelpPageReqActivity">
 
     <ImageView
@@ -20,7 +21,7 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginTop="40dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="20dp"
         android:background="@drawable/back_button"
         android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,12 +31,12 @@
         android:id="@+id/tv_helpreq_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/helpreq_title"
         android:textAlignment="center"
         android:textSize="30dp"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/black"
         android:fontFamily="@font/leaguespartanbold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,52 +46,60 @@
         android:id="@+id/tv_helpreq_subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginTop="60dp"
         android:text="@string/helpreq_subtitle"
         android:textAlignment="center"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/grey"
         android:textSize="15.8dp"
-        android:fontFamily="@font/leaguespartanbold"
+        android:fontFamily="@font/leaguespartansemibold"
         app:layout_constraintTop_toBottomOf="@id/tv_helpreq_title"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_helpreq"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="170dp"
         android:layout_marginTop="12dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_helpreq_subtitle"
-        android:background="@color/white"
+        app:boxStrokeColor="@color/dark_blue"
         style="@style/TextInputLayout">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_helpreq"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Ketik pertanyaanmu di sini..."
-            android:fontFamily="@font/andikaregular"
-            android:textSize="14dp"
-            android:layout_gravity="top"
-            style="@style/TextInputEditText"/>
+            android:textColorHint="@color/light_grey"
+            android:hint="Ketik permasalahanmu di sini..."
+            app:boxStrokeColor="@color/dark_blue"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_helpreq"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/andikaregular"
+                    android:textSize="14sp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
     </com.google.android.material.textfield.TextInputLayout>
 
+
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_send"
-        android:background="@drawable/bg_button_white"
+        android:background="@drawable/bg_button_blue"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="20dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/string_send"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/til_helpreq"
         app:layout_constraintEnd_toEndOf="parent" />
 

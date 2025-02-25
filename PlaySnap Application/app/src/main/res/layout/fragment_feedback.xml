@@ -104,8 +104,11 @@
     <TextView
         android:id="@+id/textView2"
         style="@style/Title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textAlignment="center"
         android:text="Have Fun, Player!"
         android:textColor="@color/white"
         android:textSize="35dp"
@@ -118,9 +121,12 @@
     <TextView
         android:id="@+id/tv_subtitle_feedback"
         style="@style/Subtitle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginTop="48dp"
+        android:textAlignment="center"
         android:text="Kasih ulasan permainan yuk!"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -138,20 +144,41 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
-        android:id="@+id/rating_star_feedback"
-        android:layout_width="175dp"
-        android:layout_height="30dp"
-        android:background="@drawable/ic_rate05"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/star_rating_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/background_rating_feedback"
+        app:layout_constraintEnd_toEndOf="@id/background_rating_feedback"
         app:layout_constraintTop_toTopOf="@id/background_rating_feedback"
         app:layout_constraintBottom_toBottomOf="@id/background_rating_feedback"
-        app:layout_constraintEnd_toEndOf="@id/background_rating_feedback"
-        app:layout_constraintStart_toStartOf="@id/background_rating_feedback"/>
+        android:layout_marginHorizontal="10dp">
+
+                <RatingBar
+                    android:id="@+id/rating_like"
+                    android:numStars="5"
+                    android:stepSize="0.5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:progressBackgroundTint="@color/light_grey2"
+                    android:progressTint="@color/yellow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:scaleX="0.85"
+                    android:scaleY="0.85"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <View
         android:id="@+id/line1_feedback"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="0.5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -162,8 +189,10 @@
 
     <View
         android:id="@+id/line2_feedback"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="0.5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -177,23 +206,23 @@
         android:layout_width="75dp"
         android:layout_height="50dp"
         android:layout_marginBottom="15dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/background_rating_feedback"
         android:backgroundTint="@color/dark_green"
         app:layout_constraintBottom_toTopOf="@id/line2_feedback"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.8" />
 
     <TextView
         android:id="@+id/game_title_feedback"
         style="@style/Title"
-        android:layout_width="wrap_content"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="20dp"
         android:shadowColor="@color/text_shadow"
         android:shadowDx="1"
         android:shadowDy="1"
-        android:text="Lompat Tali"
+        android:text="@string/title_game_rating"
         android:textColor="@color/white"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -233,10 +262,10 @@
         android:id="@+id/ic_game_feedback"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:layout_marginStart="20dp"
         android:background="@drawable/ic_game"
         android:backgroundTint="@color/grey"
         app:layout_constraintBottom_toTopOf="@id/selesai_button_feedback"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/game_title_feedback"
@@ -249,16 +278,18 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
-        android:text="Outdoor, Usia >6 tahun"
-        android:textColor="@color/grey"
+        android:text="@string/category_game_rating"
+        android:textColor="@color/white"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="@id/line2_feedback"
         app:layout_constraintStart_toEndOf="@id/ic_game_feedback" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/selesai_button_feedback"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/bg_button_selesai_feedback"
         style="@style/Title"
         android:text="Selesai"
@@ -269,6 +300,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.857" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

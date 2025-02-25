@@ -41,8 +41,8 @@ class SplashActivity : AppCompatActivity() {
                             val email = document.getString("email")
                             val fullName = document.getString("fullName")
                             val username = document.getString("username")
-                            val profilePicture = document.getString("profilePicture")
-                            val gender = document.getString("gender")
+                            val profilePicture = document.getString("profilePicture") ?: "https://drive.google.com/uc?export=view&id=1nY1KAhHQ4mDa-wFGAkg34dCRW8qM1qYH"
+                            val gender = document.getString("gender") ?: "-"
                             // Store user profile globally
                             userProfile = UserProfile(email, fullName, username, profilePicture, gender)
                             Log.d("Splash", "User Profile Loaded: ${userProfile?.fullName ?: "N/A"}")

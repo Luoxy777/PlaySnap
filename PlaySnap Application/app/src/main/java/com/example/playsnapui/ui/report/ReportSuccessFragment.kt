@@ -23,9 +23,7 @@ class ReportSuccessFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnBack.setOnClickListener {
-            parentFragmentManager.popBackStack()  // Kembali ke fragment sebelumnya
-        }
+
     }
 
     override fun onDestroyView() {

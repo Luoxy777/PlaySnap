@@ -43,7 +43,7 @@ class RecommendGameFragment : Fragment() {
     private val handler = Handler(Looper.getMainLooper())
     private val updateRunnable = object : Runnable {
         override fun run() {
-            binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
+            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             handler.postDelayed(this, 1000) // Update setiap 1 detik
         }
     }
@@ -71,7 +71,7 @@ class RecommendGameFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentRecommendGameBinding.inflate(inflater, container, false)
-        binding.gameFoundText.text = "${recommendedGames.size} permainan ditemukan"
+        binding.numberOfGamesFound.text = "${recommendedGames.size}"
 
         return binding.root
     }
@@ -95,14 +95,18 @@ class RecommendGameFragment : Fragment() {
 
         binding.usiaButtonCat.setOnClickListener {
             showPopupWindowUsia(it)
+
+            binding.numberOfGamesFound.text = "${recommendedGames.size}"
         }
 
         binding.pemainButtonCat.setOnClickListener {
             showPopupWindowPemain(it)
+            binding.numberOfGamesFound.text = "${recommendedGames.size}"
         }
 
         binding.lokasiButtonCat.setOnClickListener {
             showPopupWindowLokasi(it)
+            binding.numberOfGamesFound.text = "${recommendedGames.size}"
         }
 
         binding.btnBack.setOnClickListener {
@@ -306,7 +310,7 @@ class RecommendGameFragment : Fragment() {
             else if(SharedData.isObject == true){
                 cekGamesFilterObject()
             }
-
+            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
 
@@ -320,6 +324,7 @@ class RecommendGameFragment : Fragment() {
             else if(SharedData.isObject == true){
                 cekGamesFilterObject()
             }
+            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
 
@@ -333,6 +338,7 @@ class RecommendGameFragment : Fragment() {
             else if(SharedData.isObject == true){
                 cekGamesFilterObject()
             }
+            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
     }
@@ -367,6 +373,7 @@ class RecommendGameFragment : Fragment() {
             else if(SharedData.isObject == true){
                 cekGamesFilterObject()
             }
+            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
 
@@ -382,6 +389,7 @@ class RecommendGameFragment : Fragment() {
             else if(SharedData.isObject == true){
                 cekGamesFilterObject()
             }
+            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
 
@@ -397,6 +405,7 @@ class RecommendGameFragment : Fragment() {
             else if(SharedData.isObject == true){
                 cekGamesFilterObject()
             }
+            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
     }
@@ -428,6 +437,7 @@ class RecommendGameFragment : Fragment() {
             else if(SharedData.isObject == true){
                 cekGamesFilterObject()
             }
+            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
 
@@ -440,6 +450,7 @@ class RecommendGameFragment : Fragment() {
             else if(SharedData.isObject == true){
                 cekGamesFilterObject()
             }
+            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
     }

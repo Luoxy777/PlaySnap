@@ -13,11 +13,14 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.playsnapui.R
 import com.example.playsnapui.databinding.FragmentSwipeGalleryBinding
+import com.example.playsnapui.ui.gallery.DeleteObjectFragment
+import com.example.playsnapui.ui.gallery.scroll.OnDeleteConfirmedListener
+import com.example.playsnapui.ui.gallery.scroll.ScrollGalleryAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.File
 
 @AndroidEntryPoint
-class SwipeGalleryFragment : Fragment() {
+class SwipeGalleryFragment : Fragment(), OnDeleteConfirmedListener {
 
     private var _binding: FragmentSwipeGalleryBinding? = null
     private val binding get() = _binding!!
@@ -100,27 +103,9 @@ class SwipeGalleryFragment : Fragment() {
         }
 
         binding.hapusButton.setOnClickListener {
-            val updatedList = adapter.getCurrentImagePaths().toMutableList()
-            val sortedSelectedItems = selectedItems.sortedDescending()
-
-            // Delete selected items
-            for (index in sortedSelectedItems) {
-                updatedList.removeAt(index)
-            }
-
-            // Update the selectedItems set
-            selectedItems.clear()
-
-            // Reinitialize the adapter with the updated imagePaths and selectedItems
-            adapter = SwipeGalleryAdapter(updatedList) { position, isChecked ->
-                selectedItems.remove(position)
-            }
-
-            // Set the adapter to the ViewPager
-            binding.viewPager.adapter = adapter
-
-            // Notify the adapter of changes
-            adapter.notifyDataSetChanged()
+            val dialog = DeleteObjectFragment.newInstance()
+            dialog.setDeleteConfirmedListener(this)  // Pass the listener to the dialog
+            dialog.show(parentFragmentManager, "DeleteObject")
         }
 
         binding.mulaiButton.setOnClickListener {
@@ -160,6 +145,31 @@ class SwipeGalleryFragment : Fragment() {
         val file = File(imagePath)
         return if (file.exists()) Uri.fromFile(file) else null
     }
+
+    override fun onDeleteConfirmed() {
+        val updatedList = adapter.getCurrentImagePaths().toMutableList()
+        val sortedSelectedItems = selectedItems.sortedDescending()
+
+        // Delete selected items
+        for (index in sortedSelectedItems) {
+            updatedList.removeAt(index)
+        }
+
+        // Update the selectedItems set
+        selectedItems.clear()
+
+        // Reinitialize the adapter with the updated imagePaths and selectedItems
+        adapter = SwipeGalleryAdapter(updatedList) { position, isChecked ->
+            selectedItems.remove(position)
+        }
+
+        // Set the adapter to the ViewPager
+        binding.viewPager.adapter = adapter
+
+        // Notify the adapter of changes
+        adapter.notifyDataSetChanged()
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

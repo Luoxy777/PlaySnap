@@ -142,6 +142,9 @@
             app:destination="@id/homeFragment"
             app:popUpTo="@id/recommendGameFragment"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_PopularFragment_to_TutorialFragment"
+            app:destination="@id/tutorialFragment" />
     </fragment>
 
     <fragment

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ReportPageActivity">
     >
 
@@ -27,7 +28,7 @@
         android:fontFamily="@font/leaguespartanbold"
         android:text="@string/report_title"
         android:textAlignment="center"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/black"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -35,39 +36,41 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_back" />
 
     <TextView
-        android:id="@+id/tv_helpreq_subtitle"
+        android:id="@+id/tv_report_subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="60dp"
         android:text="@string/report_subtitle"
-        android:textColor="@color/dark_blue"
-        android:textSize="15.8dp"
-        android:fontFamily="@font/leaguespartanbold"
+        android:textColor="@color/grey"
+        android:textSize="18dp"
+        android:fontFamily="@font/leaguespartansemibold"
         app:layout_constraintTop_toBottomOf="@id/tv_report_title"/>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_helpreq"
+        android:id="@+id/til_report"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="170dp"
         android:layout_marginTop="12dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_helpreq_subtitle"
-        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/tv_report_subtitle"
+        app:boxStrokeColor="@color/dark_blue"
         style="@style/TextInputLayout">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Ketik permasalahanmu di sini..."
+            android:textColorHint="@color/light_grey"
+            app:boxStrokeColor="@color/dark_blue"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_helpreq"
+                android:id="@+id/etReportreq"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/andikaregular"
@@ -75,12 +78,12 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_send"
-        android:background="@drawable/bg_button_white"
+        android:background="@drawable/bg_button_blue"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -88,8 +91,8 @@
         android:layout_marginStart="40dp"
         android:layout_marginEnd="20dp"
         android:text="@string/string_send"
-        android:textColor="@color/dark_blue"
-        app:layout_constraintTop_toBottomOf="@id/til_helpreq"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/til_report"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView

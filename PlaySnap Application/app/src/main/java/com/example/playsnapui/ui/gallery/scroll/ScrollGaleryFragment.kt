@@ -19,9 +19,15 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.playsnapui.R
 import com.example.playsnapui.databinding.FragmentScrollGaleryBinding
+import com.example.playsnapui.ui.gallery.DeleteObjectFragment
 import java.io.File
 
-class ScrollGalleryFragment : Fragment() {
+interface OnDeleteConfirmedListener {
+    fun onDeleteConfirmed()
+}
+
+class ScrollGalleryFragment : Fragment(), OnDeleteConfirmedListener {
+
 
     private var _binding: FragmentScrollGaleryBinding? = null
     private val binding get() = _binding!!
@@ -88,30 +94,9 @@ class ScrollGalleryFragment : Fragment() {
 
     private fun setupButtons() {
         binding.hapusButton.setOnClickListener {
-            val sortedSelectedItems = selectedItems.sortedDescending()
-
-            // Delete selected items
-            for (index in sortedSelectedItems) {
-                imagePaths.removeAt(index)
-            }
-
-            // Clear the selectedItems set
-            selectedItems.clear()
-
-            // Reinitialize the adapter with the updated imagePaths and selectedItems
-            adapter = ScrollGalleryAdapter(imagePaths) { position, isChecked ->
-                if (isChecked) {
-                    selectedItems.add(position)
-                } else {
-                    selectedItems.remove(position)
-                }
-            }
-
-            // Set the adapter to the RecyclerView
-            binding.recentRecyclerPopgame.adapter = adapter
-
-            // Notify the adapter of changes
-            adapter.notifyDataSetChanged()
+            val dialog = DeleteObjectFragment.newInstance()
+            dialog.setDeleteConfirmedListener(this)  // Pass the listener to the dialog
+            dialog.show(parentFragmentManager, "DeleteObject")
         }
 
         binding.btnSwitchLayout.setOnClickListener {
@@ -175,6 +160,7 @@ class ScrollGalleryFragment : Fragment() {
     }
 
 
+
     private fun loadRecentImages() {
         val projection = arrayOf(MediaStore.Images.Media.DATA)
         val sortOrder = "${MediaStore.Images.Media.DATE_ADDED} DESC"
@@ -195,6 +181,33 @@ class ScrollGalleryFragment : Fragment() {
         val file = File(imagePath)
         return if (file.exists()) Uri.fromFile(file) else null
     }
+    override fun onDeleteConfirmed() {
+        val sortedSelectedItems = selectedItems.sortedDescending()
+
+        // Delete selected items
+        for (index in sortedSelectedItems) {
+            imagePaths.removeAt(index)
+        }
+
+        // Clear the selectedItems set
+        selectedItems.clear()
+
+        // Reinitialize the adapter with the updated imagePaths and selectedItems
+        adapter = ScrollGalleryAdapter(imagePaths) { position, isChecked ->
+            if (isChecked) {
+                selectedItems.add(position)
+            } else {
+                selectedItems.remove(position)
+            }
+        }
+
+        // Set the adapter to the RecyclerView
+        binding.recentRecyclerPopgame.adapter = adapter
+
+        // Notify the adapter of changes
+        adapter.notifyDataSetChanged()
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

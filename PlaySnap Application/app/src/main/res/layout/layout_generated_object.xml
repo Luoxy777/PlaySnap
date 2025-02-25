@@ -15,7 +15,7 @@
             android:paddingEnd="20dp"
             android:text="Tempurung Kelapa"
             android:textSize="16sp"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/grey"
             android:backgroundTint="@color/white"
             style="@style/Subtitle"
             app:cornerRadius="50dp"
