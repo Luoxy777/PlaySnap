@@ -12,8 +12,12 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.android.flexbox.FlexboxLayoutManager
 import com.example.playsnapui.R
 import com.example.playsnapui.databinding.FragmentObjectBinding
+import com.google.android.flexbox.AlignItems
+import com.google.android.flexbox.FlexWrap
+import com.google.android.flexbox.JustifyContent
 
 class ObjectFragment : Fragment() {
 
@@ -46,8 +50,16 @@ class ObjectFragment : Fragment() {
             viewModel.removeObjectAt(position)
         }
 
-        val gridLayoutManager = GridLayoutManager(requireContext(), 2)  // 2 columns in grid
-        binding.recyclerPopobject.layoutManager = gridLayoutManager
+//        val gridLayoutManager = GridLayoutManager(requireContext(), 2)  // 2 columns in grid
+//        binding.recyclerPopobject.layoutManager = gridLayoutManager
+//        binding.recyclerPopobject.adapter = adapter
+
+        val flexboxLayoutManager = FlexboxLayoutManager(requireContext())
+        flexboxLayoutManager.justifyContent = JustifyContent.FLEX_START // Align items to the left
+        flexboxLayoutManager.alignItems = AlignItems.FLEX_START // Start alignment for items
+        flexboxLayoutManager.flexWrap = FlexWrap.WRAP // Enable wrapping of items to the next line
+
+        binding.recyclerPopobject.layoutManager = flexboxLayoutManager
         binding.recyclerPopobject.adapter = adapter
 
         // Observe data from ViewModel

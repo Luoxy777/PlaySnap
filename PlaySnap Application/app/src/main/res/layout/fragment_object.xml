@@ -156,7 +156,7 @@
         android:layout_weight="1"
         android:clipToPadding="false"
         android:gravity="center"
-        android:padding="24dp"
+        android:padding="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/background_list_of_object"
         app:layout_constraintEnd_toEndOf="@+id/background_list_of_object"
         app:layout_constraintStart_toStartOf="@+id/background_list_of_object"
