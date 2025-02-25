@@ -4,19 +4,18 @@
     <item
         android:id="@+id/nav_home"
         android:icon="@drawable/logo_home"
-        android:title="home" />
+        android:title="Beranda" />
     <item
         android:id="@+id/nav_like"
         android:icon="@drawable/logo_like"
-        android:title="like" />
+        android:title="Suka" />
     <item
         android:id="@+id/nav_bookmark"
         android:icon="@drawable/logo_bookmark"
-        android:title="bookmark" />
+        android:title="Simpan" />
     <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/logo_profile"
-        android:title="profile" />
-
+        android:title="Profil" />
 
 </menu>

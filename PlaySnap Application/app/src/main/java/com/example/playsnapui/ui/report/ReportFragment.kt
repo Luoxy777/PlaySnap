@@ -33,7 +33,7 @@ class ReportFragment : Fragment() {
         viewModel = ViewModelProvider(this)[ReportViewModel::class.java]
 
         binding.btnSend.setOnClickListener {
-            val reportText = binding.etHelpreq.text.toString().trim()
+            val reportText = binding.etReportreq.text.toString().trim()
 
             if (reportText.isNotEmpty()) {
                 viewModel.saveReportToFirestore(
@@ -41,7 +41,7 @@ class ReportFragment : Fragment() {
                     onSuccess = {
                         // Hanya pindah ke ReportSuccessFragment jika laporan berhasil disimpan
                         Toast.makeText(requireContext(), "Laporan berhasil dikirim!", Toast.LENGTH_SHORT).show()
-                        binding.etHelpreq.text?.clear() // Hapus teks setelah dikirim
+                        binding.etReportreq.text?.clear() // Hapus teks setelah dikirim
                         findNavController().navigate(R.id.action_ReportFragment_to_ReportSuccessFragment)
                     },
                     onFailure = { exception ->

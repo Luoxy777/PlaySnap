@@ -91,6 +91,7 @@
                         android:layout_marginStart="30dp"
                         android:layout_marginTop="20dp"
                         android:drawableTop="@drawable/usia_opt1"
+                        android:drawableTint="@color/grey"
                         android:paddingTop="15dp"/>
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -103,6 +104,7 @@
                         app:layout_constraintEnd_toStartOf="@id/usia_opt3_btn"
                         android:layout_marginTop="20dp"
                         android:drawableTop="@drawable/usia_opt2"
+                        android:drawableTint="@color/grey"
                         android:paddingTop="15dp"/>
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -115,6 +117,7 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="30dp"
                         android:drawableTop="@drawable/usia_opt3"
+                        android:drawableTint="@color/grey"
                         android:paddingTop="15dp"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -176,6 +179,7 @@
                         android:layout_marginStart="45dp"
                         android:layout_marginTop="20dp"
                         android:drawableTop="@drawable/lokasi_opt1"
+                        android:drawableTint="@color/grey"
                         android:paddingTop="15dp"/>
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -189,6 +193,7 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="45dp"
                         android:drawableTop="@drawable/lokasi_opt2"
+                        android:drawableTint="@color/grey"
                         android:paddingTop="15dp"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -249,6 +254,7 @@
                         android:layout_marginStart="30dp"
                         android:layout_marginTop="20dp"
                         android:drawableTop="@drawable/pemain_opt1"
+                        android:drawableTint="@color/grey"
                         android:paddingTop="15dp"/>
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -261,6 +267,7 @@
                         app:layout_constraintEnd_toStartOf="@id/pemain_opt3_btn"
                         android:layout_marginTop="20dp"
                         android:drawableTop="@drawable/pemain_opt2"
+                        android:drawableTint="@color/grey"
                         android:paddingTop="15dp"/>
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -273,6 +280,7 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="30dp"
                         android:drawableTop="@drawable/pemain_opt3"
+                        android:drawableTint="@color/grey"
                         android:paddingTop="15dp"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

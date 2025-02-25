@@ -260,7 +260,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/leaguespartanbold"
                     android:text="Video Tutorial"
-                    android:textColor="@color/dark_blue"
+                    android:textColor="@color/light_grey"
                     android:textSize="17dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/title_tutorial" />
@@ -283,7 +283,7 @@
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/leaguespartanbold"
                     android:text="Langkah - Langkah Bermain"
-                    android:textColor="@color/dark_blue"
+                    android:textColor="@color/light_grey"
                     android:textSize="17dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/video_tutorial_content" />
