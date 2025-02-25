@@ -90,6 +90,7 @@ class ObjectFragment : Fragment() {
         binding.mulaiButton.setOnClickListener {
             // Fetch recommended games from ViewModel based on detected objects
             val detectedObjects = viewModel.objects.value.orEmpty()
+
             viewModel.getRecommendedGames(detectedObjects)
 
             // Observe recommended games from ViewModel
