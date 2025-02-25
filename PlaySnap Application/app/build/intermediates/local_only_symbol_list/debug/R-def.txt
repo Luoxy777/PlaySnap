@@ -675,7 +675,6 @@ layout activity_manage_object
 layout activity_profile_page
 layout activity_register
 layout activity_search_by_camera_page
-layout activity_search_game_page
 layout activity_search_object_by_type_page
 layout activity_settings_account_page
 layout activity_splash
