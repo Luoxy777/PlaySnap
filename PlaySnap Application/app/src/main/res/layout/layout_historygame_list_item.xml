@@ -53,7 +53,7 @@
                 android:fontFamily="@font/leaguespartanbold"
                 android:lines="1"
                 android:text="@string/title_game_card"
-                android:textColor="@color/dark_blue"
+                android:textColor="@color/grey"
                 android:textSize="14dp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -78,7 +78,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/andikaregular"
                     android:text="121"
-                    android:textColor="@color/dark_blue"
+                    android:textColor="@color/grey"
                     android:textSize="7dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -110,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:text="121"
                     android:textSize="7dp"
-                    android:textColor="@color/dark_blue"
+                    android:textColor="@color/grey"
                     android:fontFamily="@font/andikaregular"
                     app:layout_constraintTop_toBottomOf="@id/btn_share_history"
                     app:layout_constraintStart_toStartOf="parent"
@@ -130,6 +130,7 @@
                 android:layout_width="250dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="10dp"
+                android:numStars="5"
                 android:progressBackgroundTint="@color/light_grey2"
                 android:progressTint="@color/yellow"
                 android:scaleX="0.35"

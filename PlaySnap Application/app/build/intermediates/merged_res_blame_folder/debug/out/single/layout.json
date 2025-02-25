@@ -1,6 +1,7 @@
 [
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-mergeDebugResources-4:\\layout\\activity_gallery_view_object_swipe_page.xml",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\activity_gallery_view_object_swipe_page.xml"
     },
@@ -11,6 +12,18 @@
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-mergeDebugResources-4:\\layout\\fragment_swipe_gallery.xml",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\fragment_swipe_gallery.xml"
+=======
+        "merged": "C:\\Users\\teres\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-mergeDebugResources-85:\\layout\\layout_taken_photo.xml",
+        "source": "C:\\Users\\teres\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-88:\\layout\\layout_taken_photo.xml"
+    },
+    {
+        "merged": "C:\\Users\\teres\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-mergeDebugResources-85:\\layout\\activity_profile_page.xml",
+        "source": "C:\\Users\\teres\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-88:\\layout\\activity_profile_page.xml"
+    },
+    {
+        "merged": "C:\\Users\\teres\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-mergeDebugResources-85:\\layout\\pop_up_gender.xml",
+        "source": "C:\\Users\\teres\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-88:\\layout\\pop_up_gender.xml"
+>>>>>>> Stashed changes
     },
     {
         "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/layout_delete_object_confirmation.xml",

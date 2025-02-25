@@ -24,9 +24,6 @@ class HelpFragmentReqSuccess : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Tambahkan aksi jika ada tombol kembali, misalnya:
-        binding.btnBack.setOnClickListener {
-            parentFragmentManager.popBackStack()
-        }
     }
 
     override fun onDestroyView() {

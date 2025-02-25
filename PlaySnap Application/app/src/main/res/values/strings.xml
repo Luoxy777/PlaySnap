@@ -54,10 +54,10 @@
     <string name="full_name">Totok Sugianto</string>
     <string name="email">totoksugianto@gmail.com</string>
     <string name="btn_edit_profile">Edit Profil</string>
-    <string name="subttile_profile">AKUN</string>
+    <string name="subttile_profile">Akun</string>
     <string name="history_game">Riwayat Permainan</string>
-    <string name="report">LAPORKAN</string>
-    <string name="setting_acc">ATUR AKUN</string>
+    <string name="report">Laporkan</string>
+    <string name="setting_acc">Atur Akun</string>
     <string name="tv_filter_title">Filter Permainan</string>
     <string name="tv_filter_subtitle">Pilih kategori sesuai dengan kondisimu!</string>
     <string name="filter_usia_main_btn_text">Usia</string>
@@ -223,7 +223,12 @@
     <string name="option_laki">Laki-laki</string>
     <string name="option_perempuan">Perempuan</string>
     <string name="option_none">-</string>
+<<<<<<< Updated upstream
     <string name="usia_desc">6-10</string>
     <string name="pemain_desc">3-5</string>
     <string name="lokasi_desc">Outdoor</string>
+=======
+    <string name="title_game_rating">Lompat Tali</string>
+    <string name="category_game_rating"><![CDATA[Outdoor, Usia >6 tahun]]></string>
+>>>>>>> Stashed changes
 </resources>

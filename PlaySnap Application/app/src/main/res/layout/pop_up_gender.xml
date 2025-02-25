@@ -7,17 +7,18 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="355dp"
-        android:layout_height="100dp"
-        android:background="@drawable/bg_button_lightblue">
+        android:layout_height="162dp"
+        android:background="@drawable/bg_button_blue">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/opt1_laki"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="40dp"
             android:layout_margin="10dp"
             android:text="@string/option_laki"
-            android:textSize="10dp"
-            android:fontFamily="@font/andikaregular"
+            android:textSize="16dp"
+            android:textAllCaps="false"
+            android:fontFamily="@font/andikabold"
             android:background="@drawable/bg_button_white"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,11 +27,12 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/opt2_perempuan"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="40dp"
             android:layout_margin="10dp"
             android:text="@string/option_perempuan"
-            android:textSize="10dp"
-            android:fontFamily="@font/andikaregular"
+            android:textAllCaps="false"
+            android:textSize="16dp"
+            android:fontFamily="@font/andikabold"
             android:background="@drawable/bg_button_white"
             app:layout_constraintTop_toBottomOf="@id/opt1_laki"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,11 +41,12 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/opt3_none"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="40dp"
             android:layout_margin="10dp"
             android:text="@string/option_none"
-            android:textSize="10dp"
-            android:fontFamily="@font/andikaregular"
+            android:textAllCaps="false"
+            android:textSize="16dp"
+            android:fontFamily="@font/andikabold"
             android:background="@drawable/bg_button_white"
             app:layout_constraintTop_toBottomOf="@id/opt2_perempuan"
             app:layout_constraintStart_toStartOf="parent"

@@ -91,6 +91,7 @@ drawable ic_change_pic
 drawable ic_delete_acc
 drawable ic_display_game
 drawable ic_display_game_landscape
+drawable ic_edit
 drawable ic_email
 drawable ic_field
 drawable ic_filter_game
@@ -155,6 +156,7 @@ drawable pemain_opt3
 drawable playsnaplogo
 drawable properti_opt1
 drawable properti_opt2
+drawable rounded_layout
 drawable rounded_rectangle_dragable
 drawable search_background
 drawable semua_opt
@@ -325,6 +327,7 @@ id edit3_email
 id edit3_new_pass_confirm
 id edit4_gender
 id editProfileFragment
+id etReportreq
 id et_confirmpass
 id et_email
 id et_fullname
@@ -334,7 +337,6 @@ id et_new_pass_confirm
 id et_old_pass
 id et_password
 id et_search_game
-id et_search_help
 id et_username
 id feedbackFragment
 id field
@@ -548,6 +550,7 @@ id til_new_pass
 id til_new_pass_confirm
 id til_old_pass
 id til_password
+id til_report
 id til_username
 id title_alat_bermain
 id title_bottom
@@ -604,6 +607,7 @@ id tv_q7_answer
 id tv_question
 id tv_register_subtitle
 id tv_register_title
+id tv_report_subtitle
 id tv_report_success_title
 id tv_report_title
 id tv_subtitle_banner
@@ -732,6 +736,7 @@ string btn_login
 string btn_register
 string btn_sign_out
 string btn_signup
+string category_game_rating
 string daftar
 string delete_message
 string deskripsi_game_content_tutorial_page
@@ -836,6 +841,7 @@ string title_bottom_helpreq
 string title_change_pass
 string title_foryou
 string title_game_card
+string title_game_rating
 string title_greating
 string title_header_game_tutorial_page
 string title_help

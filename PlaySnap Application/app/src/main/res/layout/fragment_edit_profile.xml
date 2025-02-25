@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".EditProfilePageActivity">
 
     <ScrollView
@@ -13,7 +14,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_back"
@@ -47,7 +48,7 @@
                 android:text="@string/title_profile"
                 android:textAlignment="center"
                 android:textSize="30dp"
-                android:textColor="@color/dark_blue"
+                android:textColor="@color/black"
                 android:fontFamily="@font/leaguespartanbold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +57,7 @@
             <ImageView
                 android:id="@+id/profile_pic"
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
+                android:layout_height="150dp"
                 android:src="@drawable/ic_profile_pic"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/title_profile"
@@ -84,19 +85,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/leaguespartansemibold"
                     android:text="@string/edit1_subtitle"
-                    android:textSize="20dp"
-                    android:textColor="@color/dark_blue"
-                    android:fontFamily="@font/leaguespartanbold"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:textColor="@color/light_grey"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:id="@+id/llc_edit1_name_fill"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_button_grey"
+                    android:background="@drawable/bg_button_white"
                     android:layout_marginTop="7dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
@@ -108,14 +110,16 @@
                         android:id="@+id/tv_edit1_name_fill"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/ic_edit"
+                        android:drawableTint="@color/light_grey"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
                         android:text="@string/edit1_name"
                         android:textSize="18dp"
-                        android:textColor="@color/dark_blue"
-                        android:fontFamily="@font/andikaregular"
+                        android:textColor="@color/grey"
+                        android:fontFamily="@font/andikabold"
                         />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -136,9 +140,9 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:text="@string/edit2_subtitle"
-                    android:textSize="20dp"
-                    android:textColor="@color/dark_blue"
-                    android:fontFamily="@font/leaguespartanbold"
+                    android:textSize="18dp"
+                    android:textColor="@color/light_grey"
+                    android:fontFamily="@font/leaguespartansemibold"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"/>
@@ -147,7 +151,7 @@
                     android:id="@+id/llc_edit2_username_fill"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_button_grey"
+                    android:background="@drawable/bg_button_white"
                     android:layout_marginTop="7dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
@@ -159,14 +163,16 @@
                         android:id="@+id/tv_edit2_username_fill"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/ic_edit"
+                        android:drawableTint="@color/light_grey"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
                         android:text="@string/edit2_username"
                         android:textSize="18dp"
-                        android:textColor="@color/dark_blue"
-                        android:fontFamily="@font/andikaregular"
+                        android:textColor="@color/grey"
+                        android:fontFamily="@font/andikabold"
                         />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -187,9 +193,9 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:text="@string/edit3_subtitle"
-                    android:textSize="20dp"
-                    android:textColor="@color/dark_blue"
-                    android:fontFamily="@font/leaguespartanbold"
+                    android:textSize="18dp"
+                    android:textColor="@color/light_grey"
+                    android:fontFamily="@font/leaguespartansemibold"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"/>
@@ -198,7 +204,7 @@
                     android:id="@+id/llc_edit3_email_fill"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_button_grey"
+                    android:background="@drawable/rounded_layout"
                     android:layout_marginTop="7dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
@@ -216,8 +222,8 @@
                         android:layout_marginBottom="5dp"
                         android:text="@string/edit3_email"
                         android:textSize="18dp"
-                        android:textColor="@color/dark_blue"
-                        android:fontFamily="@font/andikaregular"
+                        android:textColor="@color/grey"
+                        android:fontFamily="@font/andikabold"
                         />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -239,8 +245,8 @@
                     android:layout_marginEnd="20dp"
                     android:text="@string/edit4_subtitle"
                     android:textSize="20dp"
-                    android:textColor="@color/dark_blue"
-                    android:fontFamily="@font/leaguespartanbold"
+                    android:textColor="@color/light_grey"
+                    android:fontFamily="@font/leaguespartansemibold"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"/>
@@ -249,7 +255,7 @@
                     android:id="@+id/llc_edit4_gender_fill"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_button_grey"
+                    android:background="@drawable/bg_button_white"
                     android:layout_marginTop="7dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
@@ -271,12 +277,11 @@
                         android:drawableTint="@color/light_grey"
                         android:text="@string/edit4_gender"
                         android:textSize="18dp"
-                        android:textColor="@color/dark_blue"
-                        android:fontFamily="@font/andikaregular"
+                        android:textColor="@color/grey"
+                        android:fontFamily="@font/andikabold"
                         />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
-
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -287,19 +292,20 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginTop="22dp"
-                android:layout_marginBottom="100dp"
-                android:drawablePadding="8dp"
-                android:paddingStart="5dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/light_grey"
+                android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:background="@android:color/transparent"
+                android:background="@drawable/rounded_layout"
                 android:drawableEnd="@drawable/back_button_mini"
                 android:text="@string/btn_change_pass"
-                android:textSize="22dp"
+                android:textSize="16dp"
                 android:textAllCaps="false"
                 android:textAlignment="textStart"
                 android:textColor="@color/grey"
-                android:fontFamily="@font/leaguespartanregular"
+                android:fontFamily="@font/andikabold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
