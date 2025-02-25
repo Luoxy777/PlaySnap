@@ -19,6 +19,7 @@
             android:layout_width="120dp"
             android:layout_height="25dp"
             android:drawableTop="@drawable/lokasi_opt1"
+            android:drawableTint="@color/black"
             android:paddingTop="5dp"
             android:background="@drawable/bg_button_white"/>
 
@@ -31,7 +32,23 @@
             android:layout_width="120dp"
             android:layout_height="25dp"
             android:drawableTop="@drawable/lokasi_opt2"
+            android:drawableTint="@color/black"
             android:paddingTop="5dp"
+            android:background="@drawable/bg_button_white"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/lokasi_cat_opt_4_rec"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lokasi_cat_opt_2_rec"
+            android:layout_marginTop="5dp"
+            android:layout_width="120dp"
+            android:layout_height="25dp"
+            android:fontFamily="@font/andikaregular"
+            android:textColor="@color/dark_blue"
+            android:paddingTop="6.5dp"
+            android:drawableTop="@drawable/semua_opt"
+            android:drawableTint="@color/black"
             android:background="@drawable/bg_button_white"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

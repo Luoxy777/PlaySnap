@@ -17,10 +17,10 @@
         android:id="@+id/btn_check"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:background="@drawable/btn_check"
+        android:background="@drawable/btn_check_pressed_taken_photo"
         android:layout_marginStart="60dp"
         android:layout_marginTop="5dp"
         android:drawableTop="@drawable/baseline_check_24"
-        android:drawableTint="@color/dark_green"/>
+        android:drawableTint="@color/white"/>
 
 </androidx.cardview.widget.CardView>

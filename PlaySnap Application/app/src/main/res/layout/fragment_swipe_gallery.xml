@@ -7,6 +7,15 @@
     android:background="@color/dark_blue">
 
     <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/butterfly_no_outline"
+        app:layout_constraintStart_toEndOf="@id/gallery_title"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="70dp"
+        android:layout_marginStart="20dp"/>
+
+    <ImageView
         android:id="@id/field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -104,28 +113,28 @@
         app:layout_constraintVertical_bias="0.47" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/maskot_gallery"
         android:layout_width="88dp"
         android:layout_height="92dp"
         android:layout_marginStart="64dp"
         android:background="@drawable/ic_maskot_main_logo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_manage_object_subtitle" />
+        android:layout_marginBottom="307dp"
+        app:layout_constraintBottom_toBottomOf="@id/scroll_bg_object" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_switch_layout"
         style="@style/ButtonWhite"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="72dp"
+        android:layout_marginBottom="335dp"
         android:background="@drawable/mulai_button_oultline"
         android:drawableTop="@drawable/baseline_grid_view_24"
         android:elevation="100dp"
         android:padding="6dp"
-        app:layout_constraintBottom_toTopOf="@id/scroll_bg_object"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_manage_object_subtitle" />
+        app:layout_constraintBottom_toBottomOf="@id/scroll_bg_object"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@id/mulai_button"

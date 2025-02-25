@@ -223,4 +223,7 @@
     <string name="option_laki">Laki-laki</string>
     <string name="option_perempuan">Perempuan</string>
     <string name="option_none">-</string>
+    <string name="usia_desc">6-10</string>
+    <string name="pemain_desc">3-5</string>
+    <string name="lokasi_desc">Outdoor</string>
 </resources>

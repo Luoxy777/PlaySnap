@@ -138,15 +138,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
-        android:id="@+id/rating_star_feedback"
-        android:layout_width="175dp"
-        android:layout_height="30dp"
-        android:background="@drawable/ic_rate05"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/star_rating_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/background_rating_feedback"
+        app:layout_constraintEnd_toEndOf="@id/background_rating_feedback"
         app:layout_constraintTop_toTopOf="@id/background_rating_feedback"
         app:layout_constraintBottom_toBottomOf="@id/background_rating_feedback"
-        app:layout_constraintEnd_toEndOf="@id/background_rating_feedback"
-        app:layout_constraintStart_toStartOf="@id/background_rating_feedback"/>
+        android:layout_marginHorizontal="10dp">
+
+                <RatingBar
+                    android:id="@+id/rating_like"
+                    android:numStars="5"
+                    android:stepSize="0.5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:progressBackgroundTint="@color/light_grey2"
+                    android:progressTint="@color/yellow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:scaleX="0.85"
+                    android:scaleY="0.85"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <View
         android:id="@+id/line1_feedback"

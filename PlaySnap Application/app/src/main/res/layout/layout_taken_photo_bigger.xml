@@ -18,8 +18,9 @@
         android:layout_height="30dp"
         android:layout_marginStart="160dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/btn_check"
+        android:background="@drawable/btn_check_pressed_taken_photo"
         android:drawableTop="@drawable/baseline_check_24"
-        android:drawableTint="@color/dark_green" />
+        android:drawableTint="@color/white"
+        android:paddingTop="3dp"/>
 
 </androidx.cardview.widget.CardView>

@@ -10,7 +10,7 @@
         android:id="@+id/btn_back"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/back_button"
         android:backgroundTint="@color/dark_blue"
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/leaguespartanbold"
         android:text="Siap Bermain?"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/grey"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -48,7 +48,7 @@
         android:fontFamily="@font/andikaregular"
         android:gravity="center"
         android:text="@string/tv_manage_object_subtitle"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/grey"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -116,31 +116,10 @@
         android:drawableTint="@color/white"/>
 
 
-<!--    <com.google.android.material.textfield.TextInputEditText-->
-<!--        android:id="@+id/et_search_game"-->
-<!--        style="@style/TextInputEditText_search"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="40dp"-->
-<!--        android:layout_marginStart="40dp"-->
-<!--        android:layout_marginTop="180dp"-->
-<!--        android:layout_marginEnd="3dp"-->
-<!--        android:background="@drawable/search_background"-->
-<!--        android:drawableStart="@drawable/ic_search"-->
-<!--        android:elevation="8dp"-->
-<!--        android:hint="@string/hint_manage_object"-->
-<!--        android:padding="10dp"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="12sp"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/add_button"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-<!--    -->
-
-
     <ImageView
         android:id="@+id/background_list_of_object"
         android:layout_width="360dp"
-        android:layout_height="330dp"
+        android:layout_height="400dp"
         android:background="@drawable/background_object_search_by_type"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -152,7 +131,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_popobject"
         android:layout_width="316dp"
-        android:layout_height="261dp"
+        android:layout_height="370dp"
         android:layout_weight="1"
         android:clipToPadding="false"
         android:gravity="center"
@@ -170,14 +149,12 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="100dp"
         android:background="@drawable/mulai_button_oultline"
         android:text="@string/mulai_btn_text"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/background_list_of_object"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/background_list_of_object" />
 
     <ProgressBar
         android:id="@+id/progressBar"
