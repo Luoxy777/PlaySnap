@@ -7,12 +7,13 @@
     android:background="@color/dark_blue">
 
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/butterfly_no_outline"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:rotation="-45"
+        android:background="@drawable/butterfly_full_body"
         app:layout_constraintStart_toEndOf="@id/gallery_title"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         android:layout_marginStart="20dp"/>
 
     <ImageView
@@ -68,13 +69,12 @@
     <ImageView
         android:id="@+id/scroll_bg_object"
         android:layout_width="360dp"
-        android:layout_height="328dp"
+        android:layout_height="400dp"
         android:background="@drawable/background_object_search_by_type"
-        app:layout_constraintBottom_toBottomOf="@id/field"
+        android:layout_marginTop="210dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
@@ -88,29 +88,27 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/swipeLeft"
-        android:layout_width="20dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="48dp"
-        android:background="@drawable/back_button"
-        android:backgroundTint="@color/dark_blue"
-        app:layout_constraintBottom_toBottomOf="@+id/viewPager"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="40dp"
+        android:rotation="90"
+        android:background="@drawable/baseline_expand_circle_down_24"
+        android:backgroundTint="@color/dark_green"
+        app:layout_constraintBottom_toBottomOf="@+id/scroll_bg_object"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scroll_bg_object" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/swipeRight"
-        android:layout_width="20dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="276dp"
-        android:layout_marginEnd="48dp"
-        android:background="@drawable/back_button_mini"
-        android:backgroundTint="@color/dark_blue"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/baseline_expand_circle_down_24"
+        android:rotation="-90"
+        android:backgroundTint="@color/dark_green"
         app:layout_constraintBottom_toBottomOf="@+id/scroll_bg_object"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
-        app:layout_constraintStart_toEndOf="@+id/swipeLeft"
-        app:layout_constraintTop_toTopOf="@+id/scroll_bg_object"
-        app:layout_constraintVertical_bias="0.47" />
+        app:layout_constraintTop_toTopOf="@+id/scroll_bg_object"/>
 
     <ImageView
         android:id="@+id/maskot_gallery"
@@ -119,7 +117,7 @@
         android:layout_marginStart="64dp"
         android:background="@drawable/ic_maskot_main_logo"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="307dp"
+        android:layout_marginBottom="378.5dp"
         app:layout_constraintBottom_toBottomOf="@id/scroll_bg_object" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -128,7 +126,7 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginEnd="72dp"
-        android:layout_marginBottom="335dp"
+        android:layout_marginBottom="407dp"
         android:background="@drawable/mulai_button_oultline"
         android:drawableTop="@drawable/baseline_grid_view_24"
         android:elevation="100dp"
@@ -142,8 +140,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="65dp"
         android:background="@drawable/mulai_button_oultline"
         android:text="@string/mulai_btn_text"
         android:textColor="@color/white"
@@ -156,8 +154,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="65dp"
         android:background="@drawable/hapus_button_oultline"
         android:text="HAPUS"
         android:textColor="@color/white"

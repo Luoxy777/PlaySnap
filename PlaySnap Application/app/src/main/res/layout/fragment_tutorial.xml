@@ -62,7 +62,9 @@
         android:background="@drawable/back_button"
         android:backgroundTint="@color/dark_blue"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:translationZ="-100dp"
+        android:elevation="-100dp"/>
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -72,7 +74,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        android:translationZ="100dp">
 
         <include
             android:id="@+id/bottom_sheet"
