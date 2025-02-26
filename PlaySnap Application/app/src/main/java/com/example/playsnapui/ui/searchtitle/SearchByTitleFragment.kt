@@ -75,21 +75,25 @@ class SearchByTitleFragment : Fragment() {
 
 
         binding.addButton.setOnClickListener {
-            val queryText = binding.etSearchGame.text.toString().trim() // Ambil teks pencarian
+            val queryText = binding.etSearchGame.text.toString().trim().lowercase() // Konversi ke lowercase
 
             if (queryText.isNotEmpty()) {
                 val db = FirebaseFirestore.getInstance()
-                val queryEnd = queryText + "\uf8ff" // Batasan untuk pencarian teks
 
                 db.collection("games")
-                    .whereGreaterThanOrEqualTo("namaPermainan", queryText)
-                    .whereLessThanOrEqualTo("namaPermainan", queryEnd)
                     .get()
                     .addOnSuccessListener { documents ->
                         val gameList = mutableListOf<Games>()
                         for (document in documents) {
                             val game = document.toObject(Games::class.java)
-                            gameList.add(game)
+
+                            // Periksa apakah queryText ada dalam namaPermainan (case-insensitive)
+                            if (game.namaPermainan.lowercase().contains(queryText)) {
+                                gameList.add(game)
+                            }
+                            else if (game.namaPermainan.contains(queryText)) {
+                                gameList.add(game)
+                            }
                         }
                         adapter.updateGames(gameList) // Perbarui RecyclerView
                     }

@@ -273,6 +273,7 @@ id btn_bagaimana_cara_cari
 id btn_bagaimana_cara_melihat
 id btn_bagaimana_cara_menghapus
 id btn_bagaimana_cara_pindai
+id btn_cancel_delete
 id btn_change_pass
 id btn_change_profile
 id btn_check
@@ -751,8 +752,10 @@ navigation nav_graph_auth
 string age_category_card
 string alat_bermain_content_tutorial_page
 string app_name
+string btn_cancel_delete
 string btn_change_pass
 string btn_delete
+string btn_delete_acc
 string btn_edit_profile
 string btn_login
 string btn_register
