@@ -37,6 +37,16 @@ class SearchByTitleFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.etSearchGame.requestFocus()
+        val inputMethodManager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.showSoftInput(binding.etSearchGame, InputMethodManager.SHOW_IMPLICIT)
+
+        view.setOnTouchListener { _, _ ->
+            hideKeyboard()
+            false
+        }
+
         val emptyList = ArrayList<Games>()
         adapter = HomeAdapterForYou(emptyList)
         val recyclerView = binding.listGamesSearchtitle
@@ -65,21 +75,25 @@ class SearchByTitleFragment : Fragment() {
 
 
         binding.addButton.setOnClickListener {
-            val queryText = binding.etSearchGame.text.toString().trim() // Ambil teks pencarian
+            val queryText = binding.etSearchGame.text.toString().trim().lowercase() // Konversi ke lowercase
 
             if (queryText.isNotEmpty()) {
                 val db = FirebaseFirestore.getInstance()
-                val queryEnd = queryText + "\uf8ff" // Batasan untuk pencarian teks
 
                 db.collection("games")
-                    .whereGreaterThanOrEqualTo("namaPermainan", queryText)
-                    .whereLessThanOrEqualTo("namaPermainan", queryEnd)
                     .get()
                     .addOnSuccessListener { documents ->
                         val gameList = mutableListOf<Games>()
                         for (document in documents) {
                             val game = document.toObject(Games::class.java)
-                            gameList.add(game)
+
+                            // Periksa apakah queryText ada dalam namaPermainan (case-insensitive)
+                            if (game.namaPermainan.lowercase().contains(queryText)) {
+                                gameList.add(game)
+                            }
+                            else if (game.namaPermainan.contains(queryText)) {
+                                gameList.add(game)
+                            }
                         }
                         adapter.updateGames(gameList) // Perbarui RecyclerView
                     }
@@ -92,6 +106,15 @@ class SearchByTitleFragment : Fragment() {
         }
 
     }
+
+    fun hideKeyboard() {
+        val inputMethodManager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val view = requireActivity().currentFocus
+        view?.let {
+            inputMethodManager.hideSoftInputFromWindow(it.windowToken, 0)
+        }
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

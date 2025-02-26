@@ -111,6 +111,7 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
         }
     }
 
+
     private fun setupListeners() {
         binding.btnBack.setOnClickListener {
             findNavController().navigate(R.id.action_editProfileFragment_to_ProfileFragment) // Go back to previous screen

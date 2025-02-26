@@ -32,7 +32,7 @@ class HomeActivity : AppCompatActivity() {
             when (destination.id) {
                 R.id.snapFragment, R.id.swipeGalleryFragment, R.id.scrollGalleryFragment, R.id.filterFragment, R.id.ObjectFragment,
                 R.id.recommendGameFragment, R.id.tutorialFragment, R.id.historyFragment, R.id.reportFragment, R.id.reportSuccessFragment,
-                R.id.editProfileFragment, R.id.accountSettingFragment, R.id.editPasswordFragment -> {
+                R.id.editProfileFragment, R.id.accountSettingFragment, R.id.editPasswordFragment, R.id.feedbackFragment, R.id.helpFragmentReqSuccess -> {
                     binding.bottomNavigationView.visibility = View.GONE
                 }
                 else -> {

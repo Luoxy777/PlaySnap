@@ -2,12 +2,14 @@ package com.example.playsnapui.ui.login
 
 import SharedData.userProfile
 import UserProfile
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
@@ -39,15 +41,16 @@ class  LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        view.setOnTouchListener { _, _ ->
+            hideKeyboard()
+            false
+        }
+
         // Observe email and password fields
         binding.etEmail.addTextChangedListener { viewModel.onEmailChanged(it.toString()) }
         binding.etPassword.addTextChangedListener { viewModel.onPasswordChanged(it.toString()) }
 
-        // Handle login button click
-        binding.masukButton.setOnClickListener {
-            viewModel.login()
-
-        }
+        setUpListener()
 
 
         // Observe login state
@@ -98,6 +101,29 @@ class  LoginFragment : Fragment() {
                 Toast.makeText(requireContext(), "Gagal masuk. Periksa lagi pengenal Anda.", Toast.LENGTH_SHORT).show()
             }
         })
+    }
+
+    fun setUpListener(){
+        binding.masukButton.setOnClickListener {
+            viewModel.login()
+
+        }
+
+        binding.btnBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
+//        binding.daftar.setOnClickListener {
+//            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+//        }
+    }
+
+    fun hideKeyboard() {
+        val inputMethodManager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val view = requireActivity().currentFocus
+        view?.let {
+            inputMethodManager.hideSoftInputFromWindow(it.windowToken, 0)
+        }
     }
 
     override fun onDestroyView() {

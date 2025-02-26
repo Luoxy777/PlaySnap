@@ -1,9 +1,11 @@
 package com.example.playsnapui.ui.register
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -31,19 +33,12 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.registerButton.setOnClickListener {
-            val fullName = binding.etFullname.text.toString()
-            val email = binding.etEmail.text.toString()
-            val username = binding.etUsername.text.toString()
-            val password = binding.etPassword.text.toString()
-            val confirmPassword = binding.etConfirmpass.text.toString()
-
-            if (password == confirmPassword) {
-                viewModel.register(fullName, email, username, password)
-            } else {
-                Toast.makeText(requireContext(), "Kata sandi tidak cocok dengan konfirmasi", Toast.LENGTH_SHORT).show()
-            }
+        view.setOnTouchListener { _, _ ->
+            hideKeyboard()
+            false
         }
+
+        setUpListener()
 
         // ✅ Observe registerState
         lifecycleScope.launch {
@@ -65,6 +60,38 @@ class RegisterFragment : Fragment() {
                     else -> Unit
                 }
             }
+        }
+    }
+
+    fun setUpListener(){
+        binding.registerButton.setOnClickListener {
+            val fullName = binding.etFullname.text.toString()
+            val email = binding.etEmail.text.toString()
+            val username = binding.etUsername.text.toString()
+            val password = binding.etPassword.text.toString()
+            val confirmPassword = binding.etConfirmpass.text.toString()
+
+            if (password == confirmPassword) {
+                viewModel.register(fullName, email, username, password)
+            } else {
+                Toast.makeText(requireContext(), "Kata sandi tidak cocok dengan konfirmasi", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        binding.btnBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
+        binding.masuk.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+        }
+    }
+
+    fun hideKeyboard() {
+        val inputMethodManager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val view = requireActivity().currentFocus
+        view?.let {
+            inputMethodManager.hideSoftInputFromWindow(it.windowToken, 0)
         }
     }
 

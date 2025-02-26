@@ -1,5 +1,7 @@
 package com.example.playsnapui.ui.home
 
+import SharedData
+import kotlin.random.Random
 import SharedData.userProfile
 import android.annotation.SuppressLint
 import androidx.lifecycle.ViewModelProvider
@@ -33,6 +35,8 @@ class HomeFragment : Fragment() {
     private lateinit var gamesListPopular: ArrayList<Games>
     private lateinit var gamesListForYou: ArrayList<Games>
     private lateinit var viewModel: HomeViewModel
+    private lateinit var tempListPopular : ArrayList<Games>
+    private lateinit var tempListForYou : ArrayList<Games>
 
 
     override fun onCreateView(
@@ -55,8 +59,8 @@ class HomeFragment : Fragment() {
 
         viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
 
-
-
+        tempListForYou = arrayListOf()
+        tempListPopular = arrayListOf()
         db = FirebaseFirestore.getInstance()
         gamesListPopular = arrayListOf()
         gamesListForYou = arrayListOf()
@@ -79,6 +83,9 @@ class HomeFragment : Fragment() {
         recyclerViewForYou.setHasFixedSize(true)
         recyclerViewForYou.isNestedScrollingEnabled = false
         recyclerViewForYou.adapter = homeAdapterForYou
+
+        binding.recentRecyclerForyou.visibility = View.VISIBLE
+        binding.recentRecyclerPopgame.visibility = View.VISIBLE
     }
 
     private fun setRecyclerViewHeightBasedOnItems(recyclerView: RecyclerView) {
@@ -131,24 +138,45 @@ class HomeFragment : Fragment() {
 
     @SuppressLint("NotifyDataSetChanged")
     private fun loadGamesFromFirestore() {
+        val batasGames = 10
+
         db.collection("games").addSnapshotListener { value, error ->
             if (error != null) {
                 Log.e("Firestore Error", error.message.toString())
                 return@addSnapshotListener
             }
 
+            tempListPopular.clear()
+            tempListForYou.clear()
+
             value?.documentChanges?.forEach { dc ->
                 if (dc.type == DocumentChange.Type.ADDED) {
                     val game = dc.document.toObject(Games::class.java)
-                    gamesListPopular.add(game)
-                    gamesListForYou.add(game)
+                    tempListPopular.add(game)
+                    tempListForYou.add(game)
                     Log.d("Firestore", "Game added: ${game.namaPermainan}")
                 }
             }
 
-            homeAdapterPopular.notifyDataSetChanged()
-            homeAdapterForYou.notifyDataSetChanged()
+            gamesListForYou.clear()
+            gamesListForYou.addAll(tempListForYou.shuffled().take(batasGames))
+            Log.d("For you", "${gamesListForYou.size}")
 
+            gamesListPopular.clear()
+            gamesListPopular.addAll(tempListPopular.sortedByDescending { it.rating }.take(batasGames))
+            Log.d("Popular", "${gamesListPopular.size}")
+
+
+            if (::homeAdapterPopular.isInitialized && ::homeAdapterForYou.isInitialized) {
+                Log.d("Firestore", "Notifying adapters...")
+                homeAdapterPopular.notifyDataSetChanged()
+                homeAdapterForYou.notifyDataSetChanged()
+            } else {
+                Log.e("Firestore", "Adapter belum diinisialisasi!")
+            }
+
+
+            // Pastikan perubahan terjadi dalam UI thread
             binding.recentRecyclerForyou.post {
                 setRecyclerViewHeightBasedOnItems(binding.recentRecyclerForyou)
             }

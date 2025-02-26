@@ -78,6 +78,24 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.playsnapui.ui.register.RegisterFragment"
+        android:label="register">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@+id/loginFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.playsnapui.ui.login.LoginFragment"
+        android:label="login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"/>
+    </fragment>
+
 
     <fragment
         android:id="@+id/scrollGalleryFragment"
@@ -273,8 +291,8 @@
         android:name="com.example.playsnapui.ui.report.ReportSuccessFragment"
         android:label="reportSuccess">
         <action
-            android:id="@+id/action_reportSuccessFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_reportSuccessFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
 
     <fragment
@@ -365,6 +383,9 @@
         android:id="@+id/helpFragmentReqSuccess"
         android:name="com.example.playsnapui.ui.help.HelpFragmentReqSuccess"
         android:label="helpReqSuccess">
+        <action
+            android:id="@+id/action_helpReqSuccessFragment_to_helpFragment"
+            app:destination="@id/helpFragment"/>
     </fragment>
 
     <fragment

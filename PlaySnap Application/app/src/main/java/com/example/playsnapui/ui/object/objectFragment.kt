@@ -2,6 +2,7 @@ package com.example.playsnapui.ui.`object`
 
 import SharedData
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
@@ -9,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -42,6 +44,11 @@ class ObjectFragment : Fragment() {
     @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        view.setOnTouchListener { _, _ ->
+            hideKeyboard()
+            false
+        }
 
         binding.btnBack.setOnClickListener {
             findNavController().navigate(R.id.action_ObjectFragment_to_HomeFragment)
@@ -103,6 +110,14 @@ class ObjectFragment : Fragment() {
                 // Navigate to the recommendation page
                 findNavController().navigate(R.id.action_ObjectFragment_to_RecommendGameFragment)
             })
+        }
+    }
+
+    fun hideKeyboard() {
+        val inputMethodManager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val view = requireActivity().currentFocus
+        view?.let {
+            inputMethodManager.hideSoftInputFromWindow(it.windowToken, 0)
         }
     }
 
