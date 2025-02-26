@@ -377,7 +377,7 @@
         android:layout_marginTop="30dp"
         android:paddingHorizontal="20dp"
         app:layout_constrainedHeight="true"
-        app:layout_constraintEnd_toEndOf="parent"git s
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/pemain_button_cat"></androidx.recyclerview.widget.RecyclerView>
 
