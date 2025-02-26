@@ -228,4 +228,15 @@
     <string name="lokasi_desc">Outdoor</string>
     <string name="title_game_rating">Lompat Tali</string>
     <string name="category_game_rating"><![CDATA[Outdoor, Usia >6 tahun]]></string>
+<<<<<<< Updated upstream
+=======
+    <string name="title_delete_account">Hapus Akun</string>
+    <string name="tv_input_pass">Password</string>
+    <string name="hint_input_password">Masukkan Password</string>
+    <string name="info_delete_acc">*PlaySnap tidak bertanggung jawab atas hilangnya informasi setelah akun ini dihapus secara permanen</string>
+    <string name="confirm_delete_acc">Saya bersedia menghapus akun ini secara permanen</string>
+    <string name="btn_delete_acc">HAPUS AKUN</string>
+    <string name="btn_cancel_delete">BATAL</string>
+
+>>>>>>> Stashed changes
 </resources>

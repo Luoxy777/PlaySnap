@@ -7,7 +7,6 @@
     android:background="@color/white"
     tools:context=".ui.accountSetting.AccountSettingFragment">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

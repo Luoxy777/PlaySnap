@@ -133,7 +133,7 @@
         style="@style/ButtonBlue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:text="@string/btn_login"
@@ -150,6 +150,7 @@
         android:layout_marginBottom="40dp"
         android:text="@string/login_havent_account"
         android:textAlignment="center"
+        android:fontFamily="@font/andikaregular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -159,6 +160,7 @@
         android:layout_height="wrap_content"
         android:text="@string/daftar"
         android:textAlignment="center"
+        android:fontFamily="@font/andikaregular"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toBottomOf="parent"

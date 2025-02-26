@@ -51,6 +51,7 @@ drawable bg_button_grey
 drawable bg_button_lightblue
 drawable bg_button_selesai_feedback
 drawable bg_button_white
+drawable bg_button_white2
 drawable bg_outlined_category_rec_page
 drawable bg_player_tutorial_page
 drawable bg_profile
@@ -277,6 +278,7 @@ id btn_check_alat_bermain
 id btn_check_small
 id btn_checklist
 id btn_delete
+id btn_delete_acc
 id btn_edit_profile
 id btn_filter_game
 id btn_flash
@@ -343,6 +345,7 @@ id et_confirmpass
 id et_email
 id et_fullname
 id et_helpreq
+id et_input_pass
 id et_new_pass
 id et_new_pass_confirm
 id et_old_pass
@@ -558,6 +561,7 @@ id til_confirmpass
 id til_email
 id til_fullname
 id til_helpreq
+id til_input_pass
 id til_new_pass
 id til_new_pass_confirm
 id til_old_pass
@@ -567,6 +571,7 @@ id til_username
 id title_alat_bermain
 id title_bottom
 id title_change_pass
+id title_delete_account
 id title_deskripsi
 id title_game_book
 id title_game_desc_header
@@ -584,6 +589,7 @@ id toolbar
 id tutorialFragment
 id tutorial_section
 id tv_account
+id tv_confirm_info
 id tv_edit1_name
 id tv_edit1_name_fill
 id tv_edit1_old_pass
@@ -605,6 +611,8 @@ id tv_havent_account
 id tv_helpreq_subtitle
 id tv_helpreq_success_title
 id tv_helpreq_title
+id tv_info
+id tv_input_pass
 id tv_login_subtitle
 id tv_login_title
 id tv_manage_object_subtitle
@@ -684,6 +692,7 @@ layout bottom_sheet_tutorial_page
 layout fragment_account_setting
 layout fragment_auth
 layout fragment_bookmark
+layout fragment_delete_account
 layout fragment_edit_password
 layout fragment_edit_profile
 layout fragment_feedback
@@ -748,6 +757,7 @@ string btn_register
 string btn_sign_out
 string btn_signup
 string category_game_rating
+string confirm_delete_acc
 string daftar
 string delete_message
 string deskripsi_game_content_tutorial_page
@@ -786,8 +796,10 @@ string hello_blank_fragment
 string helpreq_subtitle
 string helpreq_success_title
 string helpreq_title
+string hint_input_password
 string hint_manage_object
 string history_game
+string info_delete_acc
 string langkah_bermain_content_tutorial_page
 string like_count_card
 string location_category_card
@@ -850,6 +862,7 @@ string subttile_profile
 string title_bookmark
 string title_bottom_helpreq
 string title_change_pass
+string title_delete_account
 string title_foryou
 string title_game_card
 string title_game_rating
@@ -872,6 +885,7 @@ string title_send_question
 string title_settings
 string tv_filter_subtitle
 string tv_filter_title
+string tv_input_pass
 string tv_ketikobj_subtitle
 string tv_ketikobj_title
 string tv_login_subtitle

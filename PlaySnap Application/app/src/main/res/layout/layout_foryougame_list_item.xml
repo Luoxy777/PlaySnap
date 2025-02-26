@@ -23,6 +23,15 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_display_game_landscape" />
 
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="7dp"
+            android:src="@drawable/bg_button_white2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/display_game_foryou"/>
+
         <ImageButton
             android:id="@+id/bookmark_foryou"
             android:layout_width="wrap_content"

@@ -223,7 +223,7 @@
         style="@style/ButtonBlue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/btn_register"
         android:textColor="@color/white"
         android:layout_marginStart="20dp"
@@ -239,6 +239,7 @@
         android:layout_marginBottom="40dp"
         android:text="@string/register_have_account"
         android:textAlignment="center"
+        android:fontFamily="@font/andikaregular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -250,6 +251,7 @@
         android:layout_marginBottom="40dp"
         android:text="@string/masuk"
         android:textAlignment="center"
+        android:fontFamily="@font/andikaregular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/register_have_account" />
