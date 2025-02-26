@@ -37,6 +37,16 @@ class SearchByTitleFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.etSearchGame.requestFocus()
+        val inputMethodManager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.showSoftInput(binding.etSearchGame, InputMethodManager.SHOW_IMPLICIT)
+
+        view.setOnTouchListener { _, _ ->
+            hideKeyboard()
+            false
+        }
+
         val emptyList = ArrayList<Games>()
         adapter = HomeAdapterForYou(emptyList)
         val recyclerView = binding.listGamesSearchtitle
@@ -92,6 +102,15 @@ class SearchByTitleFragment : Fragment() {
         }
 
     }
+
+    fun hideKeyboard() {
+        val inputMethodManager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val view = requireActivity().currentFocus
+        view?.let {
+            inputMethodManager.hideSoftInputFromWindow(it.windowToken, 0)
+        }
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

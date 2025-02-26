@@ -28,7 +28,7 @@ class ReportSuccessFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         Handler(Looper.getMainLooper()).postDelayed({
             // Navigate to the home screen (adjust the destination ID if needed)
-            findNavController().navigate(R.id.action_reportSuccessFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_reportSuccessFragment_to_profileFragment)
         }, 3000)  // 3000 milliseconds = 3 seconds
 
     }

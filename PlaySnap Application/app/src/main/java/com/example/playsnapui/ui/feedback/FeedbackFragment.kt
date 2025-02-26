@@ -29,7 +29,6 @@ class FeedbackFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        (activity as? HomeActivity)?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility = View.GONE
         _binding = FragmentFeedbackBinding.inflate(inflater, container, false)
         return binding.root
     }

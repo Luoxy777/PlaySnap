@@ -64,6 +64,10 @@
         "source": "C:\\Users\\chris\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\image_illustration_started.xml"
     },
     {
+        "merged": "com.example.playsnapui.app-merged_res-5:/navigation_nav_graph.xml.flat",
+        "source": "com.example.playsnapui.app-main-7:/navigation/nav_graph.xml"
+    },
+    {
         "merged": "C:\\Users\\chris\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\layout_layout_bookgame_list_item.xml.flat",
         "source": "C:\\Users\\chris\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\layout_bookgame_list_item.xml"
     },
@@ -954,10 +958,6 @@
     {
         "merged": "C:\\Users\\chris\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_bg_button_blue.xml.flat",
         "source": "C:\\Users\\chris\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\drawable\\bg_button_blue.xml"
-    },
-    {
-        "merged": "C:\\Users\\chris\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\layout_activity_search_game_page.xml.flat",
-        "source": "C:\\Users\\chris\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\activity_search_game_page.xml"
     },
     {
         "merged": "C:\\Users\\chris\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-merged_res-5:\\drawable_logo_banner.png.flat",

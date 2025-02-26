@@ -1,11 +1,13 @@
 package com.example.playsnapui.ui.report
 
+import android.content.Context
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.playsnapui.R
@@ -28,6 +30,11 @@ class ReportFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        view.setOnTouchListener { _, _ ->
+            hideKeyboard()
+            false
+        }
 
         // Inisialisasi ViewModel
         viewModel = ViewModelProvider(this)[ReportViewModel::class.java]
@@ -55,6 +62,14 @@ class ReportFragment : Fragment() {
 
         binding.btnBack.setOnClickListener {
             findNavController().navigate(R.id.action_ReportFragment_to_ProfileFragment)
+        }
+    }
+
+    fun hideKeyboard() {
+        val inputMethodManager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val view = requireActivity().currentFocus
+        view?.let {
+            inputMethodManager.hideSoftInputFromWindow(it.windowToken, 0)
         }
     }
 
