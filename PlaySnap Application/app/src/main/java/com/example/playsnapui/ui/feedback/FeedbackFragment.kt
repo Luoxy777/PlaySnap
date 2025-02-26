@@ -103,8 +103,33 @@ class FeedbackFragment : Fragment() {
             .whereGreaterThan("rating", 0)
             .get()
             .addOnSuccessListener { documents ->
-                val totalCount = documents.size() + 1// Hitung jumlah dokumen
+                val totalCount = documents.size()// Hitung jumlah dokumen
                 Log.d("Firestore2", "Total games rated: $totalCount")
+                gameRef.get()
+                    .addOnSuccessListener { gameSnapshot ->
+                        if (gameSnapshot.exists()) {
+                            val oldRating = gameSnapshot.getDouble("rating") ?: 0.0
+                            Log.d("Firestore", "Old rating: $oldRating")
+
+                            // **Hitung rating baru menggunakan rata-rata rating lama dan rating baru**
+                            val newAvgRating = ((oldRating * (totalCount-1)) + newRating) / totalCount
+                            Log.d("new rating", "old : $oldRating, totalcount : $totalCount, newrating : $newRating")
+
+                            // **Update nilai rating di koleksi "games"**
+                            gameRef.update("rating", newAvgRating)
+                                .addOnSuccessListener {
+                                    Log.d("Firestore", "Game rating updated successfully: $newAvgRating")
+                                }
+                                .addOnFailureListener { e ->
+                                    Log.e("Firestore", "Error updating game rating", e)
+                                }
+                        } else {
+                            Log.e("Firestore", "Game document does not exist")
+                        }
+                    }
+                    .addOnFailureListener { e ->
+                        Log.e("Firestore", "Error fetching game rating", e)
+                    }
             }
             .addOnFailureListener { e ->
                 Log.e("Firestore", "Error getting count", e)
@@ -115,7 +140,7 @@ class FeedbackFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        (activity as? HomeActivity)?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility = View.VISIBLE
+//        (activity as? HomeActivity)?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility = View.VISIBLE
         _binding = null
     }
 }
