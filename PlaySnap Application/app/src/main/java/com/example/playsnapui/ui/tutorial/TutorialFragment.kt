@@ -463,7 +463,7 @@ class TutorialFragment : Fragment() {
             println("Video width = $videoWidth height = ${layoutParams.height}")
             videoView.layoutParams = layoutParams
 
-            binding.bottomSheet.fullscreenButton.setBackgroundResource(R.drawable.baseline_pause_24)  // Change to minimize icon
+            binding.bottomSheet.fullscreenButton.setBackgroundResource(R.drawable.baseline_fullscreen_exit_24)  // Change to minimize icon
             activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
 
             // Hide other layout elements for fullscreen mode
