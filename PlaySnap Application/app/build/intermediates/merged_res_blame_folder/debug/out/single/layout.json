@@ -196,20 +196,12 @@
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\activity_manage_object.xml"
     },
     {
-        "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/fragment_search_by_title.xml",
-        "source": "com.example.playsnapui.app-main-7:/layout/fragment_search_by_title.xml"
-    },
-    {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-mergeDebugResources-4:\\layout\\fragment_help_page_q5.xml",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\fragment_help_page_q5.xml"
     },
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-mergeDebugResources-4:\\layout\\fragment_delete_account.xml",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\fragment_delete_account.xml"
-    },
-    {
-        "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/fragment_feedback.xml",
-        "source": "com.example.playsnapui.app-main-7:/layout/fragment_feedback.xml"
     },
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-mergeDebugResources-4:\\layout\\fragment_auth.xml",
@@ -262,6 +254,10 @@
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-mergeDebugResources-4:\\layout\\activity_edit_password_page.xml",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\activity_edit_password_page.xml"
+    },
+    {
+        "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/fragment_recommend_game.xml",
+        "source": "com.example.playsnapui.app-main-7:/layout/fragment_recommend_game.xml"
     },
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-mergeDebugResources-4:\\layout\\fragment_bookmark.xml",
