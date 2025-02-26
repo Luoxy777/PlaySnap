@@ -60,6 +60,7 @@ class SwipeGalleryAdapter(
 
 
         private fun updateCheckButton(position: Int) {
+            if(selectedItems.contains(position)) checkButton.setBackgroundResource(R.drawable.btn_check_pressed_taken_photo) else checkButton.setBackgroundResource(R.drawable.btn_check_not_pressed_taken_photo)
             checkButton.setCompoundDrawablesWithIntrinsicBounds(
                 0,
                 if (selectedItems.contains(position)) R.drawable.baseline_check_24 else 0,

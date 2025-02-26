@@ -35,6 +35,7 @@ class SnapFragment : Fragment() {
     private var cameraSelector: CameraSelector? = null
     private var lensFacing = CameraSelector.LENS_FACING_BACK
     private val aspectRatio = AspectRatio.RATIO_16_9
+    private var flag = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -76,7 +77,11 @@ class SnapFragment : Fragment() {
         }
 
         binding!!.mulaiButton.setOnClickListener {
-            findNavController().navigate(R.id.action_SnapFragment_to_ScrollGalleryFragment)
+            if(flag==1){
+                findNavController().navigate(R.id.action_SnapFragment_to_ScrollGalleryFragment)
+            }else{
+                Toast.makeText(requireContext(), "Belum ada foto yang di jepret!", Toast.LENGTH_LONG).show()
+            }
         }
     }
 
@@ -132,7 +137,7 @@ class SnapFragment : Fragment() {
             val isTorchOn = camera.cameraInfo.torchState.value == TorchState.ON
             camera.cameraControl.enableTorch(!isTorchOn)
         } else {
-            Toast.makeText(requireContext(), "Flash is Not Available", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "Flash/Senter tidak tersedia", Toast.LENGTH_LONG).show()
             binding!!.btnFlash.isEnabled = false
         }
     }
@@ -157,7 +162,7 @@ class SnapFragment : Fragment() {
             ContextCompat.getMainExecutor(requireContext()),
             object : ImageCapture.OnImageSavedCallback {
                 override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
-                    Toast.makeText(requireContext(), "Photo Capture Succeeded", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), "Berhasil menjepret foto!", Toast.LENGTH_LONG).show()
                     loadLastCapturedImage(binding!!.galleryThumbnail)
                 }
 
@@ -190,9 +195,11 @@ class SnapFragment : Fragment() {
             arrayOf(MediaStore.Images.Media._ID),
             null, null, null
         )
+
         val count = cursor?.count ?: 0
         cursor?.close()
         textView.text = count.toString()
+        if(count > 0) flag = 1
     }
 
     private fun deleteAllCapturedPhotos() {

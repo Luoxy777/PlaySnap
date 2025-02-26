@@ -31,12 +31,8 @@
             android:id="@+id/tv_title_sign_out"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
             android:layout_marginTop="12dp"
             android:text="@string/delete_message"
-=======
-            android:text="@string/sign_out_message"
->>>>>>> 9adbe79d3ce9f64d2281f05c6d2434d4abff3ec7
             android:textAlignment="center"
             android:textSize="12dp"
             android:fontFamily="@font/andikaregular"

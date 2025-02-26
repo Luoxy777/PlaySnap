@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
@@ -112,7 +113,12 @@ class SwipeGalleryFragment : Fragment(), OnDeleteConfirmedListener {
             val updatedList = adapter.getCurrentImagePaths().toMutableList()
             val remainingImageUris = updatedList.filterIndexed { index, _ -> index !in selectedItems }
                 .map { createUri(it) }
-            viewModel.startGame(remainingImageUris)
+            if(updatedList.isEmpty()){
+                Toast.makeText(requireContext(), "Tidak ada foto yang bisa diproses!", Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.action_SwipeGalleryFragment_to_SnapFragment)
+            }else{
+                viewModel.startGame(remainingImageUris)
+            }
         }
 
     }
@@ -127,10 +133,11 @@ class SwipeGalleryFragment : Fragment(), OnDeleteConfirmedListener {
                 viewModel.detectedObjects.observe(viewLifecycleOwner) { detectedList ->
                     if (detectedList.isNotEmpty()) {
                         SharedData.detectedObjects = detectedList
-
-                        // Now navigate to another fragment or perform any other operation
-                        findNavController().navigate(R.id.action_SwipeGalleryFragment_to_ObjectFragment)
                     }
+                    else{
+                        Toast.makeText(requireContext(), "0 Object terdeteksi!", Toast.LENGTH_LONG).show()
+                    }
+                    findNavController().navigate(R.id.action_SwipeGalleryFragment_to_ObjectFragment)
                 }
             }
         })

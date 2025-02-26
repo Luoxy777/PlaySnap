@@ -115,6 +115,11 @@
         <action
             android:id="@+id/action_ScrollGalleryFragment_to_ObjectFragment"
             app:destination="@id/ObjectFragment"/>
+        <action
+            android:id="@+id/action_ScrollGalleryFragment_to_SnapFragment"
+            app:destination="@id/snapFragment"
+            app:popUpTo="@id/scrollGalleryFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
@@ -134,6 +139,11 @@
         <action
             android:id="@+id/action_SwipeGalleryFragment_to_ObjectFragment"
             app:destination="@id/ObjectFragment"
+            app:popUpTo="@id/swipeGalleryFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_SwipeGalleryFragment_to_SnapFragment"
+            app:destination="@id/snapFragment"
             app:popUpTo="@id/swipeGalleryFragment"
             app:popUpToInclusive="true"/>
     </fragment>

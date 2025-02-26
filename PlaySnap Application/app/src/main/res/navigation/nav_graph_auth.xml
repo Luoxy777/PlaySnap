@@ -36,6 +36,9 @@
             app:destination="@id/homeFragment"
             app:popUpTo="@id/authFragment"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"/>
     </fragment>
 
     <!-- Register Fragment -->

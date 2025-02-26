@@ -216,6 +216,7 @@ id action_RecommendGameFragment_to_HomeFragment
 id action_ReportFragment_to_ProfileFragment
 id action_ReportFragment_to_ReportSuccessFragment
 id action_ScrollGalleryFragment_to_ObjectFragment
+id action_ScrollGalleryFragment_to_SnapFragment
 id action_ScrollGalleryFragment_to_SwipeGalleryFragment
 id action_ScrollGalleryFragment_to_homeFragment
 id action_SettingsAccountFragment_to_AuthActivity
@@ -224,6 +225,7 @@ id action_SnapFragment_to_HomeFragment
 id action_SnapFragment_to_ScrollGalleryFragment
 id action_SwipeGalleryFragment_to_ObjectFragment
 id action_SwipeGalleryFragment_to_ScrollGalleryFragment
+id action_SwipeGalleryFragment_to_SnapFragment
 id action_SwipeGalleryFragment_to_homeFragment
 id action_TutorialFragment_to_FeedbackFragment
 id action_TutorialFragment_to_homeFragment
@@ -281,7 +283,6 @@ id btn_cancel_delete
 id btn_change_pass
 id btn_change_profile
 id btn_check
-id btn_check_alat_bermain
 id btn_check_small
 id btn_checklist
 id btn_delete

@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
@@ -110,7 +111,12 @@ class ScrollGalleryFragment : Fragment(), OnDeleteConfirmedListener {
         binding.mulaiButton.setOnClickListener {
             val remainingImageUris = imagePaths.filterIndexed { index, _ -> index !in selectedItems }
                 .mapNotNull { createUri(it) }
-            viewModel.startGame(remainingImageUris)
+            if(remainingImageUris.isEmpty()){
+                Toast.makeText(requireContext(), "Tidak ada foto yang bisa diproses!", Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.action_ScrollGalleryFragment_to_SnapFragment)
+            }else{
+                viewModel.startGame(remainingImageUris)
+            }
         }
 
         binding.btnBack.setOnClickListener{
@@ -144,10 +150,11 @@ class ScrollGalleryFragment : Fragment(), OnDeleteConfirmedListener {
                 viewModel.detectedObjects.observe(viewLifecycleOwner) { detectedList ->
                     if (detectedList.isNotEmpty()) {
                         SharedData.detectedObjects = detectedList
-
-                        // Now navigate to another fragment or perform any other operation
-                        findNavController().navigate(R.id.action_ScrollGalleryFragment_to_ObjectFragment)
                     }
+                    else{
+                        Toast.makeText(requireContext(), "0 Object terdeteksi!", Toast.LENGTH_LONG).show()
+                    }
+                    findNavController().navigate(R.id.action_ScrollGalleryFragment_to_ObjectFragment)
                 }
             }
         })

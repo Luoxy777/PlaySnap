@@ -17,7 +17,7 @@
         android:id="@+id/btn_check_small"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:background="@drawable/btn_check_pressed_taken_photo"
+        android:background="@drawable/btn_check_not_pressed_taken_photo"
         android:layout_marginStart="60dp"
         android:layout_marginTop="5dp"
         android:drawableTop="@drawable/baseline_check_24"
