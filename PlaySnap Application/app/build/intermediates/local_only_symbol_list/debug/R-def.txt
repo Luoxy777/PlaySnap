@@ -33,9 +33,12 @@ drawable background_option_filter_selector
 drawable background_rating_feedback
 drawable baseline_add_circle_outline_24
 drawable baseline_arrow_drop_down_24
+drawable baseline_bookmark_border_24
 drawable baseline_cancel_24
 drawable baseline_check_24
+drawable baseline_content_copy_24
 drawable baseline_delete_24
+drawable baseline_expand_circle_down_24
 drawable baseline_flash_off_24
 drawable baseline_flash_on_24
 drawable baseline_flip_camera_android_24
@@ -65,6 +68,7 @@ drawable btn_scan
 drawable btn_type
 drawable butterfly
 drawable butterfly_full_body
+drawable butterfly_full_body2
 drawable butterfly_fullbody
 drawable butterfly_no_outline
 drawable button_selector
@@ -315,6 +319,7 @@ id cloud1_feedback
 id cloud1_loading_page
 id cloud2_feedback
 id cloud2_loading_page
+id copy_button
 id count_like_book
 id count_like_foryou
 id count_like_history
@@ -415,6 +420,8 @@ id iv_sign_out
 id iv_success
 id jumlah_pemain_opt
 id jumlah_pemain_section
+id kupu_kupu_filter_page1
+id kupu_kupu_filter_page2
 id langkah_bermain_content
 id langkah_bermain_title
 id layout_delete_object_confirmation
@@ -435,6 +442,7 @@ id line2_feedback
 id line_game_desc_header
 id line_rec_page
 id line_search_game
+id link_text
 id list_games_searchtitle
 id llc_edit1_name_fill
 id llc_edit2_username_fill
@@ -544,6 +552,8 @@ id section_usia_main
 id selesai_button_feedback
 id sendButton
 id share_button_tutorial
+id share_just_link_layout
+id sharelink_card
 id sign_out_pop_up
 id snapFragment
 id square_view_tutorial
@@ -673,6 +683,7 @@ id usia_value
 id video_tutorial_content
 id video_tutorial_text
 id viewPager
+id x_button
 layout activity_auth
 layout activity_edit_password_page
 layout activity_edit_profile_page
@@ -737,6 +748,7 @@ layout layout_taken_photo_bigger
 layout pop_up_gender
 layout pop_up_lokasi_category
 layout pop_up_pemain_category
+layout pop_up_share
 layout pop_up_usia_category
 layout popup_delete_account
 layout popup_sign_out
