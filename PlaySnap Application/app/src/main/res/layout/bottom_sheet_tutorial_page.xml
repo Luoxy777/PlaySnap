@@ -9,7 +9,7 @@
     android:background="@drawable/rounded_rectangle_dragable"
     android:backgroundTint="@color/white"
     app:behavior_hideable="false"
-    app:behavior_peekHeight="500dp"
+    app:behavior_peekHeight="350dp"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
     <ScrollView
@@ -63,6 +63,7 @@
                         app:layout_constraintWidth_max="200dp"
                         android:layout_marginTop="10dp"
                         android:text="@string/title_header_game_tutorial_page"
+                        android:textColor="@color/dark_blue"
                         android:textSize="35dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -76,7 +77,7 @@
                         android:layout_marginBottom="15dp"
                         android:fontFamily="@font/andikaregular"
                         android:text="@string/subtitle_header_game_tutorial_page"
-                        android:textColor="@color/grey"
+                        android:textColor="@color/black"
                         android:textSize="13dp"
                         app:layout_constraintBottom_toBottomOf="@id/line_game_desc_header"
                         app:layout_constraintStart_toEndOf="@id/game_icon_header"
@@ -88,7 +89,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="17dp"
                         android:background="@drawable/ic_game"
-                        android:backgroundTint="@color/light_grey"
+                        android:backgroundTint="@color/grey"
                         app:layout_constraintBottom_toBottomOf="@id/line_game_desc_header"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/subtitle_header_desc" />
@@ -161,8 +162,9 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/leaguespartanbold"
                     android:text="Deskripsi"
-                    android:textColor="@color/grey"
-                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="15dp"
+                    android:textSize="25dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -172,8 +174,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/andikaregular"
                     android:text="@string/deskripsi_game_content_tutorial_page"
-                    android:textColor="@color/grey"
-                    android:textSize="12dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/title_deskripsi" />
@@ -186,7 +188,7 @@
                     android:fontFamily="@font/andikabold"
                     android:text="baca selengkapnya"
                     android:textColor="@color/orange"
-                    android:textSize="12dp"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/deskripsi_content" />
@@ -196,7 +198,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/alat_bermain_section"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="70dp"
                 android:layout_marginTop="25dp"
                 app:layout_constraintTop_toBottomOf="@+id/deskripsi_section"
                 tools:layout_editor_absoluteX="1dp">
@@ -207,8 +209,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/leaguespartanbold"
                     android:text="Alat Bermain"
-                    android:textColor="@color/grey"
-                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -228,7 +230,7 @@
                     android:fontFamily="@font/andikabold"
                     android:text="@string/alat_bermain_content_tutorial_page"
                     android:textColor="@color/grey"
-                    android:textSize="12dp"
+                    android:textSize="15dp"
                     app:layout_constraintStart_toEndOf="@id/ic_toys"
                     app:layout_constraintBottom_toBottomOf="parent" />
 
@@ -249,8 +251,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/leaguespartanbold"
                     android:text="Tutorial"
-                    android:textColor="@color/grey"
-                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -260,21 +262,106 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/leaguespartanbold"
                     android:text="Video Tutorial"
-                    android:textColor="@color/light_grey"
-                    android:textSize="17dp"
+                    android:textColor="@color/grey"
+                    android:textSize="20dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/title_tutorial" />
 
-                <android.widget.VideoView
-                    android:id="@+id/video_tutorial_content"
-                    android:layout_width="240dp"
-                    android:layout_height="135dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/wrapped_video_tutorial_content"
                     android:layout_marginTop="15dp"
-                    android:layout_centerInParent="true"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/video_tutorial_text" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/video_tutorial_text">
+
+                    <android.widget.VideoView
+                        android:id="@+id/video_tutorial_content"
+                        android:layout_width="360dp"
+                        android:layout_height="180dp"
+                        android:layout_centerInParent="true"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <FrameLayout
+                        android:id="@+id/controlOverlay"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent_white"
+                        app:layout_constraintStart_toStartOf="@id/video_tutorial_content"
+                        app:layout_constraintEnd_toEndOf="@id/video_tutorial_content"
+                        app:layout_constraintBottom_toBottomOf="@id/video_tutorial_content">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="bottom">
+
+                            <SeekBar
+                                android:id="@+id/seekBar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="3dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:layout_marginHorizontal="10dp"/>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                android:layout_marginHorizontal="10dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/seekBar">
+
+                                <ImageButton
+                                    android:id="@+id/backwardButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/baseline_keyboard_double_arrow_right_24"
+                                    android:scaleX="-1"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    android:layout_marginStart="10dp"/>
+
+                                <ImageButton
+                                    android:id="@+id/playPauseButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/baseline_play_arrow_24"
+                                    app:layout_constraintStart_toEndOf="@id/backwardButton"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                                <ImageButton
+                                    android:id="@+id/forwardButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/baseline_keyboard_double_arrow_right_24"
+                                    app:layout_constraintStart_toEndOf="@id/playPauseButton"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                                <ImageButton
+                                    android:id="@+id/fullscreenButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/baseline_fullscreen_24"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    android:layout_marginEnd="10dp"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </FrameLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
                 <TextView
                     android:id="@+id/langkah_bermain_title"
@@ -283,18 +370,20 @@
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/leaguespartanbold"
                     android:text="Langkah - Langkah Bermain"
-                    android:textColor="@color/light_grey"
-                    android:textSize="17dp"
+                    android:textColor="@color/grey"
+                    android:textSize="20dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/video_tutorial_content" />
+                    app:layout_constraintTop_toBottomOf="@id/wrapped_video_tutorial_content" />
 
                 <TextView
                     android:id="@+id/langkah_bermain_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/andikaregular"
+                    android:textColor="@color/black"
                     android:text="@string/langkah_bermain_content_tutorial_page"
-                    android:textSize="12dp"
+                    android:textSize="15dp"
+                    android:layout_marginTop="15dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/langkah_bermain_title" />
 
