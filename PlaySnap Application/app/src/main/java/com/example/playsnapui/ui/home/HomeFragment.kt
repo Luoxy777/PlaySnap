@@ -99,14 +99,12 @@ class HomeFragment : Fragment() {
             val itemHeight = firstItemView.measuredHeight
 
             // Calculate total height (items * item height)
-            val totalHeight = itemHeight * itemCount + recyclerView.paddingTop + recyclerView.paddingBottom + (itemHeight * 3)
+            val totalHeight = itemHeight * itemCount + 425
 
             // Set the new height
             val layoutParams = recyclerView.layoutParams
             layoutParams.height = totalHeight
             recyclerView.layoutParams = layoutParams
-
-            Log.d("RecyclerViewHeight", "Item Height: $itemHeight, Total Height: $totalHeight")
         }
     }
 

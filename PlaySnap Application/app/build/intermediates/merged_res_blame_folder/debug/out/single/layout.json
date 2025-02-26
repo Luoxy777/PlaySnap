@@ -36,12 +36,12 @@
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\fragment_register.xml"
     },
     {
-        "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-mergeDebugResources-4:\\layout\\popup_sign_out.xml",
-        "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\popup_sign_out.xml"
-    },
-    {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-mergeDebugResources-4:\\layout\\activity_main.xml",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-mergeDebugResources-4:\\layout\\popup_sign_out.xml",
+        "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\popup_sign_out.xml"
     },
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-mergeDebugResources-4:\\layout\\layout_popgame_list_item.xml",
@@ -196,6 +196,10 @@
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\activity_manage_object.xml"
     },
     {
+        "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/fragment_search_by_title.xml",
+        "source": "com.example.playsnapui.app-main-7:/layout/fragment_search_by_title.xml"
+    },
+    {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-mergeDebugResources-4:\\layout\\fragment_help_page_q5.xml",
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\fragment_help_page_q5.xml"
     },
@@ -204,8 +208,8 @@
         "source": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-main-7:\\layout\\fragment_delete_account.xml"
     },
     {
-        "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/layout_taken_photo_bigger.xml",
-        "source": "com.example.playsnapui.app-main-7:/layout/layout_taken_photo_bigger.xml"
+        "merged": "com.example.playsnapui.app-mergeDebugResources-4:/layout/fragment_feedback.xml",
+        "source": "com.example.playsnapui.app-main-7:/layout/fragment_feedback.xml"
     },
     {
         "merged": "C:\\Users\\diane\\.gradle\\daemon\\8.0\\com.example.playsnapui.app-mergeDebugResources-4:\\layout\\fragment_auth.xml",
