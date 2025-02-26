@@ -225,13 +225,13 @@ class RecommendGameFragment : Fragment() {
                         var shouldRemove = false
 
                         if (batasPemain1 != 0) {
-                            shouldRemove = shouldRemove || rangePemain.all { it > batasPemain1 }
+                            shouldRemove = shouldRemove || rangePemain.none { it in 0..batasPemain1 }
                         }
                         if (batasPemain2Bawah != 0 && batasPemain2Atas != 0) {
-                            shouldRemove = shouldRemove || (rangePemain.all { it < batasPemain2Bawah } || rangePemain.all { it > batasPemain2Atas })
+                            shouldRemove = shouldRemove || (rangePemain.none { it in batasPemain2Bawah..batasPemain2Atas })
                         }
                         if (batasPemain3 != 0) {
-                            shouldRemove = shouldRemove || rangePemain.all { it < batasPemain3 }
+                            shouldRemove = shouldRemove || rangePemain.none { it in batasPemain3..99 }
                         }
 
                         shouldRemove
@@ -310,13 +310,13 @@ class RecommendGameFragment : Fragment() {
                             var shouldRemove = false
 
                             if (batasPemain1 != 0) {
-                                shouldRemove = shouldRemove || rangePemain.all { it > batasPemain1 }
+                                shouldRemove = shouldRemove || rangePemain.none { it in 0..batasPemain1 }
                             }
                             if (batasPemain2Bawah != 0 && batasPemain2Atas != 0) {
-                                shouldRemove = shouldRemove || (rangePemain.all { it < batasPemain2Bawah } || rangePemain.all { it > batasPemain2Atas })
+                                shouldRemove = shouldRemove || (rangePemain.none { it in batasPemain2Bawah..batasPemain2Atas })
                             }
                             if (batasPemain3 != 0) {
-                                shouldRemove = shouldRemove || rangePemain.all { it < batasPemain3 }
+                                shouldRemove = shouldRemove || rangePemain.none { it in batasPemain3..99 }
                             }
 
                             shouldRemove
@@ -479,7 +479,7 @@ class RecommendGameFragment : Fragment() {
             batasPemain2Bawah = 0
             batasPemain2Atas = 0
             batasPemain3 = 6
-            isNullPemain = true
+            isNullPemain = false
             if(SharedData.isObject == false){
                 cekGamesFilterNonObject()
             }
@@ -496,7 +496,7 @@ class RecommendGameFragment : Fragment() {
             batasPemain2Bawah = 0
             batasPemain2Atas = 0
             batasPemain3 = 0
-            isNullPemain = false
+            isNullPemain = true
             if(SharedData.isObject == false){
                 cekGamesFilterNonObject()
             }
