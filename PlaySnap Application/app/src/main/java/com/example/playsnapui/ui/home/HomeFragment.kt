@@ -4,6 +4,7 @@ import SharedData
 import kotlin.random.Random
 import SharedData.userProfile
 import android.annotation.SuppressLint
+import android.net.Uri
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
@@ -20,6 +21,7 @@ import com.example.playsnapui.data.Games
 import com.example.playsnapui.R
 import com.example.playsnapui.databinding.FragmentHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.dynamiclinks.FirebaseDynamicLinks
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -50,6 +52,21 @@ class HomeFragment : Fragment() {
         }
         Log.d("HomeFragment", "User Profile: ${userProfile?.username ?: "N/A"}")
 
+        FirebaseDynamicLinks.getInstance()
+            .getDynamicLink(requireActivity().intent)
+            .addOnSuccessListener { pendingDynamicLinkData ->
+                val deepLink: Uri? = pendingDynamicLinkData?.link
+                if (deepLink != null) {
+                    val gameId = deepLink.getQueryParameter("id") // Ambil game_id dari URL
+                    if (gameId != null) {
+                        navigateToGameDetail(gameId)
+                    }
+                }
+            }
+            .addOnFailureListener {
+                Log.e("DynamicLink", "Gagal mendapatkan dynamic link", it)
+            }
+
         return binding.root
     }
 
@@ -71,13 +88,13 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupRecyclerViews() {
-        homeAdapterPopular = HomeAdapterPopular(gamesListPopular)
+        homeAdapterPopular = HomeAdapterPopular(gamesListPopular, childFragmentManager)
         recyclerViewPopular = binding.recentRecyclerPopgame
         recyclerViewPopular.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         recyclerViewPopular.setHasFixedSize(true)
         recyclerViewPopular.adapter = homeAdapterPopular
 
-        homeAdapterForYou = HomeAdapterForYou(gamesListForYou)
+        homeAdapterForYou = HomeAdapterForYou(gamesListForYou, childFragmentManager)
         recyclerViewForYou = binding.recentRecyclerForyou
         recyclerViewForYou.layoutManager = LinearLayoutManager(requireContext())
         recyclerViewForYou.setHasFixedSize(true)
@@ -179,6 +196,11 @@ class HomeFragment : Fragment() {
                 setRecyclerViewHeightBasedOnItems(binding.recentRecyclerForyou)
             }
         }
+    }
+
+    private fun navigateToGameDetail(gameId: String) {
+        val action = HomeFragmentDirections.actionPopularFragmentToTutorialFragment(gameId)
+        findNavController().navigate(action)
     }
 
     override fun onDestroyView() {

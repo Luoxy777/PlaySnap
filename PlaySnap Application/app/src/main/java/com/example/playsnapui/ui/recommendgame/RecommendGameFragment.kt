@@ -82,7 +82,7 @@ class RecommendGameFragment : Fragment() {
 
         // Display the recommended games
         if (recommendedGames.isNotEmpty()) {
-            adapter = HomeAdapterForYou(recommendedGames as ArrayList<Games>)
+            adapter = HomeAdapterForYou(recommendedGames as ArrayList<Games>, childFragmentManager)
             binding.recyclerRecommendGames.layoutManager = LinearLayoutManager(requireContext())  // Make sure it's set
             binding.recyclerRecommendGames.adapter = adapter
 

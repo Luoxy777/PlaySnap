@@ -1,5 +1,6 @@
 package com.example.playsnapui.ui.home
 
+import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -8,15 +9,20 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.playsnapui.R
 import com.example.playsnapui.data.Games
+import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.dynamiclinks.DynamicLink
+import com.google.firebase.dynamiclinks.FirebaseDynamicLinks
 import com.google.firebase.firestore.FirebaseFirestore
 
-class HomeAdapterForYou (private val gameList: ArrayList<Games>) : RecyclerView.Adapter<HomeAdapterForYou.MyViewHolder>(){
+class HomeAdapterForYou (private val gameList: ArrayList<Games>,     private val fragmentManager: FragmentManager // Pass FragmentManager here
+) : RecyclerView.Adapter<HomeAdapterForYou.MyViewHolder>(){
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -169,6 +175,10 @@ class HomeAdapterForYou (private val gameList: ArrayList<Games>) : RecyclerView.
             holder.likeButton.tag = newLikeStatus
         }
 
+        holder.shareButton.setOnClickListener{
+            createDynamicLink(game)
+        }
+
         holder.itemView.setOnClickListener {
             // Save the game details in SharedData
             SharedData.gameDetails = game
@@ -178,6 +188,38 @@ class HomeAdapterForYou (private val gameList: ArrayList<Games>) : RecyclerView.
 
         }
     }
+
+    private fun createDynamicLink(game: Games) {
+        // Create a Dynamic Link
+        val link = Uri.parse("https://playsnapgame.page.link/game?id=${game.game_id}") // Adjust the link as needed
+
+        FirebaseDynamicLinks.getInstance()
+            .createDynamicLink()
+            .setLink(link)
+            .setDomainUriPrefix("https://playsnapgame.page.link")
+            .setAndroidParameters(
+                DynamicLink.AndroidParameters.Builder("com.example.playsnapui")
+                    .setMinimumVersion(24)
+                    .build()
+            )
+            .buildShortDynamicLink() // FIX: Use this for async task
+            .addOnSuccessListener { shortDynamicLink ->
+                val dynamicLink = shortDynamicLink.shortLink.toString()
+                showDynamicLinkDialog(dynamicLink)
+            }
+            .addOnFailureListener { e ->
+                Log.e("DynamicLink", "Error creating dynamic link", e)
+            }
+
+
+    }
+
+    private fun showDynamicLinkDialog(dynamicLink: String) {
+        val dialog = ShareFragment(dynamicLink)
+        dialog.show(fragmentManager, "ShareFragment")
+    }
+
+
 
     public class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val gamesName: TextView = itemView.findViewById(R.id.title_game_foryou)
@@ -189,6 +231,7 @@ class HomeAdapterForYou (private val gameList: ArrayList<Games>) : RecyclerView.
         val rating : RatingBar = itemView.findViewById(R.id.rating_foryou)
         val lokasiText : TextView = itemView.findViewById(R.id.tv_game_foryou)
         val usiaText : TextView = itemView.findViewById(R.id.tv_player_foryou)
+        val shareButton : ImageButton = itemView.findViewById(R.id.btn_share_foryou)
 
         // Fetch the bookmark status from Firestore based on user and game
 

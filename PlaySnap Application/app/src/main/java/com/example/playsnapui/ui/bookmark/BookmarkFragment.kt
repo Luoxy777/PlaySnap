@@ -34,7 +34,7 @@ class BookmarkFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Initialize RecyclerView
-        val adapter = HomeAdapterPopular(arrayListOf()) // Pass an empty list initially
+        val adapter = HomeAdapterPopular(arrayListOf(), childFragmentManager) // Pass an empty list initially
         val layoutManager = GridLayoutManager(requireContext(), 2) // 2 columns in the grid
         binding.recentRecyclerBookmark.layoutManager = layoutManager
         binding.recentRecyclerBookmark.adapter = adapter

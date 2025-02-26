@@ -21,7 +21,9 @@ color transparent_white
 color white
 color yellow
 dimen video_height
+dimen video_height_full
 dimen video_width
+dimen video_width_full
 drawable back_button
 drawable back_button_down
 drawable back_button_mini
@@ -225,6 +227,7 @@ id action_ScrollGalleryFragment_to_SwipeGalleryFragment
 id action_ScrollGalleryFragment_to_homeFragment
 id action_SettingsAccountFragment_to_AuthActivity
 id action_SettingsAccountFragment_to_ProfileFragment
+id action_SettingsAccountFragment_to_deleteAccountFragment
 id action_SnapFragment_to_HomeFragment
 id action_SnapFragment_to_ScrollGalleryFragment
 id action_SwipeGalleryFragment_to_ObjectFragment
@@ -236,6 +239,7 @@ id action_TutorialFragment_to_homeFragment
 id action_authFragment_to_homeFragment
 id action_authFragment_to_loginFragment
 id action_authFragment_to_registerFragment
+id action_deleteAccountFragment_to_AuthActivity
 id action_editProfileFragment_to_ChangePassFragment
 id action_editProfileFragment_to_ProfileFragment
 id action_helpReqSuccessFragment_to_helpFragment
@@ -338,6 +342,7 @@ id count_share_history
 id count_share_like
 id count_share_pop
 id daftar
+id deleteAccountFragment
 id deskripsi_content
 id deskripsi_section
 id display_game_book
@@ -473,6 +478,7 @@ id lokasi_section_title
 id lokasi_title_filter_opt
 id lokasi_value
 id mainkan_button_tutorial
+id margin_setter
 id maskotTopFilterPage
 id maskot_awan_image
 id maskot_awan_image_atas

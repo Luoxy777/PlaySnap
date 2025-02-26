@@ -20,4 +20,5 @@ object SharedData {
     var batasPemain2Atas : Int = 0
     var batasPemain3 : Int = 0
     var lokasiContainer : String = ""
+    var sharedLinks : String = ""
 }

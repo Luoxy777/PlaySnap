@@ -56,7 +56,7 @@ class SearchByTitleFragment : Fragment() {
 
         val emptyList = ArrayList<Games>()
         val recyclerView = binding.listGamesSearchtitle
-        adapter = HomeAdapterForYou(emptyList)
+        adapter = HomeAdapterForYou(emptyList, childFragmentManager)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
 

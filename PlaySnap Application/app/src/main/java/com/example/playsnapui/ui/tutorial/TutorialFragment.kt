@@ -3,6 +3,7 @@ package com.example.playsnapui.ui.tutorial
 import SharedData.gameDetails
 import TutorialViewModel
 import android.annotation.SuppressLint
+import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Bundle
 import android.text.Html
@@ -13,6 +14,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.MediaController
 import android.widget.VideoView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
@@ -21,7 +24,10 @@ import com.bumptech.glide.Glide
 import com.example.playsnapui.R
 import com.example.playsnapui.data.Games
 import com.example.playsnapui.databinding.FragmentTutorialBinding
+import com.example.playsnapui.ui.home.ShareFragment
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.dynamiclinks.DynamicLink
+import com.google.firebase.dynamiclinks.FirebaseDynamicLinks
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
@@ -33,6 +39,8 @@ class TutorialFragment : Fragment() {
     private var _binding: FragmentTutorialBinding? = null
     private val binding get() = _binding!!
     private var viewModel: TutorialViewModel? = null
+    private var isFullscreen = false
+
     @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -92,7 +100,6 @@ class TutorialFragment : Fragment() {
             }
         }
 
-        playVideoFromGoogleDrive()
 
         // Fetch the bookmark status from Firestore based on user and game
         val userId = FirebaseAuth.getInstance().currentUser?.uid
@@ -138,8 +145,10 @@ class TutorialFragment : Fragment() {
 
         // Set up button listeners
         setUpListeners()
+        playVideoFromGoogleDrive()
         return binding.root
     }
+
 
     private fun setUpListeners() {
         // Back button click listener
@@ -188,7 +197,9 @@ class TutorialFragment : Fragment() {
 
 
         // Share button click listener
-        binding.shareButtonTutorial.setOnClickListener { v -> viewModel?.toggleShare() }
+        binding.shareButtonTutorial.setOnClickListener {
+            gameDetails?.let { it1 -> createDynamicLink(it1) }
+        }
 
         binding.bottomSheet.mainkanButtonTutorial.setOnClickListener {
             val currentTime = System.currentTimeMillis() // You can also use LocalDateTime if needed
@@ -243,9 +254,10 @@ class TutorialFragment : Fragment() {
 
             findNavController().navigate(R.id.action_TutorialFragment_to_FeedbackFragment)
         }
+
+
+
     }
-
-
     private fun updateBookmarkStatus(game: Games, bookmarkStatus: Boolean) {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         if (userId != null) {
@@ -297,6 +309,7 @@ class TutorialFragment : Fragment() {
                 }
         }
     }
+
     private fun updateLikeStatus(game: Games, likeStatus: Boolean) {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         if (userId != null) {
@@ -349,8 +362,6 @@ class TutorialFragment : Fragment() {
         }
     }
 
-    private var isFullscreen = false
-
     private fun playVideoFromGoogleDrive() {
         // Get the VideoView reference from binding
         val videoView: VideoView = binding.bottomSheet.videoTutorialContent
@@ -362,14 +373,14 @@ class TutorialFragment : Fragment() {
         val uri: Uri = Uri.parse(videoUrl)
         videoView.setVideoURI(uri)
 
-        // Set up MediaController for play/pause functionality
-        val mediaController = MediaController(requireContext())
-        mediaController.setAnchorView(videoView)
-        videoView.setMediaController(mediaController)
+        // Set up MediaController for play/pause functionality (but it will be custom)
+        // Initially hide your custom controls (they will be shown when the video is clicked)
+        binding.bottomSheet.controlOverlay.visibility = View.GONE
 
         // Start the video when ready
         videoView.setOnPreparedListener {
             videoView.start()
+            binding.bottomSheet.playPauseButton.setBackgroundResource(R.drawable.baseline_pause_24)  // Set play/pause button to pause state
         }
 
         // Handle errors
@@ -378,29 +389,161 @@ class TutorialFragment : Fragment() {
             true
         }
 
-        // Toggle fullscreen mode on tap (specifically horizontal fullscreen)
+        // Show the custom control overlay when video is clicked
         videoView.setOnClickListener {
-            toggleFullscreen(videoView)
+            toggleControlOverlayVisibility()
+        }
+
+        binding.bottomSheet.playPauseButton.setOnClickListener {
+            if (videoView.isPlaying) {
+                videoView.pause()
+                binding.bottomSheet.playPauseButton.setBackgroundResource(R.drawable.baseline_play_arrow_24)  // Set play button
+            } else {
+                videoView.start()
+                binding.bottomSheet.playPauseButton.setBackgroundResource(R.drawable.baseline_pause_24)  // Set pause button
+            }
+        }
+        // Forward 10 seconds
+        binding.bottomSheet.forwardButton.setOnClickListener {
+            val currentPosition = videoView.currentPosition
+            videoView.seekTo(currentPosition + 10000)  // Forward by 10 seconds
+        }
+
+// Backward 10 seconds
+        binding.bottomSheet.backwardButton.setOnClickListener {
+            val currentPosition = videoView.currentPosition
+            videoView.seekTo(currentPosition - 10000)  // Backward by 10 seconds
+        }
+
+        binding.bottomSheet.fullscreenButton.setOnClickListener {
+            isFullscreen = !isFullscreen
+            println("Fullscreen status = $isFullscreen")
+            toggleFullscreen(videoView)  // Call the toggleFullscreen function when the fullscreen button is clicked
+        }
+
+    }
+
+    private fun toggleControlOverlayVisibility() {
+        // Toggle visibility of the custom control overlay
+        if (binding.bottomSheet.controlOverlay.visibility == View.GONE) {
+            binding.bottomSheet.controlOverlay.visibility = View.VISIBLE
+        } else {
+            binding.bottomSheet.controlOverlay.visibility = View.GONE
         }
     }
 
     private fun toggleFullscreen(videoView: VideoView) {
         val layoutParams = videoView.layoutParams
 
-        if (isFullscreen) {
-            // Switch to normal size (keep the height fixed but reduce width)
-            layoutParams.width = resources.getDimensionPixelSize(R.dimen.video_width)
-        } else {
-            // Switch to horizontal fullscreen
-            layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT
-            // Optionally adjust height to maintain aspect ratio if needed
-            val videoWidth = layoutParams.width
-            val aspectRatio = 16f / 9f // For example, typical landscape aspect ratio
-            layoutParams.height = (videoWidth / aspectRatio).toInt()
-        }
+        val constraintLayout = view?.findViewById<ConstraintLayout>(R.id.wrapped_video_tutorial_content)
+        val constraintSet = ConstraintSet()
+        val marginSetter = view?.findViewById<ConstraintLayout>(R.id.margin_setter)
+        constraintSet.clone(constraintLayout)
 
-        videoView.layoutParams = layoutParams
-        isFullscreen = !isFullscreen
+        if (!isFullscreen) {
+            // Minimize to vertical mode
+            println("Check !isFullScreen")
+            layoutParams.width = resources.getDimensionPixelSize(R.dimen.video_width)
+            layoutParams.height = resources.getDimensionPixelSize(R.dimen.video_height)
+            videoView.layoutParams = layoutParams
+
+            binding.bottomSheet.fullscreenButton.setBackgroundResource(R.drawable.baseline_fullscreen_24)  // Change to fullscreen icon
+            // Restore other layout elements visibility
+            restoreOtherLayoutElements()
+            activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        } else {
+            // Switch to fullscreen (horizontal)
+            println("Check fullScreen")
+            layoutParams.width = resources.getDimensionPixelSize(R.dimen.video_width_full)
+            layoutParams.height = ViewGroup.LayoutParams.MATCH_PARENT
+            val videoWidth = layoutParams.width
+
+            val aspectRatio = 16f / 9f  // 16:9 aspect ratio
+            layoutParams.height = (videoWidth / aspectRatio).toInt()
+            println("Video width = $videoWidth height = ${layoutParams.height}")
+            videoView.layoutParams = layoutParams
+
+            binding.bottomSheet.fullscreenButton.setBackgroundResource(R.drawable.baseline_pause_24)  // Change to minimize icon
+            activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+
+            // Hide other layout elements for fullscreen mode
+            hideOtherLayoutElements()
+            println("Oops? ended.")
+        }
+    }
+
+    private fun createDynamicLink(game: Games) {
+        // Create a Dynamic Link
+        val link = Uri.parse("https://playsnapgame.page.link/game?id=${game.game_id}") // Adjust the link as needed
+
+        FirebaseDynamicLinks.getInstance()
+            .createDynamicLink()
+            .setLink(link)
+            .setDomainUriPrefix("https://playsnapgame.page.link")
+            .setAndroidParameters(
+                DynamicLink.AndroidParameters.Builder("com.example.playsnapui")
+                    .setMinimumVersion(24)
+                    .build()
+            )
+            .buildShortDynamicLink() // FIX: Use this for async task
+            .addOnSuccessListener { shortDynamicLink ->
+                val dynamicLink = shortDynamicLink.shortLink.toString()
+                showDynamicLinkDialog(dynamicLink)
+            }
+            .addOnFailureListener { e ->
+                Log.e("DynamicLink", "Error creating dynamic link", e)
+            }
+
+
+    }
+
+    private fun showDynamicLinkDialog(dynamicLink: String) {
+        val dialog = ShareFragment(dynamicLink)
+        dialog.show(parentFragmentManager, "ShareFragment")
+    }
+
+
+    private fun hideOtherLayoutElements() {
+        // Hide elements other than the video view and controls
+//        binding.squareViewTutorial.visibility = View.GONE
+//        binding.interactionButton.visibility = View.GONE
+//        binding.btnBack.visibility = View.GONE
+        binding.bottomSheet.dragIcon.visibility = View.GONE
+        binding.bottomSheet.videoTutorialText.visibility = View.GONE
+        binding.bottomSheet.gameDescHeaderWrapped.visibility = View.GONE
+        binding.bottomSheet.deskripsiSection.visibility = View.GONE
+        binding.bottomSheet.alatBermainSection.visibility = View.GONE
+        binding.bottomSheet.titleTutorial.visibility = View.GONE
+        binding.bottomSheet.langkahBermainTitle.visibility = View.GONE
+        binding.bottomSheet.langkahBermainContent.visibility = View.GONE
+        binding.bottomSheet.mainkanButtonTutorial.visibility = View.GONE
+    }
+
+    private fun restoreOtherLayoutElements() {
+        // Restore visibility of the elements that were hidden in fullscreen mode
+        binding.bottomSheet.dragIcon.visibility = View.VISIBLE
+        binding.bottomSheet.videoTutorialText.visibility = View.VISIBLE
+        binding.bottomSheet.gameDescHeaderWrapped.visibility = View.VISIBLE
+        binding.bottomSheet.deskripsiSection.visibility = View.VISIBLE
+        binding.bottomSheet.alatBermainSection.visibility = View.VISIBLE
+        binding.bottomSheet.titleTutorial.visibility = View.VISIBLE
+        binding.bottomSheet.langkahBermainTitle.visibility = View.VISIBLE
+        binding.bottomSheet.langkahBermainContent.visibility = View.VISIBLE
+        binding.bottomSheet.mainkanButtonTutorial.visibility = View.VISIBLE
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Ensure the orientation is portrait when the fragment resumes
+        if (!isFullscreen) {
+            activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        // Ensure the orientation is portrait when the fragment is paused or navigated away from
+        activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
     }
 
 

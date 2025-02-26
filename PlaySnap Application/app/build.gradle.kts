@@ -119,6 +119,10 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.8.6")  // Navigation UI
     implementation("com.google.android.flexbox:flexbox:3.0.0")
 
+    implementation("com.google.firebase:firebase-dynamic-links-ktx:21.0.0")
+    implementation("com.google.android.gms:play-services-tasks:18.0.2")
+
+
 }
 
 kapt {
