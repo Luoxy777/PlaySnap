@@ -45,6 +45,7 @@ drawable baseline_flash_off_24
 drawable baseline_flash_on_24
 drawable baseline_flip_camera_android_24
 drawable baseline_fullscreen_24
+drawable baseline_fullscreen_exit_24
 drawable baseline_grid_view_24
 drawable baseline_image_24
 drawable baseline_keyboard_double_arrow_right_24
