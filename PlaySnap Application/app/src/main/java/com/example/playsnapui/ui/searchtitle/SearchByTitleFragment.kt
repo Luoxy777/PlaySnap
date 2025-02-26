@@ -1,5 +1,6 @@
 package com.example.playsnapui.ui.searchtitle
 
+import SharedData
 import android.os.Bundle
 import android.view.KeyEvent
 import androidx.fragment.app.Fragment
@@ -16,7 +17,10 @@ import com.example.playsnapui.databinding.FragmentSearchByTitleBinding
 import com.example.playsnapui.ui.home.HomeAdapterForYou
 import com.google.firebase.firestore.FirebaseFirestore
 import android.content.Context
+import android.util.Log
+import android.view.ViewTreeObserver
 import android.view.inputmethod.InputMethodManager
+import androidx.recyclerview.widget.RecyclerView
 
 
 class SearchByTitleFragment : Fragment() {
@@ -38,6 +42,9 @@ class SearchByTitleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        getAllGames()
+        setRecyclerViewHeightBasedOnItems(binding.listGamesSearchtitle)
+
         binding.etSearchGame.requestFocus()
         val inputMethodManager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.showSoftInput(binding.etSearchGame, InputMethodManager.SHOW_IMPLICIT)
@@ -48,8 +55,8 @@ class SearchByTitleFragment : Fragment() {
         }
 
         val emptyList = ArrayList<Games>()
-        adapter = HomeAdapterForYou(emptyList)
         val recyclerView = binding.listGamesSearchtitle
+        adapter = HomeAdapterForYou(emptyList)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
 
@@ -101,10 +108,54 @@ class SearchByTitleFragment : Fragment() {
                         Toast.makeText(context, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
                     }
             } else {
-                Toast.makeText(context, "Masukkan nama permainan!", Toast.LENGTH_SHORT).show()
+                getAllGames() // Panggil kembali semua data jika input kosong
             }
         }
 
+    }
+
+    fun getAllGames(){
+        val db = FirebaseFirestore.getInstance()
+
+        db.collection("games")
+            .get()
+            .addOnSuccessListener { documents ->
+                val gameList = mutableListOf<Games>()
+                for (document in documents) {
+                    val game = document.toObject(Games::class.java)
+                    gameList.add(game)
+                }
+                SharedData.totalGamesCount = gameList.size
+                Log.d("Shared Data total count", "${gameList.size}")
+                adapter.updateGames(gameList) // Perbarui RecyclerView
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(context, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+
+    }
+
+    private fun setRecyclerViewHeightBasedOnItems(recyclerView: RecyclerView) {
+        val recyclerView = binding.listGamesSearchtitle
+
+        recyclerView.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+            override fun onGlobalLayout() {
+                recyclerView.viewTreeObserver.removeOnGlobalLayoutListener(this)
+
+                // Dapatkan tinggi total dari parent layout
+                val parentHeight = binding.root.height
+
+                // Dapatkan posisi Y dari search bar (EditText)
+                val searchBarBottom = binding.etSearchGame.bottom
+
+                // Hitung tinggi RecyclerView agar tidak melebihi layar
+                val newHeight = parentHeight - searchBarBottom - 20 // Beri margin kecil
+
+                // Set tinggi RecyclerView
+                recyclerView.layoutParams.height = newHeight - 50
+                recyclerView.requestLayout()
+            }
+        })
     }
 
     fun hideKeyboard() {

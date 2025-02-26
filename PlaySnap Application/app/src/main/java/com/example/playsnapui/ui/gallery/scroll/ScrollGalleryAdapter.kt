@@ -43,7 +43,7 @@ class ScrollGalleryAdapter(
         val isSelected = selectedItems.contains(position)
 
         holder.btnCheck.apply {
-//            setBackgroundResource(R.drawable.btn_check_not_pressed_taken_photo) // Default background
+            setBackgroundResource(R.drawable.btn_check_pressed_taken_photo) // Default background
 
             if (isSelected) {
                 setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.baseline_check_24, 0, 0) // Show drawableTop

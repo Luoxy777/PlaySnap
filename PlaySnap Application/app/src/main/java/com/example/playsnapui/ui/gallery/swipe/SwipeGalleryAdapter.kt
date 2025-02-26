@@ -48,6 +48,7 @@ class SwipeGalleryAdapter(
             updateCheckButton(position)
 
             checkButton.setOnClickListener {
+                checkButton.setBackgroundResource(R.drawable.btn_check_pressed_taken_photo)
                 if (selectedItems.contains(position)) {
                     selectedItems.remove(position)
                 } else {
