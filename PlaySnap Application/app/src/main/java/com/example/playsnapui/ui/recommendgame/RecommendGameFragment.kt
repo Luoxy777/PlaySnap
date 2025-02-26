@@ -581,7 +581,7 @@ class RecommendGameFragment : Fragment() {
 
                 firstViewHolder?.let {
                     val itemHeight = it.measuredHeight
-                    val extraHeight = itemHeight * 3  // Tambahkan tinggi untuk beberapa item tambahan
+                    val extraHeight = (itemHeight * 5) - 100// Tambahkan tinggi untuk beberapa item tambahan
 
                     val currentHeight = recyclerView.layoutParams.height
                     recyclerView.layoutParams.height = currentHeight + extraHeight
