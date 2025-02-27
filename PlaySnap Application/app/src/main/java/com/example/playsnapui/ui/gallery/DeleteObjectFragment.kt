@@ -20,6 +20,8 @@ class DeleteObjectFragment : DialogFragment() {
     ): View {
         binding = LayoutDeleteObjectConfirmationBinding.inflate(inflater, container, false)
 
+        dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
         // "No" button click closes the dialog without action
         binding.btnNo.setOnClickListener {
             dismiss()
