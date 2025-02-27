@@ -1,12 +1,15 @@
 package com.example.playsnapui.ui.deleteAccount
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.playsnapui.AuthActivity
 import com.example.playsnapui.R
 import com.google.firebase.auth.FirebaseAuth
 import com.example.playsnapui.databinding.FragmentDeleteAccountBinding
@@ -59,9 +62,10 @@ class DeleteAccountFragment : Fragment() {
                         user.delete()
                             .addOnCompleteListener { deleteTask ->
                                 if (deleteTask.isSuccessful) {
-                                    showSnackbar("Akun berhasil dihapus")
+                                    Toast.makeText(requireContext(), "Akun berhasil dihapus", Toast.LENGTH_SHORT).show()
+                                    val intent = Intent(requireContext(), AuthActivity::class.java)
+                                    startActivity(intent)
                                     // Optionally, navigate to login screen or main screen
-                                    findNavController().navigate(R.id.action_deleteAccountFragment_to_AuthActivity)
                                 } else {
                                     showSnackbar("Akun gagal dihapus")
                                 }
@@ -74,6 +78,6 @@ class DeleteAccountFragment : Fragment() {
     }
 
     private fun showSnackbar(message: String) {
-        Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
+        Snackbar.make(binding.root, message, Snackbar.LENGTH_LONG).show()
     }
 }
