@@ -171,15 +171,18 @@ drawable mulai_button_oultline
 drawable pemain_opt1
 drawable pemain_opt2
 drawable pemain_opt3
+drawable play_svgrepo_com
 drawable playsnaplogo
 drawable properti_opt1
 drawable properti_opt2
+drawable puzzle_toy_svgrepo_com
 drawable rounded_layout
 drawable rounded_rectangle_dragable
 drawable search_background
 drawable semua_opt
 drawable silang
 drawable tenda_karnaval
+drawable tools_hammer_svgrepo_com
 drawable usia_opt1
 drawable usia_opt2
 drawable usia_opt3
@@ -325,6 +328,9 @@ id btn_switch_layout
 id btn_type_object
 id btn_yes
 id camera_button
+id cara_membuat_content
+id cara_membuat_icon
+id cara_membuat_title
 id check_rec_page
 id cloud1_feedback
 id cloud1_loading_page
@@ -438,6 +444,7 @@ id jumlah_pemain_section
 id kupu_kupu_filter_page1
 id kupu_kupu_filter_page2
 id langkah_bermain_content
+id langkah_bermain_icon
 id langkah_bermain_title
 id layout_delete_object_confirmation
 id layout_display_game
@@ -699,6 +706,7 @@ id usia_section_title
 id usia_title_filter_opt
 id usia_value
 id video_tutorial_content
+id video_tutorial_icon
 id video_tutorial_text
 id viewPager
 id wrapped_video_tutorial_content

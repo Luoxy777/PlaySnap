@@ -262,6 +262,15 @@
                     app:layout_constraintTop_toTopOf="parent"
                     android:visibility="visible"/>
 
+                <ImageView
+                    android:id="@+id/video_tutorial_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/play_svgrepo_com"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/video_tutorial_text"/>
+
                 <TextView
                     android:id="@+id/video_tutorial_text"
                     android:layout_width="wrap_content"
@@ -270,7 +279,9 @@
                     android:text="Video Tutorial"
                     android:textColor="@color/grey"
                     android:textSize="20dp"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintStart_toEndOf="@id/video_tutorial_icon"
                     app:layout_constraintTop_toBottomOf="@id/title_tutorial"
                     android:visibility="visible"/>
 
@@ -369,6 +380,50 @@
                     </FrameLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
+                <ImageView
+                    android:id="@+id/cara_membuat_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/tools_hammer_svgrepo_com"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/cara_membuat_title"/>
+
+                <TextView
+                    android:id="@+id/cara_membuat_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/leaguespartanbold"
+                    android:text="Cara Membuat N/A"
+                    android:textColor="@color/grey"
+                    android:textSize="20dp"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintStart_toEndOf="@id/cara_membuat_icon"
+                    app:layout_constraintTop_toBottomOf="@id/wrapped_video_tutorial_content"
+                    android:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/cara_membuat_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/andikaregular"
+                    android:textColor="@color/black"
+                    android:text="@string/langkah_bermain_content_tutorial_page"
+                    android:textSize="15dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cara_membuat_title"
+                    android:visibility="visible"/>
+
+                <ImageView
+                    android:id="@+id/langkah_bermain_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/puzzle_toy_svgrepo_com"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/langkah_bermain_title"/>
 
                 <TextView
                     android:id="@+id/langkah_bermain_title"
@@ -379,8 +434,9 @@
                     android:text="Langkah - Langkah Bermain"
                     android:textColor="@color/grey"
                     android:textSize="20dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/wrapped_video_tutorial_content"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintStart_toEndOf="@id/langkah_bermain_icon"
+                    app:layout_constraintTop_toBottomOf="@id/cara_membuat_content"
                     android:visibility="visible"/>
 
                 <TextView

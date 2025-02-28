@@ -220,6 +220,10 @@
         "source": "com.example.playsnapui.app-main-7:/layout/layout_popgame_list_item.xml"
     },
     {
+        "merged": "com.example.playsnapui.app-merged_res-5:/drawable_tools_hammer_svgrepo_com.xml.flat",
+        "source": "com.example.playsnapui.app-main-7:/drawable/tools_hammer_svgrepo_com.xml"
+    },
+    {
         "merged": "com.example.playsnapui.app-merged_res-5:/drawable_batal_hapus_button.xml.flat",
         "source": "com.example.playsnapui.app-main-7:/drawable/batal_hapus_button.xml"
     },
@@ -650,6 +654,10 @@
     {
         "merged": "com.example.playsnapui.app-merged_res-5:/mipmap-xhdpi_ic_started_picture.webp.flat",
         "source": "com.example.playsnapui.app-main-7:/mipmap-xhdpi/ic_started_picture.webp"
+    },
+    {
+        "merged": "com.example.playsnapui.app-merged_res-5:/drawable_play_svgrepo_com.xml.flat",
+        "source": "com.example.playsnapui.app-main-7:/drawable/play_svgrepo_com.xml"
     },
     {
         "merged": "com.example.playsnapui.app-merged_res-5:/mipmap-mdpi_ic_started_picture_round.webp.flat",
@@ -1098,6 +1106,10 @@
     {
         "merged": "com.example.playsnapui.app-merged_res-5:/layout_fragment_snap.xml.flat",
         "source": "com.example.playsnapui.app-main-7:/layout/fragment_snap.xml"
+    },
+    {
+        "merged": "com.example.playsnapui.app-merged_res-5:/drawable_puzzle_toy_svgrepo_com.xml.flat",
+        "source": "com.example.playsnapui.app-main-7:/drawable/puzzle_toy_svgrepo_com.xml"
     },
     {
         "merged": "com.example.playsnapui.app-merged_res-5:/drawable_ic_game.xml.flat",
