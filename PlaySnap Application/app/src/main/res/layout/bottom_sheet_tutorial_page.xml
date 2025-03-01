@@ -395,12 +395,25 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/leaguespartanbold"
-                    android:text="Cara Membuat N/A"
+                    android:text="Cara Membuat Properti"
                     android:textColor="@color/grey"
                     android:textSize="20dp"
                     android:layout_marginStart="5dp"
                     app:layout_constraintStart_toEndOf="@id/cara_membuat_icon"
                     app:layout_constraintTop_toBottomOf="@id/wrapped_video_tutorial_content"
+                    android:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/bahan_properti"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/andikaregular"
+                    android:textColor="@color/black"
+                    android:text="@string/langkah_bermain_content_tutorial_page"
+                    android:textSize="15dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cara_membuat_title"
                     android:visibility="visible"/>
 
                 <TextView
@@ -413,7 +426,7 @@
                     android:textSize="15dp"
                     android:layout_marginTop="15dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cara_membuat_title"
+                    app:layout_constraintTop_toBottomOf="@id/bahan_properti"
                     android:visibility="visible"/>
 
                 <ImageView
