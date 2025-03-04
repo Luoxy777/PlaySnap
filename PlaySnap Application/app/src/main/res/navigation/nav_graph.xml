@@ -300,7 +300,7 @@
             app:destination="@id/profileFragment" />
         <action
             android:id="@+id/action_SettingsAccountFragment_to_deleteAccountFragment"
-            app:destination="@id/deleteAccountFragment" />
+            app:destination="@id/DeleteAccountFragment" />
 
     </fragment>
 
@@ -416,7 +416,7 @@
     </fragment>
 
     <fragment
-        android:id="@+id/deleteAccountFragment"
+        android:id="@+id/DeleteAccountFragment"
         android:name="com.example.playsnapui.ui.deleteAccount.DeleteAccountFragment"
         android:label="deleteAccount">
         <action

@@ -52,6 +52,12 @@ class HomeFragment : Fragment() {
         }
         Log.d("HomeFragment", "User Profile: ${userProfile?.username ?: "N/A"}")
 
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         FirebaseDynamicLinks.getInstance()
             .getDynamicLink(requireActivity().intent)
             .addOnSuccessListener { pendingDynamicLinkData ->
@@ -67,11 +73,6 @@ class HomeFragment : Fragment() {
                 Log.e("DynamicLink", "Gagal mendapatkan dynamic link", it)
             }
 
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility = View.VISIBLE
 
         viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
@@ -83,8 +84,8 @@ class HomeFragment : Fragment() {
         gamesListForYou = arrayListOf()
 
         setupRecyclerViews()
-        setupListeners()
         loadGamesFromFirestore()
+        setupListeners()
     }
 
     private fun setupRecyclerViews() {
@@ -185,16 +186,20 @@ class HomeFragment : Fragment() {
 
             if (::homeAdapterPopular.isInitialized && ::homeAdapterForYou.isInitialized) {
                 Log.d("Firestore", "Notifying adapters...")
-                homeAdapterPopular.notifyDataSetChanged()
-                homeAdapterForYou.notifyDataSetChanged()
+                requireActivity().runOnUiThread {
+                    homeAdapterPopular.notifyDataSetChanged()
+                    homeAdapterForYou.notifyDataSetChanged()
+                }
             } else {
                 Log.e("Firestore", "Adapter belum diinisialisasi!")
             }
 
 
             // Pastikan perubahan terjadi dalam UI thread
-            binding.recentRecyclerForyou.post {
-                setRecyclerViewHeightBasedOnItems(binding.recentRecyclerForyou)
+            if (_binding != null) {
+                binding!!.recentRecyclerForyou.post {
+                    setRecyclerViewHeightBasedOnItems(binding!!.recentRecyclerForyou)
+                }
             }
         }
     }
