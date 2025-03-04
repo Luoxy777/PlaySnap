@@ -204,6 +204,12 @@ class HomeFragment : Fragment() {
         findNavController().navigate(action)
     }
 
+    override fun onResume() {
+        super.onResume()
+        userProfile?.let {
+            binding.tvTitleName.text = it.username ?: "N/A"
+        }    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

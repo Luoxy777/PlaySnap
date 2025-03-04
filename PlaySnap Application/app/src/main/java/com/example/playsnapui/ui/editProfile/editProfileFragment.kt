@@ -118,7 +118,7 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
         }
 
         binding.btnChecklist.setOnClickListener {
-            editText!!.clearFocus()
+            editText?.clearFocus()
             updateUserProfileInFirestore()
         }
 
@@ -307,7 +307,8 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
         inputStream?.let { input ->
             try {
                 // Create a file in internal storage
-                val file = File(requireContext().filesDir, "profile_pic.jpg")
+                val randomFileName = "${System.currentTimeMillis()}.jpg"
+                val file = File(requireContext().filesDir, randomFileName)
                 val outputStream: OutputStream = FileOutputStream(file)
                 val buffer = ByteArray(1024)
                 var length: Int
