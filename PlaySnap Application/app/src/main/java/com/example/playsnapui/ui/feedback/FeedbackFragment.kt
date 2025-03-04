@@ -57,26 +57,31 @@ class FeedbackFragment : Fragment() {
             val db = FirebaseFirestore.getInstance()
             val socialInteractionRef = db.collection("social_interaction")
 
-            Log.d("User ID", "Id : $userId")
-            Log.d("Gmae ID", "Id : $gameId")
-            // Cari dokumen yang sesuai berdasarkan user_ID dan game_ID
             socialInteractionRef
                 .whereEqualTo("user_ID", userId)
                 .whereEqualTo("game_ID", gameId)
                 .get()
                 .addOnSuccessListener { documents ->
+                    if (documents.isEmpty) {
+                        Log.e("Firestore", "Dokumen tidak ditemukan untuk user_ID: $userId dan game_ID: $gameId")
+                        return@addOnSuccessListener
+                    }
+
                     for (document in documents) {
-                        if (documents.isEmpty) {
-                            Log.e("Firestore", "Dokumen tidak ditemukan untuk user_ID: $userId dan game_ID: $gameId")
-                            return@addOnSuccessListener
-                        }
-                        Log.d("tes", "tes")
                         socialInteractionRef.document(document.id)
                             .update("rating", newRating)
                             .addOnSuccessListener {
-                                Log.d("tes", "tes")
-                                Log.d("Firestore2", "Rating berhasil diperbarui")
-                                updateGameRating(gameId, newRating) // Update ke koleksi "games"
+                                Log.d("Firestore", "Rating berhasil diperbarui")
+
+                                if (newRating.toInt() != 0) {
+                                    updateGameRating(gameId, newRating) {
+                                        Log.d("rating", "jalan")
+                                        findNavController().navigate(R.id.action_FeedbackFragment_to_HomeFragment)
+                                    }
+                                } else {
+                                    Log.d("rating", "gak jalan")
+                                    findNavController().navigate(R.id.action_FeedbackFragment_to_HomeFragment)
+                                }
                             }
                             .addOnFailureListener { e ->
                                 Log.e("Firestore", "Gagal memperbarui rating", e)
@@ -86,55 +91,54 @@ class FeedbackFragment : Fragment() {
                 .addOnFailureListener { e ->
                     Log.e("Firestore", "Gagal mendapatkan dokumen", e)
                 }
-
-            findNavController().navigate(R.id.action_FeedbackFragment_to_HomeFragment)
         }
     }
 
 
-    private fun updateGameRating(gameId: String, newRating: Float) {
+
+    private fun updateGameRating(gameId: String, newRating: Float, onComplete: () -> Unit) {
         val db = FirebaseFirestore.getInstance()
         val gameRef = db.collection("games").document(gameId)
-        val socialInteractionRef = db.collection("social_interaction")
 
         db.collection("social_interaction")
             .whereEqualTo("game_ID", gameId)
             .whereGreaterThan("rating", 0)
             .get()
             .addOnSuccessListener { documents ->
-                val totalCount = documents.size()// Hitung jumlah dokumen
+                val totalCount = documents.size() // Hitung jumlah dokumen
                 Log.d("Firestore2", "Total games rated: $totalCount")
+
                 gameRef.get()
                     .addOnSuccessListener { gameSnapshot ->
                         if (gameSnapshot.exists()) {
                             val oldRating = gameSnapshot.getDouble("rating") ?: 0.0
-                            Log.d("Firestore", "Old rating: $oldRating")
+                            val newAvgRating = ((oldRating * (totalCount - 1)) + newRating) / totalCount
 
-                            // **Hitung rating baru menggunakan rata-rata rating lama dan rating baru**
-                            val newAvgRating = ((oldRating * (totalCount-1)) + newRating) / totalCount
-                            Log.d("new rating", "old : $oldRating, totalcount : $totalCount, newrating : $newRating")
-
-                            // **Update nilai rating di koleksi "games"**
                             gameRef.update("rating", newAvgRating)
                                 .addOnSuccessListener {
                                     Log.d("Firestore", "Game rating updated successfully: $newAvgRating")
+                                    onComplete() // Callback setelah update selesai
                                 }
                                 .addOnFailureListener { e ->
                                     Log.e("Firestore", "Error updating game rating", e)
+                                    onComplete() // Tetap pindah meskipun gagal
                                 }
                         } else {
                             Log.e("Firestore", "Game document does not exist")
+                            onComplete()
                         }
                     }
                     .addOnFailureListener { e ->
                         Log.e("Firestore", "Error fetching game rating", e)
+                        onComplete()
                     }
             }
             .addOnFailureListener { e ->
                 Log.e("Firestore", "Error getting count", e)
+                onComplete()
             }
-
     }
+
 
 
     override fun onDestroyView() {
