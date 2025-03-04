@@ -21,10 +21,13 @@ class ShareFragment(private val dynamicLink: String) : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.pop_up_share, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)
 
         val linkTextView: TextView = view.findViewById(R.id.link_text)
         val copyButton: ImageButton = view.findViewById(R.id.copy_button)
