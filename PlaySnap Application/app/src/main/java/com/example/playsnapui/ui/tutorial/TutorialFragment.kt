@@ -70,6 +70,15 @@ class TutorialFragment : Fragment() {
         binding.bottomSheet.langkahBermainContent.text = Html.fromHtml(gameDetails?.tutorial ?: "NA", Html.FROM_HTML_MODE_LEGACY)
         binding.bottomSheet.numberPlayer.text = "${gameDetails?.pemainMin}-${gameDetails?.pemainMax}"
 
+        if(gameDetails?.step != ""){
+            binding.bottomSheet.bahanProperti.text = Html.fromHtml(gameDetails?.bahanProperti)
+            binding.bottomSheet.caraMembuatContent.text = Html.fromHtml(gameDetails?.step)
+        }else{
+            binding.bottomSheet.caraMembuatIcon.visibility = View.GONE
+            binding.bottomSheet.caraMembuatTitle.visibility = View.GONE
+            binding.bottomSheet.caraMembuatContent.visibility = View.GONE
+            binding.bottomSheet.bahanProperti.visibility = View.GONE
+        }
 
         val fullText = gameDetails?.deskripsi ?: "NA"
         val maxLength = 130
@@ -517,6 +526,10 @@ class TutorialFragment : Fragment() {
         binding.bottomSheet.langkahBermainTitle.visibility = View.GONE
         binding.bottomSheet.langkahBermainContent.visibility = View.GONE
         binding.bottomSheet.mainkanButtonTutorial.visibility = View.GONE
+        binding.bottomSheet.caraMembuatIcon.visibility = View.GONE
+        binding.bottomSheet.caraMembuatTitle.visibility = View.GONE
+        binding.bottomSheet.caraMembuatContent.visibility = View.GONE
+        binding.bottomSheet.bahanProperti.visibility = View.GONE
     }
 
     private fun restoreOtherLayoutElements() {
@@ -530,6 +543,10 @@ class TutorialFragment : Fragment() {
         binding.bottomSheet.langkahBermainTitle.visibility = View.VISIBLE
         binding.bottomSheet.langkahBermainContent.visibility = View.VISIBLE
         binding.bottomSheet.mainkanButtonTutorial.visibility = View.VISIBLE
+        binding.bottomSheet.caraMembuatIcon.visibility = View.VISIBLE
+        binding.bottomSheet.caraMembuatTitle.visibility = View.VISIBLE
+        binding.bottomSheet.caraMembuatContent.visibility = View.VISIBLE
+        binding.bottomSheet.bahanProperti.visibility = View.VISIBLE
     }
 
     override fun onResume() {

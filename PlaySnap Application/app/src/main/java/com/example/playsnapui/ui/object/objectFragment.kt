@@ -51,6 +51,7 @@ class ObjectFragment : Fragment() {
         }
 
         binding.btnBack.setOnClickListener {
+            SharedData.detectedObjects = emptyList()
             findNavController().navigate(R.id.action_ObjectFragment_to_HomeFragment)
         }
 
