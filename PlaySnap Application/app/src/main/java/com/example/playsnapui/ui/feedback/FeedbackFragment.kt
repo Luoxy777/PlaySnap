@@ -71,6 +71,7 @@ class FeedbackFragment : Fragment() {
                         socialInteractionRef.document(document.id)
                             .update("rating", newRating)
                             .addOnSuccessListener {
+<<<<<<< HEAD
                                 Log.d("Firestore", "Rating berhasil diperbarui")
 
                                 if (newRating.toInt() != 0) {
@@ -82,6 +83,12 @@ class FeedbackFragment : Fragment() {
                                     Log.d("rating", "gak jalan")
                                     findNavController().navigate(R.id.action_FeedbackFragment_to_HomeFragment)
                                 }
+=======
+                                Log.d("tes", "tes")
+                                Log.d("Firestore2", "Rating berhasil diperbarui")
+                                updateGameRating(gameId, newRating) // Update ke koleksi "games"
+                                findNavController().navigate(R.id.action_FeedbackFragment_to_HomeFragment)
+>>>>>>> 26c56ac7d7fe3b5efff995112843783c4284a3ee
                             }
                             .addOnFailureListener { e ->
                                 Log.e("Firestore", "Gagal memperbarui rating", e)
@@ -91,6 +98,10 @@ class FeedbackFragment : Fragment() {
                 .addOnFailureListener { e ->
                     Log.e("Firestore", "Gagal mendapatkan dokumen", e)
                 }
+<<<<<<< HEAD
+=======
+            findNavController().navigate(R.id.action_FeedbackFragment_to_HomeFragment)
+>>>>>>> 26c56ac7d7fe3b5efff995112843783c4284a3ee
         }
     }
 

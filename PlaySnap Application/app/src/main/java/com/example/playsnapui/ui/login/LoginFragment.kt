@@ -82,7 +82,7 @@ class  LoginFragment : Fragment() {
                                         gender
                                     )
                                     Log.d(
-                                        "Splash",
+                                        "Login",
                                         "User Profile Loaded: ${userProfile?.fullName ?: "N/A"}"
                                     )
 
@@ -94,6 +94,7 @@ class  LoginFragment : Fragment() {
                             }
                     }
                 }
+                requireActivity().finish()
                 val intent = Intent(requireActivity(), HomeActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
