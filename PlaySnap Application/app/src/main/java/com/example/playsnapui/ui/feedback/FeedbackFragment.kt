@@ -77,6 +77,7 @@ class FeedbackFragment : Fragment() {
                                 Log.d("tes", "tes")
                                 Log.d("Firestore2", "Rating berhasil diperbarui")
                                 updateGameRating(gameId, newRating) // Update ke koleksi "games"
+                                findNavController().navigate(R.id.action_FeedbackFragment_to_HomeFragment)
                             }
                             .addOnFailureListener { e ->
                                 Log.e("Firestore", "Gagal memperbarui rating", e)
@@ -86,7 +87,6 @@ class FeedbackFragment : Fragment() {
                 .addOnFailureListener { e ->
                     Log.e("Firestore", "Gagal mendapatkan dokumen", e)
                 }
-
             findNavController().navigate(R.id.action_FeedbackFragment_to_HomeFragment)
         }
     }
