@@ -1,12 +1,17 @@
 package com.example.playsnapui.ui.editProfile
 
 import SharedData
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.AlertDialog
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
@@ -14,10 +19,14 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -43,8 +52,9 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
     private val binding get() = _binding!!
     private var editText: EditText? = null
 
-    private val PICK_IMAGE_REQUEST = 1001
+    private val CAMERA_PERMISSION_REQUEST_CODE = 1001
     private lateinit var pickImageLauncher: ActivityResultLauncher<Intent>  // Declare the launcher
+    private var filename: String = "";
 
     private var flag: Int = 0
 
@@ -80,6 +90,7 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
             }
         }
 
+
         // Set up listeners for buttons
         setupListeners()
 
@@ -113,8 +124,19 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
 
 
     private fun setupListeners() {
+        val db = FirebaseFirestore.getInstance()
+
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(R.id.action_editProfileFragment_to_ProfileFragment) // Go back to previous screen
+            FirebaseAuth.getInstance().currentUser?.let { it1 ->
+                db.collection("users").document(it1.uid).get()
+                    .addOnSuccessListener { document ->
+                        if (document != null) {
+                            SharedData.userProfile?.profilePicture =
+                                document.getString("profilePicture")
+                            findNavController().navigate(R.id.action_editProfileFragment_to_ProfileFragment) // Go back to previous screen
+                        }
+                    }
+            }
         }
 
         binding.btnChecklist.setOnClickListener {
@@ -123,15 +145,102 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
         }
 
         binding.btnChangeProfile.setOnClickListener {
-            // Let the user pick an image from the gallery
-            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-            pickImageLauncher.launch(intent)  // Launch the image picker using the new API
+//            // Let the user pick an image from the gallery
+//            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+//            pickImageLauncher.launch(intent)  // Launch the image picker using the new API
+            showImagePickerDialog()
         }
 
         binding.btnChangePass.setOnClickListener {
             // Navigate to Change Password screen or show a dialog
             findNavController().navigate(R.id.action_editProfileFragment_to_ChangePassFragment)
         }
+    }
+
+    private fun showImagePickerDialog() {
+        val options = arrayOf("Pilih dari Galeri", "Ambil Foto")
+        AlertDialog.Builder(requireContext())
+            .setTitle("Pilih Gambar Profil")
+            .setItems(options) { _, which ->
+                when (which) {
+                    0 -> pickImageFromGallery()
+                    1 -> captureImageFromCamera()
+                }
+            }
+            .show()
+    }
+
+    private fun pickImageFromGallery() {
+        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        pickImageLauncher.launch(intent)
+    }
+
+    // Define the request code at the top of your activity/fragment class
+
+    private var imageUri: Uri? = null  // Simpan URI global agar bisa diakses setelah capture
+
+    @SuppressLint("QueryPermissionsNeeded")
+    private fun captureImageFromCamera() {
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+            val imageCaptureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+
+            if (imageCaptureIntent.resolveActivity(requireContext().packageManager) != null) {
+                filename = "profile_pic_${System.currentTimeMillis()}.jpg"
+
+                val contentValues = ContentValues().apply {
+                    put(MediaStore.Images.Media.DISPLAY_NAME, filename)
+                    put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg")
+                    put(MediaStore.Images.Media.RELATIVE_PATH, Environment.DIRECTORY_PICTURES) // Save to Pictures
+                }
+
+                // Simpan URI global untuk digunakan setelah foto diambil
+                imageUri = requireContext().contentResolver.insert(
+                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                    contentValues
+                )
+
+                if (imageUri != null) {
+                    imageCaptureIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
+                    cameraResultLauncher.launch(imageCaptureIntent)
+                } else {
+                    Log.e("CaptureImage", "Failed to create image URI")
+                }
+            } else {
+                Log.e("CaptureImage", "No camera app available")
+            }
+        } else {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(Manifest.permission.CAMERA),
+                CAMERA_PERMISSION_REQUEST_CODE
+            )
+        }
+    }
+
+    private val cameraResultLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                if (imageUri != null) {
+                    Log.d("CaptureImage", "Image captured and saved at: $imageUri")
+                    SharedData.userProfile?.profilePicture = imageUri.toString()
+
+                    // **Langsung load gambar dengan Glide**
+                    loadImageWithGlide(imageUri.toString())
+                } else {
+                    Log.e("CaptureImage", "Failed to capture image, URI is null.")
+                }
+            } else {
+                Log.e("CaptureImage", "Failed to capture image, result not OK.")
+            }
+        }
+
+
+    private fun loadImageWithGlide(imageUri: String) {
+        // Use Glide to load the image into an ImageView
+        Glide.with(requireContext())
+            .load(imageUri)
+            .transform(CircleCrop())
+            .into(binding.profilePic)
     }
 
     private fun observeViewModel() {
@@ -267,7 +376,6 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
         }
     }
 
-
     private fun updateUserProfileInFirestore() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid // Get the user ID
         val db = FirebaseFirestore.getInstance()
@@ -303,6 +411,7 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
 
 
     private fun saveImageToInternalStorage(selectedImageUri: Uri) {
+        Log.d("Selected Image", "$selectedImageUri")
         val inputStream: InputStream? = context?.contentResolver?.openInputStream(selectedImageUri)
         inputStream?.let { input ->
             try {
