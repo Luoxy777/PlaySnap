@@ -4,6 +4,7 @@ import SharedData.userProfile
 import UserProfile
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -27,6 +28,11 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val deepLinkUri: Uri? = intent?.data
+        Log.d("Full link", "$deepLinkUri")
+        val gameId = deepLinkUri?.getQueryParameter("id")
+        Log.d("You get the link", "$gameId")
+
         // Firebase Auth instance
         val auth = FirebaseAuth.getInstance()
         if (auth.currentUser != null) {
@@ -48,8 +54,16 @@ class SplashActivity : AppCompatActivity() {
                             Log.d("Splash", "User Profile Loaded: ${userProfile?.fullName ?: "N/A"}")
 
                             // ✅ Navigate **after** user profile is set
-                            startActivity(Intent(this, HomeActivity::class.java))
-                            finish()
+                            if(gameId!=null){
+                                Log.d("You get the link splash2", "$gameId haha")
+                                val intent = Intent(this, HomeActivity::class.java)
+                                gameId.let { intent.putExtra("gameId", it) }
+                                startActivity(intent)
+                                finish()
+                            }else{
+                                startActivity(Intent(this, HomeActivity::class.java))
+                                finish()
+                            }
                         }
                     }
                     .addOnFailureListener { exception ->
@@ -59,8 +73,9 @@ class SplashActivity : AppCompatActivity() {
                     }
             }
         } else {
-            // If no user is logged in, go to AuthActivity
-            startActivity(Intent(this, AuthActivity::class.java))
+            val intent = Intent(this, AuthActivity::class.java)
+            gameId?.let { intent.putExtra("gameId", it) }
+            startActivity(intent)
             finish()
         }
     }

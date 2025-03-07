@@ -8,6 +8,7 @@ object SharedData {
     var recommendedGames: List<Games> = emptyList()
     var userProfile: UserProfile? = null
     var gameDetails: Games? = null
+    var deepLinkid: String? = ""
     var propertyContainer : String = ""
 //    var batasUsia1 : Int = 0
 //    var batasUsia2Bawah : Int = 0

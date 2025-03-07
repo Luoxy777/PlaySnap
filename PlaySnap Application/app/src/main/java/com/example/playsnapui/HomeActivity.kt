@@ -1,6 +1,8 @@
 package com.example.playsnapui
 
+import SharedData.deepLinkid
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -20,6 +22,13 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        deepLinkid = ""
+        val gameId = intent.getStringExtra("gameId") ?: ""
+        Log.d("From HomeAct", "$gameId ????")
+        deepLinkid = gameId
+        Log.d("From HomeAct", "$deepLinkid ????")
+
 
         // Get NavController
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
