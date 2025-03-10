@@ -50,7 +50,7 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
     private lateinit var viewModel: EditProfileViewModel
     private var _binding: FragmentEditProfileBinding? = null
     private val binding get() = _binding!!
-    private var editText: EditText? = null
+    private val activeEditTexts = mutableMapOf<TextView, EditText>()
 
     private val CAMERA_PERMISSION_REQUEST_CODE = 1001
     private lateinit var pickImageLauncher: ActivityResultLauncher<Intent>  // Declare the launcher
@@ -140,7 +140,6 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
         }
 
         binding.btnChecklist.setOnClickListener {
-            editText?.clearFocus()
             updateUserProfileInFirestore()
         }
 
@@ -317,6 +316,10 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
                 }
             }
 
+            // Simpan EditText yang sedang aktif
+            activeEditTexts[textView] = editText
+
+
             // Ganti TextView dengan EditText
             parent.removeViewAt(index)
             parent.addView(editText, index)
@@ -325,6 +328,7 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
             editText.requestFocus()
             val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT)
+
 
             // Ketika kehilangan fokus, kembalikan ke TextView
             editText.setOnFocusChangeListener { _, hasFocus ->
@@ -335,6 +339,8 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
                     imm.hideSoftInputFromWindow(editText.windowToken, 0)
                 }
             }
+
+
 
             // Saat tombol "Done" ditekan
             editText.setOnEditorActionListener { _, actionId, _ ->
@@ -358,20 +364,38 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
         if (userId != null) {
             val userDocRef = db.collection("users").document(userId)
 
-            // Create a map of the fields that were updated
-            val updatedProfileData = mutableMapOf<String, Any>()
-            SharedData.userProfile?.fullName = binding.tvEdit1NameFill.text.toString()
-            SharedData.userProfile?.username = binding.tvEdit2UsernameFill.text.toString()
-            SharedData.userProfile?.email = binding.tvEdit3EmailFill.text.toString()
-            SharedData.userProfile?.gender = binding.tvEdit4GenderFill.text.toString()
+            // Ambil data dari input
+            val fullNameText = activeEditTexts[binding.tvEdit1NameFill]?.text?.toString()
+                ?: binding.tvEdit1NameFill.text.toString()
 
-            updatedProfileData["fullName"] = SharedData.userProfile?.fullName ?: ""
-            updatedProfileData["username"] = SharedData.userProfile?.username ?: ""
-            updatedProfileData["email"] = SharedData.userProfile?.email ?: ""
-            updatedProfileData["gender"] = SharedData.userProfile?.gender ?: ""
-            updatedProfileData["profilePicture"] = SharedData.userProfile?.profilePicture ?: "" // Update with new profile picture path
+            val usernameText = activeEditTexts[binding.tvEdit2UsernameFill]?.text?.toString()
+                ?: binding.tvEdit2UsernameFill.text.toString()
 
-            // Update the user document in Firestore
+            val emailText = binding.tvEdit3EmailFill.text.toString()
+            val genderText = binding.tvEdit4GenderFill.text.toString()
+
+            // Cek apakah ada field yang kosong
+            if (fullNameText.isBlank() || usernameText.isBlank() || emailText.isBlank() || genderText.isBlank()) {
+                Toast.makeText(requireContext(), "Harap isi semua kolom terlebih dahulu!", Toast.LENGTH_SHORT).show()
+                return
+            }
+
+            // Update SharedData
+            SharedData.userProfile?.fullName = fullNameText
+            SharedData.userProfile?.username = usernameText
+            SharedData.userProfile?.email = emailText
+            SharedData.userProfile?.gender = genderText
+
+            // Persiapkan data untuk Firestore
+            val updatedProfileData = mapOf(
+                "fullName" to fullNameText,
+                "username" to usernameText,
+                "email" to emailText,
+                "gender" to genderText,
+                "profilePicture" to (SharedData.userProfile?.profilePicture ?: "")
+            )
+
+            // Update ke Firestore
             userDocRef.update(updatedProfileData)
                 .addOnSuccessListener {
                     Log.d("EditProfile", "User profile updated successfully in Firestore")
