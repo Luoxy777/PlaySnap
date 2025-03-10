@@ -296,83 +296,58 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
     @SuppressLint("ServiceCast", "ResourceType")
     private fun makeEditableOnClick(textView: TextView) {
         textView.setOnClickListener {
-            // Create an EditText dynamically and set the text from TextView
-            editText = EditText(requireContext())
-            editText!!.setText(textView.text)
-
-            // Optionally set properties like hint or input type
-            editText!!.hint = "Ketikkan yang baru"
-            editText!!.inputType = android.text.InputType.TYPE_CLASS_TEXT
-
-            // Set text color and hint color
-            editText!!.setTextColor(resources.getColor(R.color.black, null))
-            editText!!.setHintTextColor(resources.getColor(R.color.grey, null)) // You can adjust the hint color too
-
-            // Add padding to the right
-            val layoutParams = ViewGroup.MarginLayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )
-            layoutParams.setMargins(10, 5, 10, 5) // Set margins (top, left, right, bottom)
-
-            // Set the layoutParams for the EditText
-            editText!!.layoutParams = layoutParams
-            val typeface = ResourcesCompat.getFont(requireContext(), R.font.andikaregular)
-            editText!!.typeface = typeface
-
-            // Replace TextView with EditText
-            val parent = textView.parent as ViewGroup
+            val context = textView.context
+            val parent = textView.parent as? ViewGroup ?: return@setOnClickListener
             val index = parent.indexOfChild(textView)
+
+            // Buat EditText baru
+            val editText = EditText(context).apply {
+                setText(textView.text)
+                hint = "Ketikkan yang baru"
+                inputType = android.text.InputType.TYPE_CLASS_TEXT
+                setTextColor(ContextCompat.getColor(context, R.color.black))
+                setHintTextColor(ContextCompat.getColor(context, R.color.grey))
+                typeface = ResourcesCompat.getFont(context, R.font.andikaregular)
+
+                layoutParams = ViewGroup.MarginLayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                ).apply {
+                    setMargins(10, 5, 10, 5)
+                }
+            }
+
+            // Ganti TextView dengan EditText
             parent.removeViewAt(index)
             parent.addView(editText, index)
 
-            // Request focus to automatically show the keyboard
-            editText!!.requestFocus()
-
-            // Store the editText reference in a field to be used later
-            textView.tag = editText
-
-            // Show the keyboard
-            val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            // Fokuskan EditText dan tampilkan keyboard
+            editText.requestFocus()
+            val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT)
 
-            // Set an OnFocusChangeListener to revert to TextView when focus is lost
-
-            editText!!.setOnFocusChangeListener { _, hasFocus ->
+            // Ketika kehilangan fokus, kembalikan ke TextView
+            editText.setOnFocusChangeListener { _, hasFocus ->
                 if (!hasFocus) {
-                    // When focus is lost, save the new value and convert back to TextView
-                    textView.text = editText!!.text
+                    textView.text = editText.text
                     parent.removeViewAt(index)
                     parent.addView(textView, index)
-
-                    // Hide the keyboard
-//                    imm.hideSoftInputFromWindow(editText.windowToken, 0)
+                    imm.hideSoftInputFromWindow(editText.windowToken, 0)
                 }
-                println("Not focus now")
             }
 
-            // Handle "done" button press on the keyboard (Enter/Return key)
-            editText!!.setOnEditorActionListener { v, actionId, event ->
+            // Saat tombol "Done" ditekan
+            editText.setOnEditorActionListener { _, actionId, _ ->
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    // Hide the keyboard
-                    imm.hideSoftInputFromWindow(editText!!.windowToken, 0)
-
-                    // Update the TextView with the new value from EditText
-                    textView.text = editText!!.text
-
-                    // Remove the EditText and add the TextView back
+                    textView.text = editText.text
                     parent.removeViewAt(index)
                     parent.addView(textView, index)
-
-                    // Clear the focus from EditText
-                    editText!!.clearFocus()
-
-                    true  // Return true to indicate that the action was handled
+                    imm.hideSoftInputFromWindow(editText.windowToken, 0)
+                    true
                 } else {
                     false
                 }
             }
-
         }
     }
 
