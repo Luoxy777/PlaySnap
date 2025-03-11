@@ -52,6 +52,9 @@ class HomeFragment : Fragment() {
         gamesListPopular = arrayListOf()
         gamesListForYou = arrayListOf()
 
+        setupRecyclerViews()
+        setupListeners()
+
         Log.d("Check deeplink: ", "$deepLinkid")
         if (deepLinkid != "") {
             FirebaseFirestore.getInstance().collection("games")
@@ -74,8 +77,7 @@ class HomeFragment : Fragment() {
                     )
                 }
         }
-        setupRecyclerViews()
-        setupListeners()
+
 
     }
 
@@ -135,19 +137,14 @@ class HomeFragment : Fragment() {
                     addAll(tempListPopular.sortedByDescending { it.rating }.take(batasGames))
                 }
 
-                if (isAdded && activity != null && binding != null) {
+                if (isAdded) {
                     requireActivity().runOnUiThread {
-                        if (homeAdapterPopular != null) homeAdapterPopular.notifyDataSetChanged()
-                        if (homeAdapterForYou != null) homeAdapterForYou.notifyDataSetChanged()
-                        if (binding.recentRecyclerForyou != null) {
-                            binding.recentRecyclerForyou.post {
-                                setRecyclerViewHeightBasedOnItems(
-                                    binding.recentRecyclerForyou
-                                )
-                            }
-                        }
+                        homeAdapterPopular.notifyDataSetChanged()
+                        homeAdapterForYou.notifyDataSetChanged()
+                        setRecyclerViewHeightBasedOnItems(binding.recentRecyclerForyou)
                     }
-                }            }
+                }
+            }
             .addOnFailureListener { Log.e("Firestore Error", it.message.toString()) }
     }
 
