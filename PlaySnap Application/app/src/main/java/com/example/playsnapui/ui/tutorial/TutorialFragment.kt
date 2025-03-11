@@ -82,6 +82,8 @@ class TutorialFragment : Fragment() {
             binding.bottomSheet.caraMembuatTitle.visibility = View.GONE
             binding.bottomSheet.caraMembuatContent.visibility = View.GONE
             binding.bottomSheet.bahanProperti.visibility = View.GONE
+            binding.bottomSheet.tvBahan.visibility = View.GONE
+            binding.bottomSheet.tvCara.visibility = View.GONE
         }
 
         val fullText = gameDetails?.deskripsi ?: "NA"
