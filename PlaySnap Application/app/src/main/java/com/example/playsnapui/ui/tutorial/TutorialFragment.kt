@@ -75,10 +75,10 @@ class TutorialFragment : Fragment() {
         binding.bottomSheet.apply {
             titleGameDescHeader.text = gameDetails?.namaPermainan ?: "NA"
             subtitleHeaderDesc.text = "${gameDetails?.jenisLokasi}, Usia ${gameDetails?.usiaMin} - ${gameDetails?.usiaMax} tahun"
-            if(gameDetails?.properti?.isNotEmpty() == true){
-                alatBermainContent.text = gameDetails?.properti ?: "NA"
-            }else{
+            if(gameDetails?.properti?.isEmpty() == true){
                 alatBermainSection.visibility = View.GONE
+            }else{
+                alatBermainContent.text = gameDetails?.properti ?: "NA"
             }
             langkahBermainContent.text = Html.fromHtml(gameDetails?.tutorial ?: "NA", Html.FROM_HTML_MODE_LEGACY)
             numberPlayer.text = if (gameDetails?.pemainMin == gameDetails?.pemainMax) {
@@ -219,7 +219,6 @@ class TutorialFragment : Fragment() {
                         .whereEqualTo("game_ID", game.game_id)
                         .get()
                         .await()
-
                     if (documents.isEmpty) {
                         val socialInteraction = hashMapOf(
                             "user_ID" to userId,
@@ -414,10 +413,12 @@ class TutorialFragment : Fragment() {
 
     private fun toggleFullscreen(videoView: VideoView) {
         if (isFullscreen) {
+            binding.bottomSheet.fullscreenButton.setBackgroundResource(R.drawable.baseline_fullscreen_exit_24)
             activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
             hideOtherLayoutElements()
             adjustVideoViewLayout(true)
         } else {
+            binding.bottomSheet.fullscreenButton.setBackgroundResource(R.drawable.baseline_fullscreen_24)
             activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
             restoreOtherLayoutElements()
             adjustVideoViewLayout(false)
@@ -464,19 +465,21 @@ class TutorialFragment : Fragment() {
             videoTutorialText.visibility = View.VISIBLE
             gameDescHeaderWrapped.visibility = View.VISIBLE
             deskripsiSection.visibility = View.VISIBLE
-            alatBermainSection.visibility = View.VISIBLE
             titleTutorial.visibility = View.VISIBLE
             langkahBermainIcon.visibility = View.VISIBLE
             langkahBermainTitle.visibility = View.VISIBLE
             langkahBermainContent.visibility = View.VISIBLE
             mainkanButtonTutorial.visibility = View.VISIBLE
-            if(gameDetails?.bahanProperti?.isNotEmpty()  == true){
+            if (gameDetails?.bahanProperti?.isNotEmpty() == true) {
                 tvBahan.visibility = View.VISIBLE
                 tvCara.visibility = View.VISIBLE
                 caraMembuatIcon.visibility = View.VISIBLE
                 caraMembuatTitle.visibility = View.VISIBLE
                 caraMembuatContent.visibility = View.VISIBLE
                 bahanProperti.visibility = View.VISIBLE
+            }
+            if (gameDetails?.properti?.isNotEmpty() == true) {
+                alatBermainSection.visibility = View.VISIBLE
             }
         }
     }
