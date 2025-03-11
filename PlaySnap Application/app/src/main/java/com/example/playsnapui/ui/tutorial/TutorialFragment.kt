@@ -72,7 +72,11 @@ class TutorialFragment : Fragment() {
         binding.bottomSheet.subtitleHeaderDesc.text = "${gameDetails?.jenisLokasi}, Usia ${gameDetails?.usiaMin} - ${gameDetails?.usiaMax} tahun"
         binding.bottomSheet.alatBermainContent.text = gameDetails?.properti ?: "NA"
         binding.bottomSheet.langkahBermainContent.text = Html.fromHtml(gameDetails?.tutorial ?: "NA", Html.FROM_HTML_MODE_LEGACY)
-        binding.bottomSheet.numberPlayer.text = "${gameDetails?.pemainMin}-${gameDetails?.pemainMax}"
+        if(gameDetails?.pemainMin == gameDetails?.pemainMax){
+            binding.bottomSheet.numberPlayer.text = "${gameDetails?.pemainMax}"
+        }else{
+            binding.bottomSheet.numberPlayer.text = "${gameDetails?.pemainMin}-${gameDetails?.pemainMax}"
+        }
 
         if(gameDetails?.step != ""){
             binding.bottomSheet.bahanProperti.text = Html.fromHtml(gameDetails?.bahanProperti, Html.FROM_HTML_MODE_COMPACT)
