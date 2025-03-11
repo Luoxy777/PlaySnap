@@ -75,8 +75,8 @@ class TutorialFragment : Fragment() {
         binding.bottomSheet.numberPlayer.text = "${gameDetails?.pemainMin}-${gameDetails?.pemainMax}"
 
         if(gameDetails?.step != ""){
-            binding.bottomSheet.bahanProperti.text = Html.fromHtml(gameDetails?.bahanProperti)
-            binding.bottomSheet.caraMembuatContent.text = Html.fromHtml(gameDetails?.step)
+            binding.bottomSheet.bahanProperti.text = Html.fromHtml(gameDetails?.bahanProperti, Html.FROM_HTML_MODE_COMPACT)
+            binding.bottomSheet.caraMembuatContent.text = Html.fromHtml(gameDetails?.step, Html.FROM_HTML_MODE_COMPACT)
         }else{
             binding.bottomSheet.caraMembuatIcon.visibility = View.GONE
             binding.bottomSheet.caraMembuatTitle.visibility = View.GONE
