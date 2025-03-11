@@ -70,7 +70,11 @@ class TutorialFragment : Fragment() {
         // Inflate the layout using ViewBinding
         binding.bottomSheet.titleGameDescHeader.text = gameDetails?.namaPermainan ?: "NA"
         binding.bottomSheet.subtitleHeaderDesc.text = "${gameDetails?.jenisLokasi}, Usia ${gameDetails?.usiaMin} - ${gameDetails?.usiaMax} tahun"
-        binding.bottomSheet.alatBermainContent.text = gameDetails?.properti ?: "NA"
+        if(gameDetails?.properti?.isEmpty() == true){
+            binding.bottomSheet.alatBermainSection.visibility = View.GONE
+        }else{
+            binding.bottomSheet.alatBermainContent.text = gameDetails?.properti ?: "NA"
+        }
         binding.bottomSheet.langkahBermainContent.text = Html.fromHtml(gameDetails?.tutorial ?: "NA", Html.FROM_HTML_MODE_LEGACY)
         if(gameDetails?.pemainMin == gameDetails?.pemainMax){
             binding.bottomSheet.numberPlayer.text = "${gameDetails?.pemainMax}"
@@ -566,11 +570,14 @@ class TutorialFragment : Fragment() {
         binding.bottomSheet.titleTutorial.visibility = View.GONE
         binding.bottomSheet.langkahBermainTitle.visibility = View.GONE
         binding.bottomSheet.langkahBermainContent.visibility = View.GONE
+        binding.bottomSheet.langkahBermainIcon.visibility = View.GONE
         binding.bottomSheet.mainkanButtonTutorial.visibility = View.GONE
         binding.bottomSheet.caraMembuatIcon.visibility = View.GONE
         binding.bottomSheet.caraMembuatTitle.visibility = View.GONE
         binding.bottomSheet.caraMembuatContent.visibility = View.GONE
         binding.bottomSheet.bahanProperti.visibility = View.GONE
+        binding.bottomSheet.tvCara.visibility = View.GONE
+        binding.bottomSheet.tvBahan.visibility = View.GONE
     }
 
     private fun restoreOtherLayoutElements() {
@@ -579,15 +586,22 @@ class TutorialFragment : Fragment() {
         binding.bottomSheet.videoTutorialText.visibility = View.VISIBLE
         binding.bottomSheet.gameDescHeaderWrapped.visibility = View.VISIBLE
         binding.bottomSheet.deskripsiSection.visibility = View.VISIBLE
-        binding.bottomSheet.alatBermainSection.visibility = View.VISIBLE
         binding.bottomSheet.titleTutorial.visibility = View.VISIBLE
         binding.bottomSheet.langkahBermainTitle.visibility = View.VISIBLE
         binding.bottomSheet.langkahBermainContent.visibility = View.VISIBLE
+        binding.bottomSheet.langkahBermainIcon.visibility = View.VISIBLE
         binding.bottomSheet.mainkanButtonTutorial.visibility = View.VISIBLE
-        binding.bottomSheet.caraMembuatIcon.visibility = View.VISIBLE
-        binding.bottomSheet.caraMembuatTitle.visibility = View.VISIBLE
-        binding.bottomSheet.caraMembuatContent.visibility = View.VISIBLE
-        binding.bottomSheet.bahanProperti.visibility = View.VISIBLE
+        if(gameDetails?.bahanProperti?.isNotEmpty() == true){
+            binding.bottomSheet.caraMembuatIcon.visibility = View.VISIBLE
+            binding.bottomSheet.caraMembuatTitle.visibility = View.VISIBLE
+            binding.bottomSheet.caraMembuatContent.visibility = View.VISIBLE
+            binding.bottomSheet.bahanProperti.visibility = View.VISIBLE
+            binding.bottomSheet.tvCara.visibility = View.VISIBLE
+            binding.bottomSheet.tvBahan.visibility = View.VISIBLE
+        }
+        if(gameDetails?.properti?.isEmpty() == false){
+            binding.bottomSheet.alatBermainSection.visibility = View.VISIBLE
+        }
     }
 
     override fun onResume() {

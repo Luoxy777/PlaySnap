@@ -85,7 +85,10 @@ class  LoginFragment : Fragment() {
                                         "Login",
                                         "User Profile Loaded: ${userProfile?.fullName ?: "N/A"}"
                                     )
-
+                                    requireActivity().finish()
+                                    val intent = Intent(requireActivity(), HomeActivity::class.java)
+                                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                    startActivity(intent)
                                 }
                             }
                             .addOnFailureListener { exception ->
@@ -94,10 +97,6 @@ class  LoginFragment : Fragment() {
                             }
                     }
                 }
-                requireActivity().finish()
-                val intent = Intent(requireActivity(), HomeActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(intent)
             } else {
                 Toast.makeText(requireContext(), "Gagal masuk. Periksa lagi pengenal Anda.", Toast.LENGTH_SHORT).show()
             }
