@@ -1,6 +1,8 @@
 package com.example.playsnapui.ui.home
 
+import SharedData
 import SharedData.deepLinkid
+import SharedData.gameDetails
 import SharedData.userProfile
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -18,8 +20,9 @@ import com.example.playsnapui.R
 import com.example.playsnapui.data.Games
 import com.example.playsnapui.databinding.FragmentHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.firestore.DocumentChange
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
+
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -49,8 +52,31 @@ class HomeFragment : Fragment() {
         gamesListPopular = arrayListOf()
         gamesListForYou = arrayListOf()
 
+        Log.d("Check deeplink: ", "$deepLinkid")
+        if (deepLinkid != "") {
+            FirebaseFirestore.getInstance().collection("games")
+                .document(deepLinkid!!)
+                .get()
+                .addOnSuccessListener { document: DocumentSnapshot ->
+                    if (document.exists()) {
+                        gameDetails = document.toObject(Games::class.java)
+                        if (gameDetails != null) {
+                            deepLinkid = ""
+                            findNavController().navigate(R.id.action_PopularFragment_to_TutorialFragment)
+                        }
+                    }
+                }
+                .addOnFailureListener { e: Exception? ->
+                    Log.e(
+                        "Firestore",
+                        "Error fetching game details",
+                        e
+                    )
+                }
+        }
         setupRecyclerViews()
         setupListeners()
+
     }
 
     private fun setupRecyclerViews() {
@@ -109,14 +135,19 @@ class HomeFragment : Fragment() {
                     addAll(tempListPopular.sortedByDescending { it.rating }.take(batasGames))
                 }
 
-                requireActivity().runOnUiThread {
-                    homeAdapterPopular.notifyDataSetChanged()
-                    homeAdapterForYou.notifyDataSetChanged()
-                    binding.recentRecyclerForyou.post {
-                        setRecyclerViewHeightBasedOnItems(binding.recentRecyclerForyou)
+                if (isAdded && activity != null && binding != null) {
+                    requireActivity().runOnUiThread {
+                        if (homeAdapterPopular != null) homeAdapterPopular.notifyDataSetChanged()
+                        if (homeAdapterForYou != null) homeAdapterForYou.notifyDataSetChanged()
+                        if (binding.recentRecyclerForyou != null) {
+                            binding.recentRecyclerForyou.post {
+                                setRecyclerViewHeightBasedOnItems(
+                                    binding.recentRecyclerForyou
+                                )
+                            }
+                        }
                     }
-                }
-            }
+                }            }
             .addOnFailureListener { Log.e("Firestore Error", it.message.toString()) }
     }
 

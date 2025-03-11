@@ -20,7 +20,6 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         deepLinkid = intent.getStringExtra("gameId").orEmpty()
-        Log.d("HomeActivity", "DeepLink ID: $deepLinkid")
 
         // Get NavController
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as? NavHostFragment
