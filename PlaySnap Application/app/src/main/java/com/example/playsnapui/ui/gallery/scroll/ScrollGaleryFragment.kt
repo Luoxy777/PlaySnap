@@ -95,9 +95,14 @@ class ScrollGalleryFragment : Fragment(), OnDeleteConfirmedListener {
 
     private fun setupButtons() {
         binding.hapusButton.setOnClickListener {
-            val dialog = DeleteObjectFragment.newInstance()
-            dialog.setDeleteConfirmedListener(this)  // Pass the listener to the dialog
-            dialog.show(parentFragmentManager, "DeleteObject")
+            if(selectedItems.isNotEmpty()){
+                val dialog = DeleteObjectFragment.newInstance()
+                dialog.setDeleteConfirmedListener(this)  // Pass the listener to the dialog
+                dialog.show(parentFragmentManager, "DeleteObject")
+            }
+            else{
+                Toast.makeText(requireContext(), "Tidak ada foto yang dipilih untuk dihapus!", Toast.LENGTH_LONG).show()
+            }
         }
 
         binding.btnSwitchLayout.setOnClickListener {
