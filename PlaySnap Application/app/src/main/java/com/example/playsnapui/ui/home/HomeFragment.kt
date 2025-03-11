@@ -1,6 +1,7 @@
 package com.example.playsnapui.ui.home
 
 import SharedData
+import SharedData.deepLinkid
 import kotlin.random.Random
 import SharedData.userProfile
 import android.annotation.SuppressLint
@@ -51,27 +52,16 @@ class HomeFragment : Fragment() {
             binding.tvTitleName.text = it.username ?: "N/A"
         }
         Log.d("HomeFragment", "User Profile: ${userProfile?.username ?: "N/A"}")
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        FirebaseDynamicLinks.getInstance()
-            .getDynamicLink(requireActivity().intent)
-            .addOnSuccessListener { pendingDynamicLinkData ->
-                val deepLink: Uri? = pendingDynamicLinkData?.link
-                if (deepLink != null) {
-                    val gameId = deepLink.getQueryParameter("id") // Ambil game_id dari URL
-                    if (gameId != null) {
-                        navigateToGameDetail(gameId)
-                    }
-                }
-            }
-            .addOnFailureListener {
-                Log.e("DynamicLink", "Gagal mendapatkan dynamic link", it)
-            }
+        Log.d("From Home Fragment", "$deepLinkid ????")
+        if(deepLinkid != ""){
+            fetchGameDetailsFromFirestore(deepLinkid!!)
+        }
 
         requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility = View.VISIBLE
 
@@ -87,6 +77,33 @@ class HomeFragment : Fragment() {
         loadGamesFromFirestore()
         setupListeners()
     }
+    private fun fetchGameDetailsFromFirestore(gameId: String) {
+        val db = FirebaseFirestore.getInstance()
+
+        db.collection("games").document(gameId).get()
+            .addOnSuccessListener { document ->
+                if (document.exists()) {
+                    val gameDetails = document.toObject(Games::class.java)
+                    Log.d("GameDetails", "Fetched game: $gameDetails")
+
+                    // Store game details
+                    SharedData.gameDetails = gameDetails
+
+                    // Navigate to TutorialFragment
+                    openTutorialFragment()
+                } else {
+                    Log.e("GameDetails", "Game not found")
+                }
+            }
+            .addOnFailureListener { e ->
+                Log.e("GameDetails", "Error fetching game details", e)
+            }
+    }
+
+    private fun openTutorialFragment() {
+        findNavController().navigate(R.id.action_PopularFragment_to_TutorialFragment)
+    }
+
 
     private fun setupRecyclerViews() {
         homeAdapterPopular = HomeAdapterPopular(gamesListPopular, childFragmentManager)
@@ -202,11 +219,6 @@ class HomeFragment : Fragment() {
                 }
             }
         }
-    }
-
-    private fun navigateToGameDetail(gameId: String) {
-        val action = HomeFragmentDirections.actionPopularFragmentToTutorialFragment(gameId)
-        findNavController().navigate(action)
     }
 
     override fun onResume() {

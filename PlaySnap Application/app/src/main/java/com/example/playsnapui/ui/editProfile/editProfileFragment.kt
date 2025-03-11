@@ -1,12 +1,17 @@
 package com.example.playsnapui.ui.editProfile
 
 import SharedData
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.AlertDialog
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
@@ -14,10 +19,14 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -41,10 +50,11 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
     private lateinit var viewModel: EditProfileViewModel
     private var _binding: FragmentEditProfileBinding? = null
     private val binding get() = _binding!!
-    private var editText: EditText? = null
+    private val activeEditTexts = mutableMapOf<TextView, EditText>()
 
-    private val PICK_IMAGE_REQUEST = 1001
+    private val CAMERA_PERMISSION_REQUEST_CODE = 1001
     private lateinit var pickImageLauncher: ActivityResultLauncher<Intent>  // Declare the launcher
+    private var filename: String = "";
 
     private var flag: Int = 0
 
@@ -80,6 +90,7 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
             }
         }
 
+
         // Set up listeners for buttons
         setupListeners()
 
@@ -113,25 +124,122 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
 
 
     private fun setupListeners() {
+        val db = FirebaseFirestore.getInstance()
+
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(R.id.action_editProfileFragment_to_ProfileFragment) // Go back to previous screen
+            FirebaseAuth.getInstance().currentUser?.let { it1 ->
+                db.collection("users").document(it1.uid).get()
+                    .addOnSuccessListener { document ->
+                        if (document != null) {
+                            SharedData.userProfile?.profilePicture =
+                                document.getString("profilePicture")
+                            findNavController().navigate(R.id.action_editProfileFragment_to_ProfileFragment) // Go back to previous screen
+                        }
+                    }
+            }
         }
 
         binding.btnChecklist.setOnClickListener {
-            editText?.clearFocus()
             updateUserProfileInFirestore()
         }
 
         binding.btnChangeProfile.setOnClickListener {
-            // Let the user pick an image from the gallery
-            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-            pickImageLauncher.launch(intent)  // Launch the image picker using the new API
+//            // Let the user pick an image from the gallery
+//            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+//            pickImageLauncher.launch(intent)  // Launch the image picker using the new API
+            showImagePickerDialog()
         }
 
         binding.btnChangePass.setOnClickListener {
             // Navigate to Change Password screen or show a dialog
             findNavController().navigate(R.id.action_editProfileFragment_to_ChangePassFragment)
         }
+    }
+
+    private fun showImagePickerDialog() {
+        val options = arrayOf("Pilih dari Galeri", "Ambil Foto")
+        AlertDialog.Builder(requireContext())
+            .setTitle("Pilih Gambar Profil")
+            .setItems(options) { _, which ->
+                when (which) {
+                    0 -> pickImageFromGallery()
+                    1 -> captureImageFromCamera()
+                }
+            }
+            .show()
+    }
+
+    private fun pickImageFromGallery() {
+        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        pickImageLauncher.launch(intent)
+    }
+
+    // Define the request code at the top of your activity/fragment class
+
+    private var imageUri: Uri? = null  // Simpan URI global agar bisa diakses setelah capture
+
+    @SuppressLint("QueryPermissionsNeeded")
+    private fun captureImageFromCamera() {
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+            val imageCaptureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+
+            if (imageCaptureIntent.resolveActivity(requireContext().packageManager) != null) {
+                filename = "profile_pic_${System.currentTimeMillis()}.jpg"
+
+                val contentValues = ContentValues().apply {
+                    put(MediaStore.Images.Media.DISPLAY_NAME, filename)
+                    put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg")
+                    put(MediaStore.Images.Media.RELATIVE_PATH, Environment.DIRECTORY_PICTURES) // Save to Pictures
+                }
+
+                // Simpan URI global untuk digunakan setelah foto diambil
+                imageUri = requireContext().contentResolver.insert(
+                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                    contentValues
+                )
+
+                if (imageUri != null) {
+                    imageCaptureIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
+                    cameraResultLauncher.launch(imageCaptureIntent)
+                } else {
+                    Log.e("CaptureImage", "Failed to create image URI")
+                }
+            } else {
+                Log.e("CaptureImage", "No camera app available")
+            }
+        } else {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(Manifest.permission.CAMERA),
+                CAMERA_PERMISSION_REQUEST_CODE
+            )
+        }
+    }
+
+    private val cameraResultLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                if (imageUri != null) {
+                    Log.d("CaptureImage", "Image captured and saved at: $imageUri")
+                    SharedData.userProfile?.profilePicture = imageUri.toString()
+
+                    // **Langsung load gambar dengan Glide**
+                    loadImageWithGlide(imageUri.toString())
+                } else {
+                    Log.e("CaptureImage", "Failed to capture image, URI is null.")
+                }
+            } else {
+                Log.e("CaptureImage", "Failed to capture image, result not OK.")
+            }
+        }
+
+
+    private fun loadImageWithGlide(imageUri: String) {
+        // Use Glide to load the image into an ImageView
+        Glide.with(requireContext())
+            .load(imageUri)
+            .transform(CircleCrop())
+            .into(binding.profilePic)
     }
 
     private fun observeViewModel() {
@@ -187,86 +295,67 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
     @SuppressLint("ServiceCast", "ResourceType")
     private fun makeEditableOnClick(textView: TextView) {
         textView.setOnClickListener {
-            // Create an EditText dynamically and set the text from TextView
-            editText = EditText(requireContext())
-            editText!!.setText(textView.text)
-
-            // Optionally set properties like hint or input type
-            editText!!.hint = "Ketikkan yang baru"
-            editText!!.inputType = android.text.InputType.TYPE_CLASS_TEXT
-
-            // Set text color and hint color
-            editText!!.setTextColor(resources.getColor(R.color.black, null))
-            editText!!.setHintTextColor(resources.getColor(R.color.grey, null)) // You can adjust the hint color too
-
-            // Add padding to the right
-            val layoutParams = ViewGroup.MarginLayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )
-            layoutParams.setMargins(10, 5, 10, 5) // Set margins (top, left, right, bottom)
-
-            // Set the layoutParams for the EditText
-            editText!!.layoutParams = layoutParams
-            val typeface = ResourcesCompat.getFont(requireContext(), R.font.andikaregular)
-            editText!!.typeface = typeface
-
-            // Replace TextView with EditText
-            val parent = textView.parent as ViewGroup
+            val context = textView.context
+            val parent = textView.parent as? ViewGroup ?: return@setOnClickListener
             val index = parent.indexOfChild(textView)
+
+            // Buat EditText baru
+            val editText = EditText(context).apply {
+                setText(textView.text)
+                hint = "Ketikkan yang baru"
+                inputType = android.text.InputType.TYPE_CLASS_TEXT
+                setTextColor(ContextCompat.getColor(context, R.color.black))
+                setHintTextColor(ContextCompat.getColor(context, R.color.grey))
+                typeface = ResourcesCompat.getFont(context, R.font.andikaregular)
+
+                layoutParams = ViewGroup.MarginLayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                ).apply {
+                    setMargins(10, 5, 10, 5)
+                }
+            }
+
+            // Simpan EditText yang sedang aktif
+            activeEditTexts[textView] = editText
+
+
+            // Ganti TextView dengan EditText
             parent.removeViewAt(index)
             parent.addView(editText, index)
 
-            // Request focus to automatically show the keyboard
-            editText!!.requestFocus()
-
-            // Store the editText reference in a field to be used later
-            textView.tag = editText
-
-            // Show the keyboard
-            val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            // Fokuskan EditText dan tampilkan keyboard
+            editText.requestFocus()
+            val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT)
 
-            // Set an OnFocusChangeListener to revert to TextView when focus is lost
 
-            editText!!.setOnFocusChangeListener { _, hasFocus ->
+            // Ketika kehilangan fokus, kembalikan ke TextView
+            editText.setOnFocusChangeListener { _, hasFocus ->
                 if (!hasFocus) {
-                    // When focus is lost, save the new value and convert back to TextView
-                    textView.text = editText!!.text
+                    textView.text = editText.text
                     parent.removeViewAt(index)
                     parent.addView(textView, index)
-
-                    // Hide the keyboard
-//                    imm.hideSoftInputFromWindow(editText.windowToken, 0)
+                    imm.hideSoftInputFromWindow(editText.windowToken, 0)
                 }
-                println("Not focus now")
             }
 
-            // Handle "done" button press on the keyboard (Enter/Return key)
-            editText!!.setOnEditorActionListener { v, actionId, event ->
+
+
+            // Saat tombol "Done" ditekan
+            editText.setOnEditorActionListener { _, actionId, _ ->
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    // Hide the keyboard
-                    imm.hideSoftInputFromWindow(editText!!.windowToken, 0)
-
-                    // Update the TextView with the new value from EditText
-                    textView.text = editText!!.text
-
-                    // Remove the EditText and add the TextView back
+                    textView.text = editText.text
                     parent.removeViewAt(index)
                     parent.addView(textView, index)
-
-                    // Clear the focus from EditText
-                    editText!!.clearFocus()
-
-                    true  // Return true to indicate that the action was handled
+                    imm.hideSoftInputFromWindow(editText.windowToken, 0)
+                    true
                 } else {
                     false
                 }
             }
-
         }
     }
-
 
     private fun updateUserProfileInFirestore() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid // Get the user ID
@@ -275,20 +364,38 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
         if (userId != null) {
             val userDocRef = db.collection("users").document(userId)
 
-            // Create a map of the fields that were updated
-            val updatedProfileData = mutableMapOf<String, Any>()
-            SharedData.userProfile?.fullName = binding.tvEdit1NameFill.text.toString()
-            SharedData.userProfile?.username = binding.tvEdit2UsernameFill.text.toString()
-            SharedData.userProfile?.email = binding.tvEdit3EmailFill.text.toString()
-            SharedData.userProfile?.gender = binding.tvEdit4GenderFill.text.toString()
+            // Ambil data dari input
+            val fullNameText = activeEditTexts[binding.tvEdit1NameFill]?.text?.toString()
+                ?: binding.tvEdit1NameFill.text.toString()
 
-            updatedProfileData["fullName"] = SharedData.userProfile?.fullName ?: ""
-            updatedProfileData["username"] = SharedData.userProfile?.username ?: ""
-            updatedProfileData["email"] = SharedData.userProfile?.email ?: ""
-            updatedProfileData["gender"] = SharedData.userProfile?.gender ?: ""
-            updatedProfileData["profilePicture"] = SharedData.userProfile?.profilePicture ?: "" // Update with new profile picture path
+            val usernameText = activeEditTexts[binding.tvEdit2UsernameFill]?.text?.toString()
+                ?: binding.tvEdit2UsernameFill.text.toString()
 
-            // Update the user document in Firestore
+            val emailText = binding.tvEdit3EmailFill.text.toString()
+            val genderText = binding.tvEdit4GenderFill.text.toString()
+
+            // Cek apakah ada field yang kosong
+            if (fullNameText.isBlank() || usernameText.isBlank() || emailText.isBlank() || genderText.isBlank()) {
+                Toast.makeText(requireContext(), "Harap isi semua kolom terlebih dahulu!", Toast.LENGTH_SHORT).show()
+                return
+            }
+
+            // Update SharedData
+            SharedData.userProfile?.fullName = fullNameText
+            SharedData.userProfile?.username = usernameText
+            SharedData.userProfile?.email = emailText
+            SharedData.userProfile?.gender = genderText
+
+            // Persiapkan data untuk Firestore
+            val updatedProfileData = mapOf(
+                "fullName" to fullNameText,
+                "username" to usernameText,
+                "email" to emailText,
+                "gender" to genderText,
+                "profilePicture" to (SharedData.userProfile?.profilePicture ?: "")
+            )
+
+            // Update ke Firestore
             userDocRef.update(updatedProfileData)
                 .addOnSuccessListener {
                     Log.d("EditProfile", "User profile updated successfully in Firestore")
@@ -303,6 +410,7 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
 
 
     private fun saveImageToInternalStorage(selectedImageUri: Uri) {
+        Log.d("Selected Image", "$selectedImageUri")
         val inputStream: InputStream? = context?.contentResolver?.openInputStream(selectedImageUri)
         inputStream?.let { input ->
             try {

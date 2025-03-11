@@ -1,11 +1,14 @@
 package com.example.playsnapui.ui.tutorial
 
+import SharedData.deepLinkid
 import SharedData.gameDetails
 import TutorialViewModel
 import android.annotation.SuppressLint
 import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.Html
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,6 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.MediaController
+import android.widget.SeekBar
 import android.widget.VideoView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
@@ -84,6 +88,7 @@ class TutorialFragment : Fragment() {
         val maxLength = 130
         val truncatedText: String
         val showMoreText: String
+        deepLinkid = ""
 
 // Check if the string exceeds maxLength
         if (fullText.length > maxLength) {
@@ -386,10 +391,17 @@ class TutorialFragment : Fragment() {
         // Initially hide your custom controls (they will be shown when the video is clicked)
         binding.bottomSheet.controlOverlay.visibility = View.GONE
 
-        // Start the video when ready
-        videoView.setOnPreparedListener {
+        videoView.setOnPreparedListener { mediaPlayer ->
             videoView.start()
-            binding.bottomSheet.playPauseButton.setBackgroundResource(R.drawable.baseline_pause_24)  // Set play/pause button to pause state
+            binding.bottomSheet.playPauseButton.setBackgroundResource(R.drawable.baseline_pause_24)
+
+            // Update SeekBar
+            binding.bottomSheet.seekBar.max = mediaPlayer.duration
+            updateSeekBar()
+
+            // Update time text
+            val totalTime = formatTime(mediaPlayer.duration)
+//            binding.bottomSheet.totalTime.text = totalTime
         }
 
         // Handle errors
@@ -430,7 +442,49 @@ class TutorialFragment : Fragment() {
             toggleFullscreen(videoView)  // Call the toggleFullscreen function when the fullscreen button is clicked
         }
 
+        // SeekBar listener
+        binding.bottomSheet.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                if (fromUser) {
+                    videoView.seekTo(progress)
+//                    binding.bottomSheet.currentTime.text = formatTime(progress)
+                }
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                videoView.pause()
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                videoView.start()
+                binding.bottomSheet.playPauseButton.setBackgroundResource(R.drawable.baseline_pause_24)
+            }
+        })
+
     }
+
+    // Update SeekBar while video is playing
+    private fun updateSeekBar() {
+        val handler = Handler(Looper.getMainLooper())
+        handler.post(object : Runnable {
+            override fun run() {
+                val videoView = binding.bottomSheet.videoTutorialContent
+                if (videoView.isPlaying) {
+                    binding.bottomSheet.seekBar.progress = videoView.currentPosition
+//                    binding.bottomSheet.currentTime.text = formatTime(videoView.currentPosition)
+                }
+                handler.postDelayed(this, 500)
+            }
+        })
+    }
+
+    // Format time in MM:SS
+    private fun formatTime(milliseconds: Int): String {
+        val minutes = milliseconds / 1000 / 60
+        val seconds = milliseconds / 1000 % 60
+        return String.format("%02d:%02d", minutes, seconds)
+    }
+
 
     private fun toggleControlOverlayVisibility() {
         // Toggle visibility of the custom control overlay
@@ -483,27 +537,8 @@ class TutorialFragment : Fragment() {
 
     private fun createDynamicLink(game: Games) {
         // Create a Dynamic Link
-        val link = Uri.parse("https://playsnapgame.page.link/game?id=${game.game_id}") // Adjust the link as needed
-
-        FirebaseDynamicLinks.getInstance()
-            .createDynamicLink()
-            .setLink(link)
-            .setDomainUriPrefix("https://playsnapgame.page.link")
-            .setAndroidParameters(
-                DynamicLink.AndroidParameters.Builder("com.example.playsnapui")
-                    .setMinimumVersion(24)
-                    .build()
-            )
-            .buildShortDynamicLink() // FIX: Use this for async task
-            .addOnSuccessListener { shortDynamicLink ->
-                val dynamicLink = shortDynamicLink.shortLink.toString()
-                showDynamicLinkDialog(dynamicLink)
-            }
-            .addOnFailureListener { e ->
-                Log.e("DynamicLink", "Error creating dynamic link", e)
-            }
-
-
+        val link = Uri.parse("https://playsnapgame.page.link/${game.game_id}") // Adjust the link as needed
+        showDynamicLinkDialog(link.toString())
     }
 
     private fun showDynamicLinkDialog(dynamicLink: String) {

@@ -288,27 +288,8 @@ class HomeAdapterPopular(internal val gameList: ArrayList<Games>,    private val
 
     private fun createDynamicLink(game: Games) {
         // Create a Dynamic Link
-        val link = Uri.parse("https://playsnapgame.page.link/game?id=${game.game_id}") // Adjust the link as needed
-
-        FirebaseDynamicLinks.getInstance()
-            .createDynamicLink()
-            .setLink(link)
-            .setDomainUriPrefix("https://playsnapgame.page.link")
-            .setAndroidParameters(
-                DynamicLink.AndroidParameters.Builder("com.example.playsnapui")
-                    .setMinimumVersion(24)
-                    .build()
-            )
-            .buildShortDynamicLink() // FIX: Use this for async task
-            .addOnSuccessListener { shortDynamicLink ->
-                val dynamicLink = shortDynamicLink.shortLink.toString()
-                showDynamicLinkDialog(dynamicLink)
-            }
-            .addOnFailureListener { e ->
-                Log.e("DynamicLink", "Error creating dynamic link", e)
-            }
-
-
+        val link = Uri.parse("https://playsnapgame.page.link/${game.game_id}") // Adjust the link as needed
+        showDynamicLinkDialog(link.toString())
     }
 
     private fun showDynamicLinkDialog(dynamicLink: String) {
