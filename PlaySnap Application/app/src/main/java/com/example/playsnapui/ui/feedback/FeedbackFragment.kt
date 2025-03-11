@@ -72,7 +72,6 @@ class FeedbackFragment : Fragment() {
                             .update("rating", newRating)
                             .addOnSuccessListener {
                                 Log.d("Firestore", "Rating berhasil diperbarui")
-
                                 if (newRating.toInt() != 0) {
                                     updateGameRating(gameId, newRating) {
                                         Log.d("rating", "jalan")
