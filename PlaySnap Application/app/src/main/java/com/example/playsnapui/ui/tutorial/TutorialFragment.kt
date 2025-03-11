@@ -72,16 +72,22 @@ class TutorialFragment : Fragment() {
         binding.bottomSheet.subtitleHeaderDesc.text = "${gameDetails?.jenisLokasi}, Usia ${gameDetails?.usiaMin} - ${gameDetails?.usiaMax} tahun"
         binding.bottomSheet.alatBermainContent.text = gameDetails?.properti ?: "NA"
         binding.bottomSheet.langkahBermainContent.text = Html.fromHtml(gameDetails?.tutorial ?: "NA", Html.FROM_HTML_MODE_LEGACY)
-        binding.bottomSheet.numberPlayer.text = "${gameDetails?.pemainMin}-${gameDetails?.pemainMax}"
+        if(gameDetails?.pemainMin == gameDetails?.pemainMax){
+            binding.bottomSheet.numberPlayer.text = "${gameDetails?.pemainMax}"
+        }else{
+            binding.bottomSheet.numberPlayer.text = "${gameDetails?.pemainMin}-${gameDetails?.pemainMax}"
+        }
 
         if(gameDetails?.step != ""){
-            binding.bottomSheet.bahanProperti.text = Html.fromHtml(gameDetails?.bahanProperti)
-            binding.bottomSheet.caraMembuatContent.text = Html.fromHtml(gameDetails?.step)
+            binding.bottomSheet.bahanProperti.text = Html.fromHtml(gameDetails?.bahanProperti, Html.FROM_HTML_MODE_COMPACT)
+            binding.bottomSheet.caraMembuatContent.text = Html.fromHtml(gameDetails?.step, Html.FROM_HTML_MODE_COMPACT)
         }else{
             binding.bottomSheet.caraMembuatIcon.visibility = View.GONE
             binding.bottomSheet.caraMembuatTitle.visibility = View.GONE
             binding.bottomSheet.caraMembuatContent.visibility = View.GONE
             binding.bottomSheet.bahanProperti.visibility = View.GONE
+            binding.bottomSheet.tvBahan.visibility = View.GONE
+            binding.bottomSheet.tvCara.visibility = View.GONE
         }
 
         val fullText = gameDetails?.deskripsi ?: "NA"
