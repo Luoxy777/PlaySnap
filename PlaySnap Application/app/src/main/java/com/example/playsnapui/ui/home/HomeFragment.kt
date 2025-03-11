@@ -57,7 +57,7 @@ class HomeFragment : Fragment() {
         recyclerViewPopular = binding.recentRecyclerPopgame.apply {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             setHasFixedSize(true)
-            adapter = HomeAdapterPopular(gamesListPopular, childFragmentManager).also { homeAdapterPopular = it }
+            adapter = HomeAdapterPopular(gamesListPopular,childFragmentManager).also { homeAdapterPopular = it }
             visibility = View.VISIBLE
         }
 
