@@ -15,6 +15,7 @@ import com.example.playsnapui.R
 import com.example.playsnapui.data.Games
 import com.example.playsnapui.databinding.FragmentBookmarkBinding
 import com.example.playsnapui.ui.home.HomeAdapterPopular
+import com.example.playsnapui.ui.home.HomeViewModel
 
 class BookmarkFragment : Fragment() {
 

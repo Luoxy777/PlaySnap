@@ -81,14 +81,12 @@ class RecommendGameFragment : Fragment() {
         popupWindow = PopupWindow(requireContext())
 
         // Display the recommended games
-        if (recommendedGames.isNotEmpty()) {
-            adapter = HomeAdapterForYou(recommendedGames as ArrayList<Games>, childFragmentManager)
-            binding.recyclerRecommendGames.layoutManager = LinearLayoutManager(requireContext())  // Make sure it's set
-            binding.recyclerRecommendGames.adapter = adapter
+        adapter = HomeAdapterForYou(ArrayList(recommendedGames), childFragmentManager)
+        binding.recyclerRecommendGames.layoutManager = LinearLayoutManager(requireContext())  // Make sure it's set
+        binding.recyclerRecommendGames.adapter = adapter
 
-            binding.recyclerRecommendGames.post {
-                setRecyclerViewHeightBasedOnItems(binding.recyclerRecommendGames)
-            }
+        binding.recyclerRecommendGames.post {
+            setRecyclerViewHeightBasedOnItems(binding.recyclerRecommendGames)
         }
 
         binding.usiaButtonChild.setOnClickListener {
@@ -110,7 +108,7 @@ class RecommendGameFragment : Fragment() {
         }
 
         binding.btnBack.setOnClickListener {
-            findNavController().navigateUp()
+            findNavController().navigate(R.id.action_RecommendGameFragment_to_HomeFragment)
         }
     }
 

@@ -2,29 +2,27 @@ package com.example.playsnapui.ui.home
 
 import SharedData
 import SharedData.deepLinkid
-import kotlin.random.Random
+import SharedData.gameDetails
 import SharedData.userProfile
 import android.annotation.SuppressLint
-import android.net.Uri
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
-import androidx.lifecycle.Observer
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.playsnapui.data.Games
 import com.example.playsnapui.R
+import com.example.playsnapui.data.Games
 import com.example.playsnapui.databinding.FragmentHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.dynamiclinks.FirebaseDynamicLinks
-import com.google.firebase.firestore.DocumentChange
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
+
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -38,194 +36,136 @@ class HomeFragment : Fragment() {
     private lateinit var gamesListPopular: ArrayList<Games>
     private lateinit var gamesListForYou: ArrayList<Games>
     private lateinit var viewModel: HomeViewModel
-    private lateinit var tempListPopular : ArrayList<Games>
-    private lateinit var tempListForYou : ArrayList<Games>
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-
-        userProfile?.let {
-            binding.tvTitleName.text = it.username ?: "N/A"
-        }
-        Log.d("HomeFragment", "User Profile: ${userProfile?.username ?: "N/A"}")
+        userProfile?.let { binding.tvTitleName.text = it.username ?: "N/A" }
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        Log.d("From Home Fragment", "$deepLinkid ????")
-        if(deepLinkid != ""){
-            fetchGameDetailsFromFirestore(deepLinkid!!)
-        }
-
         requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility = View.VISIBLE
 
         viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
-
-        tempListForYou = arrayListOf()
-        tempListPopular = arrayListOf()
         db = FirebaseFirestore.getInstance()
         gamesListPopular = arrayListOf()
         gamesListForYou = arrayListOf()
 
         setupRecyclerViews()
-        loadGamesFromFirestore()
         setupListeners()
-    }
-    private fun fetchGameDetailsFromFirestore(gameId: String) {
-        val db = FirebaseFirestore.getInstance()
 
-        db.collection("games").document(gameId).get()
-            .addOnSuccessListener { document ->
-                if (document.exists()) {
-                    val gameDetails = document.toObject(Games::class.java)
-                    Log.d("GameDetails", "Fetched game: $gameDetails")
-
-                    // Store game details
-                    SharedData.gameDetails = gameDetails
-
-                    // Navigate to TutorialFragment
-                    openTutorialFragment()
-                } else {
-                    Log.e("GameDetails", "Game not found")
+        Log.d("Check deeplink: ", "$deepLinkid")
+        if (deepLinkid != "") {
+            FirebaseFirestore.getInstance().collection("games")
+                .document(deepLinkid!!)
+                .get()
+                .addOnSuccessListener { document: DocumentSnapshot ->
+                    if (document.exists()) {
+                        gameDetails = document.toObject(Games::class.java)
+                        if (gameDetails != null) {
+                            deepLinkid = ""
+                            findNavController().navigate(R.id.action_PopularFragment_to_TutorialFragment)
+                        }
+                    }
                 }
-            }
-            .addOnFailureListener { e ->
-                Log.e("GameDetails", "Error fetching game details", e)
-            }
-    }
+                .addOnFailureListener { e: Exception? ->
+                    Log.e(
+                        "Firestore",
+                        "Error fetching game details",
+                        e
+                    )
+                }
+        }
 
-    private fun openTutorialFragment() {
-        findNavController().navigate(R.id.action_PopularFragment_to_TutorialFragment)
-    }
 
+    }
 
     private fun setupRecyclerViews() {
-        homeAdapterPopular = HomeAdapterPopular(gamesListPopular, childFragmentManager)
-        recyclerViewPopular = binding.recentRecyclerPopgame
-        recyclerViewPopular.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        recyclerViewPopular.setHasFixedSize(true)
-        recyclerViewPopular.adapter = homeAdapterPopular
+        recyclerViewPopular = binding.recentRecyclerPopgame.apply {
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            setHasFixedSize(true)
+            adapter = HomeAdapterPopular(gamesListPopular,childFragmentManager).also { homeAdapterPopular = it }
+            visibility = View.VISIBLE
+        }
 
-        homeAdapterForYou = HomeAdapterForYou(gamesListForYou, childFragmentManager)
-        recyclerViewForYou = binding.recentRecyclerForyou
-        recyclerViewForYou.layoutManager = LinearLayoutManager(requireContext())
-        recyclerViewForYou.setHasFixedSize(true)
-        recyclerViewForYou.isNestedScrollingEnabled = false
-        recyclerViewForYou.adapter = homeAdapterForYou
-
-        binding.recentRecyclerForyou.visibility = View.VISIBLE
-        binding.recentRecyclerPopgame.visibility = View.VISIBLE
-    }
-
-    private fun setRecyclerViewHeightBasedOnItems(recyclerView: RecyclerView) {
-        val adapter = recyclerView.adapter ?: return
-
-        val itemCount = adapter.itemCount
-        if (itemCount > 0) {
-            val layoutManager = recyclerView.layoutManager as? LinearLayoutManager ?: return
-
-            val firstItemView = layoutManager.findViewByPosition(0) ?: return
-            val itemHeight = firstItemView.measuredHeight
-
-            // Calculate total height (items * item height)
-            val totalHeight = itemHeight * itemCount + 425
-
-            // Set the new height
-            val layoutParams = recyclerView.layoutParams
-            layoutParams.height = totalHeight
-            recyclerView.layoutParams = layoutParams
+        recyclerViewForYou = binding.recentRecyclerForyou.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            setHasFixedSize(true)
+            isNestedScrollingEnabled = true
+            adapter = HomeAdapterForYou(gamesListForYou, childFragmentManager).also { homeAdapterForYou = it }
+            visibility = View.VISIBLE
         }
     }
 
     private fun setupListeners() {
-        binding.btnFilterGame.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_filterFragment)
+        binding.apply {
+            btnFilterGame.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_filterFragment) }
+            btnScanObject.setOnClickListener { findNavController().navigate(R.id.action_HomeFragment_to_SnapFragment) }
+            btnTypeObject.setOnClickListener {
+                SharedData.detectedObjects = emptyList()
+                findNavController().navigate(R.id.action_HomeFragment_to_ObjectFragment)
+            }
+            helpButton.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_HelpFragment) }
+            etSearchGame.setOnClickListener { findNavController().navigate(R.id.action_HomeFragment_to_SearchByTitleFragment) }
         }
-
-        binding.btnScanObject.setOnClickListener {
-            findNavController().navigate(R.id.action_HomeFragment_to_SnapFragment)
-        }
-
-        binding.btnTypeObject.setOnClickListener{
-            SharedData.detectedObjects = emptyList()
-            findNavController().navigate(R.id.action_HomeFragment_to_ObjectFragment)
-        }
-
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
-            requireActivity().finish()
-        }
-
-        binding.helpButton.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_HelpFragment)
-        }
-
-        binding.etSearchGame.setOnClickListener{
-            findNavController().navigate(R.id.action_HomeFragment_to_SearchByTitleFragment)
-        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) { requireActivity().finish() }
     }
 
     @SuppressLint("NotifyDataSetChanged")
     private fun loadGamesFromFirestore() {
         val batasGames = 10
 
-        db.collection("games").addSnapshotListener { value, error ->
-            if (error != null) {
-                Log.e("Firestore Error", error.message.toString())
-                return@addSnapshotListener
-            }
+        db.collection("games").get()
+            .addOnSuccessListener { value ->
+                val tempListPopular = mutableListOf<Games>()
+                val tempListForYou = mutableListOf<Games>()
 
-            tempListPopular.clear()
-            tempListForYou.clear()
+                value.documents.forEach { document ->
+                    document.toObject(Games::class.java)?.let {
+                        tempListPopular.add(it)
+                        tempListForYou.add(it)
+                    }
+                }
 
-            value?.documentChanges?.forEach { dc ->
-                if (dc.type == DocumentChange.Type.ADDED) {
-                    val game = dc.document.toObject(Games::class.java)
-                    tempListPopular.add(game)
-                    tempListForYou.add(game)
-                    Log.d("Firestore", "Game added: ${game.namaPermainan}")
+                gamesListForYou.apply {
+                    clear()
+                    addAll(tempListForYou.shuffled().take(batasGames))
+                }
+                gamesListPopular.apply {
+                    clear()
+                    addAll(tempListPopular.sortedByDescending { it.rating }.take(batasGames))
+                }
+
+                if (isAdded) {
+                    requireActivity().runOnUiThread {
+                        homeAdapterPopular.notifyDataSetChanged()
+                        homeAdapterForYou.notifyDataSetChanged()
+                        setRecyclerViewHeightBasedOnItems(binding.recentRecyclerForyou)
+                    }
                 }
             }
+            .addOnFailureListener { Log.e("Firestore Error", it.message.toString()) }
+    }
 
-            gamesListForYou.clear()
-            gamesListForYou.addAll(tempListForYou.shuffled().take(batasGames))
-            Log.d("For you", "${gamesListForYou.size}")
+    private fun setRecyclerViewHeightBasedOnItems(recyclerView: RecyclerView) {
+        recyclerView.post {
+            val adapter = recyclerView.adapter ?: return@post
+            val layoutManager = recyclerView.layoutManager as? LinearLayoutManager ?: return@post
 
-            gamesListPopular.clear()
-            gamesListPopular.addAll(tempListPopular.sortedByDescending { it.rating }.take(batasGames))
-            Log.d("Popular", "${gamesListPopular.size}")
-
-
-            if (::homeAdapterPopular.isInitialized && ::homeAdapterForYou.isInitialized) {
-                Log.d("Firestore", "Notifying adapters...")
-                requireActivity().runOnUiThread {
-                    homeAdapterPopular.notifyDataSetChanged()
-                    homeAdapterForYou.notifyDataSetChanged()
-                }
-            } else {
-                Log.e("Firestore", "Adapter belum diinisialisasi!")
-            }
-
-
-            // Pastikan perubahan terjadi dalam UI thread
-            if (_binding != null) {
-                binding!!.recentRecyclerForyou.post {
-                    setRecyclerViewHeightBasedOnItems(binding!!.recentRecyclerForyou)
-                }
+            if (adapter.itemCount > 0) {
+                recyclerView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
+                val totalHeight = recyclerView.measuredHeight + 425
+                recyclerView.layoutParams = recyclerView.layoutParams.apply { height = totalHeight }
             }
         }
     }
 
     override fun onResume() {
         super.onResume()
-        userProfile?.let {
-            binding.tvTitleName.text = it.username ?: "N/A"
-        }    }
+        userProfile?.let { binding.tvTitleName.text = it.username ?: "N/A" }
+        loadGamesFromFirestore()
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
