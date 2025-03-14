@@ -162,7 +162,7 @@ class SnapFragment : Fragment() {
             ContextCompat.getMainExecutor(requireContext()),
             object : ImageCapture.OnImageSavedCallback {
                 override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
-                    Toast.makeText(requireContext(), "Berhasil menjepret foto!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), "Berhasil menjepret foto!", Toast.LENGTH_SHORT).show()
                     loadLastCapturedImage(binding!!.galleryThumbnail)
                 }
 

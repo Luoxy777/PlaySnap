@@ -99,7 +99,7 @@ class RecommendGameFragment : Fragment() {
         }
 
         binding.btnBack.setOnClickListener {
-            findNavController().navigateUp()
+            findNavController().navigate(R.id.action_RecommendGameFragment_to_HomeFragment)
         }
     }
 

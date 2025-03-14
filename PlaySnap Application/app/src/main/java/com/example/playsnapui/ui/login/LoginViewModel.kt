@@ -1,13 +1,12 @@
 package com.example.playsnapui.ui.login
 
-import android.content.Intent
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.playsnapui.HomeActivity
+import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
 
 class LoginViewModel : ViewModel() {
 
@@ -39,10 +38,13 @@ class LoginViewModel : ViewModel() {
             return
         }
 
-        firebaseAuth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener { task ->
-                _loginState.value = task.isSuccessful
-
-                }
+        viewModelScope.launch {
+            try {
+                val result = firebaseAuth.signInWithEmailAndPassword(email, password).await()
+                _loginState.value = result.user != null
+            } catch (e: Exception) {
+                _loginState.value = false
+            }
+        }
     }
 }

@@ -1,9 +1,8 @@
 package com.example.playsnapui.ui.tutorial
 
-import SharedData.deepLinkid
 import SharedData.gameDetails
-import TutorialViewModel
 import android.annotation.SuppressLint
+import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
@@ -15,8 +14,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import android.widget.VideoView
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -29,189 +26,348 @@ import com.example.playsnapui.ui.home.ShareFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.dynamiclinks.FirebaseDynamicLinks
 import com.google.firebase.firestore.DocumentReference
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
+
 class TutorialFragment : Fragment() {
+
     private var _binding: FragmentTutorialBinding? = null
     private val binding get() = _binding!!
-    private var viewModel: TutorialViewModel? = null
     private var isFullscreen = false
-    private val seekBarHandler = Handler(Looper.getMainLooper())
+
+    private val handler = Handler(Looper.getMainLooper())
     private val updateSeekBarRunnable = object : Runnable {
         override fun run() {
-            val videoView = binding.bottomSheet.videoTutorialContent
-            if (videoView.isPlaying) {
-                binding.bottomSheet.seekBar.progress = videoView.currentPosition
-            }
-            seekBarHandler.postDelayed(this, 500)
+            updateSeekBar()
+            handler.postDelayed(this, 500)
         }
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentTutorialBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(requireActivity())[TutorialViewModel::class.java]
+        return binding.root
+    }
 
-        Glide.with(requireContext())
-            .load(gameDetails?.squareThumb)
-            .placeholder(R.drawable.ic_display_game)
-            .into(binding.squareViewTutorial)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initializeViews()
+        setUpListeners()
+        playVideoFromGoogleDrive()
+    }
 
-        binding.bottomSheet.titleGameDescHeader.text = gameDetails?.namaPermainan ?: "NA"
-        binding.bottomSheet.subtitleHeaderDesc.text = "${gameDetails?.jenisLokasi}, Usia ${gameDetails?.usiaMin} - ${gameDetails?.usiaMax} tahun"
-        binding.bottomSheet.alatBermainContent.text = gameDetails?.properti ?: "NA"
-        binding.bottomSheet.langkahBermainContent.text = Html.fromHtml(gameDetails?.tutorial ?: "NA", Html.FROM_HTML_MODE_LEGACY)
-
-        if(gameDetails?.pemainMin == gameDetails?.pemainMax){
-            binding.bottomSheet.numberPlayer.text = "${gameDetails?.pemainMax}"
-        }else{
-            binding.bottomSheet.numberPlayer.text = "${gameDetails?.pemainMin}-${gameDetails?.pemainMax}"
+    @SuppressLint("SetTextI18n")
+    private fun initializeViews() {
+        // Load game thumbnail using Glide
+        gameDetails?.squareThumb?.let { thumbnailUrl ->
+            Glide.with(requireContext())
+                .load(thumbnailUrl)
+                .placeholder(R.drawable.ic_display_game)
+                .into(binding.squareViewTutorial)
         }
 
-        if(gameDetails?.step != ""){
-            binding.bottomSheet.bahanProperti.text = Html.fromHtml(gameDetails?.bahanProperti, Html.FROM_HTML_MODE_COMPACT)
-            binding.bottomSheet.caraMembuatContent.text = Html.fromHtml(gameDetails?.step, Html.FROM_HTML_MODE_COMPACT)
-        }else{
-            binding.bottomSheet.caraMembuatIcon.visibility = View.GONE
-            binding.bottomSheet.caraMembuatTitle.visibility = View.GONE
-            binding.bottomSheet.caraMembuatContent.visibility = View.GONE
-            binding.bottomSheet.bahanProperti.visibility = View.GONE
-            binding.bottomSheet.tvBahan.visibility = View.GONE
-            binding.bottomSheet.tvCara.visibility = View.GONE
-        }
-
-        val fullText = gameDetails?.deskripsi ?: "NA"
-        val maxLength = 130
-        val truncatedText = if (fullText.length > maxLength) fullText.substring(0, maxLength) + "..." else fullText
-        val showMoreText = if (fullText.length > maxLength) "baca selengkapnya" else ""
-
-        binding.bottomSheet.deskripsiContent.text = truncatedText
-        binding.bottomSheet.bacaSelengkapnya.text = showMoreText
-
-        binding.bottomSheet.bacaSelengkapnya.setOnClickListener {
-            if (binding.bottomSheet.bacaSelengkapnya.text == "baca selengkapnya") {
-                binding.bottomSheet.deskripsiContent.text = fullText
-                binding.bottomSheet.bacaSelengkapnya.text = "kecilkan"
+        // Set game details
+        binding.bottomSheet.apply {
+            titleGameDescHeader.text = gameDetails?.namaPermainan ?: "NA"
+            subtitleHeaderDesc.text = "${gameDetails?.jenisLokasi}, Usia ${gameDetails?.usiaMin} - ${gameDetails?.usiaMax} tahun"
+            if(gameDetails?.properti?.isEmpty() == true){
+                alatBermainSection.visibility = View.GONE
+            }else{
+                alatBermainContent.text = gameDetails?.properti ?: "NA"
+            }
+            langkahBermainContent.text = Html.fromHtml(gameDetails?.tutorial ?: "NA", Html.FROM_HTML_MODE_LEGACY)
+            numberPlayer.text = if (gameDetails?.pemainMin == gameDetails?.pemainMax) {
+                "${gameDetails?.pemainMax}"
             } else {
-                binding.bottomSheet.deskripsiContent.text = truncatedText
-                binding.bottomSheet.bacaSelengkapnya.text = "baca selengkapnya"
+                "${gameDetails?.pemainMin}-${gameDetails?.pemainMax}"
+            }
+
+            if (gameDetails?.step.isNullOrEmpty()) {
+                caraMembuatIcon.visibility = View.GONE
+                caraMembuatTitle.visibility = View.GONE
+                caraMembuatContent.visibility = View.GONE
+                bahanProperti.visibility = View.GONE
+                tvBahan.visibility = View.GONE
+                tvCara.visibility = View.GONE
+            } else {
+                bahanProperti.text = Html.fromHtml(gameDetails?.bahanProperti, Html.FROM_HTML_MODE_COMPACT)
+                caraMembuatContent.text = Html.fromHtml(gameDetails?.step, Html.FROM_HTML_MODE_COMPACT)
+            }
+
+            val fullText = gameDetails?.deskripsi ?: "NA"
+            val maxLength = 130
+            val truncatedText = if (fullText.length > maxLength) {
+                fullText.substring(0, maxLength) + "..."
+            } else {
+                fullText
+            }
+            deskripsiContent.text = truncatedText
+            bacaSelengkapnya.text = if (fullText.length > maxLength) "baca selengkapnya" else ""
+
+            bacaSelengkapnya.setOnClickListener {
+                if (bacaSelengkapnya.text == "baca selengkapnya") {
+                    deskripsiContent.text = fullText
+                    bacaSelengkapnya.text = "kecilkan"
+                } else {
+                    deskripsiContent.text = truncatedText
+                    bacaSelengkapnya.text = "baca selengkapnya"
+                }
             }
         }
 
+        // Fetch bookmark and like status
+        fetchSocialInteractionStatus()
+    }
+
+    private fun fetchSocialInteractionStatus() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
-        val db = FirebaseFirestore.getInstance()
-        viewLifecycleOwner.lifecycleScope.launch {
-            try {
-                val document = db.collection("social_interaction")
-                    .whereEqualTo("user_ID", userId)
-                    .whereEqualTo("game_ID", gameDetails?.game_id)
-                    .get()
-                    .await()
-                    .documents
-                    .firstOrNull()
+        if (userId != null) {
+            CoroutineScope(Dispatchers.IO).launch {
+                try {
+                    val db = FirebaseFirestore.getInstance()
+                    val documents = db.collection("social_interaction")
+                        .whereEqualTo("user_ID", userId)
+                        .whereEqualTo("game_ID", gameDetails?.game_id)
+                        .get()
+                        .await()
 
-                binding.bookmarkButtonTutorial.setBackgroundResource(
-                    if (document?.getBoolean("bookmark_status") == true) R.drawable.ic_bookmark else R.drawable.ic_unbookmark
-                )
-                binding.likeButtonTutorial.setBackgroundResource(
-                    if (document?.getBoolean("like_status") == true) R.drawable.ic_like else R.drawable.ic_unlike
-                )
-            } catch (e: Exception) {
-                Log.e("FirestoreError", "Error fetching data", e)
+                    withContext(Dispatchers.Main) {
+                        if (documents.isEmpty) {
+                            binding.bookmarkButtonTutorial.setBackgroundResource(R.drawable.ic_unbookmark)
+                            binding.likeButtonTutorial.setBackgroundResource(R.drawable.ic_unlike)
+                        } else {
+                            val doc = documents.first()
+                            val bookmarkStatus = doc.getBoolean("bookmark_status") ?: false
+                            binding.bookmarkButtonTutorial.setBackgroundResource(
+                                if (bookmarkStatus) R.drawable.ic_bookmark else R.drawable.ic_unbookmark
+                            )
+                            binding.bookmarkButtonTutorial.tag = bookmarkStatus
+
+                            val likeStatus = doc.getBoolean("like_status") ?: false
+                            binding.likeButtonTutorial.setBackgroundResource(
+                                if (likeStatus) R.drawable.ic_like else R.drawable.ic_unlike
+                            )
+                            binding.likeButtonTutorial.tag = likeStatus
+                        }
+                    }
+                } catch (e: Exception) {
+                    Log.e("Firestore", "Error fetching social interaction status", e)
+                }
             }
         }
+    }
 
-
-
-        binding.btnBack.setOnClickListener{
+    private fun setUpListeners() {
+        binding.btnBack.setOnClickListener {
             findNavController().navigateUp()
         }
 
         binding.bookmarkButtonTutorial.setOnClickListener {
-            val current = binding.bookmarkButtonTutorial.tag as? Boolean ?: false
-            val newStatus = !current
-            gameDetails?.let { it1 -> updateBookmarkStatus(it1, newStatus) }
-            binding.bookmarkButtonTutorial.setBackgroundResource(if (newStatus) R.drawable.ic_bookmark else R.drawable.ic_unbookmark)
-            binding.bookmarkButtonTutorial.tag = newStatus
+            val currentBookmarkStatus = binding.bookmarkButtonTutorial.tag as? Boolean ?: false
+            val newBookmarkStatus = !currentBookmarkStatus
+            gameDetails?.let { game -> updateBookmarkStatus(game, newBookmarkStatus) }
+            binding.bookmarkButtonTutorial.setBackgroundResource(
+                if (newBookmarkStatus) R.drawable.ic_bookmark else R.drawable.ic_unbookmark
+            )
+            binding.bookmarkButtonTutorial.tag = newBookmarkStatus
         }
 
         binding.likeButtonTutorial.setOnClickListener {
-            val current = binding.likeButtonTutorial.tag as? Boolean ?: false
-            val newStatus = !current
-            gameDetails?.let { it1 -> updateLikeStatus(it1, newStatus) }
-            binding.likeButtonTutorial.setBackgroundResource(if (newStatus) R.drawable.ic_like else R.drawable.ic_unlike)
-            binding.likeButtonTutorial.tag = newStatus
+            val currentLikeStatus = binding.likeButtonTutorial.tag as? Boolean ?: false
+            val newLikeStatus = !currentLikeStatus
+            gameDetails?.let { game -> updateLikeStatus(game, newLikeStatus) }
+            binding.likeButtonTutorial.setBackgroundResource(
+                if (newLikeStatus) R.drawable.ic_like else R.drawable.ic_unlike
+            )
+            binding.likeButtonTutorial.tag = newLikeStatus
         }
 
         binding.shareButtonTutorial.setOnClickListener {
-            gameDetails?.let { it1 -> createDynamicLink(it1) }
+            gameDetails?.let { game -> createDynamicLink(game) }
         }
 
         binding.bottomSheet.mainkanButtonTutorial.setOnClickListener {
-            val currentTime = System.currentTimeMillis()
-            val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
-            val formattedDate = dateFormat.format(Date(currentTime))
-            val userId = FirebaseAuth.getInstance().currentUser?.uid
-            val db = FirebaseFirestore.getInstance()
+            updateVisitDate()
+            findNavController().navigate(R.id.action_TutorialFragment_to_FeedbackFragment)
+        }
+    }
 
-            db.collection("social_interaction")
-                .whereEqualTo("user_ID", userId)
-                .whereEqualTo("game_ID", gameDetails?.game_id)
-                .get()
-                .addOnSuccessListener { querySnapshot ->  // HAPUS viewLifecycleOwner
-                    if (!querySnapshot.isEmpty) {
-                        val document = querySnapshot.documents[0]
-                        db.collection("social_interaction").document(document.id)
-                            .update("date_visit", formattedDate)
-                    } else {
+
+
+    private fun createDynamicLink(game: Games) {
+        val link = Uri.parse("https://playsnapgame.page.link/${game.game_id}")
+        showDynamicLinkDialog(link.toString())
+    }
+
+    private fun showDynamicLinkDialog(link: String) {
+        ShareFragment(link).show(parentFragmentManager, "ShareFragment")
+    }
+
+
+    private fun updateBookmarkStatus(game: Games, bookmarkStatus: Boolean) {
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+        if (userId != null) {
+            CoroutineScope(Dispatchers.IO).launch {
+                try {
+                    val db = FirebaseFirestore.getInstance()
+                    val documents = db.collection("social_interaction")
+                        .whereEqualTo("user_ID", userId)
+                        .whereEqualTo("game_ID", game.game_id)
+                        .get()
+                        .await()
+                    if (documents.isEmpty) {
                         val socialInteraction = hashMapOf(
                             "user_ID" to userId,
-                            "game_ID" to gameDetails?.game_id,
-                            "date_visit" to formattedDate,
+                            "game_ID" to game.game_id,
+                            "date_visit" to null,
                             "like_status" to false,
+                            "bookmark_status" to bookmarkStatus,
+                            "rating" to 0
+                        )
+                        db.collection("social_interaction").add(socialInteraction).await()
+                    } else {
+                        for (document in documents) {
+                            val dateVisit = document.getString("date_visit")
+                            val likeStatus = document.getBoolean("like_status")
+                            if (!bookmarkStatus && !likeStatus!! && (dateVisit == "null" || dateVisit == null)) {
+                                db.collection("social_interaction")
+                                    .document(document.id)
+                                    .delete()
+                                    .await()
+                            } else {
+                                db.collection("social_interaction")
+                                    .document(document.id)
+                                    .update("bookmark_status", bookmarkStatus)
+                                    .await()
+                            }
+                        }
+                    }
+                } catch (e: Exception) {
+                    Log.e("Firestore", "Error updating bookmark status", e)
+                }
+            }
+        }
+    }
+
+    private fun updateLikeStatus(game: Games, likeStatus: Boolean) {
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+        if (userId != null) {
+            CoroutineScope(Dispatchers.IO).launch {
+                try {
+                    val db = FirebaseFirestore.getInstance()
+                    val documents = db.collection("social_interaction")
+                        .whereEqualTo("user_ID", userId)
+                        .whereEqualTo("game_ID", game.game_id)
+                        .get()
+                        .await()
+
+                    if (documents.isEmpty) {
+                        val socialInteraction = hashMapOf(
+                            "user_ID" to userId,
+                            "game_ID" to game.game_id,
+                            "date_visit" to null,
+                            "like_status" to likeStatus,
                             "bookmark_status" to false,
                             "rating" to 0
                         )
-                        db.collection("social_interaction").add(socialInteraction)
+                        db.collection("social_interaction").add(socialInteraction).await()
+                    } else {
+                        for (document in documents) {
+                            val dateVisit = document.getString("date_visit")
+                            val bookmarkStatus = document.getBoolean("bookmark_status")
+                            if (!bookmarkStatus!! && !likeStatus && (dateVisit == "null" || dateVisit == null)) {
+                                db.collection("social_interaction")
+                                    .document(document.id)
+                                    .delete()
+                                    .await()
+                            } else {
+                                db.collection("social_interaction")
+                                    .document(document.id)
+                                    .update("like_status", likeStatus)
+                                    .await()
+                            }
+                        }
                     }
+                } catch (e: Exception) {
+                    Log.e("Firestore", "Error updating like status", e)
                 }
-                .addOnFailureListener { e ->
-                    Log.e("FirestoreError", "Error fetching data", e)
-                }
-
-            findNavController().navigate(R.id.action_TutorialFragment_to_FeedbackFragment)
+            }
         }
+    }
 
+    private fun updateVisitDate() {
+        val currentTime = System.currentTimeMillis()
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+        val formattedDate = dateFormat.format(Date(currentTime))
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+        val db = FirebaseFirestore.getInstance()
 
-        playVideoFromGoogleDrive()
-        return binding.root
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val documents = db.collection("social_interaction")
+                    .whereEqualTo("user_ID", userId)
+                    .whereEqualTo("game_ID", gameDetails?.game_id)
+                    .get()
+                    .await()
+
+                if (documents.isEmpty) {
+                    val socialInteraction = hashMapOf(
+                        "user_ID" to userId,
+                        "game_ID" to gameDetails?.game_id,
+                        "date_visit" to formattedDate,
+                        "like_status" to false,
+                        "bookmark_status" to false,
+                        "rating" to 0
+                    )
+                    db.collection("social_interaction").add(socialInteraction).await()
+                } else {
+                    val document = documents.first()
+                    db.collection("social_interaction")
+                        .document(document.id)
+                        .update("date_visit", formattedDate)
+                        .await()
+                }
+            } catch (e: Exception) {
+                Log.e("Firestore", "Error updating visit date", e)
+            }
+        }
     }
 
     private fun playVideoFromGoogleDrive() {
-        val videoView = binding.bottomSheet.videoTutorialContent
-        val uri = Uri.parse(gameDetails?.linkVideo)
-        videoView.setVideoURI(uri)
+        val videoView: VideoView = binding.bottomSheet.videoTutorialContent
+        val videoUrl = gameDetails?.linkVideo ?: return
 
-        binding.bottomSheet.controlOverlay.visibility = View.GONE
+        val uri = Uri.parse(videoUrl)
+        videoView.setVideoURI(uri)
 
         videoView.setOnPreparedListener { mediaPlayer ->
             videoView.start()
             binding.bottomSheet.playPauseButton.setBackgroundResource(R.drawable.baseline_pause_24)
             binding.bottomSheet.seekBar.max = mediaPlayer.duration
-            updateSeekBar()
+            handler.post(updateSeekBarRunnable)
         }
 
-        videoView.setOnClickListener { toggleControlOverlayVisibility() }
+        videoView.setOnErrorListener { _, _, _ ->
+            Log.e("TutorialFragment", "Error playing video")
+            true
+        }
+
+        videoView.setOnClickListener {
+            toggleControlOverlayVisibility()
+        }
 
         binding.bottomSheet.playPauseButton.setOnClickListener {
             if (videoView.isPlaying) {
@@ -240,165 +396,108 @@ class TutorialFragment : Fragment() {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 if (fromUser) videoView.seekTo(progress)
             }
-            override fun onStartTrackingTouch(seekBar: SeekBar?) { videoView.pause() }
-            override fun onStopTrackingTouch(seekBar: SeekBar?) { videoView.start() }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                videoView.pause()
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                videoView.start()
+                binding.bottomSheet.playPauseButton.setBackgroundResource(R.drawable.baseline_pause_24)
+            }
         })
     }
 
     private fun updateSeekBar() {
-        seekBarHandler.post(updateSeekBarRunnable)
+        val videoView = binding.bottomSheet.videoTutorialContent
+        if (videoView.isPlaying) {
+            binding.bottomSheet.seekBar.progress = videoView.currentPosition
+        }
     }
 
     private fun toggleControlOverlayVisibility() {
-        binding.bottomSheet.controlOverlay.visibility = if (binding.bottomSheet.controlOverlay.visibility == View.GONE) View.VISIBLE else View.GONE
+        binding.bottomSheet.controlOverlay.visibility =
+            if (binding.bottomSheet.controlOverlay.visibility == View.GONE) View.VISIBLE else View.GONE
     }
 
     private fun toggleFullscreen(videoView: VideoView) {
-        val layoutParams = videoView.layoutParams
-        if (!isFullscreen) {
-            layoutParams.width = resources.getDimensionPixelSize(R.dimen.video_width)
-            layoutParams.height = resources.getDimensionPixelSize(R.dimen.video_height)
-            restoreOtherLayoutElements()
-            binding.bottomSheet.fullscreenButton.setBackgroundResource(R.drawable.baseline_fullscreen_24)
+        if (isFullscreen) {
+            binding.bottomSheet.fullscreenButton.setBackgroundResource(R.drawable.baseline_fullscreen_exit_24)
+            activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+            hideOtherLayoutElements()
+            adjustVideoViewLayout(true)
         } else {
+            binding.bottomSheet.fullscreenButton.setBackgroundResource(R.drawable.baseline_fullscreen_24)
+            activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+            restoreOtherLayoutElements()
+            adjustVideoViewLayout(false)
+
+        }
+    }
+
+    private fun adjustVideoViewLayout(isFullscreen: Boolean) {
+        val layoutParams = binding.bottomSheet.videoTutorialContent.layoutParams
+        if (isFullscreen) {
             layoutParams.width = resources.getDimensionPixelSize(R.dimen.video_width_full)
             layoutParams.height = ViewGroup.LayoutParams.MATCH_PARENT
-            hideOtherLayoutElements()
-            binding.bottomSheet.fullscreenButton.setBackgroundResource(R.drawable.baseline_fullscreen_exit_24)
+        } else {
+            layoutParams.width = resources.getDimensionPixelSize(R.dimen.video_width)
+            layoutParams.height = resources.getDimensionPixelSize(R.dimen.video_height)
         }
-        videoView.layoutParams = layoutParams
-    }
-
-    private fun updateBookmarkStatus(game: Games, bookmarkStatus: Boolean) {
-        val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
-        val db = FirebaseFirestore.getInstance()
-
-        lifecycleScope.launch(Dispatchers.IO) {  // Gunakan Coroutine
-            try {
-                val querySnapshot = db.collection("social_interaction")
-                    .whereEqualTo("user_ID", userId)
-                    .whereEqualTo("game_ID", game.game_id)
-                    .get()
-                    .await() // Convert ke coroutine
-
-                if (querySnapshot.isEmpty) {
-                    val socialInteraction = hashMapOf(
-                        "user_ID" to userId,
-                        "game_ID" to game.game_id,
-                        "bookmark_status" to bookmarkStatus,
-                        "like_status" to false,
-                        "rating" to 0
-                    )
-                    db.collection("social_interaction").add(socialInteraction).await()
-                } else {
-                    for (document in querySnapshot.documents) {
-                        if (!bookmarkStatus && document.getString("date_visit") == null) {
-                            db.collection("social_interaction").document(document.id).delete().await()
-                        } else {
-                            db.collection("social_interaction").document(document.id)
-                                .update("bookmark_status", bookmarkStatus).await()
-                        }
-                    }
-                }
-            } catch (e: Exception) {
-                Log.e("FirestoreError", "Error updating bookmark", e)
-            }
-        }
-    }
-
-
-    private fun updateLikeStatus(game: Games, likeStatus: Boolean) {
-        val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
-        val db = FirebaseFirestore.getInstance()
-
-        lifecycleScope.launch(Dispatchers.IO) {  // Jalankan di background thread
-            try {
-                val querySnapshot = db.collection("social_interaction")
-                    .whereEqualTo("user_ID", userId)
-                    .whereEqualTo("game_ID", game.game_id)
-                    .get()
-                    .await() // Convert ke coroutine
-
-                if (querySnapshot.isEmpty) {
-                    val socialInteraction = hashMapOf(
-                        "user_ID" to userId,
-                        "game_ID" to game.game_id,
-                        "like_status" to likeStatus,
-                        "bookmark_status" to false,
-                        "rating" to 0
-                    )
-                    db.collection("social_interaction").add(socialInteraction).await()
-                } else {
-                    for (document in querySnapshot.documents) {
-                        if (!likeStatus && document.getString("date_visit") == null) {
-                            db.collection("social_interaction").document(document.id).delete().await()
-                        } else {
-                            db.collection("social_interaction").document(document.id)
-                                .update("like_status", likeStatus).await()
-                        }
-                    }
-                }
-            } catch (e: Exception) {
-                Log.e("FirestoreError", "Error updating like status", e)
-            }
-        }
-    }
-
-
-    private fun createDynamicLink(game: Games) {
-        val link = Uri.parse("https://playsnapgame.page.link/${game.game_id}")
-        showDynamicLinkDialog(link.toString())
-    }
-
-    private fun showDynamicLinkDialog(link: String) {
-        ShareFragment(link).show(parentFragmentManager, "ShareFragment")
+        binding.bottomSheet.videoTutorialContent.layoutParams = layoutParams
     }
 
     private fun hideOtherLayoutElements() {
-        binding.bottomSheet.dragIcon.visibility = View.GONE
-        binding.bottomSheet.videoTutorialText.visibility = View.GONE
-        binding.bottomSheet.gameDescHeaderWrapped.visibility = View.GONE
-        binding.bottomSheet.deskripsiSection.visibility = View.GONE
-        binding.bottomSheet.alatBermainSection.visibility = View.GONE
-        binding.bottomSheet.titleTutorial.visibility = View.GONE
-        binding.bottomSheet.langkahBermainTitle.visibility = View.GONE
-        binding.bottomSheet.langkahBermainContent.visibility = View.GONE
-        binding.bottomSheet.mainkanButtonTutorial.visibility = View.GONE
-        binding.bottomSheet.caraMembuatIcon.visibility = View.GONE
-        binding.bottomSheet.caraMembuatTitle.visibility = View.GONE
-        binding.bottomSheet.caraMembuatContent.visibility = View.GONE
-        binding.bottomSheet.bahanProperti.visibility = View.GONE
+        binding.bottomSheet.apply {
+            dragIcon.visibility = View.GONE
+            videoTutorialText.visibility = View.GONE
+            gameDescHeaderWrapped.visibility = View.GONE
+            deskripsiSection.visibility = View.GONE
+            alatBermainSection.visibility = View.GONE
+            titleTutorial.visibility = View.GONE
+            langkahBermainIcon.visibility = View.GONE
+            langkahBermainTitle.visibility = View.GONE
+            langkahBermainContent.visibility = View.GONE
+            mainkanButtonTutorial.visibility = View.GONE
+            tvBahan.visibility = View.GONE
+            tvCara.visibility = View.GONE
+            caraMembuatIcon.visibility = View.GONE
+            caraMembuatTitle.visibility = View.GONE
+            caraMembuatContent.visibility = View.GONE
+            bahanProperti.visibility = View.GONE
+        }
     }
 
     private fun restoreOtherLayoutElements() {
-        binding.bottomSheet.dragIcon.visibility = View.VISIBLE
-        binding.bottomSheet.videoTutorialText.visibility = View.VISIBLE
-        binding.bottomSheet.gameDescHeaderWrapped.visibility = View.VISIBLE
-        binding.bottomSheet.deskripsiSection.visibility = View.VISIBLE
-        binding.bottomSheet.alatBermainSection.visibility = View.VISIBLE
-        binding.bottomSheet.titleTutorial.visibility = View.VISIBLE
-        binding.bottomSheet.langkahBermainTitle.visibility = View.VISIBLE
-        binding.bottomSheet.langkahBermainContent.visibility = View.VISIBLE
-        binding.bottomSheet.mainkanButtonTutorial.visibility = View.VISIBLE
-        binding.bottomSheet.caraMembuatIcon.visibility = View.VISIBLE
-        binding.bottomSheet.caraMembuatTitle.visibility = View.VISIBLE
-        binding.bottomSheet.caraMembuatContent.visibility = View.VISIBLE
-        binding.bottomSheet.bahanProperti.visibility = View.VISIBLE
-    }
-
-    override fun onPause() {
-        super.onPause()
-        binding.bottomSheet.videoTutorialContent.pause()
+        binding.bottomSheet.apply {
+            dragIcon.visibility = View.VISIBLE
+            videoTutorialText.visibility = View.VISIBLE
+            gameDescHeaderWrapped.visibility = View.VISIBLE
+            deskripsiSection.visibility = View.VISIBLE
+            titleTutorial.visibility = View.VISIBLE
+            langkahBermainIcon.visibility = View.VISIBLE
+            langkahBermainTitle.visibility = View.VISIBLE
+            langkahBermainContent.visibility = View.VISIBLE
+            mainkanButtonTutorial.visibility = View.VISIBLE
+            if (gameDetails?.bahanProperti?.isNotEmpty() == true) {
+                tvBahan.visibility = View.VISIBLE
+                tvCara.visibility = View.VISIBLE
+                caraMembuatIcon.visibility = View.VISIBLE
+                caraMembuatTitle.visibility = View.VISIBLE
+                caraMembuatContent.visibility = View.VISIBLE
+                bahanProperti.visibility = View.VISIBLE
+            }
+            if (gameDetails?.properti?.isNotEmpty() == true) {
+                alatBermainSection.visibility = View.VISIBLE
+            }
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        seekBarHandler.removeCallbacks(updateSeekBarRunnable)
-        binding.bottomSheet.videoTutorialContent.apply {
-            stopPlayback()
-            setOnPreparedListener(null)
-            setOnClickListener(null)
-            setOnErrorListener(null)
+        handler.removeCallbacks(updateSeekBarRunnable)
+        if (binding.bottomSheet.videoTutorialContent.isPlaying) {
+            binding.bottomSheet.videoTutorialContent.stopPlayback()
         }
         _binding = null
     }
