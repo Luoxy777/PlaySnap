@@ -7,6 +7,11 @@
     android:background="@color/white"
     tools:context=".ui.home.HomeFragment">
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <ScrollView
         android:id="@+id/MyScrollView"
         android:layout_width="match_parent"
@@ -90,6 +95,7 @@
                 android:layout_marginTop="73dp"
                 android:layout_marginEnd="20dp"
                 android:src="@drawable/logo_banner"
+                android:elevation="1dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -240,5 +246,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </RelativeLayout>

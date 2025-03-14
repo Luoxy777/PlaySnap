@@ -9,7 +9,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.navigation.fragment.findNavController
 import com.example.playsnapui.R
 import com.example.playsnapui.databinding.BottomSheetFilterPageBinding
@@ -18,8 +20,11 @@ import com.example.playsnapui.databinding.FragmentHomeBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import androidx.lifecycle.lifecycleScope
+import com.example.playsnapui.HomeActivity
 import com.example.playsnapui.data.Games
 import com.example.playsnapui.ui.recommendgame.RecommendGameFragment
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
@@ -29,6 +34,8 @@ class FilterFragment : Fragment() {
 
     private var _binding: FragmentFilterBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var bottomSheetBehavior: BottomSheetBehavior<View>
 
     private var bottomSheetBinding: BottomSheetFilterPageBinding? = null
     private val db = FirebaseFirestore.getInstance()
@@ -40,7 +47,7 @@ class FilterFragment : Fragment() {
         _binding = FragmentFilterBinding.inflate(inflater, container, false)
 
         // INI PERBAIKANNYA: Inflate BottomSheet secara mandiri
-        bottomSheetBinding = BottomSheetFilterPageBinding.inflate(inflater, binding.bottomSheetFilterPage, true)
+        bottomSheetBinding = BottomSheetFilterPageBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -61,177 +68,7 @@ class FilterFragment : Fragment() {
         var isNullPemain : Boolean = true
         var isNullProperti : Boolean = true
 
-        binding!!.btnBack.setOnClickListener {
-            findNavController().navigate(R.id.action_FilterFragment_to_HomeFragment)
-        }
-
         bottomSheetBinding?.let { sheetBinding ->
-//            // Set listener untuk tombol usia
-//            var isClicked1 = false
-//            var isClicked2 = false
-//            var isClicked3 = false
-//            sheetBinding.usiaOpt1Btn.setOnClickListener {
-//                if(isNullUsia == true){
-//                    if(!isClicked1){
-//                        sheetBinding.usiaOpt1Btn.setBackgroundResource(R.drawable.background_option_filter_pressed)
-//                        isClicked1 = true
-//                    }
-//                    if(isClicked2){
-//                        sheetBinding.usiaOpt2Btn.setBackgroundResource(R.drawable.background_option_filter_page)
-//                        isClicked2 = false
-//                    }
-//                    if(isClicked3){
-//                        sheetBinding.usiaOpt3Btn.setBackgroundResource(R.drawable.background_option_filter_page)
-//                        isClicked3 = false
-//                    }
-//                    isNullUsia = false
-//                    binding.usiaValue.text = "<6 th"
-//                    batasUsiaBawah = 0
-//                    batasUsiaAtas = 5
-//                }
-//                else if(isNullUsia == false){
-//                    if(isClicked1){
-//                        sheetBinding.usiaOpt1Btn.setBackgroundResource(R.drawable.background_option_filter_page)
-//                        isClicked1 = false
-//                        isNullUsia = true
-//                        binding.usiaValue.text = "-"
-//                        batasUsiaBawah = 0
-//                        batasUsiaAtas = 0
-//                    }
-//                    else if(!isClicked1){
-//                        sheetBinding.usiaOpt1Btn.setBackgroundResource(R.drawable.background_option_filter_pressed)
-//                        isClicked1 = true
-//                        isNullUsia = false
-//                        binding.usiaValue.text = "<6 th"
-//                        batasUsiaBawah = 0
-//                        batasUsiaAtas = 5
-//                    }
-//                    else if(isClicked2){
-//                        sheetBinding.usiaOpt2Btn.setBackgroundResource(R.drawable.background_option_filter_page)
-//                        isClicked2 = false
-//                        isNullUsia = true
-//                        binding.usiaValue.text = "-"
-//                        batasUsiaBawah = 0
-//                        batasUsiaAtas = 0
-//                    }
-//                    else if(isClicked3){
-//                        sheetBinding.usiaOpt3Btn.setBackgroundResource(R.drawable.background_option_filter_page)
-//                        isClicked3 = false
-//                        isNullUsia = true
-//                        binding.usiaValue.text = "-"
-//                        batasUsiaBawah = 0
-//                        batasUsiaAtas = 0
-//                    }
-//                }
-//            }
-//            sheetBinding.usiaOpt2Btn.setOnClickListener {
-//                if(isNullUsia == true){
-//                    if(isClicked1){
-//                        sheetBinding.usiaOpt1Btn.setBackgroundResource(R.drawable.background_option_filter_page)
-//                        isClicked1 = false
-//                    }
-//                    if(!isClicked2){
-//                        sheetBinding.usiaOpt2Btn.setBackgroundResource(R.drawable.background_option_filter_pressed)
-//                        isClicked2 = true
-//                    }
-//                    if(isClicked3){
-//                        sheetBinding.usiaOpt3Btn.setBackgroundResource(R.drawable.background_option_filter_page)
-//                        isClicked3 = false
-//                    }
-//                    isNullUsia = false
-//                    binding.usiaValue.text = "6 - 10 th"
-//                    batasUsiaBawah = 6
-//                    batasUsiaAtas = 10
-//                }
-//                else if(isNullUsia == false){
-//                    if(isClicked1){
-//                        sheetBinding.usiaOpt1Btn.setBackgroundResource(R.drawable.background_option_filter_page)
-//                        isClicked1 = false
-//                        isNullUsia = true
-//                        binding.usiaValue.text = "-"
-//                        batasUsiaBawah = 0
-//                        batasUsiaAtas = 0
-//                    }
-//                    if(isClicked2){
-//                        sheetBinding.usiaOpt2Btn.setBackgroundResource(R.drawable.background_option_filter_page)
-//                        isClicked2 = false
-//                        isNullUsia = true
-//                        binding.usiaValue.text = "-"
-//                        batasUsiaBawah = 0
-//                        batasUsiaAtas = 0
-//                    }
-//                    else if(!isClicked2){
-//                        sheetBinding.usiaOpt2Btn.setBackgroundResource(R.drawable.background_option_filter_pressed)
-//                        isClicked2 = true
-//                        isNullUsia = false
-//                        binding.usiaValue.text = "6 - 10 th"
-//                        batasUsiaBawah = 6
-//                        batasUsiaAtas = 10
-//                    }
-//                    else if(isClicked3){
-//                        sheetBinding.usiaOpt3Btn.setBackgroundResource(R.drawable.background_option_filter_page)
-//                        isClicked3 = false
-//                        isNullUsia = true
-//                        binding.usiaValue.text = "-"
-//                        batasUsiaBawah = 0
-//                        batasUsiaAtas = 0
-//                    }
-//                }
-//            }
-//            sheetBinding.usiaOpt3Btn.setOnClickListener {
-//                if(isNullUsia == true){
-//                    if(isClicked1){
-//                        sheetBinding.usiaOpt1Btn.setBackgroundResource(R.drawable.background_option_filter_page)
-//                        isClicked1 = false
-//                    }
-//                    if(isClicked2){
-//                        sheetBinding.usiaOpt2Btn.setBackgroundResource(R.drawable.background_option_filter_page)
-//                        isClicked2 = false
-//                    }
-//                    if(!isClicked3){
-//                        sheetBinding.usiaOpt3Btn.setBackgroundResource(R.drawable.background_option_filter_pressed)
-//                        isClicked3 = true
-//                    }
-//                    isNullUsia = false
-//                    binding.usiaValue.text = ">10 th"
-//                    batasUsiaBawah = 11
-//                    batasUsiaAtas = 13
-//                }
-//                else if(isNullUsia == false){
-//                    if(isClicked1){
-//                        sheetBinding.usiaOpt1Btn.setBackgroundResource(R.drawable.background_option_filter_page)
-//                        isClicked1 = false
-//                        isNullUsia = true
-//                        binding.usiaValue.text = "-"
-//                        batasUsiaBawah = 0
-//                        batasUsiaAtas = 0
-//                    }
-//                    if(isClicked2){
-//                        sheetBinding.usiaOpt2Btn.setBackgroundResource(R.drawable.background_option_filter_page)
-//                        isClicked2 = false
-//                        isNullUsia = true
-//                        binding.usiaValue.text = "-"
-//                        batasUsiaBawah = 0
-//                        batasUsiaAtas = 0
-//                    }
-//                    if(isClicked3){
-//                        sheetBinding.usiaOpt3Btn.setBackgroundResource(R.drawable.background_option_filter_page)
-//                        isClicked3 = false
-//                        isNullUsia = true
-//                        binding.usiaValue.text = "-"
-//                        batasUsiaBawah = 0
-//                        batasUsiaAtas = 0
-//                    }
-//                    else if(!isClicked3){
-//                        sheetBinding.usiaOpt3Btn.setBackgroundResource(R.drawable.background_option_filter_pressed)
-//                        isClicked3 = true
-//                        isNullUsia = false
-//                        binding.usiaValue.text = ">10 th"
-//                        batasUsiaBawah = 11
-//                        batasUsiaAtas = 13
-//                    }
-//                }
-//            }
 
             // Variabel untuk menyimpan tombol yang sedang aktif
             var selectedButton: View? = null
@@ -274,33 +111,6 @@ class FilterFragment : Fragment() {
             sheetBinding.usiaOpt3Btn.setOnClickListener {
                 selectButton(it, ">10 th", 11, 13)
             }
-
-
-//            // Set listener untuk tombol lokasi
-//            sheetBinding.lokasiOpt1Btn.setOnClickListener {
-//                if(isNullLokasi == true){
-//                    isNullLokasi = false
-//                    binding.lokasiValue.text = "Indoor"
-//                    lokasiContainer = "Indoor"
-//                }
-//                else if(isNullLokasi == false){
-//                    isNullLokasi = true
-//                    binding.lokasiValue.text = "-"
-//                    lokasiContainer = ""
-//                }
-//            }
-//            sheetBinding.lokasiOpt2Btn.setOnClickListener {
-//                if(isNullLokasi == true){
-//                    isNullLokasi = false
-//                    binding.lokasiValue.text = "Outdoor"
-//                    lokasiContainer = "Outdoor"
-//                }
-//                else if(isNullLokasi == false){
-//                    isNullLokasi = true
-//                    binding.lokasiValue.text = "-"
-//                    lokasiContainer = ""
-//                }
-//            }
 
             // Set listener untuk tombol lokasi
             var isClickedIndoor = false
@@ -346,54 +156,6 @@ class FilterFragment : Fragment() {
                 }
             }
 
-
-            // Set listener untuk tombol jumlah pemain
-//            sheetBinding.pemainOpt1Btn.setOnClickListener {
-//                if(isNullPemain == true){
-//                    isNullPemain = false
-//                    binding.pemainValue.text = "<3 org"
-//                    batasPemain1 = 2
-//                }
-//                else if(isNullPemain == false){
-//                    isNullPemain = true
-//                    binding.pemainValue.text = "-"
-//                    batasPemain1 = 0
-//                    batasPemain2Bawah = 0
-//                    batasPemain2Atas = 0
-//                    batasPemain3 = 0
-//                }
-//            }
-//            sheetBinding.pemainOpt2Btn.setOnClickListener {
-//                if(isNullPemain == true){
-//                    isNullPemain = false
-//                    binding.pemainValue.text = "3 - 5 org"
-//                    batasPemain2Bawah = 3
-//                    batasPemain2Atas = 5
-//                }
-//                else if(isNullPemain == false){
-//                    isNullPemain = true
-//                    binding.pemainValue.text = "-"
-//                    batasPemain1 = 0
-//                    batasPemain2Bawah = 0
-//                    batasPemain2Atas = 0
-//                    batasPemain3 = 0
-//                }
-//            }
-//            sheetBinding.pemainOpt3Btn.setOnClickListener {
-//                if(isNullPemain == true){
-//                    isNullPemain = false
-//                    binding.pemainValue.text = ">5 org"
-//                    batasPemain3 = 6
-//                }
-//                else if(isNullPemain == false){
-//                    isNullPemain = true
-//                    binding.pemainValue.text = "-"
-//                    batasPemain1 = 0
-//                    batasPemain2Bawah = 0
-//                    batasPemain2Atas = 0
-//                    batasPemain3 = 0
-//                }
-//            }
             // Variabel status untuk setiap tombol
             var isClickedPemain1 = false
             var isClickedPemain2 = false
@@ -461,33 +223,6 @@ class FilterFragment : Fragment() {
                     resetPemainSelection()
                 }
             }
-
-
-//            // Set listener untuk tombol properti
-//            sheetBinding.propertiOpt1Btn.setOnClickListener {
-//                if(isNullProperti == true){
-//                    isNullProperti = false
-//                    binding.propertiValue.text = "Ya"
-//                    propertyContainer = "Ya"
-//                }
-//                else if(isNullProperti == false){
-//                    isNullProperti = true
-//                    binding.lokasiValue.text = "-"
-//                    propertyContainer = ""
-//                }
-//            }
-//            sheetBinding.propertiOpt2Btn.setOnClickListener {
-//                if(isNullProperti == true){
-//                    isNullProperti = false
-//                    binding.propertiValue.text = "Tidak"
-//                    propertyContainer = "Tidak"
-//                }
-//                else if(isNullProperti == false){
-//                    isNullProperti = true
-//                    binding.lokasiValue.text = "-"
-//                    propertyContainer = ""
-//                }
-//            }
 
             // Set listener untuk tombol properti
             // Variabel untuk menyimpan status tombol properti
@@ -683,6 +418,12 @@ class FilterFragment : Fragment() {
             }
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as? HomeActivity)?.binding?.bottomNavigationView?.visibility = View.GONE
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

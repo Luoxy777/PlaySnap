@@ -5,9 +5,12 @@ import SharedData.deepLinkid
 import kotlin.random.Random
 import SharedData.userProfile
 import android.annotation.SuppressLint
+import android.content.Context
 import android.net.Uri
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,6 +21,8 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.bumptech.glide.Glide
 import com.example.playsnapui.data.Games
 import com.example.playsnapui.R
 import com.example.playsnapui.databinding.FragmentHomeBinding
@@ -40,6 +45,7 @@ class HomeFragment : Fragment() {
     private lateinit var viewModel: HomeViewModel
     private lateinit var tempListPopular : ArrayList<Games>
     private lateinit var tempListForYou : ArrayList<Games>
+    private lateinit var swipeRefreshLayout: SwipeRefreshLayout
 
 
     override fun onCreateView(
@@ -47,6 +53,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+
 
         userProfile?.let {
             binding.tvTitleName.text = it.username ?: "N/A"
@@ -57,6 +64,12 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        swipeRefreshLayout = view.findViewById(R.id.swipeRefreshLayout)
+
+        swipeRefreshLayout.setOnRefreshListener {
+            refreshData()
+        }
 
         Log.d("From Home Fragment", "$deepLinkid ????")
         if(deepLinkid != ""){
@@ -170,6 +183,14 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun refreshData() {
+        // Tambahkan logika refresh, misalnya memuat ulang data dari server atau database lokal
+        loadGamesFromFirestore()
+        Handler(Looper.getMainLooper()).postDelayed({
+            swipeRefreshLayout.isRefreshing = false // Hentikan animasi refresh
+        }, 2000) // Simulasi delay 2 detik
+    }
+
     @SuppressLint("NotifyDataSetChanged")
     private fun loadGamesFromFirestore() {
         val batasGames = 10
@@ -218,6 +239,9 @@ class HomeFragment : Fragment() {
                     setRecyclerViewHeightBasedOnItems(binding!!.recentRecyclerForyou)
                 }
             }
+
+            binding.swipeRefreshLayout.isRefreshing = false // Berhenti refresh setelah data dimuat
+
         }
     }
 
@@ -225,10 +249,10 @@ class HomeFragment : Fragment() {
         super.onResume()
         userProfile?.let {
             binding.tvTitleName.text = it.username ?: "N/A"
-        }    }
+        }
+        loadGamesFromFirestore() // Pastikan data di-refresh saat kembali ke HomeFragment
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
+
+
 }

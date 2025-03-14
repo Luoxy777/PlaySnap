@@ -10,12 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.playsnapui.R
-import com.example.playsnapui.data.Games
-import com.example.playsnapui.databinding.FragmentBookmarkBinding
 import com.example.playsnapui.databinding.FragmentLikeBinding
-import com.example.playsnapui.ui.bookmark.BookmarkViewModel
 import com.example.playsnapui.ui.home.HomeAdapterPopular
 
 class LikeFragment : Fragment() {
@@ -36,25 +31,32 @@ class LikeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Initialize RecyclerView
-        val adapter = HomeAdapterPopular(arrayListOf(), childFragmentManager) // Pass an empty list initially
-        val layoutManager = GridLayoutManager(requireContext(), 2) // 2 columns in the grid
+        val adapter = HomeAdapterPopular(arrayListOf(), childFragmentManager)
+        val layoutManager = GridLayoutManager(requireContext(), 2)
         binding.recentRecyclerLike.layoutManager = layoutManager
         binding.recentRecyclerLike.adapter = adapter
 
+        // Load data pertama kali
+        loadLikedGames(adapter)
 
-        Log.d("Haha", "Cek1")
+        // Setup SwipeRefreshLayout
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            loadLikedGames(adapter)
+        }
+    }
+
+    private fun loadLikedGames(adapter: HomeAdapterPopular) {
+        binding.swipeRefreshLayout.isRefreshing = true // Tampilkan indikator refresh
+
         likeViewModel.fetchLikedGames()
-        Log.d("Haha", "Cek2")
 
-        // Observe the bookmarked games
         likeViewModel.likedGames.observe(viewLifecycleOwner, Observer { games ->
             games?.let {
                 adapter.gameList.clear()
                 adapter.gameList.addAll(it)
                 adapter.notifyDataSetChanged()
             }
+            binding.swipeRefreshLayout.isRefreshing = false // Sembunyikan indikator refresh
         })
-
-
     }
 }

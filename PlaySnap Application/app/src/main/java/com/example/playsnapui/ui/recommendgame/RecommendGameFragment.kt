@@ -40,13 +40,6 @@ class RecommendGameFragment : Fragment() {
 
     private val db = FirebaseFirestore.getInstance()
     private lateinit var popupWindow : PopupWindow
-    private val handler = Handler(Looper.getMainLooper())
-    private val updateRunnable = object : Runnable {
-        override fun run() {
-            binding.numberOfGamesFound.text = "${recommendedGames.size}"
-            handler.postDelayed(this, 1000) // Update setiap 1 detik
-        }
-    }
 
     var batasUsiaBawah = SharedData.batasUsiaBawah
     var batasUsiaAtas = SharedData.batasUsiaAtas
@@ -69,6 +62,7 @@ class RecommendGameFragment : Fragment() {
         _binding = FragmentRecommendGameBinding.inflate(inflater, container, false)
         binding.numberOfGamesFound.text = "${recommendedGames.size}"
         buttonUI()
+        Log.d("size", "mainan : ${recommendedGames.size}")
         return binding.root
     }
 
@@ -92,19 +86,16 @@ class RecommendGameFragment : Fragment() {
         binding.usiaButtonChild.setOnClickListener {
             showPopupWindowUsia(it)
             buttonUI()
-            binding.numberOfGamesFound.text = "${recommendedGames.size}"
         }
 
         binding.pemainButtonChild.setOnClickListener {
             showPopupWindowPemain(it)
             buttonUI()
-            binding.numberOfGamesFound.text = "${recommendedGames.size}"
         }
 
         binding.lokasiButtonChild.setOnClickListener {
             showPopupWindowLokasi(it)
             buttonUI()
-            binding.numberOfGamesFound.text = "${recommendedGames.size}"
         }
 
         binding.btnBack.setOnClickListener {
@@ -246,16 +237,23 @@ class RecommendGameFragment : Fragment() {
                 val emptySet : MutableSet<Games> = mutableSetOf()
                 SharedData.recommendedGames = emptySet.toList()
                 SharedData.recommendedGames = matchingGames.toList()
+
                 var i : Int = 0
                 for(game in SharedData.recommendedGames){
                     Log.d("Shared Data Games", "Games : $game")
                     i++
                 }
                 Log.d("Shared Data Index", "Total : $i")
-                lifecycleScope.launch(Dispatchers.Main) { adapter.updateGames(SharedData.recommendedGames) }
+                lifecycleScope.launch(Dispatchers.Main) {
+                    adapter.updateGames(SharedData.recommendedGames)
+                    binding.numberOfGamesFound.text = "${SharedData.recommendedGames.size}" // Update di sini
+
+                }
             } catch (e: Exception) {
                 lifecycleScope.launch(Dispatchers.Main) {
                     adapter.updateGames(SharedData.recommendedGames)
+                    binding.numberOfGamesFound.text = "${SharedData.recommendedGames.size}" // Update di sini
+
                 }
             }
         }
@@ -322,14 +320,23 @@ class RecommendGameFragment : Fragment() {
                     }
 
                     SharedData.recommendedGames = tempGames.toList()
-                    lifecycleScope.launch(Dispatchers.Main) { adapter.updateGames(SharedData.recommendedGames) }
+                    lifecycleScope.launch(Dispatchers.Main) {
+                        adapter.updateGames(SharedData.recommendedGames)
+                        binding.numberOfGamesFound.text = "${SharedData.recommendedGames.size}" // Update di sini
+
+                    }
                 }
                 .addOnFailureListener { exception ->
                     Log.e("ObjectViewModel", "Error getting documents: ", exception)
+                    lifecycleScope.launch(Dispatchers.Main) {
+                        binding.numberOfGamesFound.text = "${SharedData.recommendedGames.size}"
+                    }
                 }
         } catch (e: Exception) {
             lifecycleScope.launch(Dispatchers.Main) {
                 adapter.updateGames(SharedData.recommendedGames)
+                binding.numberOfGamesFound.text = "${SharedData.recommendedGames.size}" // Update di sini
+
             }
         }
     }
@@ -369,7 +376,6 @@ class RecommendGameFragment : Fragment() {
                 cekGamesFilterObject()
             }
             buttonUI()
-            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
 
@@ -384,7 +390,6 @@ class RecommendGameFragment : Fragment() {
                 cekGamesFilterObject()
             }
             buttonUI()
-            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
 
@@ -399,7 +404,6 @@ class RecommendGameFragment : Fragment() {
                 cekGamesFilterObject()
             }
             buttonUI()
-            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
 
@@ -414,7 +418,6 @@ class RecommendGameFragment : Fragment() {
                 cekGamesFilterObject()
             }
             buttonUI()
-            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
     }
@@ -451,7 +454,6 @@ class RecommendGameFragment : Fragment() {
                 cekGamesFilterObject()
             }
             buttonUI()
-            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
 
@@ -468,7 +470,6 @@ class RecommendGameFragment : Fragment() {
                 cekGamesFilterObject()
             }
             buttonUI()
-            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
 
@@ -485,7 +486,6 @@ class RecommendGameFragment : Fragment() {
                 cekGamesFilterObject()
             }
             buttonUI()
-            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
 
@@ -502,7 +502,6 @@ class RecommendGameFragment : Fragment() {
                 cekGamesFilterObject()
             }
             buttonUI()
-            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
     }
@@ -536,7 +535,6 @@ class RecommendGameFragment : Fragment() {
                 cekGamesFilterObject()
             }
             buttonUI()
-            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
 
@@ -550,12 +548,11 @@ class RecommendGameFragment : Fragment() {
                 cekGamesFilterObject()
             }
             buttonUI()
-            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
 
         lokasiOpt3.setOnClickListener {
-            lokasiContainer = "-"
+            lokasiContainer = ""
             isNullLokasi = true
             if(SharedData.isObject == false){
                 cekGamesFilterNonObject()
@@ -564,7 +561,6 @@ class RecommendGameFragment : Fragment() {
                 cekGamesFilterObject()
             }
             buttonUI()
-            binding.numberOfGamesFound.text = "${recommendedGames.size}"
             popupWindow.dismiss()
         }
     }
@@ -592,17 +588,14 @@ class RecommendGameFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         buttonUI()
-        handler.post(updateRunnable)
     }
 
     override fun onPause() {
         super.onPause()
-        handler.removeCallbacks(updateRunnable)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        handler.removeCallbacks(updateRunnable)
         _binding = null
     }
 }
