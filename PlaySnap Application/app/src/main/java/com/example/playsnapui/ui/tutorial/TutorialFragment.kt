@@ -104,7 +104,7 @@ class TutorialFragment : Fragment() {
     <body>
         <div class="video-container">
             <iframe 
-                src="$videoUri" 
+                src="//www.youtube.com/embed/$videoUri" 
                 frameborder="0" 
                 allowfullscreen 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
