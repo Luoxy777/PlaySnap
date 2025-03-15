@@ -4,10 +4,13 @@ import android.Manifest
 import android.content.ContentValues
 import android.content.pm.PackageManager
 import android.database.Cursor
+import android.graphics.RectF
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.LayoutInflater
+import android.view.MotionEvent
+import android.view.ScaleGestureDetector
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -26,6 +29,7 @@ import com.example.playsnapui.databinding.FragmentSnapBinding
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Locale
+import java.util.concurrent.TimeUnit
 
 class SnapFragment : Fragment() {
     private var binding: FragmentSnapBinding? = null
@@ -129,8 +133,51 @@ class SnapFragment : Fragment() {
             .requireLensFacing(lensFacing)
             .build()
         cameraProvider!!.unbindAll()
+        setUpZoomTapToFocus()
         camera = cameraProvider!!.bindToLifecycle(this, cameraSelector!!, preview, imageCapture)
     }
+
+    private fun setUpZoomTapToFocus(){
+        val listener = object : ScaleGestureDetector.SimpleOnScaleGestureListener(){
+            override fun onScale(detector: ScaleGestureDetector): Boolean {
+                val currentZoomRatio = camera?.cameraInfo?.zoomState?.value?.zoomRatio  ?: 1f
+                val delta = detector.scaleFactor
+                camera?.cameraControl?.setZoomRatio(currentZoomRatio * delta)
+                return true
+            }
+        }
+
+        val scaleGestureDetector = ScaleGestureDetector(requireContext(),listener)
+
+        binding?.previewView?.setOnTouchListener { view, event ->
+            scaleGestureDetector.onTouchEvent(event)
+            if (event.action == MotionEvent.ACTION_DOWN){
+                val factory = binding?.previewView?.meteringPointFactory
+                val point = factory?.createPoint(event.x,event.y)
+                val action = point?.let {
+                    FocusMeteringAction.Builder(it,FocusMeteringAction.FLAG_AF)
+                        .setAutoCancelDuration(2, TimeUnit.SECONDS)
+                        .build()
+                }
+
+                val x = event.x
+                val y = event.y
+
+                val focusCircle = RectF(x-50,y-50, x+50,y+50)
+
+                binding!!.focusCircleView.focusCircle = focusCircle
+                binding!!.focusCircleView.invalidate()
+
+                if (action != null) {
+                    camera?.cameraControl?.startFocusAndMetering(action)
+                }
+
+                view.performClick()
+            }
+            true
+        }
+    }
+
 
     private fun setFlashIcon(camera: Camera?) {
         if (camera!!.cameraInfo.hasFlashUnit()) {

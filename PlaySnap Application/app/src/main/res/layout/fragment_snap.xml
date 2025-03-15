@@ -138,6 +138,14 @@
 
     </RelativeLayout>
 
+    <com.example.playsnapui.ui.snap.FocusCircleView
+        android:id="@+id/focusCircleView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/previewView"
+        app:layout_constraintEnd_toEndOf="@+id/previewView"
+        app:layout_constraintStart_toStartOf="@+id/previewView"
+        app:layout_constraintTop_toTopOf="@+id/previewView" />
 
     <androidx.camera.view.PreviewView
         android:id="@+id/previewView"
