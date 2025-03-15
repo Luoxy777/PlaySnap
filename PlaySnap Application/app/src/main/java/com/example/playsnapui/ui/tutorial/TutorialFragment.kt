@@ -12,6 +12,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebChromeClient
+import android.webkit.WebResourceRequest
+import android.webkit.WebSettings
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import android.widget.FrameLayout
 import android.widget.SeekBar
 import android.widget.VideoView
 import androidx.fragment.app.Fragment
@@ -47,12 +53,18 @@ class TutorialFragment : Fragment() {
     private var isFullscreen = false
 
     private val handler = Handler(Looper.getMainLooper())
-    private val updateSeekBarRunnable = object : Runnable {
-        override fun run() {
-            updateSeekBar()
-            handler.postDelayed(this, 500)
-        }
-    }
+//    private val updateSeekBarRunnable = object : Runnable {
+//        override fun run() {
+//            updateSeekBar()
+//            handler.postDelayed(this, 500)
+//        }
+//    }
+
+    private lateinit var customWebChromeClient: WebChromeClient
+    private lateinit var webView: WebView
+    private var customView: View? = null
+    private var customViewContainer: ViewGroup? = null
+    private var customViewCallback: WebChromeClient.CustomViewCallback? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -64,9 +76,104 @@ class TutorialFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        webView = binding.bottomSheet.videoTutorialContent
+        setupWebView()
+        val videoUri = gameDetails?.linkVideo
+
+        val embedHtml = """
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <style>
+            * { margin: 0; padding: 0; }
+            html, body { width: 100%; height: 100%; overflow: hidden; }
+            .video-container { 
+                position: relative; 
+                width: 100vw; 
+                height: 56.25vw; /* 16:9 aspect ratio */ 
+            }
+            iframe { 
+                position: absolute; 
+                width: 100%; 
+                height: 100%;
+                transform: scale(1); /* Perbesar tampilan tombol */
+                transform-origin: center; /* Pastikan scaling tetap rapi */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="video-container">
+            <iframe 
+                src="$videoUri" 
+                frameborder="0" 
+                allowfullscreen 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+            </iframe>
+        </div>
+    </body>
+    </html>
+""".trimIndent()
+
+        webView.loadDataWithBaseURL(null, embedHtml, "text/html", "utf-8", null)
         initializeViews()
         setUpListeners()
-        playVideoFromGoogleDrive()
+//        playVideoFromGoogleDrive()
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    private fun setupWebView() {
+        webView.webViewClient = object : WebViewClient() {
+            override fun shouldOverrideUrlLoading(
+                view: WebView?, request: WebResourceRequest?
+            ): Boolean {
+                return false
+            }
+        }
+
+        webView.webChromeClient = object : WebChromeClient() {
+            private var customView: View? = null
+            private var customViewCallback: CustomViewCallback? = null
+            private var fullScreenContainer: FrameLayout? = null
+
+            override fun onShowCustomView(view: View?, callback: CustomViewCallback?) {
+                if (customView != null) {
+                    onHideCustomView()
+                    return
+                }
+
+                customView = view
+                customViewCallback = callback
+
+                fullScreenContainer = FrameLayout(requireContext()).apply {
+                    layoutParams = ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.MATCH_PARENT
+                    )
+                    addView(view)
+                }
+
+                requireActivity().window.decorView.findViewById<ViewGroup>(android.R.id.content)
+                    .addView(fullScreenContainer)
+
+                webView.visibility = View.GONE
+            }
+
+            override fun onHideCustomView() {
+                fullScreenContainer?.removeView(customView)
+                customView = null
+                customViewCallback?.onCustomViewHidden()
+
+                webView.visibility = View.VISIBLE
+            }
+        }
+
+        val webSettings = webView.settings
+        webSettings.javaScriptEnabled = true
+        webSettings.domStorageEnabled = true
+        webSettings.useWideViewPort = true
+        webSettings.loadWithOverviewMode = true
+        webSettings.userAgentString = "Mozilla/5.0 (Linux; Android 10; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.99 Mobile Safari/537.36" // Forces mobile mode
+        webSettings.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
     }
 
     @SuppressLint("SetTextI18n")
@@ -346,159 +453,166 @@ class TutorialFragment : Fragment() {
         }
     }
 
-    private fun playVideoFromGoogleDrive() {
-        val videoView: VideoView = binding.bottomSheet.videoTutorialContent
-        val videoUrl = gameDetails?.linkVideo ?: return
-
-        val uri = Uri.parse(videoUrl)
-        videoView.setVideoURI(uri)
-
-        videoView.setOnPreparedListener { mediaPlayer ->
-            videoView.start()
-            binding.bottomSheet.playPauseButton.setBackgroundResource(R.drawable.baseline_pause_24)
-            binding.bottomSheet.seekBar.max = mediaPlayer.duration
-            handler.post(updateSeekBarRunnable)
-        }
-
-        videoView.setOnErrorListener { _, _, _ ->
-            Log.e("TutorialFragment", "Error playing video")
-            true
-        }
-
-        videoView.setOnClickListener {
-            toggleControlOverlayVisibility()
-        }
-
-        binding.bottomSheet.playPauseButton.setOnClickListener {
-            if (videoView.isPlaying) {
-                videoView.pause()
-                binding.bottomSheet.playPauseButton.setBackgroundResource(R.drawable.baseline_play_arrow_24)
-            } else {
-                videoView.start()
-                binding.bottomSheet.playPauseButton.setBackgroundResource(R.drawable.baseline_pause_24)
-            }
-        }
-
-        binding.bottomSheet.forwardButton.setOnClickListener {
-            videoView.seekTo(videoView.currentPosition + 10000)
-        }
-
-        binding.bottomSheet.backwardButton.setOnClickListener {
-            videoView.seekTo(videoView.currentPosition - 10000)
-        }
-
-        binding.bottomSheet.fullscreenButton.setOnClickListener {
-            isFullscreen = !isFullscreen
-            toggleFullscreen(videoView)
-        }
-
-        binding.bottomSheet.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                if (fromUser) videoView.seekTo(progress)
-            }
-
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {
-                videoView.pause()
-            }
-
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {
-                videoView.start()
-                binding.bottomSheet.playPauseButton.setBackgroundResource(R.drawable.baseline_pause_24)
-            }
-        })
-    }
-
-    private fun updateSeekBar() {
-        val videoView = binding.bottomSheet.videoTutorialContent
-        if (videoView.isPlaying) {
-            binding.bottomSheet.seekBar.progress = videoView.currentPosition
-        }
-    }
-
-    private fun toggleControlOverlayVisibility() {
-        binding.bottomSheet.controlOverlay.visibility =
-            if (binding.bottomSheet.controlOverlay.visibility == View.GONE) View.VISIBLE else View.GONE
-    }
-
-    private fun toggleFullscreen(videoView: VideoView) {
-        if (isFullscreen) {
-            binding.bottomSheet.fullscreenButton.setBackgroundResource(R.drawable.baseline_fullscreen_exit_24)
-            activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
-            hideOtherLayoutElements()
-            adjustVideoViewLayout(true)
-        } else {
-            binding.bottomSheet.fullscreenButton.setBackgroundResource(R.drawable.baseline_fullscreen_24)
-            activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-            restoreOtherLayoutElements()
-            adjustVideoViewLayout(false)
-
-        }
-    }
-
-    private fun adjustVideoViewLayout(isFullscreen: Boolean) {
-        val layoutParams = binding.bottomSheet.videoTutorialContent.layoutParams
-        if (isFullscreen) {
-            layoutParams.width = resources.getDimensionPixelSize(R.dimen.video_width_full)
-            layoutParams.height = ViewGroup.LayoutParams.MATCH_PARENT
-        } else {
-            layoutParams.width = resources.getDimensionPixelSize(R.dimen.video_width)
-            layoutParams.height = resources.getDimensionPixelSize(R.dimen.video_height)
-        }
-        binding.bottomSheet.videoTutorialContent.layoutParams = layoutParams
-    }
-
-    private fun hideOtherLayoutElements() {
-        binding.bottomSheet.apply {
-            dragIcon.visibility = View.GONE
-            videoTutorialText.visibility = View.GONE
-            gameDescHeaderWrapped.visibility = View.GONE
-            deskripsiSection.visibility = View.GONE
-            alatBermainSection.visibility = View.GONE
-            titleTutorial.visibility = View.GONE
-            langkahBermainIcon.visibility = View.GONE
-            langkahBermainTitle.visibility = View.GONE
-            langkahBermainContent.visibility = View.GONE
-            mainkanButtonTutorial.visibility = View.GONE
-            tvBahan.visibility = View.GONE
-            tvCara.visibility = View.GONE
-            caraMembuatIcon.visibility = View.GONE
-            caraMembuatTitle.visibility = View.GONE
-            caraMembuatContent.visibility = View.GONE
-            bahanProperti.visibility = View.GONE
-        }
-    }
-
-    private fun restoreOtherLayoutElements() {
-        binding.bottomSheet.apply {
-            dragIcon.visibility = View.VISIBLE
-            videoTutorialText.visibility = View.VISIBLE
-            gameDescHeaderWrapped.visibility = View.VISIBLE
-            deskripsiSection.visibility = View.VISIBLE
-            titleTutorial.visibility = View.VISIBLE
-            langkahBermainIcon.visibility = View.VISIBLE
-            langkahBermainTitle.visibility = View.VISIBLE
-            langkahBermainContent.visibility = View.VISIBLE
-            mainkanButtonTutorial.visibility = View.VISIBLE
-            if (gameDetails?.bahanProperti?.isNotEmpty() == true) {
-                tvBahan.visibility = View.VISIBLE
-                tvCara.visibility = View.VISIBLE
-                caraMembuatIcon.visibility = View.VISIBLE
-                caraMembuatTitle.visibility = View.VISIBLE
-                caraMembuatContent.visibility = View.VISIBLE
-                bahanProperti.visibility = View.VISIBLE
-            }
-            if (gameDetails?.properti?.isNotEmpty() == true) {
-                alatBermainSection.visibility = View.VISIBLE
-            }
-        }
-    }
+//    private fun playVideoFromGoogleDrive() {
+//        val videoView: VideoView = binding.bottomSheet.videoTutorialContent
+//        val videoUrl = gameDetails?.linkVideo ?: return
+//
+//        val uri = Uri.parse(videoUrl)
+//        videoView.setVideoURI(uri)
+//
+//        videoView.setOnPreparedListener { mediaPlayer ->
+//            videoView.start()
+//            binding.bottomSheet.playPauseButton.setBackgroundResource(R.drawable.baseline_pause_24)
+//            binding.bottomSheet.seekBar.max = mediaPlayer.duration
+//            handler.post(updateSeekBarRunnable)
+//        }
+//
+//        videoView.setOnErrorListener { _, _, _ ->
+//            Log.e("TutorialFragment", "Error playing video")
+//            true
+//        }
+//
+//        videoView.setOnClickListener {
+//            toggleControlOverlayVisibility()
+//        }
+//
+//        binding.bottomSheet.playPauseButton.setOnClickListener {
+//            if (videoView.isPlaying) {
+//                videoView.pause()
+//                binding.bottomSheet.playPauseButton.setBackgroundResource(R.drawable.baseline_play_arrow_24)
+//            } else {
+//                videoView.start()
+//                binding.bottomSheet.playPauseButton.setBackgroundResource(R.drawable.baseline_pause_24)
+//            }
+//        }
+//
+//        binding.bottomSheet.forwardButton.setOnClickListener {
+//            videoView.seekTo(videoView.currentPosition + 10000)
+//        }
+//
+//        binding.bottomSheet.backwardButton.setOnClickListener {
+//            videoView.seekTo(videoView.currentPosition - 10000)
+//        }
+//
+//        binding.bottomSheet.fullscreenButton.setOnClickListener {
+//            isFullscreen = !isFullscreen
+//            toggleFullscreen(videoView)
+//        }
+//
+//        binding.bottomSheet.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+//            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+//                if (fromUser) videoView.seekTo(progress)
+//            }
+//
+//            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+//                videoView.pause()
+//            }
+//
+//            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+//                videoView.start()
+//                binding.bottomSheet.playPauseButton.setBackgroundResource(R.drawable.baseline_pause_24)
+//            }
+//        })
+//    }
+//
+//    private fun updateSeekBar() {
+//        val videoView = binding.bottomSheet.videoTutorialContent
+//        if (videoView.isPlaying) {
+//            binding.bottomSheet.seekBar.progress = videoView.currentPosition
+//        }
+//    }
+//
+//    private fun toggleControlOverlayVisibility() {
+//        binding.bottomSheet.controlOverlay.visibility =
+//            if (binding.bottomSheet.controlOverlay.visibility == View.GONE) View.VISIBLE else View.GONE
+//    }
+//
+//    private fun toggleFullscreen(videoView: VideoView) {
+//        if (isFullscreen) {
+//            binding.bottomSheet.fullscreenButton.setBackgroundResource(R.drawable.baseline_fullscreen_exit_24)
+//            activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+//            hideOtherLayoutElements()
+//            adjustVideoViewLayout(true)
+//        } else {
+//            binding.bottomSheet.fullscreenButton.setBackgroundResource(R.drawable.baseline_fullscreen_24)
+//            activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+//            restoreOtherLayoutElements()
+//            adjustVideoViewLayout(false)
+//
+//        }
+//    }
+//
+//    private fun adjustVideoViewLayout(isFullscreen: Boolean) {
+//        val layoutParams = binding.bottomSheet.videoTutorialContent.layoutParams
+//        if (isFullscreen) {
+//            layoutParams.width = resources.getDimensionPixelSize(R.dimen.video_width_full)
+//            layoutParams.height = ViewGroup.LayoutParams.MATCH_PARENT
+//        } else {
+//            layoutParams.width = resources.getDimensionPixelSize(R.dimen.video_width)
+//            layoutParams.height = resources.getDimensionPixelSize(R.dimen.video_height)
+//        }
+//        binding.bottomSheet.videoTutorialContent.layoutParams = layoutParams
+//    }
+//
+//    private fun hideOtherLayoutElements() {
+//        binding.bottomSheet.apply {
+//            dragIcon.visibility = View.GONE
+//            videoTutorialText.visibility = View.GONE
+//            gameDescHeaderWrapped.visibility = View.GONE
+//            deskripsiSection.visibility = View.GONE
+//            alatBermainSection.visibility = View.GONE
+//            titleTutorial.visibility = View.GONE
+//            langkahBermainIcon.visibility = View.GONE
+//            langkahBermainTitle.visibility = View.GONE
+//            langkahBermainContent.visibility = View.GONE
+//            mainkanButtonTutorial.visibility = View.GONE
+//            tvBahan.visibility = View.GONE
+//            tvCara.visibility = View.GONE
+//            caraMembuatIcon.visibility = View.GONE
+//            caraMembuatTitle.visibility = View.GONE
+//            caraMembuatContent.visibility = View.GONE
+//            bahanProperti.visibility = View.GONE
+//        }
+//    }
+//
+//    private fun restoreOtherLayoutElements() {
+//        binding.bottomSheet.apply {
+//            dragIcon.visibility = View.VISIBLE
+//            videoTutorialText.visibility = View.VISIBLE
+//            gameDescHeaderWrapped.visibility = View.VISIBLE
+//            deskripsiSection.visibility = View.VISIBLE
+//            titleTutorial.visibility = View.VISIBLE
+//            langkahBermainIcon.visibility = View.VISIBLE
+//            langkahBermainTitle.visibility = View.VISIBLE
+//            langkahBermainContent.visibility = View.VISIBLE
+//            mainkanButtonTutorial.visibility = View.VISIBLE
+//            if (gameDetails?.bahanProperti?.isNotEmpty() == true) {
+//                tvBahan.visibility = View.VISIBLE
+//                tvCara.visibility = View.VISIBLE
+//                caraMembuatIcon.visibility = View.VISIBLE
+//                caraMembuatTitle.visibility = View.VISIBLE
+//                caraMembuatContent.visibility = View.VISIBLE
+//                bahanProperti.visibility = View.VISIBLE
+//            }
+//            if (gameDetails?.properti?.isNotEmpty() == true) {
+//                alatBermainSection.visibility = View.VISIBLE
+//            }
+//        }
+//    }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        handler.removeCallbacks(updateSeekBarRunnable)
-        if (binding.bottomSheet.videoTutorialContent.isPlaying) {
-            binding.bottomSheet.videoTutorialContent.stopPlayback()
-        }
+//        handler.removeCallbacks(updateSeekBarRunnable)
+//        if (binding.bottomSheet.videoTutorialContent.isPlaying) {
+//            binding.bottomSheet.videoTutorialContent.stopPlayback()
+//        }
+//        if (customView != null) {
+//            customWebChromeClient.onHideCustomView() // Use the stored reference
+//        } else if (webView.canGoBack()) {
+//            webView.goBack()
+//        } else {
+//            requireActivity().onBackPressedDispatcher.onBackPressed()
+//        }
         _binding = null
     }
 }

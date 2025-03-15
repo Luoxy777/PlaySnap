@@ -294,9 +294,9 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/video_tutorial_text">
 
-                    <android.widget.VideoView
+                    <WebView
                         android:id="@+id/video_tutorial_content"
-                        android:layout_width="360dp"
+                        android:layout_width="match_parent"
                         android:layout_height="180dp"
                         android:layout_centerInParent="true"
                         android:orientation="horizontal"
@@ -308,6 +308,7 @@
                     <FrameLayout
                         android:id="@+id/controlOverlay"
                         android:layout_width="0dp"
+                        android:visibility="gone"
                         android:layout_height="wrap_content"
                         android:background="@color/transparent_white"
                         app:layout_constraintStart_toStartOf="@id/video_tutorial_content"
@@ -507,6 +508,8 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
