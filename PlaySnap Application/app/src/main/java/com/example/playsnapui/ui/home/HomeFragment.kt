@@ -15,6 +15,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -134,9 +135,10 @@ class HomeFragment : Fragment() {
     private fun refreshData() {
         // Tambahkan logika refresh, misalnya memuat ulang data dari server atau database lokal
         loadGamesFromFirestore()
+        Toast.makeText(requireContext(), "Refreshing...", Toast.LENGTH_SHORT).show()
         Handler(Looper.getMainLooper()).postDelayed({
             swipeRefreshLayout.isRefreshing = false // Hentikan animasi refresh
-        }, 2000) // Simulasi delay 2 detik
+        }, 1000) // Simulasi delay 2 detik
     }
 
     @SuppressLint("NotifyDataSetChanged")
