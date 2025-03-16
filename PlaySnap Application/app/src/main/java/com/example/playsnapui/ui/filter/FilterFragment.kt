@@ -35,8 +35,6 @@ class FilterFragment : Fragment() {
     private var _binding: FragmentFilterBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var bottomSheetBehavior: BottomSheetBehavior<View>
-
     private var bottomSheetBinding: BottomSheetFilterPageBinding? = null
     private val db = FirebaseFirestore.getInstance()
 
@@ -47,7 +45,7 @@ class FilterFragment : Fragment() {
         _binding = FragmentFilterBinding.inflate(inflater, container, false)
 
         // INI PERBAIKANNYA: Inflate BottomSheet secara mandiri
-        bottomSheetBinding = BottomSheetFilterPageBinding.inflate(inflater, container, false)
+        bottomSheetBinding = BottomSheetFilterPageBinding.inflate(inflater, binding.bottomSheetFilterPage, true)
 
         return binding.root
     }
@@ -67,6 +65,10 @@ class FilterFragment : Fragment() {
         var isNullLokasi : Boolean = true
         var isNullPemain : Boolean = true
         var isNullProperti : Boolean = true
+
+        binding!!.btnBack.setOnClickListener {
+            findNavController().navigate(R.id.action_FilterFragment_to_HomeFragment)
+        }
 
         bottomSheetBinding?.let { sheetBinding ->
 
