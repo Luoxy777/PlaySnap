@@ -73,8 +73,7 @@
         <action
             android:id="@+id/action_FilterFragment_to_RecGameFragment"
             app:destination="@id/recommendGameFragment"/>
-<!--            app:popUpTo="@id/filterFragment"-->
-<!--            app:popUpToInclusive="true"-->
+
 
     </fragment>
 

@@ -24,13 +24,11 @@ import java.io.FileOutputStream
 class HomeActivity : AppCompatActivity() {
     lateinit var binding: ActivityHomeBinding
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
-
 
         deepLinkid = ""
         val gameId = intent.getStringExtra("gameId") ?: ""
@@ -51,7 +49,8 @@ class HomeActivity : AppCompatActivity() {
             R.id.snapFragment, R.id.swipeGalleryFragment, R.id.scrollGalleryFragment, R.id.filterFragment, R.id.ObjectFragment,
             R.id.recommendGameFragment, R.id.tutorialFragment, R.id.historyFragment, R.id.reportFragment, R.id.reportSuccessFragment,
             R.id.editProfileFragment, R.id.accountSettingFragment, R.id.editPasswordFragment, R.id.feedbackFragment, R.id.helpFragmentReqSuccess,
-            R.id.DeleteAccountFragment
+            R.id.DeleteAccountFragment, R.id.helpFragment, R.id.helpFragmentPageQ1, R.id.helpFragmentPageQ2, R.id.helpFragmentPageQ3, R.id.helpFragmentPageQ4,
+            R.id.helpFragmentPageQ5, R.id.helpFragmentPageQ6, R.id.helpFragmentPageQ7, R.id.helpFragmentReq
         )
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
@@ -69,4 +68,5 @@ class HomeActivity : AppCompatActivity() {
             true
         }
     }
+
 }
