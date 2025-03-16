@@ -28,6 +28,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 
 
 class FilterFragment : Fragment() {
@@ -411,8 +412,9 @@ class FilterFragment : Fragment() {
                 SharedData.recommendedGames = emptySet.toList()
                 SharedData.recommendedGames = matchingGames.toList()
 
-                findNavController().navigate(R.id.action_FilterFragment_to_RecGameFragment)
-
+                withContext(Dispatchers.Main) {
+                    findNavController().navigate(R.id.action_FilterFragment_to_RecGameFragment)
+                }
             } catch (e: Exception) {
                 lifecycleScope.launch(Dispatchers.Main) {
 
