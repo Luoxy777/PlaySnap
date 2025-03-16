@@ -185,104 +185,116 @@ class HomeAdapterPopular(internal val gameList: ArrayList<Games>,    private val
     }
 
     private fun updateBookmarkStatus(game: Games, bookmarkStatus: Boolean) {
-        val userId = FirebaseAuth.getInstance().currentUser?.uid
+        val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
 
-        if (userId != null) {
-            val db = FirebaseFirestore.getInstance()
+        if (game.game_id.isNullOrEmpty()) {
+            Log.w("Firestore", "Game ID is null or empty")
+            return
+        }
 
-            db.collection("social_interaction")
-                .whereEqualTo("user_ID", userId)
-                .whereEqualTo("game_ID", game.game_id)
-                .get()
-                .addOnSuccessListener { documents ->
-                    if (documents.isEmpty) {
-                        // If no existing document, create a new one
-                        val socialInteraction = hashMapOf(
-                            "user_ID" to userId,
-                            "game_ID" to game.game_id,
-                            "date_visit" to null, // Initially set to null (or current date when visited)
-                            "like_status" to false, // Or based on your logic
-                            "bookmark_status" to bookmarkStatus,
-                            "rating" to 0 // Default rating
-                        )
-                        db.collection("social_interaction").add(socialInteraction)
-                    } else {
-                        // If document exists, check the bookmark status
-                        for (document in documents) {
-                            val dateVisit = document.getString("date_visit") // Get the visit date from the document
-                            val likeStatus = document.getBoolean("like_status")
-                            if (!bookmarkStatus && !likeStatus!! && (dateVisit == "null" || dateVisit == null)) {
-                                // If unbookmarking and no date visit, delete the document
-                                db.collection("social_interaction")
-                                    .document(document.id)
-                                    .delete()
-                                    .addOnSuccessListener {
-                                        Log.d("Firestore", "Document deleted because the game hasn't been visited.")
-                                    }
-                                    .addOnFailureListener { exception ->
-                                        Log.w("Firestore", "Error deleting document", exception)
-                                    }
-                            } else {
-                                // Update the bookmark status
-                                db.collection("social_interaction")
-                                    .document(document.id)
-                                    .update("bookmark_status", bookmarkStatus)
-                            }
+        val db = FirebaseFirestore.getInstance()
+
+        db.collection("social_interaction")
+            .whereEqualTo("user_ID", userId)
+            .whereEqualTo("game_ID", game.game_id)
+            .get()
+            .addOnSuccessListener { documents ->
+                if (documents.isEmpty) {
+                    // Jika tidak ada dokumen, tambahkan baru
+                    val socialInteraction = hashMapOf(
+                        "user_ID" to userId,
+                        "game_ID" to game.game_id,
+                        "date_visit" to null,
+                        "like_status" to false,
+                        "bookmark_status" to bookmarkStatus,
+                        "rating" to 0
+                    )
+                    db.collection("social_interaction").add(socialInteraction)
+                        .addOnSuccessListener {
+                            Log.d("Firestore", "Bookmark added.")
+                        }
+                } else {
+                    for (document in documents) {
+                        val dateVisit = document.getString("date_visit")
+                        val likeStatus = document.getBoolean("like_status") ?: false // Default false jika null
+
+                        if (!bookmarkStatus && !likeStatus && (dateVisit.isNullOrEmpty() || dateVisit == "null")) {
+                            // Jika unbookmark dan tidak ada like serta belum dikunjungi, hapus dokumen
+                            db.collection("social_interaction")
+                                .document(document.id)
+                                .delete()
+                                .addOnSuccessListener {
+                                    Log.d("Firestore", "Document deleted.")
+                                }
+                                .addOnFailureListener { exception ->
+                                    Log.w("Firestore", "Error deleting document", exception)
+                                }
+                        } else {
+                            // Update bookmark status
+                            db.collection("social_interaction")
+                                .document(document.id)
+                                .update("bookmark_status", bookmarkStatus)
+                                .addOnSuccessListener {
+                                    Log.d("Firestore", "Bookmark status updated.")
+                                }
                         }
                     }
                 }
-                .addOnFailureListener { exception ->
-                    Log.w("Firestore", "Error fetching document for bookmark status", exception)
-                }
-        }
+            }
+            .addOnFailureListener { exception ->
+                Log.w("Firestore", "Error fetching document for bookmark status", exception)
+            }
     }
 
-    private fun updateLikeStatus(game: Games, likeStatus: Boolean,  callback: (Boolean) -> Unit) {
+
+    private fun updateLikeStatus(game: Games, likeStatus: Boolean, callback: (Boolean) -> Unit) {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         if (userId != null) {
             val db = FirebaseFirestore.getInstance()
-            Log.d("Masuk pak", "hehe")
+
             db.collection("social_interaction")
                 .whereEqualTo("user_ID", userId)
                 .whereEqualTo("game_ID", game.game_id)
                 .get()
                 .addOnSuccessListener { documents ->
-                    if (documents.isEmpty) {
-                        // If no existing document, create a new one
+                    val document = documents.firstOrNull()
+
+                    if (document == null) {
+                        // Jika tidak ada dokumen, buat baru
                         val socialInteraction = hashMapOf(
                             "user_ID" to userId,
                             "game_ID" to game.game_id,
-                            "date_visit" to null, // Initially set to null (or current date when visited)
+                            "date_visit" to null,
                             "like_status" to likeStatus,
-                            "bookmark_status" to false, // Default bookmark status
-                            "rating" to 0 // Default rating
+                            "bookmark_status" to false,
+                            "rating" to 0
                         )
-                        db.collection("social_interaction").add(socialInteraction).addOnSuccessListener { callback(true) }
+                        db.collection("social_interaction")
+                            .add(socialInteraction)
+                            .addOnSuccessListener { callback(true) }
+                            .addOnFailureListener { callback(false) }
                     } else {
-                        // If document exists, check the bookmark status
-                        for (document in documents) {
-                            val dateVisit = document.getString("date_visit") // Get the visit date from the document
-                            val bookmarkStatus = document.getBoolean("bookmark_status")
-                            if (!bookmarkStatus!! && !likeStatus && (dateVisit == "null" || dateVisit == null)) {
-                                // If unbookmarking and no date visit, delete the document
-                                db.collection("social_interaction")
-                                    .document(document.id)
-                                    .delete()
-                                    .addOnSuccessListener {
-                                        callback(true)                                     }
-                                    .addOnFailureListener { exception ->
-                                        callback(false)                                     }
-                            } else {
-                                // Update the bookmark status
-                                db.collection("social_interaction")
-                                    .document(document.id)
-                                    .update("like_status", likeStatus).addOnSuccessListener{ callback(true)}
-                            }
+                        val dateVisit = document.getString("date_visit")
+                        val bookmarkStatus = document.getBoolean("bookmark_status") ?: false
+
+                        if (!bookmarkStatus && !likeStatus && dateVisit == null) {
+                            // Hapus jika tidak dibookmark, unlike, dan belum pernah dikunjungi
+                            db.collection("social_interaction")
+                                .document(document.id)
+                                .delete()
+                                .addOnSuccessListener { callback(true) }
+                                .addOnFailureListener { callback(false) }
+                        } else {
+                            // Update status like
+                            db.collection("social_interaction")
+                                .document(document.id)
+                                .update("like_status", likeStatus)
+                                .addOnSuccessListener { callback(true) }
+                                .addOnFailureListener { callback(false) }
                         }
                     }
                 }
-                .addOnFailureListener { exception ->
-                    callback(false)                 }
+                .addOnFailureListener { callback(false) }
         }
     }
 

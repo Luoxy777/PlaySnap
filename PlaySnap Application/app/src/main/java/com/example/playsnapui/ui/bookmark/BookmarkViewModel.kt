@@ -8,6 +8,7 @@ import com.example.playsnapui.data.Games
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
+
 class BookmarkViewModel : ViewModel() {
 
     private val db = FirebaseFirestore.getInstance()
@@ -24,34 +25,48 @@ class BookmarkViewModel : ViewModel() {
                 .get()
                 .addOnSuccessListener { documents ->
                     val gamesList = mutableListOf<Games>()
+
+                    if (documents.isEmpty) {
+                        _bookmarkedGames.postValue(emptyList()) // Set UI ke kosong jika tidak ada bookmark
+                        return@addOnSuccessListener
+                    }
+
+                    var fetchCount = 0
+                    val totalGames = documents.size() // Jumlah game yang harus di-fetch
+
                     for (document in documents) {
                         val gameId = document.getString("game_ID")
-                        if (gameId != "" && gameId != null) {
-                            Log.d("Fetch", "fetching data $gameId")
-                            // You need to fetch game details (like namaPermainan) using gameId
-                            fetchGameDetails(gameId, gamesList)
+                        if (!gameId.isNullOrEmpty()) {
+                            Log.d("Fetch", "Fetching data $gameId")
+                            fetchGameDetails(gameId, gamesList) {
+                                fetchCount++
+                                if (fetchCount == totalGames) {
+                                    _bookmarkedGames.postValue(gamesList) // Update UI hanya setelah semua selesai
+                                }
+                            }
                         }
                     }
                 }
                 .addOnFailureListener { exception ->
                     Log.w("Firestore", "Error fetching bookmarked games", exception)
+                    _bookmarkedGames.postValue(emptyList()) // Handle error dengan mengosongkan UI
                 }
         }
     }
 
-    private fun fetchGameDetails(gameId: String, gamesList: MutableList<Games>) {
+    private fun fetchGameDetails(gameId: String, gamesList: MutableList<Games>, onComplete: () -> Unit) {
         db.collection("games").document(gameId).get()
             .addOnSuccessListener { document ->
                 val game = document.toObject(Games::class.java)
                 game?.let {
                     gamesList.add(it)
-                    _bookmarkedGames.postValue(gamesList)
-                    Log.d("Haha", "test data ${game.game_id}")
+                    Log.d("Haha", "Fetched game data: ${game.game_id}")
                 }
+                onComplete() // Tandai bahwa fetch satu game selesai
             }
             .addOnFailureListener { exception ->
                 Log.w("Firestore", "Error fetching game details", exception)
+                onComplete()
             }
     }
-
 }
