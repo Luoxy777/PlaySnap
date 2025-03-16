@@ -182,7 +182,7 @@ class HomeFragment : Fragment() {
 
             if (adapter.itemCount > 0) {
                 recyclerView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
-                val totalHeight = recyclerView.measuredHeight + 425
+                val totalHeight = recyclerView.measuredHeight
                 recyclerView.layoutParams = recyclerView.layoutParams.apply { height = totalHeight }
             }
 
