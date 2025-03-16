@@ -59,12 +59,15 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
     private var flag: Int = 0
 
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         // Initialize ViewBinding
         _binding = FragmentEditProfileBinding.bind(view)
         viewModel = ViewModelProvider(this)[EditProfileViewModel::class.java]
+
+        binding.tvEdit4GenderFill.tag = false;
 
         // Populate profile data
         val userProfile = SharedData.userProfile
@@ -101,7 +104,6 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
         makeEditableOnClick(binding.tvEdit1NameFill)
         makeEditableOnClick(binding.tvEdit2UsernameFill)
 //        makeEditableOnClick(binding.tvEdit3EmailFill)
-        binding.tvEdit4GenderFill.tag = false;
         binding.tvEdit4GenderFill.setOnClickListener {
             // Show the gender popup when clicked
             binding.tvEdit4GenderFill.tag = !(binding.tvEdit4GenderFill.tag as Boolean)
@@ -278,17 +280,32 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
         // Set listeners for each gender option
         opt1Laki.setOnClickListener {
             binding.tvEdit4GenderFill.text = getString(R.string.option_laki) // Set gender to "Laki"
-            genderPopup.visibility = View.GONE // Hide the popup after selection
+            binding.tvEdit4GenderFill.setCompoundDrawablesWithIntrinsicBounds(
+                0, 0, R.drawable.back_button_down, 0
+            )
+            binding.tvEdit4GenderFill.tag = false;
+
+            hideGenderPopup()
         }
 
         opt2Perempuan.setOnClickListener {
             binding.tvEdit4GenderFill.text = getString(R.string.option_perempuan) // Set gender to "Perempuan"
-            genderPopup.visibility = View.GONE // Hide the popup after selection
+            binding.tvEdit4GenderFill.setCompoundDrawablesWithIntrinsicBounds(
+                0, 0, R.drawable.back_button_down, 0
+            )
+            binding.tvEdit4GenderFill.tag = false;
+
+            hideGenderPopup()
         }
 
         opt3None.setOnClickListener {
             binding.tvEdit4GenderFill.text = getString(R.string.option_none) // Set gender to "None"
-            genderPopup.visibility = View.GONE // Hide the popup after selection
+            binding.tvEdit4GenderFill.setCompoundDrawablesWithIntrinsicBounds(
+                0, 0, R.drawable.back_button_down, 0
+            )
+            binding.tvEdit4GenderFill.tag = false;
+
+            hideGenderPopup()
         }
     }
 
