@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -49,6 +50,13 @@ class ObjectFragment : Fragment() {
             hideKeyboard()
             false
         }
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // Ganti dengan tujuan back yang kamu inginkan
+                findNavController().navigate(R.id.action_ObjectFragment_to_HomeFragment)
+            }
+        })
 
         binding.btnBack.setOnClickListener {
             SharedData.detectedObjects = emptyList()
