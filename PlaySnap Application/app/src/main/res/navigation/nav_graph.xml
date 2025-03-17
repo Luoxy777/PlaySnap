@@ -394,6 +394,8 @@
             app:destination="@id/helpFragmentReqSuccess"
             app:popUpTo="@id/helpFragmentReq"
             app:popUpToInclusive="true"/>
+
+
     </fragment>
 
     <fragment
@@ -401,8 +403,9 @@
         android:name="com.example.playsnapui.ui.help.HelpFragmentReqSuccess"
         android:label="helpReqSuccess">
         <action
-            android:id="@+id/action_helpReqSuccessFragment_to_helpFragment"
-            app:destination="@id/helpFragment"/>
+            android:id="@+id/action_helpReqSuccessFragment_to_homeFragment"
+            app:destination="@id/homeFragment"/>
+
     </fragment>
 
     <fragment

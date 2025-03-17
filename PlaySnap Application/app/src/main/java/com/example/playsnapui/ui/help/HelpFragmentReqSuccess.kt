@@ -28,7 +28,7 @@ class HelpFragmentReqSuccess : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         Handler(Looper.getMainLooper()).postDelayed({
             // Navigate to the home screen (adjust the destination ID if needed)
-            findNavController().navigate(R.id.action_helpReqSuccessFragment_to_helpFragment)
+            findNavController().navigate(R.id.action_helpReqSuccessFragment_to_homeFragment)
         }, 3000)  // 3000 milliseconds = 3 seconds
     }
 
