@@ -1,5 +1,6 @@
 name: Keep Hugging Face Space Alive
 on:
+  workflow_dispatch:  # This allows manual triggering
   schedule:
     - cron: "*/5 * * * *"  # Runs every 10 minutes
 jobs:
@@ -8,3 +9,4 @@ jobs:
     steps:
       - name: Send Request
         run: curl -s https://kohakkun-my-yolo-api.hf.space
+        
